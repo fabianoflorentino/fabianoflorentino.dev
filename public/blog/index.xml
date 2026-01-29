@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on </title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blogs on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>email@example.com (Hugo Nightfall)</managingEditor>
+    <webMaster>email@example.com (Hugo Nightfall)</webMaster>
+    <lastBuildDate>Wed, 28 Jan 2026 19:47:11 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOLID em Go: princípios ou dogmas?</title>
+      <link>http://localhost:1313/blog/solid/solid_em_go_principios_ou_dogmas/</link>
+      <pubDate>Wed, 28 Jan 2026 19:47:11 -0300</pubDate><author>email@example.com (Hugo Nightfall)</author>
+      <guid>http://localhost:1313/blog/solid/solid_em_go_principios_ou_dogmas/</guid>
+      <description>&lt;p&gt;Isso soa familiar?&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Go não é orientado a objetos&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;ou&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;SOLID é coisa de Java / C#&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;Essas afirmações não são totalmente falsas; mas também existem outras formas de entender e talvez aplicar os&#xA;princípios SOLID em outras linguagens que não sejam orientadas a objetos.&lt;/p&gt;&#xA;&lt;p&gt;Bora entender melhor?:&lt;/p&gt;&#xA;&lt;h2 id=&#34;solid-faz-sentido-em-go&#34;&gt;SOLID faz sentido em Go?&lt;/h2&gt;&#xA;&lt;p&gt;A resposta curta é: sim, mas não como idealizado em linguagens orientada a objetos.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SOLID&lt;/a&gt;&#xA; é uma sigla que representa cinco princípios de design de software propostos por &#xA;&lt;a href=&#34;http://cleancoder.com/products&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Robert C. Martin&lt;/a&gt;&#xA;, também conhecido como &amp;ldquo;Uncle Bob&amp;rdquo;. Esses princípios são amplamente utilizados no desenvolvimento de software orientado a objetos para criar sistemas mais robustos, flexíveis e fáceis de manter.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -13,11 +13,7 @@ showCategories = false
 
 Isso soa familiar?
 
-"Go não é orientado a objetos"
-
-ou
-
-"SOLID é coisa de Java / C#"
+"Go não é orientado a objetos" ou "SOLID é coisa de Java / C#"...
 
 Essas afirmações não são totalmente falsas; mas também existem outras formas de entender e talvez aplicar os
 princípios SOLID em outras linguagens que não sejam orientadas a objetos.
@@ -70,6 +66,8 @@ type UserService interface {
 Em Go abstrações precisam existir, não planejada prematuramente. Sem múltiplas implementações concretas, sem uma necessidade real
 Sem ganho claro da abstração.
 
+---
+
 ## Novamente; então por que SOLID em Go?
 
 ### 1. Interfaces pequenas são naturais em Go
@@ -114,6 +112,33 @@ o que significa não fazer:
 - Criar árvores de abstrações
 - Introduzir complexidade desnecessária
 - Antecipar extensões que talvez nunca existam
+
+## E quando SOLID não faz sentido?
+
+Código pequeno e estável, não há multiplass implementacões, abstração não reduz complexidade. Go prefere a
+simplicidade a elegância teórica.
+
+## Próximos passos
+
+Nos próximos posts, vamos conversar sobre cada princípio SOLID usando sempre Go como linguagem de exemplo.
+
+- Onde ele faz sentido
+- Onde não faz sentido
+- Aplicar de forma idiomática
+
+## Conclusão
+
+SOLID em Go não é uma receita pronta — é um conjunto de heurísticas.
+
+Quando aplicado com moderação, ajuda a escrever código:
+
+mais testável
+mais legível
+mais resiliente a mudanças
+
+Quando aplicado sem necessidade real, só adiciona complexidade desnecessária.
+
+Até lá.
 
 ## Referências
 

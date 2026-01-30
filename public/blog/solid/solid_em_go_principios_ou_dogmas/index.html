@@ -3,7 +3,7 @@
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <title>
-SOLID em Go: princípios ou dogmas? | Hugo Nightfall
+SOLID em Go: princípios ou dogmas? | Fabiano Santos Florentino
 </title>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -32,7 +32,7 @@ SOLID em Go: princípios ou dogmas? | Hugo Nightfall
     <div class="header">
         <div>
             <a class="terminal" href="/">
-                <span>fabianoflorentino@127.0.0.1 ~ $</span>
+                <span>fabianoflorentino@0.0.0.0 ~ $</span>
             </a>
         </div>
         <input class="side-menu" type="checkbox" id="side-menu">
@@ -98,9 +98,7 @@ SOLID em Go: princípios ou dogmas? | Hugo Nightfall
     
     <div>
         <p>Isso soa familiar?</p>
-<p>&ldquo;Go não é orientado a objetos&rdquo;</p>
-<p>ou</p>
-<p>&ldquo;SOLID é coisa de Java / C#&rdquo;</p>
+<p>&ldquo;Go não é orientado a objetos&rdquo; ou &ldquo;SOLID é coisa de Java / C#&rdquo;&hellip;</p>
 <p>Essas afirmações não são totalmente falsas; mas também existem outras formas de entender e talvez aplicar os
 princípios SOLID em outras linguagens que não sejam orientadas a objetos.</p>
 <p>Bora entender melhor?:</p>
@@ -139,6 +137,7 @@ princípios SOLID em outras linguagens que não sejam orientadas a objetos.</p>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Em Go abstrações precisam existir, não planejada prematuramente. Sem múltiplas implementações concretas, sem uma necessidade real
 Sem ganho claro da abstração.</p>
+<hr>
 <h2 id="novamente-então-por-que-solid-em-go">Novamente; então por que SOLID em Go?</h2>
 <h3 id="1-interfaces-pequenas-são-naturais-em-go">1. Interfaces pequenas são naturais em Go</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Reader</span> <span style="color:#66d9ef">interface</span> {
@@ -169,6 +168,24 @@ quase que natural.</p>
 <li>Introduzir complexidade desnecessária</li>
 <li>Antecipar extensões que talvez nunca existam</li>
 </ul>
+<h2 id="e-quando-solid-não-faz-sentido">E quando SOLID não faz sentido?</h2>
+<p>Código pequeno e estável, não há multiplass implementacões, abstração não reduz complexidade. Go prefere a
+simplicidade a elegância teórica.</p>
+<h2 id="próximos-passos">Próximos passos</h2>
+<p>Nos próximos posts, vamos conversar sobre cada princípio SOLID usando sempre Go como linguagem de exemplo.</p>
+<ul>
+<li>Onde ele faz sentido</li>
+<li>Onde não faz sentido</li>
+<li>Aplicar de forma idiomática</li>
+</ul>
+<h2 id="conclusão">Conclusão</h2>
+<p>SOLID em Go não é uma receita pronta — é um conjunto de heurísticas.</p>
+<p>Quando aplicado com moderação, ajuda a escrever código:</p>
+<p>mais testável
+mais legível
+mais resiliente a mudanças</p>
+<p>Quando aplicado sem necessidade real, só adiciona complexidade desnecessária.</p>
+<p>Até lá.</p>
 <h2 id="referências">Referências</h2>
 <ul>
 <li>
@@ -186,7 +203,7 @@ quase que natural.</p>
         <footer class="footer">
     
         <span>
-            © 2026 Hugo Nightfall, Built with
+            © 2026 Fabiano Santos Florentino, Built with
             <a href="https://gohugo.io" class="footerLink">Hugo</a> and
             <a href="https://github.com/LordMathis/hugo-theme-nightfall" class="footerLink">Nightfall</a> theme
         </span>

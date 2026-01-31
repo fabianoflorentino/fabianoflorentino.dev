@@ -1,6 +1,6 @@
 +++
 date = '2026-01-31'
-draft = true
+draft = false
 title = 'SOLID em Go: princípios ou dogmas?'
 
 showMetadata = false

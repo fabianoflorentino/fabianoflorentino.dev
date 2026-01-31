@@ -143,7 +143,7 @@ Nos próximos posts, vamos explorar cada princípio SOLID usando Go como linguag
 
 ## Conclusão
 
-SOLID em Go não é uma receita pronta — é um conjunto de heurísticas.
+SOLID em Go não é uma receita pronta — é um conjunto de [heurísticas](https://pt.wikipedia.org/wiki/Heur%C3%ADstica).
 
 Quando aplicado com moderação, ajuda a escrever código:
 

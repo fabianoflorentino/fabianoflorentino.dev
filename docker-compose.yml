@@ -1,0 +1,19 @@
+services:
+  blog:
+    container_name: blog
+    image: fabianoflorentino/blog:v0.0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - ./:/blog
+    ports:
+      - 1313:1313
+    tty: true
+    stdin_open: true
+    healthcheck:
+      test: ["CMD-SHELL", "ps aux |grep 'hugo' || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 3

@@ -8,7 +8,7 @@ theme = "nightfall"
       unsafe = true
 
 [pagination]
-pagerSize = 10
+pagerSize = 3
 
 [menu]
   [[menu.header]]
@@ -21,6 +21,7 @@ pagerSize = 10
     url = "whoami"
 
 [params]
+siteDescription = "Personal Blog Post"
 user = "fabianoflorentino"
 hostname = "0.0.0.0"
 

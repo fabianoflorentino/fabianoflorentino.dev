@@ -2,6 +2,7 @@
 date = '2026-01-31'
 draft = false
 title = 'SOLID em Go: princípios ou dogmas?'
+series = 'SOLID'
 
 showMetadata = false
 showPublishedDate = false

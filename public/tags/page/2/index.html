@@ -28,30 +28,17 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/posts/solid_em_go_principio_ou_dogma/">
+<meta property="og:url" content="http://localhost:1313/tags/">
   <meta property="og:site_name" content="Fabiano Santos Florentino">
-  <meta property="og:title" content="Solid em Go Princípio ou dogma?">
-  <meta property="og:description" content="Isso soa familiar?
-“Go não é orientado a objetos” ou “SOLID é coisa de Java / C#”…
-Se você já ouviu isso em discussões de code review, em threads no Twitter ou até dentro do time, não está sozinho.
-Essas afirmações não são totalmente falsas — mas também não contam a história toda. Existem outras formas de entender e aplicar os princípios SOLID em linguagens que não seguem o modelo clássico de orientação a objetos.">
+  <meta property="og:title" content="Tags">
+  <meta property="og:description" content="Blog Pessoal">
   <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-01-31T02:52:52-03:00">
-    <meta property="article:modified_time" content="2026-01-31T02:52:52-03:00">
-    <meta property="article:tag" content="Post">
-    <meta property="article:tag" content="Go">
-    <meta property="article:tag" content="Arquitetura">
-    <meta property="article:tag" content="Solid">
+  <meta property="og:type" content="website">
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Solid em Go Princípio ou dogma?">
-  <meta name="twitter:description" content="Isso soa familiar?
-“Go não é orientado a objetos” ou “SOLID é coisa de Java / C#”…
-Se você já ouviu isso em discussões de code review, em threads no Twitter ou até dentro do time, não está sozinho.
-Essas afirmações não são totalmente falsas — mas também não contam a história toda. Existem outras formas de entender e aplicar os princípios SOLID em linguagens que não seguem o modelo clássico de orientação a objetos.">
+  <meta name="twitter:title" content="Tags">
+  <meta name="twitter:description" content="Blog Pessoal">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -115,18 +102,15 @@ Essas afirmações não são totalmente falsas — mas também não contam a his
 
 
 
-<meta name="description" content="">
-<link rel="stylesheet" href="/css/single.css">
-
-
-<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+<meta name="description" content="Tags of Fabiano Santos Florentino">
+<link rel="stylesheet" href="/css/list.css" media="all">
 
 
   
   
 
   <title>
-Solid em Go Princípio ou dogma? | Fabiano Santos Florentino
+Tags | Fabiano Santos Florentino
 
   </title>
 </head>
@@ -305,280 +289,57 @@ Solid em Go Princípio ou dogma? | Fabiano Santos Florentino
     </nav>
 </header>
 <div id="content">
-<section id="single">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-sm-12 col-md-12 col-lg-9">
-        <div class="pr-lg-4">
-          <div class="title mb-5">
-            <h1 class="text-center mb-4">Solid em Go Princípio ou dogma?</h1>
-            <div class="text-center">
-              
-              Jan 31, 2026
-
-              
-              <span id="readingTime">
-                min read
-              </span>
-              
-            </div>
-          </div>
-          
-          <div class="featured-image">
-            <img class="img-fluid mx-auto d-block" src="/images/SOLID.jpg" alt="Solid em Go Princípio ou dogma?">
-          </div>
-          
-          <article class="page-content  p-2">
-          <p>Isso soa familiar?</p>
-<p><strong>&ldquo;Go não é orientado a objetos&rdquo;</strong> ou <strong>&ldquo;SOLID é coisa de Java / C#&rdquo;</strong>&hellip;</p>
-<p>Se você já ouviu isso em discussões de code review, em threads no Twitter ou até dentro do time, não está sozinho.</p>
-<p>Essas afirmações não são totalmente falsas — mas também não contam a história toda. Existem outras formas de entender e aplicar os princípios SOLID em linguagens que não seguem o modelo clássico de orientação a objetos.</p>
-<p>Bora entender melhor?</p>
-<h2 id="solid-faz-sentido-em-go">SOLID faz sentido em Go?</h2>
-<p>A resposta curta é: <strong>sim</strong> — desde que você entenda SOLID como <strong>princípios de design</strong>, e não como padrões de implementação.</p>
-<p>Em Go, SOLID não aparece na forma de hierarquias complexas ou abstrações profundas, mas como decisões simples e conscientes de design.</p>
-<hr>
-<p><a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">SOLID</a> é uma sigla que representa cinco princípios de design de software propostos por <a href="http://cleancoder.com/products">Robert C. Martin</a>, o Uncle Bob. Eles surgiram em um contexto fortemente orientado a objetos, com foco em classes, herança e polimorfismo explícito.</p>
-<p>Os princípios são:</p>
-<ul>
-<li><strong>Single Responsibility Principle (SRP)</strong> — Princípio da Responsabilidade Única</li>
-<li><strong>Open/Closed Principle (OCP)</strong> — Princípio Aberto/Fechado</li>
-<li><strong>Liskov Substitution Principle (LSP)</strong> — Princípio da Substituição de Liskov</li>
-<li><strong>Interface Segregation Principle (ISP)</strong> — Princípio da Segregação de Interfaces</li>
-<li><strong>Dependency Inversion Principle (DIP)</strong> — Princípio da Inversão de Dependência</li>
-</ul>
-<p>Nada disso é incompatível com Go. O que muda é <em>como</em> esses princípios se manifestam.</p>
-<p>Então… se Go não é OO clássico, por que falar de SOLID?</p>
-<h2 id="go-não-é-oo-clássico--e-isso-é-intencional">Go não é OO clássico — e isso é intencional</h2>
-<p>Go não tem herança, não possui classes e evita hierarquias profundas. Em vez disso, a linguagem incentiva:</p>
-<ul>
-<li><strong>Composição em vez de herança</strong></li>
-<li><strong>Interfaces implícitas</strong></li>
-<li><strong>Structs simples</strong></li>
-<li><strong>Funções como cidadãos de primeira classe</strong></li>
-</ul>
-<p>Essas características mudam completamente a forma como os princípios SOLID são aplicados.</p>
-<p>O ponto central não é copiar soluções de outras linguagens, mas entender <strong>qual problema cada princípio tenta resolver</strong> — e como resolvemos esse problema de forma idiomática em Go.</p>
-<h2 id="o-erro-clássico-escrever-go-como-se-fosse-java">O erro clássico: escrever Go como se fosse Java</h2>
-<p>O erro mais comum ao tentar aplicar SOLID em Go é criar abstrações antes mesmo de existir um problema real.</p>
-<h3 id="exemplo-comum">Exemplo comum</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UserService</span> <span style="color:#66d9ef">interface</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">CreateUser</span>(<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">error</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Criar interfaces “por precaução” raramente traz benefícios em Go. Sem múltiplas implementações concretas ou sem um motivo claro para desacoplar, a abstração só adiciona complexidade e indireção.</p>
-<p>Em Go, <strong>interfaces devem surgir do uso</strong>, não de uma intenção futura.</p>
-<hr>
-<h2 id="então-por-que-solid-em-go">Então… por que SOLID em Go?</h2>
-<p>Porque, quando aplicados com moderação, os princípios ajudam a escrever código mais simples, testável e fácil de evoluir.</p>
-<h3 id="1-interfaces-pequenas-são-naturais-em-go">1. Interfaces pequenas são naturais em Go</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Reader</span> <span style="color:#66d9ef">interface</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Read</span>(<span style="color:#a6e22e">p</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Esse tipo de interface não nasceu para “seguir SOLID”, mas acaba refletindo perfeitamente o <strong>Princípio da Segregação de Interfaces (ISP)</strong>: contratos pequenos, focados e fáceis de implementar.</p>
-<h3 id="2-composição-resolve-mais-do-que-herança">2. Composição resolve mais do que herança</h3>
-<p>O uso de composição em Go conversa diretamente com vários princípios:</p>
-<ul>
-<li><strong>SRP</strong>, ao manter responsabilidades bem definidas</li>
-<li><strong>OCP</strong>, ao permitir extensão por composição</li>
-<li><strong>DIP</strong>, ao depender de comportamentos, não de implementações concretas</li>
-</ul>
-<p>Sem herança, evitamos hierarquias frágeis e efeitos colaterais difíceis de prever.</p>
-<h3 id="3-dependências-explícitas">3. Dependências explícitas</h3>
-<p>Em Go, dependências geralmente são passadas de forma direta, sem containers, reflexão ou mágica escondida:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewService</span>(<span style="color:#a6e22e">repo</span> <span style="color:#a6e22e">Repository</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Service</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Service</span>{<span style="color:#a6e22e">repo</span>: <span style="color:#a6e22e">repo</span>}
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Isso torna o código mais legível, facilita testes e deixa claro <em>do que</em> cada componente realmente depende.</p>
-<hr>
-<h2 id="solid-em-go-é-mais-sobre-limites-do-que-sobre-padrões">SOLID em Go é mais sobre limites do que sobre padrões</h2>
-<p>Em Go, aplicar SOLID é mais sobre:</p>
-<ul>
-<li>Definir limites claros de responsabilidade</li>
-<li>Proteger contratos simples e explícitos</li>
-<li>Reduzir acoplamento entre pacotes</li>
-<li>Facilitar testes e mudanças</li>
-</ul>
-<p>E menos sobre:</p>
-<ul>
-<li>Criar árvores de abstrações</li>
-<li>Antecipar extensões que talvez nunca existam</li>
-<li>Introduzir complexidade sem ganho real</li>
-</ul>
-<h2 id="e-quando-solid-não-faz-sentido">E quando SOLID não faz sentido?</h2>
-<p>Em código pequeno, estável e com apenas uma implementação concreta, abstrações extras raramente ajudam.</p>
-<p>Go costuma preferir <strong>simplicidade prática</strong> a elegância teórica.</p>
-<h2 id="próximos-passos">Próximos passos</h2>
-<p>Nos próximos posts, vamos explorar cada princípio SOLID usando Go como linguagem de exemplo:</p>
-<ul>
-<li>Onde faz sentido</li>
-<li>Onde não faz sentido</li>
-<li>Como aplicar de forma idiomática</li>
-</ul>
-<h2 id="conclusão">Conclusão</h2>
-<p>SOLID em Go não é uma receita pronta — é um conjunto de <a href="https://pt.wikipedia.org/wiki/Heur%C3%ADstica">heurísticas</a>.</p>
-<p>Quando aplicado com moderação, ajuda a escrever código:</p>
-<ul>
-<li>mais testável</li>
-<li>mais legível</li>
-<li>mais resiliente a mudanças</li>
-</ul>
-<p>Quando aplicado sem necessidade real, só adiciona complexidade desnecessária.</p>
-<p>Em Go, SOLID não é um conjunto de regras — é um filtro para decisões de design.</p>
-<p>Até lá.</p>
-<h2 id="referências">Referências</h2>
-<ul>
-<li><a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">But Uncle Bob</a></li>
-<li><a href="https://aprendagolang.com.br/o-que-e-solid/">Aprenda Golang</a></li>
-<li><a href="https://pt.wikipedia.org/wiki/SOLID">Wikipedia</a></li>
-<li><a href="https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html">Blog cleancoder</a></li>
-</ul>
-
-          </article>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-3">
-        <div id="stickySideBar" class="sticky-sidebar">
-          
-          <aside class="toc">
-              <h5>
-                Sumárrio
-              </h5>
-              <div class="toc-content">
-                <nav id="TableOfContents">
-  <ul>
-    <li><a href="#solid-faz-sentido-em-go">SOLID faz sentido em Go?</a></li>
-    <li><a href="#go-não-é-oo-clássico--e-isso-é-intencional">Go não é OO clássico — e isso é intencional</a></li>
-    <li><a href="#o-erro-clássico-escrever-go-como-se-fosse-java">O erro clássico: escrever Go como se fosse Java</a>
-      <ul>
-        <li><a href="#exemplo-comum">Exemplo comum</a></li>
-      </ul>
-    </li>
-    <li><a href="#então-por-que-solid-em-go">Então… por que SOLID em Go?</a>
-      <ul>
-        <li><a href="#1-interfaces-pequenas-são-naturais-em-go">1. Interfaces pequenas são naturais em Go</a></li>
-        <li><a href="#2-composição-resolve-mais-do-que-herança">2. Composição resolve mais do que herança</a></li>
-        <li><a href="#3-dependências-explícitas">3. Dependências explícitas</a></li>
-      </ul>
-    </li>
-    <li><a href="#solid-em-go-é-mais-sobre-limites-do-que-sobre-padrões">SOLID em Go é mais sobre limites do que sobre padrões</a></li>
-    <li><a href="#e-quando-solid-não-faz-sentido">E quando SOLID não faz sentido?</a></li>
-    <li><a href="#próximos-passos">Próximos passos</a></li>
-    <li><a href="#conclusão">Conclusão</a></li>
-    <li><a href="#referências">Referências</a></li>
-  </ul>
-</nav>
-              </div>
-          </aside>
-          
-
-          
-          <aside class="tags">
-            <h5>Tags</h5>
-            <ul class="tags-ul list-unstyled list-inline">
-              
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/post"
-                target="_blank"
-              >post</a></li>
-              
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/go"
-                target="_blank"
-              >go</a></li>
-              
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/arquitetura"
-                target="_blank"
-              >arquitetura</a></li>
-              
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/solid"
-                target="_blank"
-              >solid</a></li>
-              
-            </ul>
-          </aside>
-          
-
-          
-          <aside class="social">
-            <h5>Social</h5>
-            <div class="social-content">
-              <ul class="list-inline">
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://www.linkedin.com/feed/?shareActive=true&text= http%3a%2f%2flocalhost%3a1313%2fposts%2fsolid_em_go_principio_ou_dogma%2f">
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href='https://x.com/share?text=Solid%20em%20Go%20Princ%c3%adpio%20ou%20dogma%3f&url=http%3a%2f%2flocalhost%3a1313%2fposts%2fsolid_em_go_principio_ou_dogma%2f&hashtags=post%2c%20go%2c%20arquitetura%2c%20solid'>
-                    <i class="fab fa-x-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://api.whatsapp.com/send?text=Solid%20em%20Go%20Princ%c3%adpio%20ou%20dogma%3f: http%3a%2f%2flocalhost%3a1313%2fposts%2fsolid_em_go_principio_ou_dogma%2f">
-                    <i class="fab fa-whatsapp"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href='mailto:?subject=Solid%20em%20Go%20Princ%c3%adpio%20ou%20dogma%3f&amp;body=Check%20out%20this%20site http%3a%2f%2flocalhost%3a1313%2fposts%2fsolid_em_go_principio_ou_dogma%2f'>
-                    <i class="fa fa-envelope"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </aside>
-          
-        </div>
-      </div>
-    </div>
+<div class="container pt-5" id="list-page">
+    <h2 class="text-center pb-2">Tags</h2>
     <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
         
-      </div>
+        <div class="col-lg-4 col-md-6 my-3">
+            <div class="card-columns">
+                <div class="card h-100">
+                    
+                    <div class="card-body bg-transparent p-4 shadow-sm">
+                        <a href="/tags/solid/" class="primary-font card-title">
+                            <h5 class="card-title bg-transparent" title="Solid">Solid</h5>
+                        </a>
+                        <div class="card-text secondary-font">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="mt-auto post-footer bg-transparent py-3">
+                        <span class="float-start bg-transparent">Feb 3, 2026</span>
+                        <a href="/tags/solid/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-auto m-3">
+                
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/tags/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/tags/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/tags/" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
+            </div>
+        </div>
     </div>
-  </div>
-  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
-    <i class="fas fa-angle-up"></i>
-  </button>
-</section>
-
-
-<div class="progress">
-  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
-<Script src="/js/scrollProgressBar.js"></script>
-
-
-<script>
-  var topScroll = document.getElementById("topScroll");
-  window.onscroll = function() {scrollFunction()};
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      topScroll.style.display = "block";
-    } else {
-      topScroll.style.display = "none";
-    }
-  }
-
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-
-  
-  let stickySideBarElem = document.getElementById("stickySideBar");
-  let stickyNavBar =  true ;
-  if(stickyNavBar) {
-    let headerElem = document.getElementById("profileHeader");
-    let headerHeight = headerElem.offsetHeight + 15;
-    stickySideBarElem.style.top = headerHeight + "px";
-  } else {
-    stickySideBarElem.style.top = "50px";
-  }
-</script>
-
-
-<script src="/js/readingTime.js"></script>
-
-
 
   </div><footer>
     

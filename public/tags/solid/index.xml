@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fabiano Santos Florentino</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Fabiano Santos Florentino</description>
+    <title>Solid on Fabiano Santos Florentino</title>
+    <link>http://localhost:1313/tags/solid/</link>
+    <description>Recent content in Solid on Fabiano Santos Florentino</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 03 Feb 2026 16:04:33 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/solid/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Single Responsability Principle (SRP)</title>
       <link>http://localhost:1313/posts/single_responsability_principle/</link>

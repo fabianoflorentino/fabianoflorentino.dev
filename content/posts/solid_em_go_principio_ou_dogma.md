@@ -1,6 +1,6 @@
 ---
 date: '2026-01-31T02:52:52-03:00'
-draft: true
+draft: false
 title: 'Solid em Go Princípio ou dogma?'
 tags: [post, go, arquitetura, solid]
 image: /images/SOLID.png

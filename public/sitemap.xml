@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/arquitetura/</loc>
+    <lastmod>2026-01-31T02:52:52-03:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-02-01T21:26:11-03:00</lastmod>
+    <lastmod>2026-01-31T02:52:52-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2026-02-01T21:26:11-03:00</lastmod>
+    <loc>http://localhost:1313/tags/go/</loc>
+    <lastmod>2026-01-31T02:52:52-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/solid/single_responsability_principle/</loc>
-    <lastmod>2026-02-01T21:26:11-03:00</lastmod>
+    <loc>http://localhost:1313/tags/post/</loc>
+    <lastmod>2026-01-31T02:52:52-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/solid/solid_em_go_principios_ou_dogmas/</loc>
-    <lastmod>2026-01-31T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-01-31T02:52:52-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/whoami/</loc>
-    <lastmod>2026-01-28T19:09:24-03:00</lastmod>
+    <loc>http://localhost:1313/tags/solid/</loc>
+    <lastmod>2026-01-31T02:52:52-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/posts/solid_em_go_principio_ou_dogma/</loc>
+    <lastmod>2026-01-31T02:52:52-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-01-31T02:52:52-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>

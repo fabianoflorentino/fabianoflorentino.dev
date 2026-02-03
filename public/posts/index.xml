@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Fabiano Santos Florentino</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Fabiano Santos Florentino</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Jan 2026 02:52:52 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solid em Go Princípio ou dogma?</title>
+      <link>http://localhost:1313/posts/solid_em_go_principio_ou_dogma/</link>
+      <pubDate>Sat, 31 Jan 2026 02:52:52 -0300</pubDate>
+      <guid>http://localhost:1313/posts/solid_em_go_principio_ou_dogma/</guid>
+      <description>&lt;p&gt;Isso soa familiar?&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;Go não é orientado a objetos&amp;rdquo;&lt;/strong&gt; ou &lt;strong&gt;&amp;ldquo;SOLID é coisa de Java / C#&amp;rdquo;&lt;/strong&gt;&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;Se você já ouviu isso em discussões de code review, em threads no Twitter ou até dentro do time, não está sozinho.&lt;/p&gt;&#xA;&lt;p&gt;Essas afirmações não são totalmente falsas — mas também não contam a história toda. Existem outras formas de entender e aplicar os princípios SOLID em linguagens que não seguem o modelo clássico de orientação a objetos.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

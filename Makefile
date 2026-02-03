@@ -104,22 +104,22 @@ prune: ## Remove todos os recursos Docker não utilizados (cuidado!)
 
 new-post: ## Cria um novo post (uso: make new-post TITLE="Meu Post")
 	@if [ -z "$(TITLE)" ]; then \
-		echo "$(RED)❌ Erro: Informe o título do post$(NC)"; \
-		echo "$(YELLOW)Uso: make new-post TITLE=\"Meu Título\"$(NC)"; \
+		echo -e "$(RED)❌ Erro: Informe o título do post$(NC)"; \
+		echo -e "$(YELLOW)Uso: make new-post TITLE=\"Meu Título\"$(NC)"; \
 		exit 1; \
 	fi
 	@echo -e "$(BLUE)📝 Criando novo post...$(NC)"
-	@docker exec $(CONTAINER_NAME) hugo new posts/$(shell echo "$(TITLE)" | tr '[:upper:]' '[:lower:]' | tr ' ' '-').md
+	@docker exec $(CONTAINER_NAME) hugo new posts/$(shell echo "$(TITLE)" | tr '[:upper:]' '[:lower:]' | tr ' ' '_').md
 	@echo -e "$(GREEN)✓ Post criado!$(NC)"
 
 new-draft: ## Cria um novo draft (uso: make new-draft TITLE="Meu Draft")
 	@if [ -z "$(TITLE)" ]; then \
-		echo "$(RED)❌ Erro: Informe o título do draft$(NC)"; \
-		echo "$(YELLOW)Uso: make new-draft TITLE=\"Meu Título\"$(NC)"; \
+		echo -e "$(RED)❌ Erro: Informe o título do draft$(NC)"; \
+		echo -e "$(YELLOW)Uso: make new-draft TITLE=\"Meu Título\"$(NC)"; \
 		exit 1; \
 	fi
 	@echo -e "$(BLUE)📝 Criando novo draft...$(NC)"
-	@docker exec $(CONTAINER_NAME) hugo new --kind post-bundle posts/$(shell echo "$(TITLE)" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+	@docker exec $(CONTAINER_NAME) hugo new --kind post-bundle posts/$(shell echo "$(TITLE)" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
 	@echo -e "$(GREEN)✓ Draft criado!$(NC)"
 
 list-content: ## Lista todo o conteúdo do blog

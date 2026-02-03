@@ -1,15 +1,14 @@
 FROM alpine:3.23 AS development
 
-ARG HUGO_VERSION=0.155.1
+ARG HUGO_VERSION=0.155.1 \
+  HUGO_URL=https://github.com/gohugoio/hugo \
+  HUGO_PATH=releases/download/v${HUGO_VERSION} \
+  HUGO_BINARY=hugo_${HUGO_VERSION}_linux-amd64.tar.gz
 
 WORKDIR /blog
 
-RUN apk add --no-cache \
-  curl \
-  tar \
-  ca-certificates \
-  && curl -L https://github.com/gohugoio/hugo/releases/download/v0.155.1/hugo_${HUGO_VERSION}_linux-amd64.tar.gz \
-  -o /tmp/hugo.tar.gz \
+RUN apk add --no-cache curl tar ca-certificates \
+  && curl -L ${HUGO_URL}/${HUGO_PATH}/${HUGO_BINARY} -o /tmp/hugo.tar.gz \
   && tar -xzf /tmp/hugo.tar.gz -C /tmp \
   && mv /tmp/hugo /usr/local/bin/hugo \
   && chmod +x /usr/local/bin/hugo \

@@ -30,7 +30,7 @@
 
 <meta property="og:url" content="http://localhost:1313/posts/solid_em_go_principio_ou_dogma/">
   <meta property="og:site_name" content="Fabiano Santos Florentino">
-  <meta property="og:title" content="Solid em Go Princípio ou dogma?">
+  <meta property="og:title" content="SOLID em Go Princípio ou dogma?">
   <meta property="og:description" content="Isso soa familiar?
 “Go não é orientado a objetos” ou “SOLID é coisa de Java / C#”…
 Se você já ouviu isso em discussões de code review, em threads no Twitter ou até dentro do time, não está sozinho.
@@ -47,7 +47,7 @@ Essas afirmações não são totalmente falsas — mas também não contam a his
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Solid em Go Princípio ou dogma?">
+  <meta name="twitter:title" content="SOLID em Go Princípio ou dogma?">
   <meta name="twitter:description" content="Isso soa familiar?
 “Go não é orientado a objetos” ou “SOLID é coisa de Java / C#”…
 Se você já ouviu isso em discussões de code review, em threads no Twitter ou até dentro do time, não está sozinho.
@@ -126,7 +126,7 @@ Essas afirmações não são totalmente falsas — mas também não contam a his
   
 
   <title>
-Solid em Go Princípio ou dogma? | Fabiano Santos Florentino
+SOLID em Go Princípio ou dogma? | Fabiano Santos Florentino
 
   </title>
 </head>
@@ -311,7 +311,7 @@ Solid em Go Princípio ou dogma? | Fabiano Santos Florentino
       <div class="col-sm-12 col-md-12 col-lg-9">
         <div class="pr-lg-4">
           <div class="title mb-5">
-            <h1 class="text-center mb-4">Solid em Go Princípio ou dogma?</h1>
+            <h1 class="text-center mb-4">SOLID em Go Princípio ou dogma?</h1>
             <div class="text-center">
               
               Jan 31, 2026
@@ -325,7 +325,7 @@ Solid em Go Princípio ou dogma? | Fabiano Santos Florentino
           </div>
           
           <div class="featured-image">
-            <img class="img-fluid mx-auto d-block" src="/images/SOLID.jpg" alt="Solid em Go Princípio ou dogma?">
+            <img class="img-fluid mx-auto d-block" src="/images/SOLID.jpg" alt="SOLID em Go Princípio ou dogma?">
           </div>
           
           <article class="page-content  p-2">
@@ -359,7 +359,7 @@ Solid em Go Princípio ou dogma? | Fabiano Santos Florentino
 </ul>
 <p>Essas características mudam completamente a forma como os princípios SOLID são aplicados.</p>
 <p>O ponto central não é copiar soluções de outras linguagens, mas entender <strong>qual problema cada princípio tenta resolver</strong> — e como resolvemos esse problema de forma idiomática em Go.</p>
-<h2 id="o-erro-clássico-escrever-go-como-se-fosse-java">O erro clássico: escrever Go como se fosse Java</h2>
+<h2 id="é-um-erro-escrever-go-como-se-fosse-orientado-a-objetos">É um erro escrever Go como se fosse orientado a objetos</h2>
 <p>O erro mais comum ao tentar aplicar SOLID em Go é criar abstrações antes mesmo de existir um problema real.</p>
 <h3 id="exemplo-comum">Exemplo comum</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UserService</span> <span style="color:#66d9ef">interface</span> {
@@ -369,7 +369,7 @@ Solid em Go Princípio ou dogma? | Fabiano Santos Florentino
 <p>Em Go, <strong>interfaces devem surgir do uso</strong>, não de uma intenção futura.</p>
 <hr>
 <h2 id="então-por-que-solid-em-go">Então… por que SOLID em Go?</h2>
-<p>Porque, quando aplicados com moderação, os princípios ajudam a escrever código mais simples, testável e fácil de evoluir.</p>
+<p>Porque, quando aplicados de forma adequada, os princípios ajudam a escrever código mais simples, testável e fácil manutenção.</p>
 <h3 id="1-interfaces-pequenas-são-naturais-em-go">1. Interfaces pequenas são naturais em Go</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Reader</span> <span style="color:#66d9ef">interface</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Read</span>(<span style="color:#a6e22e">p</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
@@ -382,9 +382,9 @@ Solid em Go Princípio ou dogma? | Fabiano Santos Florentino
 <li><strong>OCP</strong>, ao permitir extensão por composição</li>
 <li><strong>DIP</strong>, ao depender de comportamentos, não de implementações concretas</li>
 </ul>
-<p>Sem herança, evitamos hierarquias frágeis e efeitos colaterais difíceis de prever.</p>
+<p>Podemos evitarr hierarquias frágeis e efeitos colaterais difícies de prever mesmo Go não implementando herança.</p>
 <h3 id="3-dependências-explícitas">3. Dependências explícitas</h3>
-<p>Em Go, dependências geralmente são passadas de forma direta, sem containers, reflexão ou mágica escondida:</p>
+<p>Em Go, dependências geralmente são passadas de forma direta, usando um dos seus princípios, de não ter heierarquias profundas:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewService</span>(<span style="color:#a6e22e">repo</span> <span style="color:#a6e22e">Repository</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Service</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Service</span>{<span style="color:#a6e22e">repo</span>: <span style="color:#a6e22e">repo</span>}
 </span></span><span style="display:flex;"><span>}
@@ -421,6 +421,7 @@ Solid em Go Princípio ou dogma? | Fabiano Santos Florentino
 <li>mais testável</li>
 <li>mais legível</li>
 <li>mais resiliente a mudanças</li>
+<li>fácil manutenção</li>
 </ul>
 <p>Quando aplicado sem necessidade real, só adiciona complexidade desnecessária.</p>
 <p>Em Go, SOLID não é um conjunto de regras — é um filtro para decisões de design.</p>
@@ -448,7 +449,7 @@ Solid em Go Princípio ou dogma? | Fabiano Santos Florentino
   <ul>
     <li><a href="#solid-faz-sentido-em-go">SOLID faz sentido em Go?</a></li>
     <li><a href="#go-não-é-oo-clássico--e-isso-é-intencional">Go não é OO clássico — e isso é intencional</a></li>
-    <li><a href="#o-erro-clássico-escrever-go-como-se-fosse-java">O erro clássico: escrever Go como se fosse Java</a>
+    <li><a href="#é-um-erro-escrever-go-como-se-fosse-orientado-a-objetos">É um erro escrever Go como se fosse orientado a objetos</a>
       <ul>
         <li><a href="#exemplo-comum">Exemplo comum</a></li>
       </ul>
@@ -507,17 +508,17 @@ Solid em Go Princípio ou dogma? | Fabiano Santos Florentino
                   </a>
                 </li>
                 <li class="list-inline-item text-center">
-                  <a target="_blank" href='https://x.com/share?text=Solid%20em%20Go%20Princ%c3%adpio%20ou%20dogma%3f&url=http%3a%2f%2flocalhost%3a1313%2fposts%2fsolid_em_go_principio_ou_dogma%2f&hashtags=post%2c%20go%2c%20arquitetura%2c%20solid'>
+                  <a target="_blank" href='https://x.com/share?text=SOLID%20em%20Go%20Princ%c3%adpio%20ou%20dogma%3f&url=http%3a%2f%2flocalhost%3a1313%2fposts%2fsolid_em_go_principio_ou_dogma%2f&hashtags=post%2c%20go%2c%20arquitetura%2c%20solid'>
                     <i class="fab fa-x-twitter"></i>
                   </a>
                 </li>
                 <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://api.whatsapp.com/send?text=Solid%20em%20Go%20Princ%c3%adpio%20ou%20dogma%3f: http%3a%2f%2flocalhost%3a1313%2fposts%2fsolid_em_go_principio_ou_dogma%2f">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=SOLID%20em%20Go%20Princ%c3%adpio%20ou%20dogma%3f: http%3a%2f%2flocalhost%3a1313%2fposts%2fsolid_em_go_principio_ou_dogma%2f">
                     <i class="fab fa-whatsapp"></i>
                   </a>
                 </li>
                 <li class="list-inline-item text-center">
-                  <a target="_blank" href='mailto:?subject=Solid%20em%20Go%20Princ%c3%adpio%20ou%20dogma%3f&amp;body=Check%20out%20this%20site http%3a%2f%2flocalhost%3a1313%2fposts%2fsolid_em_go_principio_ou_dogma%2f'>
+                  <a target="_blank" href='mailto:?subject=SOLID%20em%20Go%20Princ%c3%adpio%20ou%20dogma%3f&amp;body=Check%20out%20this%20site http%3a%2f%2flocalhost%3a1313%2fposts%2fsolid_em_go_principio_ou_dogma%2f'>
                     <i class="fa fa-envelope"></i>
                   </a>
                 </li>
@@ -626,13 +627,13 @@ Solid em Go Princípio ou dogma? | Fabiano Santos Florentino
                 
                 <div class="card-header">
                     <a href="/posts/solid_em_go_principio_ou_dogma/">
-                        <img src="/images/SOLID.jpg" class="card-img-top" alt="Solid em Go Princípio ou dogma?">
+                        <img src="/images/SOLID.jpg" class="card-img-top" alt="SOLID em Go Princípio ou dogma?">
                     </a>
                 </div>
                 
                 <div class="card-body bg-transparent p-3 shadow-sm">
                     <a href="/posts/solid_em_go_principio_ou_dogma/" class="primary-font card-title">
-                        <h5 class="card-title bg-transparent" title="Solid em Go Princípio ou dogma?">Solid em Go Princípio ou …</h5>
+                        <h5 class="card-title bg-transparent" title="SOLID em Go Princípio ou dogma?">SOLID em Go Princípio ou …</h5>
                     </a>
                     <div class="card-text secondary-font">
                         <p><p>Isso soa familiar?</p>

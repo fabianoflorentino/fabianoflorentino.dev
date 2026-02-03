@@ -1,7 +1,7 @@
 ---
 date: '2026-01-31T02:52:52-03:00'
 draft: false
-title: 'Solid em Go Princípio ou dogma?'
+title: 'SOLID em Go Princípio ou dogma?'
 tags: [post, go, arquitetura, solid]
 image: /images/SOLID.jpg
 ---
@@ -51,7 +51,7 @@ Essas características mudam completamente a forma como os princípios SOLID sã
 
 O ponto central não é copiar soluções de outras linguagens, mas entender **qual problema cada princípio tenta resolver** — e como resolvemos esse problema de forma idiomática em Go.
 
-## O erro clássico: escrever Go como se fosse Java
+## É um erro escrever Go como se fosse orientado a objetos
 
 O erro mais comum ao tentar aplicar SOLID em Go é criar abstrações antes mesmo de existir um problema real.
 
@@ -71,7 +71,7 @@ Em Go, **interfaces devem surgir do uso**, não de uma intenção futura.
 
 ## Então… por que SOLID em Go?
 
-Porque, quando aplicados com moderação, os princípios ajudam a escrever código mais simples, testável e fácil de evoluir.
+Porque, quando aplicados de forma adequada, os princípios ajudam a escrever código mais simples, testável e fácil manutenção.
 
 ### 1. Interfaces pequenas são naturais em Go
 
@@ -91,11 +91,11 @@ O uso de composição em Go conversa diretamente com vários princípios:
 * **OCP**, ao permitir extensão por composição
 * **DIP**, ao depender de comportamentos, não de implementações concretas
 
-Sem herança, evitamos hierarquias frágeis e efeitos colaterais difíceis de prever.
+Podemos evitarr hierarquias frágeis e efeitos colaterais difícies de prever mesmo Go não implementando herança.
 
 ### 3. Dependências explícitas
 
-Em Go, dependências geralmente são passadas de forma direta, sem containers, reflexão ou mágica escondida:
+Em Go, dependências geralmente são passadas de forma direta, usando um dos seus princípios, de não ter heierarquias profundas:
 
 ```go
 func NewService(repo Repository) *Service {
@@ -145,6 +145,7 @@ Quando aplicado com moderação, ajuda a escrever código:
 * mais testável
 * mais legível
 * mais resiliente a mudanças
+* fácil manutenção
 
 Quando aplicado sem necessidade real, só adiciona complexidade desnecessária.
 

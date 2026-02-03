@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-01-31T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-01T21:26:11-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2026-01-31T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-01T21:26:11-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/solid/single_responsability_principle/</loc>
+    <lastmod>2026-02-01T21:26:11-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/solid/solid_em_go_principios_ou_dogmas/</loc>
     <lastmod>2026-01-31T00:00:00+00:00</lastmod>

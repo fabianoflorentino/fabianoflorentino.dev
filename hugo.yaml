@@ -34,7 +34,7 @@ Menus:
       name: Blog
       title: Blog posts
       url: /posts
-      weight: 0
+      weight: 1
     # - identifier: gallery
     #   name: Gallery
     #   title: Blog posts

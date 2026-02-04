@@ -1,7 +1,7 @@
 ---
 date: '2026-02-03T16:04:33Z'
 draft: false
-title: 'Single Responsability Principle (SRP)'
+title: 'Single Responsibility Principle (SRP)'
 tags: [post, go, arquitetura, solid, srp]
 series: SOLID
 image: /images/SRP.jpg

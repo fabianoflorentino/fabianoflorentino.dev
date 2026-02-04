@@ -35,7 +35,7 @@
 Uma classe deve ter apenas um motivo para mudar.
 Simples, não?
 Na prática, porém, esse princípio muitas vezes acaba sendo aplicado de forma errada, resultando em:
-structs artificiais demais interfaces sem propósito claro código mais complexo do que o problema original Em Go, o SRP funciona melhor quando você deixa de pensar em classes e passa a pensar em razões para mudar.">
+structs artificiais demais interfaces sem propósito claro código mais complexo do que o problema original Em Go aplicar SRP não significa criar dezenas de structs pequenas. Significa garantir que cada parte do código tenha uma razão clara e única para mudar.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -54,7 +54,7 @@ structs artificiais demais interfaces sem propósito claro código mais complexo
 Uma classe deve ter apenas um motivo para mudar.
 Simples, não?
 Na prática, porém, esse princípio muitas vezes acaba sendo aplicado de forma errada, resultando em:
-structs artificiais demais interfaces sem propósito claro código mais complexo do que o problema original Em Go, o SRP funciona melhor quando você deixa de pensar em classes e passa a pensar em razões para mudar.">
+structs artificiais demais interfaces sem propósito claro código mais complexo do que o problema original Em Go aplicar SRP não significa criar dezenas de structs pequenas. Significa garantir que cada parte do código tenha uma razão clara e única para mudar.">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -343,7 +343,10 @@ Single Responsibility Principle (SRP) | Fabiano Santos Florentino
 <li>interfaces sem propósito claro</li>
 <li>código mais complexo do que o problema original</li>
 </ul>
-<p>Em Go, o SRP funciona melhor quando você deixa de pensar em <em>classes</em> e passa a pensar em <strong>razões para mudar</strong>.</p>
+<p>Em Go aplicar SRP não significa criar dezenas de structs pequenas. Significa garantir que <strong>cada parte do código tenha uma razão clara e única para mudar</strong>.</p>
+<blockquote>
+<p>Em Go você não tem <a href="https://pt.wikipedia.org/wiki/Classe_(programa%C3%A7%C3%A3o)">classes</a> como nas linguagens de programação tradicionais, em Go a estrutura que se assemelha a uma classe é a struct, essa semelhança se da por conta da sua natureza de abstraçao de dados <a href="https://pt.wikipedia.org/wiki/Tipo_abstrato_de_dado">TAD</a> conjunto de objetos com características semelhantes.</p>
+</blockquote>
 <hr>
 <h2 id="um-handler-http-que-faz-tudo">Um handler HTTP que faz tudo</h2>
 <p>Imagine uma API REST, escrita com os módulos <em>builtin</em> do Go (<code>net/http</code> e <code>encoding/json</code>), com endpoint que retorna informações do sistema:</p>
@@ -550,7 +553,7 @@ Aqui ela permanece no <code>main</code> para deixar explícitas as responsabilid
 <p>Isso viola o <strong>SRP</strong> e tende a crescer sem controle.</p>
 <hr>
 <h2 id="srp-não-é-criar-uma-struct-por-método">SRP não é criar uma struct por método</h2>
-<p>Aplicar SRP não significa criar dezenas de structs pequenas. Significa garantir que <strong>cada parte do código tenha uma razão clara e única para mudar</strong>.</p>
+<p>Em Go, o SRP funciona melhor quando você deixa de pensar em <em>classes</em> e passa a pensar em <strong>razões para mudar</strong>.</p>
 <p>Em Go, isso geralmente se traduz em:</p>
 <ul>
 <li>structs simples</li>
@@ -573,8 +576,11 @@ No próximo post da série, podemos explorar como o SRP se conecta com handlers 
 <h2 id="referências">Referências</h2>
 <ul>
 <li><a href="https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html">Blog cleancode</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Single-responsibility_principle">Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Single-responsibility_principle">Wikipedia - SRP</a></li>
+<li><a href="https://pt.wikipedia.org/wiki/Classe_(programa%C3%A7%C3%A3o)">Wikipedia - Classes</a></li>
+<li><a href="https://pt.wikipedia.org/wiki/Tipo_abstrato_de_dado">Wikipedia - TAD</a></li>
 <li><a href="http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">But uncle Bob</a></li>
+<li><a href="https://ttemporin.dev/diferencas-entre-structs-e-classes/">Structs vs Classes</a></li>
 <li><a href="https://drive.google.com/file/d/0ByOwmqah_nuGNHEtcU5OekdDMkk/view?resourcekey=0-AbuGpXQzwZcUGExkktKt0g">Paper - SRP: The Single Responsibility Principle</a></li>
 </ul>
 <h2 id="e-se">E se?</h2>
@@ -744,6 +750,30 @@ No próximo post da série, podemos explorar como o SRP se conecta com handlers 
         Recent Posts
     </div>
     <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="/posts/open_closed_principle/">
+                        <img src="/images/OCP.jpg" class="card-img-top" alt="Open/Closed Principle">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/posts/open_closed_principle/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Open/Closed Principle">Open/Closed Principle</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Feb 4, 2026</span>
+                    <a href="/posts/open_closed_principle/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
         
         <div class="col-lg-4 col-md-6 pt-2">
             <div class="card h-100">

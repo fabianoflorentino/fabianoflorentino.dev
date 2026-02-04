@@ -9,7 +9,7 @@ image: /images/SRP.jpg
 
 Princípio de Resposabilidade única (Single Responsability Principle) a.k.a (SRP) criada por [Robert C. Matrin (Uncle Bob)](http://cleancoder.com/products) parece simples em sua definição;
 
-> **Uma classe deve ter apenas um motivo para mudar.**
+> **Uma classe deve ter apenas um motivo para mudar.**  
 
 Simples, não?
 
@@ -19,7 +19,9 @@ Na prática, porém, esse princípio muitas vezes acaba sendo aplicado de forma 
 * interfaces sem propósito claro
 * código mais complexo do que o problema original
 
-Em Go, o SRP funciona melhor quando você deixa de pensar em *classes* e passa a pensar em **razões para mudar**.
+Em Go aplicar SRP não significa criar dezenas de structs pequenas. Significa garantir que **cada parte do código tenha uma razão clara e única para mudar**.
+
+> Em Go você não tem [classes](https://pt.wikipedia.org/wiki/Classe_(programa%C3%A7%C3%A3o)) como nas linguagens de programação tradicionais, em Go a estrutura que se assemelha a uma classe é a struct, essa semelhança se da por conta da sua natureza de abstraçao de dados [TAD](https://pt.wikipedia.org/wiki/Tipo_abstrato_de_dado) conjunto de objetos com características semelhantes.
 
 ---
 
@@ -310,7 +312,7 @@ Isso viola o **SRP** e tende a crescer sem controle.
 
 ## SRP não é criar uma struct por método
 
-Aplicar SRP não significa criar dezenas de structs pequenas. Significa garantir que **cada parte do código tenha uma razão clara e única para mudar**.
+Em Go, o SRP funciona melhor quando você deixa de pensar em *classes* e passa a pensar em **razões para mudar**.
 
 Em Go, isso geralmente se traduz em:
 
@@ -339,8 +341,11 @@ No próximo post da série, podemos explorar como o SRP se conecta com handlers 
 ## Referências
 
 * [Blog cleancode](https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html)
-* [Wikipedia](https://en.wikipedia.org/wiki/Single-responsibility_principle)
+* [Wikipedia - SRP](https://en.wikipedia.org/wiki/Single-responsibility_principle)
+* [Wikipedia - Classes](https://pt.wikipedia.org/wiki/Classe_(programa%C3%A7%C3%A3o))
+* [Wikipedia - TAD](https://pt.wikipedia.org/wiki/Tipo_abstrato_de_dado)
 * [But uncle Bob](http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
+* [Structs vs Classes](https://ttemporin.dev/diferencas-entre-structs-e-classes/)
 * [Paper - SRP: The Single Responsibility Principle](https://drive.google.com/file/d/0ByOwmqah_nuGNHEtcU5OekdDMkk/view?resourcekey=0-AbuGpXQzwZcUGExkktKt0g)
 
 ## E se?

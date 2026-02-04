@@ -3,30 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/arquitetura/</loc>
-    <lastmod>2026-02-03T16:04:33+00:00</lastmod>
+    <lastmod>2026-02-04T02:31:46+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-02-03T16:04:33+00:00</lastmod>
+    <lastmod>2026-02-04T02:31:46+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/go/</loc>
-    <lastmod>2026-02-03T16:04:33+00:00</lastmod>
+    <lastmod>2026-02-04T02:31:46+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ocp/</loc>
+    <lastmod>2026-02-04T02:31:46+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/open_closed_principle/</loc>
+    <lastmod>2026-02-04T02:31:46+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/post/</loc>
-    <lastmod>2026-02-03T16:04:33+00:00</lastmod>
+    <lastmod>2026-02-04T02:31:46+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-02-03T16:04:33+00:00</lastmod>
+    <lastmod>2026-02-04T02:31:46+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/solid/</loc>
+    <lastmod>2026-02-04T02:31:46+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-02-04T02:31:46+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/single_responsibility_principle/</loc>
     <lastmod>2026-02-03T16:04:33+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/solid/</loc>
-    <lastmod>2026-02-03T16:04:33+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/srp/</loc>
-    <lastmod>2026-02-03T16:04:33+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-02-03T16:04:33+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/solid_em_go_principio_ou_dogma/</loc>

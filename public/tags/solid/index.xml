@@ -6,14 +6,21 @@
     <description>Recent content in Solid on Fabiano Santos Florentino</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Feb 2026 16:04:33 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Feb 2026 02:31:46 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/solid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open/Closed Principle</title>
+      <link>http://localhost:1313/posts/open_closed_principle/</link>
+      <pubDate>Wed, 04 Feb 2026 02:31:46 +0000</pubDate>
+      <guid>http://localhost:1313/posts/open_closed_principle/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Single Responsibility Principle (SRP)</title>
       <link>http://localhost:1313/posts/single_responsibility_principle/</link>
       <pubDate>Tue, 03 Feb 2026 16:04:33 +0000</pubDate>
       <guid>http://localhost:1313/posts/single_responsibility_principle/</guid>
-      <description>&lt;p&gt;Princípio de Resposabilidade única (Single Responsability Principle) a.k.a (SRP) criada por &lt;a href=&#34;http://cleancoder.com/products&#34;&gt;Robert C. Matrin (Uncle Bob)&lt;/a&gt; parece simples em sua definição;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Uma classe deve ter apenas um motivo para mudar.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Simples, não?&lt;/p&gt;&#xA;&lt;p&gt;Na prática, porém, esse princípio muitas vezes acaba sendo aplicado de forma errada, resultando em:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;structs artificiais demais&lt;/li&gt;&#xA;&lt;li&gt;interfaces sem propósito claro&lt;/li&gt;&#xA;&lt;li&gt;código mais complexo do que o problema original&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Em Go, o SRP funciona melhor quando você deixa de pensar em &lt;em&gt;classes&lt;/em&gt; e passa a pensar em &lt;strong&gt;razões para mudar&lt;/strong&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Princípio de Resposabilidade única (Single Responsability Principle) a.k.a (SRP) criada por &lt;a href=&#34;http://cleancoder.com/products&#34;&gt;Robert C. Matrin (Uncle Bob)&lt;/a&gt; parece simples em sua definição;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Uma classe deve ter apenas um motivo para mudar.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Simples, não?&lt;/p&gt;&#xA;&lt;p&gt;Na prática, porém, esse princípio muitas vezes acaba sendo aplicado de forma errada, resultando em:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;structs artificiais demais&lt;/li&gt;&#xA;&lt;li&gt;interfaces sem propósito claro&lt;/li&gt;&#xA;&lt;li&gt;código mais complexo do que o problema original&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Em Go aplicar SRP não significa criar dezenas de structs pequenas. Significa garantir que &lt;strong&gt;cada parte do código tenha uma razão clara e única para mudar&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>SOLID em Go Princípio ou dogma?</title>

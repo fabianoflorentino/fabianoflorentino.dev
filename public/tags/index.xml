@@ -36,5 +36,12 @@
       <guid>http://localhost:1313/tags/solid/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Srp</title>
+      <link>http://localhost:1313/tags/srp/</link>
+      <pubDate>Tue, 03 Feb 2026 16:04:33 +0000</pubDate>
+      <guid>http://localhost:1313/tags/srp/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -2,7 +2,7 @@
 date: '2026-02-03T16:04:33Z'
 draft: true
 title: 'Single Responsability Principle (SRP)'
-tags: [post, go, arquitetura, solid]
+tags: [post, go, arquitetura, solid, srp]
 series: SOLID
 image: /images/SRP.jpg
 ---
@@ -23,11 +23,9 @@ Em Go, o SRP funciona melhor quando você deixa de pensar em *classes* e passa a
 
 ---
 
-## O problema clássico: um handler HTTP que faz tudo
+## Um handler HTTP que faz tudo
 
-Imagine uma API REST, escrita com os módulos *builtin* do Go (`net/http` e `encoding/json`).
-
-Um endpoint retorna informações do sistema:
+Imagine uma API REST, escrita com os módulos *builtin* do Go (`net/http` e `encoding/json`), com endpoint que retorna informações do sistema:
 
 ```go
 func ReportHandler(w http.ResponseWriter, r *http.Request) {
@@ -36,7 +34,10 @@ func ReportHandler(w http.ResponseWriter, r *http.Request) {
     "errors":       3,
   }
 
-  response, _ := json.Marshal(data)
+  response, err := json.Marshal(data)
+  if err != nil {
+    return errors.New("problema em recuperar a resposta")
+  }
 
   w.Header().Set("Content-Type", "application/json")
   w.Write(response)
@@ -53,9 +54,9 @@ Quando tudo está no mesmo lugar, o código passa a ter múltiplas razões para 
 
 ---
 
-## Aplicando SRP corretamente no handler HTTP
+## Aplicando SRP
 
-Vamos refatorar o exemplo anterior aplicando o **Single Responsibility Principle de forma explícita**.
+Vamos fazer uma pequena refatoração, o exemplo anterior aplicando o **Single Responsibility Principle de forma explícita**.
 
 A ideia é simples:
 
@@ -140,7 +141,7 @@ Agora o handler muda **somente** se o transporte HTTP mudar.
 
 ### Use case: orquestrando a regra de negócio
 
-Em sistemas reais, é comum existir uma camada intermediária entre o handler e a regra de negócio: o **use case**.
+Em sistemas "production-ready", é comum existir uma camada intermediária entre o handler e a regra de negócio: o **use case**.
 
 O use case coordena o fluxo da aplicação, sem conhecer detalhes de HTTP ou de formatação específica.
 
@@ -158,7 +159,7 @@ Esse componente muda apenas se o **fluxo do caso de uso** mudar.
 
 ---
 
-### Handler HTTP: apenas transporte
+### Handler HTTP
 
 ```go
 type ReportHandler struct {
@@ -202,7 +203,10 @@ func main() {
 }
 ```
 
-Essa composição deixa claro como as responsabilidades se conectam — sem frameworks, sem mágica.
+Essa composição deixa claro como as responsabilidades se conectam — sem frameworks, acoplamento forte.
+
+> Em aplicações maiores, essa composição pode ser extraída para um bootstrap, container ou módulo de inicialização.  
+> Aqui ela permanece no `main` para deixar explícitas as responsabilidades e as dependências.
 
 ---
 
@@ -306,9 +310,7 @@ Isso viola o **SRP** e tende a crescer sem controle.
 
 ## SRP não é criar uma struct por método
 
-Aplicar SRP não significa criar dezenas de structs pequenas.
-
-Significa garantir que **cada parte do código tenha uma razão clara e única para mudar**.
+Aplicar SRP não significa criar dezenas de structs pequenas. Significa garantir que **cada parte do código tenha uma razão clara e única para mudar**.
 
 Em Go, isso geralmente se traduz em:
 

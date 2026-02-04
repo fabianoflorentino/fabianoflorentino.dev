@@ -45,6 +45,7 @@ structs artificiais demais interfaces sem propósito claro código mais complexo
     <meta property="article:tag" content="Go">
     <meta property="article:tag" content="Arquitetura">
     <meta property="article:tag" content="Solid">
+    <meta property="article:tag" content="Srp">
 
 
   <meta name="twitter:card" content="summary">
@@ -344,16 +345,18 @@ Single Responsability Principle (SRP) | Fabiano Santos Florentino
 </ul>
 <p>Em Go, o SRP funciona melhor quando você deixa de pensar em <em>classes</em> e passa a pensar em <strong>razões para mudar</strong>.</p>
 <hr>
-<h2 id="o-problema-clássico-um-handler-http-que-faz-tudo">O problema clássico: um handler HTTP que faz tudo</h2>
-<p>Imagine uma API REST, escrita com os módulos <em>builtin</em> do Go (<code>net/http</code> e <code>encoding/json</code>).</p>
-<p>Um endpoint retorna informações do sistema:</p>
+<h2 id="um-handler-http-que-faz-tudo">Um handler HTTP que faz tudo</h2>
+<p>Imagine uma API REST, escrita com os módulos <em>builtin</em> do Go (<code>net/http</code> e <code>encoding/json</code>), com endpoint que retorna informações do sistema:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ReportHandler</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;active_users&#34;</span>: <span style="color:#ae81ff">120</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;errors&#34;</span>:       <span style="color:#ae81ff">3</span>,
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">response</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">data</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">response</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">data</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">errors</span>.<span style="color:#a6e22e">New</span>(<span style="color:#e6db74">&#34;problema em recuperar a resposta&#34;</span>)
+</span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">Header</span>().<span style="color:#a6e22e">Set</span>(<span style="color:#e6db74">&#34;Content-Type&#34;</span>, <span style="color:#e6db74">&#34;application/json&#34;</span>)
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">Write</span>(<span style="color:#a6e22e">response</span>)
@@ -366,8 +369,8 @@ Single Responsability Principle (SRP) | Fabiano Santos Florentino
 </ul>
 <p>Quando tudo está no mesmo lugar, o código passa a ter múltiplas razões para mudar — exatamente o que o SRP tenta evitar.</p>
 <hr>
-<h2 id="aplicando-srp-corretamente-no-handler-http">Aplicando SRP corretamente no handler HTTP</h2>
-<p>Vamos refatorar o exemplo anterior aplicando o <strong>Single Responsibility Principle de forma explícita</strong>.</p>
+<h2 id="aplicando-srp">Aplicando SRP</h2>
+<p>Vamos fazer uma pequena refatoração, o exemplo anterior aplicando o <strong>Single Responsibility Principle de forma explícita</strong>.</p>
 <p>A ideia é simples:</p>
 <ul>
 <li>o handler HTTP cuida <strong>apenas do transporte</strong></li>
@@ -426,7 +429,7 @@ Single Responsability Principle (SRP) | Fabiano Santos Florentino
 </span></span></code></pre></div><p>Agora o handler muda <strong>somente</strong> se o transporte HTTP mudar.</p>
 <hr>
 <h3 id="use-case-orquestrando-a-regra-de-negócio">Use case: orquestrando a regra de negócio</h3>
-<p>Em sistemas reais, é comum existir uma camada intermediária entre o handler e a regra de negócio: o <strong>use case</strong>.</p>
+<p>Em sistemas &ldquo;production-ready&rdquo;, é comum existir uma camada intermediária entre o handler e a regra de negócio: o <strong>use case</strong>.</p>
 <p>O use case coordena o fluxo da aplicação, sem conhecer detalhes de HTTP ou de formatação específica.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">GenerateReportUseCase</span> <span style="color:#66d9ef">struct</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Service</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ReportService</span>
@@ -437,7 +440,7 @@ Single Responsability Principle (SRP) | Fabiano Santos Florentino
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Esse componente muda apenas se o <strong>fluxo do caso de uso</strong> mudar.</p>
 <hr>
-<h3 id="handler-http-apenas-transporte-1">Handler HTTP: apenas transporte</h3>
+<h3 id="handler-http">Handler HTTP</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ReportHandler</span> <span style="color:#66d9ef">struct</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">UseCase</span>   <span style="color:#f92672">*</span><span style="color:#a6e22e">GenerateReportUseCase</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Formatter</span> <span style="color:#a6e22e">Formatter</span>
@@ -471,7 +474,11 @@ Single Responsability Principle (SRP) | Fabiano Santos Florentino
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>, <span style="color:#a6e22e">handler</span>)
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Essa composição deixa claro como as responsabilidades se conectam — sem frameworks, sem mágica.</p>
+</span></span></code></pre></div><p>Essa composição deixa claro como as responsabilidades se conectam — sem frameworks, acoplamento forte.</p>
+<blockquote>
+<p>Em aplicações maiores, essa composição pode ser extraída para um bootstrap, container ou módulo de inicialização.<br>
+Aqui ela permanece no <code>main</code> para deixar explícitas as responsabilidades e as dependências.</p>
+</blockquote>
 <hr>
 <h2 id="srp-em-go-começa-com-interfaces-pequenas">SRP em Go começa com interfaces pequenas</h2>
 <p>Em Go, o SRP aparece de forma natural quando você cria <strong>interfaces mínimas</strong>, cada uma com um único papel bem definido.</p>
@@ -543,8 +550,7 @@ Single Responsability Principle (SRP) | Fabiano Santos Florentino
 <p>Isso viola o <strong>SRP</strong> e tende a crescer sem controle.</p>
 <hr>
 <h2 id="srp-não-é-criar-uma-struct-por-método">SRP não é criar uma struct por método</h2>
-<p>Aplicar SRP não significa criar dezenas de structs pequenas.</p>
-<p>Significa garantir que <strong>cada parte do código tenha uma razão clara e única para mudar</strong>.</p>
+<p>Aplicar SRP não significa criar dezenas de structs pequenas. Significa garantir que <strong>cada parte do código tenha uma razão clara e única para mudar</strong>.</p>
 <p>Em Go, isso geralmente se traduz em:</p>
 <ul>
 <li>structs simples</li>
@@ -588,14 +594,14 @@ No próximo post da série, podemos explorar como o SRP se conecta com handlers 
               <div class="toc-content">
                 <nav id="TableOfContents">
   <ul>
-    <li><a href="#o-problema-clássico-um-handler-http-que-faz-tudo">O problema clássico: um handler HTTP que faz tudo</a></li>
-    <li><a href="#aplicando-srp-corretamente-no-handler-http">Aplicando SRP corretamente no handler HTTP</a>
+    <li><a href="#um-handler-http-que-faz-tudo">Um handler HTTP que faz tudo</a></li>
+    <li><a href="#aplicando-srp">Aplicando SRP</a>
       <ul>
         <li><a href="#regra-de-negócio-dados-do-sistema">Regra de negócio: dados do sistema</a></li>
         <li><a href="#formatação-responsabilidade-isolada">Formatação: responsabilidade isolada</a></li>
         <li><a href="#handler-http-apenas-transporte">Handler HTTP: apenas transporte</a></li>
         <li><a href="#use-case-orquestrando-a-regra-de-negócio">Use case: orquestrando a regra de negócio</a></li>
-        <li><a href="#handler-http-apenas-transporte-1">Handler HTTP: apenas transporte</a></li>
+        <li><a href="#handler-http">Handler HTTP</a></li>
         <li><a href="#composição-explícita-no-main">Composição explícita no <code>main</code></a></li>
       </ul>
     </li>
@@ -635,6 +641,10 @@ No próximo post da série, podemos explorar como o SRP se conecta com handlers 
                 target="_blank"
               >solid</a></li>
               
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/srp"
+                target="_blank"
+              >srp</a></li>
+              
             </ul>
           </aside>
           
@@ -650,7 +660,7 @@ No próximo post da série, podemos explorar como o SRP se conecta com handlers 
                   </a>
                 </li>
                 <li class="list-inline-item text-center">
-                  <a target="_blank" href='https://x.com/share?text=Single%20Responsability%20Principle%20%28SRP%29&url=http%3a%2f%2flocalhost%3a1313%2fposts%2fsingle_responsability_principle%2f&hashtags=post%2c%20go%2c%20arquitetura%2c%20solid'>
+                  <a target="_blank" href='https://x.com/share?text=Single%20Responsability%20Principle%20%28SRP%29&url=http%3a%2f%2flocalhost%3a1313%2fposts%2fsingle_responsability_principle%2f&hashtags=post%2c%20go%2c%20arquitetura%2c%20solid%2c%20srp'>
                     <i class="fab fa-x-twitter"></i>
                   </a>
                 </li>

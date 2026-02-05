@@ -406,7 +406,6 @@ params:
       linkedin: https://www.linkedin.com/in/fabianosantosflorentino
       twitter: https://x.com/fabianoratm
 
-  # List pages like blogs and posts
   listPages:
     disableFeaturedImage: false
 

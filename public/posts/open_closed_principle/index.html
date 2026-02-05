@@ -31,12 +31,15 @@
 <meta property="og:url" content="http://localhost:1313/posts/open_closed_principle/">
   <meta property="og:site_name" content="Fabiano Santos Florentino">
   <meta property="og:title" content="Open/Closed Principle">
-  <meta property="og:description" content="Blog Pessoal">
+  <meta property="og:description" content="No post anterior falamos sobre o Single Responsibility Principle (SRP) e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.
+O texto terminou com uma provocação:
+E se a API precisar suportar vários formatos ao mesmo tempo?
+Essa pergunta vem naturalmente quando se pensa em um ambiente produtivo, e é exatamente o tipo de problema que não deve ser resolvido apenas com condicionais ou duplicação de código.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-02-04T02:31:46+00:00">
-    <meta property="article:modified_time" content="2026-02-04T02:31:46+00:00">
+    <meta property="article:published_time" content="2026-02-05T02:31:46+00:00">
+    <meta property="article:modified_time" content="2026-02-05T02:31:46+00:00">
     <meta property="article:tag" content="Post">
     <meta property="article:tag" content="Go">
     <meta property="article:tag" content="Arquitetura">
@@ -46,7 +49,10 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Open/Closed Principle">
-  <meta name="twitter:description" content="Blog Pessoal">
+  <meta name="twitter:description" content="No post anterior falamos sobre o Single Responsibility Principle (SRP) e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.
+O texto terminou com uma provocação:
+E se a API precisar suportar vários formatos ao mesmo tempo?
+Essa pergunta vem naturalmente quando se pensa em um ambiente produtivo, e é exatamente o tipo de problema que não deve ser resolvido apenas com condicionais ou duplicação de código.">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -309,7 +315,7 @@ Open/Closed Principle | Fabiano Santos Florentino
             <h1 class="text-center mb-4">Open/Closed Principle</h1>
             <div class="text-center">
               
-              Feb 4, 2026
+              Feb 5, 2026
 
               
               <span id="readingTime">
@@ -324,7 +330,197 @@ Open/Closed Principle | Fabiano Santos Florentino
           </div>
           
           <article class="page-content  p-2">
-          
+          <p>No post anterior falamos sobre o <strong>Single Responsibility Principle (SRP)</strong> e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.</p>
+<p>O texto terminou com uma provocação:</p>
+<blockquote>
+<p><em>E se a API precisar suportar vários formatos ao mesmo tempo?</em></p>
+</blockquote>
+<p>Essa pergunta vem naturalmente quando se pensa em um ambiente produtivo, e é exatamente o tipo de problema que não deve ser resolvido apenas com condicionais ou duplicação de código.</p>
+<p>É aqui que entramos no próximo princípio da série: o <strong>Open/Closed Principle (OCP)</strong>.</p>
+<hr>
+<h2 id="o-que-o-openclosed-principle-ocp">O que o Open/Closed Principle (OCP)?</h2>
+<p>O OCP afirma que:</p>
+<blockquote>
+<p>Um módulo deve estar <strong>aberto para extensão</strong>, mas <strong>fechado para modificação</strong>.</p>
+</blockquote>
+<p>Isso não significa “não tocar mais no código”, nem sair criando abstrações complexas. Em Go, o OCP aparece de forma muito mais simples: <strong>composição explícita e interfaces pequenas</strong>.</p>
+<hr>
+<h2 id="no-exemplo-do-post-anterior">No exemplo do post anterior</h2>
+<p>No <strong><a href="https://fabianoflorentino.dev/posts/single_responsibility_principle/">post sobre SRP</a></strong>, começamos com um handler HTTP que faz tudo:</p>
+<ul>
+<li>interpretava a requisição</li>
+<li>executava regra de negócio</li>
+<li>formatava a resposta</li>
+</ul>
+<p>E então refatoramos para algo mais claro:</p>
+<ul>
+<li>o handler ficou responsável apenas pelo transporte HTTP</li>
+<li>a lógica de negócio foi movida para um service / use case</li>
+<li>a formatação da resposta foi isolada em uma interface</li>
+</ul>
+<p>Um dos pontos centrais foi o <code>Formatter</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Formatter</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">SystemReport</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Naquele momento, o objetivo era <strong>SRP</strong>: separar responsabilidades.
+Mas, sem perceber, já criamos a oportunidade estudar e aplicar <strong>OCP</strong>.</p>
+<hr>
+<h2 id="novos-formatos-de-dados">Novos formatos de dados</h2>
+<p>No exemplo o sistema inicou com o suporte a dados em JSON.</p>
+<p>E se amanhã, eu precise de:</p>
+<ul>
+<li>XML</li>
+<li>YAML</li>
+<li>CSV</li>
+</ul>
+<p>Se a formatação estivesse embutida no handler ou no use case, cada novo formato exigiria modificar código existente — aumentando risco e acoplamento.</p>
+<p>Com o contrato já definido, a solução é apenas <strong>estender</strong>.</p>
+<hr>
+<h2 id="estendendo-o-sistema-sem-modificá-lo">Estendendo o sistema sem modificá-lo</h2>
+<p>A implementação atual pode ser algo como:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">JSONFormatter</span> <span style="color:#66d9ef">struct</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">f</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">JSONFormatter</span>) <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">report</span> <span style="color:#a6e22e">SystemReport</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">report</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Agora, para suportar XML:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">XMLFormatter</span> <span style="color:#66d9ef">struct</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">f</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">XMLFormatter</span>) <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">report</span> <span style="color:#a6e22e">SystemReport</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">xml</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">report</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Nenhuma mudança é necessária em:</p>
+<ul>
+<li>handlers HTTP</li>
+<li>use cases</li>
+<li>services</li>
+</ul>
+<p>O sistema está <strong>fechado para modificação</strong>, mas <strong>aberto para extensão</strong>.</p>
+<hr>
+<h2 id="como-funciona-o-ocp-em-go">Como funciona o OCP em Go</h2>
+<p>Diferente de linguagens orientadas a objetos que suportam herança, em Go o OCP surge quando conseguimos <strong>adicionar comportamento novo</strong> sem alterar o código que já existe.</p>
+<p>Até aqui, o exemplo mostrou apenas <strong>substituição</strong> de dependência. Vamos deixar isso mais explícito mostrando o fluxo real de mudança.</p>
+<hr>
+<h2 id="múltiplos-formatos-ao-mesmo-tempo">Múltiplos formatos ao mesmo tempo</h2>
+<p>Suponha que a API precise responder em <strong>JSON ou XML</strong>, dependendo de um header HTTP (<code>Accept</code>).</p>
+<p>OBS: <strong>não queremos modificar o handler nem o use case a cada novo formato</strong>.</p>
+<h3 id="mante-o-contrato">Mante o contrato</h3>
+<p>O contrato continua o mesmo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Formatter</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">SystemReport</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Nenhuma mudança na interface.</p>
+<hr>
+<h3 id="novos-formatos-extensão">Novos formatos (extensão)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">JSONFormatter</span> <span style="color:#66d9ef">struct</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">f</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">JSONFormatter</span>) <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">report</span> <span style="color:#a6e22e">SystemReport</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">report</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">XMLFormatter</span> <span style="color:#66d9ef">struct</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">f</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">XMLFormatter</span>) <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">report</span> <span style="color:#a6e22e">SystemReport</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">xml</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">report</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Até agora, só <strong>adição de código</strong>.</p>
+<hr>
+<h3 id="criar-um-componente-de-composição">Criar um componente de composição</h3>
+<p>Ao invés de usar <code>if</code> ou <code>switch</code> no handler, criamos um novo componente responsável por <strong>escolher</strong> o formatter (JSON/XML):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">FormatterRegistry</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">formatters</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Formatter</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewFormatterRegistry</span>() <span style="color:#f92672">*</span><span style="color:#a6e22e">FormatterRegistry</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">FormatterRegistry</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">formatters</span>: <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Formatter</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;application/json&#34;</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">JSONFormatter</span>{},
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;application/xml&#34;</span>:  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">XMLFormatter</span>{},
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">FormatterRegistry</span>) <span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">contentType</span> <span style="color:#66d9ef">string</span>) <span style="color:#a6e22e">Formatter</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">formatters</span>[<span style="color:#a6e22e">contentType</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Esse componente é novo. Nada existente foi modificado.</p>
+<hr>
+<h3 id="composição-explícita-no-main">Composição explícita no <code>main</code></h3>
+<p>É aqui que o OCP fica mais claro:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">service</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">NewReportService</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">registry</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">NewFormatterRegistry</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">useCase</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">NewGenerateReportUseCase</span>(<span style="color:#a6e22e">service</span>, <span style="color:#a6e22e">registry</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">handler</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">NewReportHandler</span>(<span style="color:#a6e22e">useCase</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>, <span style="color:#a6e22e">handler</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Se amanhã precisarmos suportar YAML:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">YAMLFormatter</span> <span style="color:#66d9ef">struct</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">y</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">YAMLFormatter</span>) <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">report</span> <span style="color:#a6e22e">SystemReport</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">report</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">FormatterRegistry</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">formatters</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Formatter</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewFormatterRegistry</span>() <span style="color:#f92672">*</span><span style="color:#a6e22e">FormatterRegistry</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">FormatterRegistry</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">formatters</span>: <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Formatter</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;application/json&#34;</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">JSONFormatter</span>{},
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;application/xml&#34;</span>:  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">XMLFormatter</span>{},
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;application/yaml&#34;</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">YAMLFormatter</span>{}, <span style="color:#75715e">// Novo formato</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">FormatterRegistry</span>) <span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">contentType</span> <span style="color:#66d9ef">string</span>) <span style="color:#a6e22e">Formatter</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">formatters</span>[<span style="color:#a6e22e">contentType</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Nenhum handler ou use case precisa mudar.</p>
+<blockquote>
+<p>Novamente, em aplicações maiores, essa composição pode ser extraída para um bootstrap, container ou módulo de inicialização.<br>
+Aqui ela permanece no main para deixar explícitas as responsabilidades e as dependências.</p>
+</blockquote>
+<hr>
+<h2 id="onde-está-o-ocp-nesse-fluxo">Onde está o OCP nesse fluxo?</h2>
+<ul>
+<li>novos formatos são <strong>adicionados</strong></li>
+<li>código existente permanece intacto</li>
+<li>o ponto de variação está isolado</li>
+<li>a composição acontece em um único lugar</li>
+</ul>
+<p>O sistema cresce por extensão, não por modificação.</p>
+<p>Trocar comportamento é simples, mas <strong>adicionar comportamento sem interferência ao comportamento existente</strong> é o verdadeiro ganho do OCP.</p>
+<hr>
+<h2 id="srp-e-ocp-trabalham-juntos">SRP e OCP trabalham juntos</h2>
+<p>Uma forma simples de enxergar essa relação:</p>
+<ul>
+<li><strong>SRP</strong> define <em>onde</em> separar responsabilidades</li>
+<li><strong>OCP</strong> define <em>como</em> essas partes evoluem sem quebrar o sistema</li>
+</ul>
+<p>Sem SRP, o OCP vira abstração prematura.
+Sem OCP, o SRP gera código correto, mas rígido.</p>
+<hr>
+<h2 id="conclusão">Conclusão</h2>
+<p>O Open/Closed Principle não exige frameworks nem arquiteturas complexas. No exemplo que já usamos no SRP, ele surge como consequência natural de um bom design:</p>
+<ul>
+<li>responsabilidades bem definidas</li>
+<li>contratos claros</li>
+<li>composição explícita</li>
+</ul>
+<p>Com isso, o sistema cresce por adição — não por modificação.</p>
+<hr>
+<h2 id="próximo-passo">Próximo passo</h2>
+<p>Agora que já conseguimos estender o sistema com segurança, surge outra pergunta:</p>
+<blockquote>
+<p><em>Qualquer implementação pode realmente substituir outra sem causar efeitos colaterais?</em></p>
+</blockquote>
+<p>No próximo post da série, vamos falar sobre o <strong>Liskov Substitution Principle (LSP)</strong> e mostrar onde muitas abstrações aparentemente corretas começam a falhar.</p>
+<p>Até lá.</p>
+
           </article>
         </div>
       </div>
@@ -336,7 +532,27 @@ Open/Closed Principle | Fabiano Santos Florentino
                 Sumárrio
               </h5>
               <div class="toc-content">
-                <nav id="TableOfContents"></nav>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#o-que-o-openclosed-principle-ocp">O que o Open/Closed Principle (OCP)?</a></li>
+    <li><a href="#no-exemplo-do-post-anterior">No exemplo do post anterior</a></li>
+    <li><a href="#novos-formatos-de-dados">Novos formatos de dados</a></li>
+    <li><a href="#estendendo-o-sistema-sem-modificá-lo">Estendendo o sistema sem modificá-lo</a></li>
+    <li><a href="#como-funciona-o-ocp-em-go">Como funciona o OCP em Go</a></li>
+    <li><a href="#múltiplos-formatos-ao-mesmo-tempo">Múltiplos formatos ao mesmo tempo</a>
+      <ul>
+        <li><a href="#mante-o-contrato">Mante o contrato</a></li>
+        <li><a href="#novos-formatos-extensão">Novos formatos (extensão)</a></li>
+        <li><a href="#criar-um-componente-de-composição">Criar um componente de composição</a></li>
+        <li><a href="#composição-explícita-no-main">Composição explícita no <code>main</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#onde-está-o-ocp-nesse-fluxo">Onde está o OCP nesse fluxo?</a></li>
+    <li><a href="#srp-e-ocp-trabalham-juntos">SRP e OCP trabalham juntos</a></li>
+    <li><a href="#conclusão">Conclusão</a></li>
+    <li><a href="#próximo-passo">Próximo passo</a></li>
+  </ul>
+</nav>
               </div>
           </aside>
           
@@ -480,11 +696,16 @@ Open/Closed Principle | Fabiano Santos Florentino
                         <h5 class="card-title bg-transparent" title="Open/Closed Principle">Open/Closed Principle</h5>
                     </a>
                     <div class="card-text secondary-font">
-                        <p></p>
+                        <p><p>No post anterior falamos sobre o <strong>Single Responsibility Principle (SRP)</strong> e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.</p>
+<p>O texto terminou com uma provocação:</p>
+<blockquote>
+<p><em>E se a API precisar suportar vários formatos ao mesmo tempo?</em></p>
+</blockquote>
+<p>Essa pergunta …</p></p>
                     </div>
                 </div>
                 <div class="mt-auto card-footer">
-                    <span class="float-start">Feb 4, 2026</span>
+                    <span class="float-start">Feb 5, 2026</span>
                     <a href="/posts/open_closed_principle/" class="float-end btn btn-outline-info btn-sm">Read</a>
                 </div>
             </div>

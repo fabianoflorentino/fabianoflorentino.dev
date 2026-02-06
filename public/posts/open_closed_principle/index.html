@@ -330,7 +330,7 @@ Open/Closed Principle | Fabiano Santos Florentino
           </div>
           
           <article class="page-content  p-2">
-          <p>No post anterior falamos sobre o <strong>Single Responsibility Principle (SRP)</strong> e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.</p>
+          <p>No post anterior falamos sobre o <strong><a href="https://fabianoflorentino.dev/posts/single_responsibility_principle/">Single Responsibility Principle (SRP)</a></strong> e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.</p>
 <p>O texto terminou com uma provocação:</p>
 <blockquote>
 <p><em>E se a API precisar suportar vários formatos ao mesmo tempo?</em></p>
@@ -443,6 +443,20 @@ Mas, sem perceber, já criamos a oportunidade estudar e aplicar <strong>OCP</str
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">formatters</span>[<span style="color:#a6e22e">contentType</span>]
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Esse componente é novo. Nada existente foi modificado.</p>
+<blockquote>
+<p><strong>Nota:</strong></p>
+<p>Para ficar atento&hellip;</p>
+<p>Um detalhe importante que vale destacarr: o <code>NewFormatterRegistry</code> não faz parte do domínio nem da regra de negócio.
+Ele existe apenas para compor o sistema, agrupando extensões possíveis e conectanddo implementações concretas.
+Na prática, esse tipo de componente costuma estar presente em camadas mais externas de aplicações como:</p>
+<ul>
+<li>o <code>main</code> / bootstrap</li>
+<li>a camada de infraestrutura</li>
+<li>ou em módulo específico de composição</li>
+</ul>
+<p>Essa decisão mantém o domínio estável e reforça a ideia central do OCP: mudança externas não devem forçar mudanças no core do sistema.
+Trocar o comportamento é simples, mas adicionar comportamento sem quebrar nada é o verdadeiro ganho do OCP.</p>
+</blockquote>
 <hr>
 <h3 id="composição-explícita-no-main">Composição explícita no <code>main</code></h3>
 <p>É aqui que o OCP fica mais claro:</p>
@@ -696,7 +710,7 @@ Sem OCP, o SRP gera código correto, mas rígido.</p>
                         <h5 class="card-title bg-transparent" title="Open/Closed Principle">Open/Closed Principle</h5>
                     </a>
                     <div class="card-text secondary-font">
-                        <p><p>No post anterior falamos sobre o <strong>Single Responsibility Principle (SRP)</strong> e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.</p>
+                        <p><p>No post anterior falamos sobre o <strong><a href="https://fabianoflorentino.dev/posts/single_responsibility_principle/">Single Responsibility Principle (SRP)</a></strong> e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.</p>
 <p>O texto terminou com uma provocação:</p>
 <blockquote>
 <p><em>E se a API precisar suportar vários formatos ao mesmo tempo?</em></p>

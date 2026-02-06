@@ -7,7 +7,7 @@ series: SOLID
 image: /images/OCP.jpg
 ---
 
-No post anterior falamos sobre o **Single Responsibility Principle (SRP)** e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.
+No post anterior falamos sobre o **[Single Responsibility Principle (SRP)](https://fabianoflorentino.dev/posts/single_responsibility_principle/)** e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.
 
 O texto terminou com uma provocação:
 
@@ -178,6 +178,21 @@ func (r *FormatterRegistry) Get(contentType string) Formatter {
 ```
 
 Esse componente é novo. Nada existente foi modificado.
+
+> **Nota:**
+>
+> Para ficar atento...
+>
+> Um detalhe importante que vale destacarr: o `NewFormatterRegistry` não faz parte do domínio nem da regra de negócio.
+> Ele existe apenas para compor o sistema, agrupando extensões possíveis e conectanddo implementações concretas.
+> Na prática, esse tipo de componente costuma estar presente em camadas mais externas de aplicações como:  
+>
+> * o `main` / bootstrap
+> * a camada de infraestrutura
+> * ou em módulo específico de composição
+>
+> Essa decisão mantém o domínio estável e reforça a ideia central do OCP: mudança externas não devem forçar mudanças no core do sistema.
+> Trocar o comportamento é simples, mas adicionar comportamento sem quebrar nada é o verdadeiro ganho do OCP.
 
 ---
 

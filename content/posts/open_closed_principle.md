@@ -1,11 +1,12 @@
 ---
+
 date: '2026-02-05T02:31:46Z'
 draft: true
 title: 'Open/Closed Principle'
 tags: [post, go, arquitetura, solid, ocp]
 series: SOLID
 image: /images/OCP.jpg
----
+----------------------
 
 No post anterior falamos sobre o **[Single Responsibility Principle (SRP)](https://fabianoflorentino.dev/posts/single_responsibility_principle/)** e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.
 
@@ -13,35 +14,37 @@ O texto terminou com uma provocação:
 
 > *E se a API precisar suportar vários formatos ao mesmo tempo?*
 
-Essa pergunta vem naturalmente quando se pensa em um ambiente produtivo, e é exatamente o tipo de problema que não deve ser resolvido apenas com condicionais ou duplicação de código.
+Essa pergunta surge naturalmente quando pensamos em sistemas reais, em produção — e é exatamente o tipo de problema que **não deve ser resolvido com `if`, `switch` espalhados ou duplicação de código**.
 
 É aqui que entramos no próximo princípio da série: o **Open/Closed Principle (OCP)**.
 
 ---
 
-## O que o Open/Closed Principle (OCP)?
+## O que é o Open/Closed Principle (OCP)?
 
-O OCP afirma que:
+Em 1988, [Bertrand Meyer](https://en.wikipedia.org/wiki/Bertrand_Meyer) definiu o princípio com a seguinte afirmação:
 
 > Um módulo deve estar **aberto para extensão**, mas **fechado para modificação**.
 
-Isso não significa “não tocar mais no código”, nem sair criando abstrações complexas. Em Go, o OCP aparece de forma muito mais simples: **composição explícita e interfaces pequenas**.
+Isso não significa “nunca mais tocar no código” nem sair criando abstrações complexas prematuramente.
+
+Em Go, o OCP aparece de forma muito mais pragmática: **interfaces pequenas, contratos claros e composição explícita**.
 
 ---
 
 ## No exemplo do post anterior
 
-No **[post sobre SRP](https://fabianoflorentino.dev/posts/single_responsibility_principle/)**, começamos com um handler HTTP que faz tudo:
+No **[post sobre SRP](https://fabianoflorentino.dev/posts/single_responsibility_principle/)**, começamos com um handler HTTP que fazia tudo:
 
 * interpretava a requisição
 * executava regra de negócio
 * formatava a resposta
 
-E então refatoramos para algo mais claro:
+Depois da refatoração, o desenho ficou mais claro:
 
 * o handler ficou responsável apenas pelo transporte HTTP
-* a lógica de negócio foi movida para um service / use case
-* a formatação da resposta foi isolada em uma interface
+* a regra de negócio foi isolada em um service / use case
+* a formatação da resposta foi extraída para uma interface
 
 Um dos pontos centrais foi o `Formatter`:
 
@@ -51,30 +54,31 @@ type Formatter interface {
 }
 ```
 
-Naquele momento, o objetivo era **SRP**: separar responsabilidades.
-Mas, sem perceber, já criamos a oportunidade estudar e aplicar **OCP**.
+Naquele momento o foco era **SRP** — separar responsabilidades. Mas, sem perceber, já deixamos o sistema **aberto para extensão**.
 
 ---
 
 ## Novos formatos de dados
 
-No exemplo o sistema inicou com o suporte a dados em JSON.
+Voltando à pergunta do final do post anterior:
 
-E se amanhã, eu precise de:
+> *E se a API precisar suportar vários formatos ao mesmo tempo?*
+
+Por exemplo:
 
 * XML
 * YAML
 * CSV
 
-Se a formatação estivesse embutida no handler ou no use case, cada novo formato exigiria modificar código existente — aumentando risco e acoplamento.
+Se a lógica de formatação estivesse dentro do handler ou do use case, **cada novo formato exigiria modificar código existente**, aumentando acoplamento e risco de regressão.
 
-Com o contrato já definido, a solução é apenas **estender**.
+Como o contrato já está definido, a solução correta não é modificar — é **estender**.
 
 ---
 
-## Estendendo o sistema sem modificá-lo
+## Estendendo sem modificar
 
-A implementação atual pode ser algo como:
+A implementação atual suporta JSON:
 
 ```go
 type JSONFormatter struct{}
@@ -84,7 +88,7 @@ func (f *JSONFormatter) Format(report SystemReport) ([]byte, error) {
 }
 ```
 
-Agora, para suportar XML:
+Agora precisamos suportar XML:
 
 ```go
 type XMLFormatter struct{}
@@ -98,29 +102,33 @@ Nenhuma mudança é necessária em:
 
 * handlers HTTP
 * use cases
-* services
+* services (caso existam)
 
-O sistema está **fechado para modificação**, mas **aberto para extensão**.
+O sistema permanece **fechado para modificação** e **aberto para extensão**.
 
 ---
 
-## Como funciona o OCP em Go
+## OCP em Go
 
-Diferente de linguagens orientadas a objetos que suportam herança, em Go o OCP surge quando conseguimos **adicionar comportamento novo** sem alterar o código que já existe.
+Diferente de linguagens fortemente orientadas a herança, em Go o OCP aparece quando conseguimos **adicionar comportamento novo** sem alterar código já existente.
 
-Até aqui, o exemplo mostrou apenas **substituição** de dependência. Vamos deixar isso mais explícito mostrando o fluxo real de mudança.
+Até aqui, mostramos apenas **substituição** de dependência (trocar JSON por XML).
+
+Vamos agora deixar o OCP ainda mais explícito mostrando um **fluxo real de mudança**, onde múltiplos comportamentos coexistem.
 
 ---
 
 ## Múltiplos formatos ao mesmo tempo
 
-Suponha que a API precise responder em **JSON ou XML**, dependendo de um header HTTP (`Accept`).
+Agora suponha que a API precise responder em **JSON ou XML**, dependendo do header HTTP `Accept`.
 
-OBS: **não queremos modificar o handler nem o use case a cada novo formato**.
+> Importante: **não queremos modificar o handler nem o use case a cada novo formato**.
 
-### Mante o contrato
+---
 
-O contrato continua o mesmo:
+### Mantendo o contrato
+
+O contrato continua exatamente o mesmo:
 
 ```go
 type Formatter interface {
@@ -128,11 +136,13 @@ type Formatter interface {
 }
 ```
 
-Nenhuma mudança na interface.
+Nenhuma alteração na interface.
 
 ---
 
-### Novos formatos (extensão)
+### Extensão por adição
+
+As implementações continuam independentes:
 
 ```go
 type JSONFormatter struct{}
@@ -142,6 +152,8 @@ func (f *JSONFormatter) Format(report SystemReport) ([]byte, error) {
 }
 ```
 
+Novo formato:
+
 ```go
 type XMLFormatter struct{}
 
@@ -150,13 +162,13 @@ func (f *XMLFormatter) Format(report SystemReport) ([]byte, error) {
 }
 ```
 
-Até agora, só **adição de código**.
+Até aqui, apenas **adição de código**.
 
 ---
 
-### Criar um componente de composição
+### Criando um componente de composição
 
-Ao invés de usar `if` ou `switch` no handler, criamos um novo componente responsável por **escolher** o formatter (JSON/XML):
+Em vez de espalhar `if` ou `switch` pelo handler, criamos um novo componente responsável apenas por **organizar e escolher** os formatters disponíveis:
 
 ```go
 type FormatterRegistry struct {
@@ -177,28 +189,27 @@ func (r *FormatterRegistry) Get(contentType string) Formatter {
 }
 ```
 
-Esse componente é novo. Nada existente foi modificado.
+Esse componente é **novo**. Nenhum código existente precisou ser alterado.
 
-> **Nota:**
+> **Nota arquitetural**
 >
-> Para ficar atento...
+> O `FormatterRegistry` **não faz parte do domínio nem da regra de negócio**.
+> Ele existe apenas para **compor o sistema**, agrupando extensões possíveis e conectando implementações concretas.
 >
-> Um detalhe importante que vale destacarr: o `NewFormatterRegistry` não faz parte do domínio nem da regra de negócio.
-> Ele existe apenas para compor o sistema, agrupando extensões possíveis e conectanddo implementações concretas.
-> Na prática, esse tipo de componente costuma estar presente em camadas mais externas de aplicações como:  
+> Na prática, esse tipo de código costuma viver em camadas mais externas da aplicação, como:
 >
 > * o `main` / bootstrap
 > * a camada de infraestrutura
-> * ou em módulo específico de composição
+> * ou um módulo específico de composição
 >
-> Essa decisão mantém o domínio estável e reforça a ideia central do OCP: mudança externas não devem forçar mudanças no core do sistema.
-> Trocar o comportamento é simples, mas adicionar comportamento sem quebrar nada é o verdadeiro ganho do OCP.
+> Essa separação mantém o domínio estável e reforça a ideia central do OCP:
+> **mudanças externas não devem forçar mudanças no core do sistema**.
 
 ---
 
 ### Composição explícita no `main`
 
-É aqui que o OCP fica mais claro:
+É aqui que o OCP fica mais visível:
 
 ```go
 func main() {
@@ -206,77 +217,42 @@ func main() {
     registry := NewFormatterRegistry()
 
     useCase := NewGenerateReportUseCase(service, registry)
-
     handler := NewReportHandler(useCase)
 
     http.ListenAndServe(":8080", handler)
 }
 ```
 
-Se amanhã precisarmos suportar YAML:
+Nenhum handler ou use case precisou mudar.
 
-```go
-type YAMLFormatter struct{}
+> Em aplicações maiores, essa composição pode ser extraída para um bootstrap, container ou módulo de inicialização.
+> Aqui ela permanece no `main` para deixar explícitas as responsabilidades e dependências.
 
-func (y *YAMLFormatter) Format(report SystemReport) ([]byte, error) {
-    return json.Marshal(report)
-}
-```
+Se amanhã precisarmos suportar YAML ou qualquer outro formato, o fluxo é o mesmo:
 
-```go
-type FormatterRegistry struct {
-    formatters map[string]Formatter
-}
+* criar uma nova implementação
+* registrá-la na composição
 
-func NewFormatterRegistry() *FormatterRegistry {
-    return &FormatterRegistry{
-        formatters: map[string]Formatter{
-            "application/json": &JSONFormatter{},
-            "application/xml":  &XMLFormatter{},
-            "application/yaml": &YAMLFormatter{}, // Novo formato
-        },
-    }
-}
-
-func (r *FormatterRegistry) Get(contentType string) Formatter {
-    return r.formatters[contentType]
-}
-```
-
-Nenhum handler ou use case precisa mudar.
-
-> Novamente, em aplicações maiores, essa composição pode ser extraída para um bootstrap, container ou módulo de inicialização.  
-> Aqui ela permanece no main para deixar explícitas as responsabilidades e as dependências.
 ---
 
 ## Onde está o OCP nesse fluxo?
 
-* novos formatos são **adicionados**
+* novos comportamentos são **adicionados**
 * código existente permanece intacto
 * o ponto de variação está isolado
 * a composição acontece em um único lugar
 
-O sistema cresce por extensão, não por modificação.
+O sistema cresce por **extensão**, não por modificação.
 
-Trocar comportamento é simples, mas **adicionar comportamento sem interferência ao comportamento existente** é o verdadeiro ganho do OCP.
-
----
-
-## SRP e OCP trabalham juntos
-
-Uma forma simples de enxergar essa relação:
-
-* **SRP** define *onde* separar responsabilidades
-* **OCP** define *como* essas partes evoluem sem quebrar o sistema
-
-Sem SRP, o OCP vira abstração prematura.
-Sem OCP, o SRP gera código correto, mas rígido.
+Trocar comportamento é simples, mas **adicionar comportamento sem interferir no que já funciona** é o verdadeiro ganho do OCP.
 
 ---
 
 ## Conclusão
 
-O Open/Closed Principle não exige frameworks nem arquiteturas complexas. No exemplo que já usamos no SRP, ele surge como consequência natural de um bom design:
+O Open/Closed Principle não exige frameworks nem arquiteturas complexas.
+
+No exemplo que começou no SRP, ele surge como consequência natural de um bom design:
 
 * responsabilidades bem definidas
 * contratos claros
@@ -295,3 +271,11 @@ Agora que já conseguimos estender o sistema com segurança, surge outra pergunt
 No próximo post da série, vamos falar sobre o **Liskov Substitution Principle (LSP)** e mostrar onde muitas abstrações aparentemente corretas começam a falhar.
 
 Até lá.
+
+---
+
+## Referências
+
+* [https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html](https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html)
+* [https://pt.wikipedia.org/wiki/Princ%C3%ADpio_do_aberto/fechado](https://pt.wikipedia.org/wiki/Princ%C3%ADpio_do_aberto/fechado)
+* [https://schembri.me/solid-the-open-closed-principle-ocp/](https://schembri.me/solid-the-open-closed-principle-ocp/)

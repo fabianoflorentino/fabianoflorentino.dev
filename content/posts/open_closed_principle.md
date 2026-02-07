@@ -1,12 +1,11 @@
 ---
-
 date: '2026-02-05T02:31:46Z'
 draft: true
 title: 'Open/Closed Principle'
 tags: [post, go, arquitetura, solid, ocp]
 series: SOLID
 image: /images/OCP.jpg
-----------------------
+---
 
 No post anterior falamos sobre o **[Single Responsibility Principle (SRP)](https://fabianoflorentino.dev/posts/single_responsibility_principle/)** e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.
 

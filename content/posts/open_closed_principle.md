@@ -69,9 +69,9 @@ Por exemplo:
 * YAML
 * CSV
 
-Se a lógica de formatação estivesse dentro do handler ou do use case, **cada novo formato exigiria modificar código existente**, aumentando acoplamento e risco de regressão.
+Se a lógica de formatação estivesse dentro do handler ou do use case, **cada novo formato exigiria modificar código existente**, aumentando [acoplamento](https://pt.wikipedia.org/wiki/Acoplamento_(programa%C3%A7%C3%A3o_de_computadores)) e risco de, sem querer, quebrar algo que já funcionava antes.
 
-Como o contrato já está definido, a solução correta não é modificar — é **estender**.
+Como o contrato já está definido, e não correr o risco com grandes problemas, a solução correta não é modificar — é **estender**.
 
 ---
 

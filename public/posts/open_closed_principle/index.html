@@ -376,8 +376,8 @@ Open/Closed Principle | Fabiano Santos Florentino
 <li>YAML</li>
 <li>CSV</li>
 </ul>
-<p>Se a lógica de formatação estivesse dentro do handler ou do use case, <strong>cada novo formato exigiria modificar código existente</strong>, aumentando acoplamento e risco de regressão.</p>
-<p>Como o contrato já está definido, a solução correta não é modificar — é <strong>estender</strong>.</p>
+<p>Se a lógica de formatação estivesse dentro do handler ou do use case, <strong>cada novo formato exigiria modificar código existente</strong>, aumentando <a href="https://pt.wikipedia.org/wiki/Acoplamento_(programa%C3%A7%C3%A3o_de_computadores)">acoplamento</a> e risco de, sem querer, quebrar algo que já funcionava antes.</p>
+<p>Como o contrato já está definido, e não correr o risco com grandes problemas, a solução correta não é modificar — é <strong>estender</strong>.</p>
 <hr>
 <h2 id="estendendo-sem-modificar">Estendendo sem modificar</h2>
 <p>A implementação atual suporta JSON:</p>

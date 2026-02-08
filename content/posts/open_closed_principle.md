@@ -1,6 +1,6 @@
 ---
 date: '2026-02-05T02:31:46Z'
-draft: true
+draft: false
 title: 'Open/Closed Principle'
 tags: [post, go, arquitetura, solid, ocp]
 series: SOLID

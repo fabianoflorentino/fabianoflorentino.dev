@@ -261,13 +261,13 @@ Com isso, o sistema cresce por adição — não por modificação.
 
 ---
 
-## Próximo passo
+## No proximo princípio
 
 Agora que já conseguimos estender o sistema com segurança, surge outra pergunta:
 
 > *Qualquer implementação pode realmente substituir outra sem causar efeitos colaterais?*
 
-No próximo post da série, vamos falar sobre o **Liskov Substitution Principle (LSP)** e mostrar onde muitas abstrações aparentemente corretas começam a falhar.
+No próximo post, vamos falar sobre o **Liskov Substitution Principle (LSP)** e mostrar onde muitas abstrações aparentemente corretas começam a falhar.
 
 Até lá.
 

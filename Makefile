@@ -47,7 +47,7 @@ help: ## Mostra esta mensagem de ajuda
 
 build: ## Faz o build da imagem Docker
 	@echo -e "$(BLUE)🔨 Building Docker image...$(NC)"
-	@docker-compose -f $(COMPOSE_FILE) build
+	@docker-compose -f $(COMPOSE_FILE) build --no-cache
 	@echo -e "$(GREEN)✓ Build concluído!$(NC)"
 
 up: ## Inicia o servidor de desenvolvimento

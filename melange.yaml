@@ -1,0 +1,34 @@
+package:
+  name: hugo-blog
+  version: 0.1.0
+  epoch: 0
+  description: Hugo static blog
+  copyright:
+    - paths:
+        - "*"
+      license: MIT
+
+  dependencies:
+    runtime: []
+  
+  checks: {}
+    
+  capabilities:
+
+  update:
+
+  cpe:
+    vendor: hugo
+    product: hugo-blog
+
+environment:
+  contents:
+    packages:
+      - hugo
+      - busybox
+
+pipeline:
+  - runs: |
+      hugo --minify
+      mkdir -p "${{targets.destdir}}/site"
+      cp -r public/* "${{targets.destdir}}/site"

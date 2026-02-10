@@ -15,6 +15,8 @@
 COMPOSE_FILE := docker-compose.yml
 SERVICE_NAME := blog
 CONTAINER_NAME := blog
+MELANGE_FILE := melange.yaml
+
 
 # ============================================================================
 # Cores para output
@@ -169,3 +171,18 @@ dev: check-deps build up logs ## Inicia ambiente completo de desenvolvimento
 quick-start: up url ## Inicia rapidamente (sem rebuild)
 
 quick-stop: down ## Para rapidamente
+
+##@ Build Moderno (Melange + Apko)
+
+melange-build: ## Builda o pacote APK do site
+	@echo "📦 Building site package with melange"
+	melange build $(MELANGE_FILE) --arch amd64
+
+
+apko-build: ## Gera imagem OCI final com apko
+	@echo "📦 Building OCI image with apko"
+	apko build apko.yaml blog:prod blog.tar
+
+
+apko-load: ## Carrega a imagem no Docker (opcional)
+	docker load < blog.tar

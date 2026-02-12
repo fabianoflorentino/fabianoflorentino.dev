@@ -1,6 +1,6 @@
-FROM alpine:3.23 AS development
+FROM alpine:3.23
 
-ARG HUGO_VERSION=0.155.1 \
+ARG HUGO_VERSION=0.155.3 \
   HUGO_URL=https://github.com/gohugoio/hugo \
   HUGO_PATH=releases/download/v${HUGO_VERSION} \
   HUGO_BINARY=hugo_${HUGO_VERSION}_linux-amd64.tar.gz
@@ -21,13 +21,3 @@ EXPOSE 1313
 USER 1000:1000
 
 ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0", "--buildDrafts", "--disableFastRender"]
-
-FROM gcr.io/distroless/static:nonroot AS production
-
-WORKDIR /blog
-
-COPY . .
-
-COPY --from=development /site/public /site
-
-USER nonroot:nonroot

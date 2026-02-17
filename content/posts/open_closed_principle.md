@@ -275,6 +275,6 @@ Até lá.
 
 ## Referências
 
-* [https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html](https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html)
-* [https://pt.wikipedia.org/wiki/Princ%C3%ADpio_do_aberto/fechado](https://pt.wikipedia.org/wiki/Princ%C3%ADpio_do_aberto/fechado)
-* [https://schembri.me/solid-the-open-closed-principle-ocp/](https://schembri.me/solid-the-open-closed-principle-ocp/)
+* [Blog cleancoder](https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html)
+* [wikkipedia](https://pt.wikipedia.org/wiki/Princ%C3%ADpio_do_aberto/fechado)
+* [Blog schembri](https://schembri.me/solid-the-open-closed-principle-ocp/)

@@ -205,6 +205,14 @@ func main() {
 }
 ```
 
+---
+
+### Go Playground
+
+Exemplo da implementacao: [https://go.dev/play/p/nBaa_i4iQT9](https://go.dev/play/p/nBaa_i4iQT9)
+
+---
+
 Essa composição deixa claro como as responsabilidades se conectam — sem frameworks, acoplamento forte.
 
 > Em aplicações maiores, essa composição pode ser extraída para um bootstrap, container ou módulo de inicialização.  

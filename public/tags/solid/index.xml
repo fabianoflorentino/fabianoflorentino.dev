@@ -6,8 +6,15 @@
     <description>Recent content in Solid on Fabiano Santos Florentino</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Feb 2026 02:31:46 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Feb 2026 23:29:58 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/solid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Liskov Substitution Principle</title>
+      <link>http://localhost:1313/posts/liskov_substitution_principle/</link>
+      <pubDate>Tue, 10 Feb 2026 23:29:58 +0000</pubDate>
+      <guid>http://localhost:1313/posts/liskov_substitution_principle/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;“Se q(x) é uma propriedade demonstrável dos objetos x de tipo T. Então q(y) deve ser verdadeiro para objetos y de tipo S onde S é um subtipo de T”&lt;/em&gt;&#xA;— Barbara Liskov&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Traduzindo isso para o mundo real:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;se eu trocar uma implementação por outra, o sistema deveria continuar funcionando do mesmo jeito.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Se a troca quebra algo inesperadamente, temos um problema.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;lembrando-onde-paramos&#34;&gt;Lembrando onde paramos&lt;/h2&gt;&#xA;&lt;p&gt;No post de &lt;strong&gt;SRP&lt;/strong&gt;, organizamos responsabilidades.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Open/Closed Principle</title>
       <link>http://localhost:1313/posts/open_closed_principle/</link>

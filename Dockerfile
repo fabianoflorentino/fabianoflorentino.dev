@@ -1,6 +1,6 @@
-FROM alpine:3.23
+FROM alpine:3.23.3
 
-ARG HUGO_VERSION=0.155.3 \
+ARG HUGO_VERSION=0.156.0 \
   HUGO_URL=https://github.com/gohugoio/hugo \
   HUGO_PATH=releases/download/v${HUGO_VERSION} \
   HUGO_BINARY=hugo_${HUGO_VERSION}_linux-amd64.tar.gz

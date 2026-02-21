@@ -12,7 +12,9 @@ RUN apk add --no-cache curl tar ca-certificates \
   && tar -xzf /tmp/hugo.tar.gz -C /tmp \
   && mv /tmp/hugo /usr/local/bin/hugo \
   && chmod +x /usr/local/bin/hugo \
-  && rm -rf /tmp/hugo.tar.gz
+  && rm -rf /tmp/hugo.tar.gz \
+  && apk del curl tar ca-certificates \
+  && rm -rf /var/cache/apk/*
 
 COPY . .
 

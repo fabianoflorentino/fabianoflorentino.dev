@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Isp on Fabiano Santos Florentino</title>
+    <link>http://localhost:1313/tags/isp/</link>
+    <description>Recent content in Isp on Fabiano Santos Florentino</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Feb 2026 17:52:53 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/isp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interface Segregation Principle</title>
+      <link>http://localhost:1313/posts/interface_segregation_principle/</link>
+      <pubDate>Thu, 19 Feb 2026 17:52:53 +0000</pubDate>
+      <guid>http://localhost:1313/posts/interface_segregation_principle/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2 id=&#34;interface-segregation-principle-isp&#34;&gt;Interface Segregation Principle (ISP)&lt;/h2&gt;&#xA;&lt;p&gt;O &lt;strong&gt;Interface Segregation Principle&lt;/strong&gt; diz:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Clientes não devem ser forçados a depender de métodos que não utilizam.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Em termos mais práticos:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;É melhor ter várias interfaces pequenas e específicas do que uma interface grande e genérica.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Se o SRP fala sobre responsabilidade de &lt;strong&gt;classes&lt;/strong&gt;, o ISP fala sobre responsabilidade de &lt;strong&gt;interfaces&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Fazendo um paralelo com Go, podemos pensar em interfaces como contratos que definem o comportamento esperado. O ISP nos orienta a manter esses contratos enxutos e focados, evitando que clientes sejam obrigados a implementar ou depender de métodos que não fazem sentido para eles.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

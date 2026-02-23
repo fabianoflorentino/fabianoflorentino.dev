@@ -3,30 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/arquitetura/</loc>
-    <lastmod>2026-02-10T23:29:58+00:00</lastmod>
+    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-02-10T23:29:58+00:00</lastmod>
+    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/go/</loc>
-    <lastmod>2026-02-10T23:29:58+00:00</lastmod>
+    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/interface_segregation_principle/</loc>
+    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/isp/</loc>
+    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/post/</loc>
+    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/solid/</loc>
+    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/liskov_substitution_principle/</loc>
     <lastmod>2026-02-10T23:29:58+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/lsp/</loc>
-    <lastmod>2026-02-10T23:29:58+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/post/</loc>
-    <lastmod>2026-02-10T23:29:58+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-02-10T23:29:58+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/solid/</loc>
-    <lastmod>2026-02-10T23:29:58+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-02-10T23:29:58+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ocp/</loc>

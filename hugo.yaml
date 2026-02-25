@@ -422,7 +422,7 @@ params:
   # For translations
   terms:
     read: "Read"
-    toc: "Sumárrio"
+    toc: "Sumário"
     copyright: "Todos os direitos reservados"
     pageNotFound: "Page not found"
     emailText: "Check out this site"

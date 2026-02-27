@@ -10,7 +10,7 @@ image: /images/SRP.jpg
 
 Este post é parte 1 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](/tags/solid/).
 
-Princípio de Resposabilidade única (Single Responsability Principle) a.k.a (SRP) criada por [Robert C. Matrin (Uncle Bob)](http://cleancoder.com/products) parece simples em sua definição;
+Princípio da Responsabilidade Única (Single Responsibility Principle), a.k.a. (SRP), criado por [Robert C. Martin (Uncle Bob)](http://cleancoder.com/products) parece simples em sua definição:
 
 > **Uma classe deve ter apenas um motivo para mudar.**  
 

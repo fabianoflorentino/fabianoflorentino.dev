@@ -1,5 +1,5 @@
 baseURL: "https://fabianoflorentino.dev/"
-languageCode: "en-us"
+languageCode: "pt-br"
 title: "Fabiano Santos Florentino"
 theme: hugo-profile
 
@@ -9,9 +9,11 @@ defaultContentLanguageInSubdir: false
 languages:
   pt:
     languageName: "Português"
+    languageCode: "pt-br"
     weight: 1
   en:
     languageName: "English"
+    languageCode: "en-us"
     weight: 2
     params:
       description: "Personal Blog"

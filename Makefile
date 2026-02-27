@@ -16,6 +16,7 @@ COMPOSE_FILE := docker-compose.yml
 SERVICE_NAME := blog
 CONTAINER_NAME := blog
 MELANGE_FILE := melange.yaml
+DOCKER_COMPOSE := $(shell if docker compose version >/dev/null 2>&1; then echo "docker compose"; else echo "docker-compose"; fi)
 
 
 # ============================================================================
@@ -49,27 +50,27 @@ help: ## Mostra esta mensagem de ajuda
 
 build: ## Faz o build da imagem Docker
 	@echo -e "$(BLUE)🔨 Building Docker image...$(NC)"
-	@docker-compose -f $(COMPOSE_FILE) build --no-cache
+	@$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) build --no-cache
 	@echo -e "$(GREEN)✓ Build concluído!$(NC)"
 
 up: ## Inicia o servidor de desenvolvimento
 	@echo -e "$(BLUE)🚀 Iniciando servidor de desenvolvimento...$(NC)"
-	@docker-compose -f $(COMPOSE_FILE) up -d
+	@$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) up -d
 	@echo -e "$(GREEN)✓ Servidor iniciado!$(NC)"
 	@echo -e "$(YELLOW)📝 Blog disponível em: http://localhost:1313$(NC)"
 
 down: ## Para o servidor de desenvolvimento
 	@echo -e "$(BLUE)🛑 Parando servidor...$(NC)"
-	@docker-compose -f $(COMPOSE_FILE) down
+	@$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) down
 	@echo -e "$(GREEN)✓ Servidor parado!$(NC)"
 
 restart: down up ## Reinicia o servidor
 
 logs: ## Mostra os logs do container
-	@docker-compose -f $(COMPOSE_FILE) logs -f $(SERVICE_NAME)
+	@$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) logs -f $(SERVICE_NAME)
 
 logs-tail: ## Mostra as últimas 100 linhas dos logs
-	@docker-compose -f $(COMPOSE_FILE) logs --tail=100 $(SERVICE_NAME)
+	@$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) logs --tail=100 $(SERVICE_NAME)
 
 shell: ## Abre um shell no container
 	@echo -e "$(BLUE)🐚 Abrindo shell no container...$(NC)"
@@ -79,7 +80,7 @@ shell: ## Abre um shell no container
 
 status: ## Mostra o status dos containers
 	@echo -e "$(BLUE)📊 Status dos containers:$(NC)"
-	@docker-compose -f $(COMPOSE_FILE) ps
+	@$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) ps
 
 ls: status ## Alias para status
 
@@ -91,7 +92,7 @@ rebuild: clean build up ## Reconstrói tudo do zero
 
 clean: ## Remove containers, volumes e imagens
 	@echo -e "$(YELLOW)🧹 Limpando ambiente...$(NC)"
-	@docker-compose -f $(COMPOSE_FILE) down -v --remove-orphans
+	@$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) down -v --remove-orphans
 	@docker rmi fabianoflorentino/blog:v0.0.1 2>/dev/null || true
 	@echo -e "$(GREEN)✓ Ambiente limpo!$(NC)"
 
@@ -145,7 +146,7 @@ generate: ## Gera os arquivos estáticos do site
 check-deps: ## Verifica se as dependências estão instaladas
 	@echo -e "$(BLUE)🔍 Verificando dependências...$(NC)"
 	@command -v docker >/dev/null 2>&1 || { echo "$(RED)❌ Docker não instalado$(NC)"; exit 1; }
-	@command -v docker-compose >/dev/null 2>&1 || { echo "$(RED)❌ Docker Compose não instalado$(NC)"; exit 1; }
+	@docker compose version >/dev/null 2>&1 || command -v docker-compose >/dev/null 2>&1 || { echo "$(RED)❌ Docker Compose não instalado$(NC)"; exit 1; }
 	@echo -e "$(GREEN)✓ Todas as dependências instaladas!$(NC)"
 
 info: ## Mostra informações do ambiente
@@ -153,13 +154,13 @@ info: ## Mostra informações do ambiente
 	@echo -e "$(YELLOW)Docker version:$(NC)"
 	@docker --version
 	@echo -e "$(YELLOW)Docker Compose version:$(NC)"
-	@docker-compose --version
+	@$(DOCKER_COMPOSE) version 2>/dev/null || $(DOCKER_COMPOSE) --version
 	@echo -e "$(YELLOW)Imagens Hugo:$(NC)"
 	@docker images | grep blog || echo "Nenhuma imagem encontrada"
 
 watch: ## Monitora mudanças nos arquivos e mostra logs
 	@echo -e "$(BLUE)👀 Monitorando mudanças...$(NC)"
-	@docker-compose -f $(COMPOSE_FILE) logs -f $(SERVICE_NAME)
+	@$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) logs -f $(SERVICE_NAME)
 
 url: ## Mostra a URL do blog
 	@echo -e "$(GREEN)🌐 Blog disponível em: http://localhost:1313$(NC)"

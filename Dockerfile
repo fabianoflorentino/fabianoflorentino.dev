@@ -1,6 +1,6 @@
-FROM alpine:3.23.3
+FROM alpine:3.23.3 AS hugo
 
-ARG HUGO_VERSION=0.156.0 \
+ARG HUGO_VERSION=0.155.3 \
   HUGO_URL=https://github.com/gohugoio/hugo \
   HUGO_PATH=releases/download/v${HUGO_VERSION} \
   HUGO_BINARY=hugo_${HUGO_VERSION}_linux-amd64.tar.gz
@@ -16,6 +16,18 @@ RUN apk add --no-cache curl tar ca-certificates \
   && apk del curl tar ca-certificates \
   && rm -rf /var/cache/apk/*
 
+
+FROM hugo AS builder
+COPY . .
+RUN hugo --gc --minify
+
+
+FROM nginx:1.27-alpine AS production
+COPY --from=builder /blog/public/ /usr/share/nginx/html/
+EXPOSE 80
+
+
+FROM hugo AS dev
 COPY . .
 
 EXPOSE 1313

@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        HUGO_VERSION: ${HUGO_VERSION:-0.155.3}
     volumes:
       - ./:/blog
     ports:
@@ -12,7 +14,7 @@ services:
     tty: true
     stdin_open: true
     healthcheck:
-      test: ["CMD-SHELL", "ps aux |grep 'hugo' || exit 1"]
+      test: ["CMD-SHELL", "ps | grep -q '[h]ugo' || exit 1"]
       interval: 5s
       timeout: 5s
       retries: 3

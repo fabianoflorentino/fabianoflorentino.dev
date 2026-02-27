@@ -7,6 +7,8 @@ series: SOLID
 image: /images/DIP.jpg
 ---
 
+Este post é parte 5 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](https://fabianoflorentino.dev/tags/solid/).
+
 ## Dependency Inversion Principle
 
 O **Dependency Inversion Principle (DIP)** é o último princípio do SOLID — e talvez o mais desafiador quando falamos de arquitetura.

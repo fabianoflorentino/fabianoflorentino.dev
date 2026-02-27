@@ -14,7 +14,7 @@ outputs:
 
 enableRobotsTXT: true
 pagination:
-  pagerSize: 3
+  pagerSize: 10
 
 markup:
   goldmark:

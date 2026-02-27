@@ -7,6 +7,8 @@ series: SOLID
 image: /images/OCP.jpg
 ---
 
+Este post é parte 2 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](https://fabianoflorentino.dev/tags/solid/).
+
 No post anterior falamos sobre o **[Single Responsibility Principle (SRP)](https://fabianoflorentino.dev/posts/single_responsibility_principle/)** e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.
 
 O texto terminou com uma provocação:

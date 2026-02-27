@@ -1,12 +1,13 @@
 ---
-
 date: '2026-02-19T17:52:53Z'
 draft: false
 title: 'Interface Segregation Principle'
 tags: [post, go, arquitetura, solid, isp]
 series: SOLID
 image: /images/ISP.jpg
-----------------------
+---
+
+Este post é parte 4 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](https://fabianoflorentino.dev/tags/solid/).
 
 ## Interface Segregation Principle (ISP)
 
@@ -262,6 +263,6 @@ O ISP é orientado ao consumidor, não à entidade.
 
 ## Referências
 
-[https://en.wikipedia.org/wiki/Interface_segregation_principle](https://en.wikipedia.org/wiki/Interface_segregation_principle)
-[https://schembri.me/solid-interface-segregation-principle-isp/](https://schembri.me/solid-interface-segregation-principle-isp/)
-[https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html](https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html)
+[Wikipedia](https://en.wikipedia.org/wiki/Interface_segregation_principle)
+[Blog schembri](https://schembri.me/solid-interface-segregation-principle-isp/)
+[Blog Cleancoder](https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html)

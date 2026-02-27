@@ -7,6 +7,8 @@ series: SOLID
 image: /images/LSP.jpg
 ---
 
+Este post é parte 3 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](https://fabianoflorentino.dev/tags/solid/).
+
 > *“Se q(x) é uma propriedade demonstrável dos objetos x de tipo T. Então q(y) deve ser verdadeiro para objetos y de tipo S onde S é um subtipo de T”*
 > — Barbara Liskov
 

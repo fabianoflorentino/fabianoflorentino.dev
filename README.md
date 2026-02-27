@@ -8,7 +8,7 @@ Hugo website built with the `hugo-profile` theme and deployed on Cloudflare Page
 - Follow logs: `make logs`
 - Stop: `make down`
 
-The dev server runs on http://localhost:1313.
+The dev server runs on <http://localhost:1313>.
 
 ### Pinning Hugo version
 

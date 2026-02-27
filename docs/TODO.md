@@ -12,6 +12,7 @@ Ideias de melhorias (alto impacto, baixo risco) para o blog (Hugo + Cloudflare P
 
 - [ ] Série com navegação: “post anterior / próximo” dentro de uma série
 - [x] “Relacionado por tags”: seção no fim do post com 3–5 posts semelhantes
+- [ ] Embed do calendário de contribuições do GitHub na home (no final da página)
 - [ ] Página “Now”
 - [ ] Página “Uses”
 - [ ] RSS por idioma

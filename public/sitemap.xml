@@ -2,54 +2,60 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/arquitetura/</loc>
+    <loc>http://fabianoflorentino.dev.local:1313/tags/arquitetura/</loc>
+    <lastmod>2026-02-26T15:33:49+00:00</lastmod>
+  </url><url>
+    <loc>http://fabianoflorentino.dev.local:1313/posts/dependency_inversion_principle/</loc>
+    <lastmod>2026-02-26T15:33:49+00:00</lastmod>
+  </url><url>
+    <loc>http://fabianoflorentino.dev.local:1313/tags/dip/</loc>
+    <lastmod>2026-02-26T15:33:49+00:00</lastmod>
+  </url><url>
+    <loc>http://fabianoflorentino.dev.local:1313/</loc>
+    <lastmod>2026-02-26T15:33:49+00:00</lastmod>
+  </url><url>
+    <loc>http://fabianoflorentino.dev.local:1313/tags/go/</loc>
+    <lastmod>2026-02-26T15:33:49+00:00</lastmod>
+  </url><url>
+    <loc>http://fabianoflorentino.dev.local:1313/tags/post/</loc>
+    <lastmod>2026-02-26T15:33:49+00:00</lastmod>
+  </url><url>
+    <loc>http://fabianoflorentino.dev.local:1313/posts/</loc>
+    <lastmod>2026-02-26T15:33:49+00:00</lastmod>
+  </url><url>
+    <loc>http://fabianoflorentino.dev.local:1313/tags/solid/</loc>
+    <lastmod>2026-02-26T15:33:49+00:00</lastmod>
+  </url><url>
+    <loc>http://fabianoflorentino.dev.local:1313/tags/</loc>
+    <lastmod>2026-02-26T15:33:49+00:00</lastmod>
+  </url><url>
+    <loc>http://fabianoflorentino.dev.local:1313/posts/interface_segregation_principle/</loc>
     <lastmod>2026-02-19T17:52:53+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://fabianoflorentino.dev.local:1313/tags/isp/</loc>
     <lastmod>2026-02-19T17:52:53+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/go/</loc>
-    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/interface_segregation_principle/</loc>
-    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/isp/</loc>
-    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/post/</loc>
-    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/solid/</loc>
-    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-02-19T17:52:53+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/liskov_substitution_principle/</loc>
+    <loc>http://fabianoflorentino.dev.local:1313/posts/liskov_substitution_principle/</loc>
     <lastmod>2026-02-10T23:29:58+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lsp/</loc>
+    <loc>http://fabianoflorentino.dev.local:1313/tags/lsp/</loc>
     <lastmod>2026-02-10T23:29:58+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ocp/</loc>
+    <loc>http://fabianoflorentino.dev.local:1313/tags/ocp/</loc>
     <lastmod>2026-02-05T02:31:46+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/open_closed_principle/</loc>
+    <loc>http://fabianoflorentino.dev.local:1313/posts/open_closed_principle/</loc>
     <lastmod>2026-02-05T02:31:46+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/single_responsibility_principle/</loc>
+    <loc>http://fabianoflorentino.dev.local:1313/posts/single_responsibility_principle/</loc>
     <lastmod>2026-02-03T16:04:33+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/srp/</loc>
+    <loc>http://fabianoflorentino.dev.local:1313/tags/srp/</loc>
     <lastmod>2026-02-03T16:04:33+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/solid_em_go_principio_ou_dogma/</loc>
+    <loc>http://fabianoflorentino.dev.local:1313/posts/solid_em_go_principio_ou_dogma/</loc>
     <lastmod>2026-01-31T02:52:52-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://fabianoflorentino.dev.local:1313/categories/</loc>
   </url>
 </urlset>

@@ -5,8 +5,9 @@
 # ============================================================================
 
 .PHONY: help build up down restart logs shell clean rebuild status new-post \
-        new-draft list-content build-prod generate check-deps info watch url \
-        dev quick-start quick-stop logs-tail health prune
+	new-draft list-content build-prod generate check-deps info watch url \
+	dev quick-start quick-stop logs-tail health prune \
+	clean-hugo regen
 
 # ============================================================================
 # Variáveis
@@ -96,6 +97,11 @@ clean: ## Remove containers, volumes e imagens
 	@docker rmi fabianoflorentino/blog:v0.0.1 2>/dev/null || true
 	@echo -e "$(GREEN)✓ Ambiente limpo!$(NC)"
 
+clean-hugo: ## Remove artefatos gerados pelo Hugo (public, resources/_gen e lock)
+	@echo -e "$(YELLOW)🧹 Limpando artefatos do Hugo...$(NC)"
+	@rm -rf public resources/_gen .hugo_build.lock
+	@echo -e "$(GREEN)✓ Artefatos removidos!$(NC)"
+
 prune: ## Remove todos os recursos Docker não utilizados (cuidado!)
 	@echo -e "$(RED)⚠️  Isso vai remover TODOS os recursos Docker não utilizados!$(NC)"
 	@echo -e "$(YELLOW)Pressione Ctrl+C para cancelar, ou Enter para continuar...$(NC)"
@@ -140,6 +146,8 @@ generate: ## Gera os arquivos estáticos do site
 	@echo -e "$(BLUE)🏗️  Gerando site estático...$(NC)"
 	@docker exec $(CONTAINER_NAME) hugo
 	@echo -e "$(GREEN)✓ Site gerado em ./public$(NC)"
+
+regen: clean-hugo generate ## Limpa e gera novamente o site (do zero)
 
 ##@ Utilitários
 

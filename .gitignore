@@ -1,0 +1,19 @@
+# Hugo build outputs
+/public/
+/resources/_gen/
+/.hugo_build.lock
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temp / logs
+*.log
+*.swp
+*~
+
+# Local environment overrides
+.env
+.env.*

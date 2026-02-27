@@ -5,7 +5,7 @@
 # ============================================================================
 
 .PHONY: help build up down restart logs shell clean rebuild status new-post \
-	new-draft list-content build-prod generate check-deps info watch url \
+	new-draft new-post-pt new-post-en list-content build-prod generate check-deps info watch url \
 	dev quick-start quick-stop logs-tail health prune \
 	clean-hugo regen
 
@@ -120,6 +120,42 @@ new-post: ## Cria um novo post (uso: make new-post TITLE="Meu Post")
 	@echo -e "$(BLUE)📝 Criando novo post...$(NC)"
 	@docker exec $(CONTAINER_NAME) hugo new posts/$(shell echo "$(TITLE)" | tr '[:upper:]' '[:lower:]' | tr ' ' '_').md
 	@echo -e "$(GREEN)✓ Post criado!$(NC)"
+
+new-post-pt: ## Cria um novo post em PT (uso: make new-post-pt TITLE="..." [KEY="..."])
+	@if [ -z "$(TITLE)" ]; then \
+		echo -e "$(RED)❌ Erro: Informe o título do post$(NC)"; \
+		echo -e "$(YELLOW)Uso: make new-post-pt TITLE=\"Meu Título\" [KEY=\"minha-chave\"]$(NC)"; \
+		exit 1; \
+	fi
+	@key="$(KEY)"; \
+	if [ -z "$$key" ]; then \
+		key=$$(echo "$(TITLE)" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$$//'); \
+	fi; \
+	file="content/posts/$${key}.pt.md"; \
+	echo -e "$(BLUE)📝 Criando novo post (pt): $${key}...$(NC)"; \
+	docker exec $(CONTAINER_NAME) hugo new "posts/$${key}.pt.md"; \
+	if [ -f "$$file" ] && ! grep -q '^translationKey:' "$$file"; then \
+		sed -i "/^title:/a translationKey: $${key}" "$$file"; \
+	fi; \
+	echo -e "$(GREEN)✓ Post criado: $$file$(NC)"
+
+new-post-en: ## Cria um novo post em EN (uso: make new-post-en TITLE="..." [KEY="..."])
+	@if [ -z "$(TITLE)" ]; then \
+		echo -e "$(RED)❌ Erro: Informe o título do post$(NC)"; \
+		echo -e "$(YELLOW)Uso: make new-post-en TITLE=\"My Title\" [KEY=\"my-key\"]$(NC)"; \
+		exit 1; \
+	fi
+	@key="$(KEY)"; \
+	if [ -z "$$key" ]; then \
+		key=$$(echo "$(TITLE)" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$$//'); \
+	fi; \
+	file="content/posts/$${key}.en.md"; \
+	echo -e "$(BLUE)📝 Criando novo post (en): $${key}...$(NC)"; \
+	docker exec $(CONTAINER_NAME) hugo new "posts/$${key}.en.md"; \
+	if [ -f "$$file" ] && ! grep -q '^translationKey:' "$$file"; then \
+		sed -i "/^title:/a translationKey: $${key}" "$$file"; \
+	fi; \
+	echo -e "$(GREEN)✓ Post criado: $$file$(NC)"
 
 new-draft: ## Cria um novo draft (uso: make new-draft TITLE="Meu Draft")
 	@if [ -z "$(TITLE)" ]; then \

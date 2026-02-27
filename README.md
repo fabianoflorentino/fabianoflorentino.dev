@@ -10,6 +10,24 @@ Hugo website built with the `hugo-profile` theme and deployed on Cloudflare Page
 - Clean generated files: `make clean-hugo`
 - Regenerate from scratch: `make regen`
 
+## Creating new posts (i18n)
+
+This project uses language suffixes in filenames:
+
+- `content/posts/<key>.pt.md`
+- `content/posts/<key>.en.md`
+
+Helpers:
+
+- `make new-post-pt TITLE="Meu Título"`
+- `make new-post-en TITLE="My Title"`
+
+By default, `translationKey` is set to the generated `<key>`.
+If you want both languages to share the same key even with different titles, pass it explicitly:
+
+- `make new-post-pt TITLE="..." KEY="minha-chave"`
+- `make new-post-en TITLE="..." KEY="minha-chave"`
+
 The dev server runs on <http://localhost:1313>.
 
 ### Pinning Hugo version

@@ -2,14 +2,15 @@
 date: '2026-02-05T02:31:46Z'
 draft: false
 title: 'Open/Closed Principle'
+translationKey: open_closed_principle
 tags: [post, go, arquitetura, solid, ocp]
 series: SOLID
 image: /images/OCP.jpg
 ---
 
-Este post é parte 2 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](https://fabianoflorentino.dev/tags/solid/).
+Este post é parte 2 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](/tags/solid/).
 
-No post anterior falamos sobre o **[Single Responsibility Principle (SRP)](https://fabianoflorentino.dev/posts/single_responsibility_principle/)** e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.
+No post anterior falamos sobre o **[Single Responsibility Principle (SRP)](/posts/single_responsibility_principle/)** e como ele ajuda a reduzir acoplamento, deixar responsabilidades explícitas e facilitar mudanças locais no código.
 
 O texto terminou com uma provocação:
 
@@ -35,7 +36,7 @@ Em Go, o OCP aparece de forma muito mais pragmática: **interfaces pequenas, con
 
 ## No exemplo do post anterior
 
-No **[post sobre SRP](https://fabianoflorentino.dev/posts/single_responsibility_principle/)**, começamos com um handler HTTP que fazia tudo:
+No **[post sobre SRP](/posts/single_responsibility_principle/)**, começamos com um handler HTTP que fazia tudo:
 
 * interpretava a requisição
 * executava regra de negócio

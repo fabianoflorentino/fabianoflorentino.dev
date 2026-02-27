@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=/fav.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<meta property="og:url" content="http://fabianoflorentino.dev.local:1313/en/posts/solid_em_go_principio_ou_dogma/">
+  <meta property="og:site_name" content="Fabiano Santos Florentino">
+  <meta property="og:title" content="SOLID in Go: principle or dogma?">
+  <meta property="og:description" content="Does this sound familiar?
+“Go is not object-oriented” or “SOLID is a Java / C# thing”…
+If you’ve heard this in code reviews, Twitter threads, or even inside your team, you’re not alone.
+These statements aren’t entirely false — but they also don’t tell the whole story. There are other ways to understand and apply SOLID in languages that don’t follow the classic object-oriented model.
+Let’s dig in.
+Does SOLID make sense in Go? The short answer is: yes — as long as you understand SOLID as design principles, not as implementation patterns.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-31T02:52:52-03:00">
+    <meta property="article:modified_time" content="2026-01-31T02:52:52-03:00">
+    <meta property="article:tag" content="Post">
+    <meta property="article:tag" content="Go">
+    <meta property="article:tag" content="Architecture">
+    <meta property="article:tag" content="Solid">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SOLID in Go: principle or dogma?">
+  <meta name="twitter:description" content="Does this sound familiar?
+“Go is not object-oriented” or “SOLID is a Java / C# thing”…
+If you’ve heard this in code reviews, Twitter threads, or even inside your team, you’re not alone.
+These statements aren’t entirely false — but they also don’t tell the whole story. There are other ways to understand and apply SOLID in languages that don’t follow the classic object-oriented model.
+Let’s dig in.
+Does SOLID make sense in Go? The short answer is: yes — as long as you understand SOLID as design principles, not as implementation patterns.">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --text-link-color: #007bff;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --text-link-color-dark: #ffffff;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+
+  
+  
+
+  <title>
+SOLID in Go: principle or dogma? | Fabiano Santos Florentino
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  false ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                Fabiano Santos Florentino
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Search'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav mx-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Search' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#about" aria-label="about">
+                            About me!
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#experience"
+                            aria-label="experience">
+                            Experience
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#education"
+                            aria-label="education">
+                            Education
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#achievements"
+                            aria-label="achievements">
+                            Certificates
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/posts/" title="Blog posts">
+                            
+                            Blog
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+
+                    
+                    <li class="nav-item navbar-text">
+                        <div class="text-center">
+                            
+                            
+
+                            
+                                
+                                    <a class="btn btn-link p-1" href="/posts/solid_em_go_principio_ou_dogma/" title="Switch to Português">
+                                        Português
+                                    </a>
+                                
+                            
+                                
+                            
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">SOLID in Go: principle or dogma?</h1>
+            <div class="text-center">
+              
+              Jan 31, 2026
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/images/SOLID.jpg" alt="SOLID in Go: principle or dogma?">
+          </div>
+          
+          <article class="page-content  p-2">
+          <p>Does this sound familiar?</p>
+<p><strong>&ldquo;Go is not object-oriented&rdquo;</strong> or <strong>&ldquo;SOLID is a Java / C# thing&rdquo;</strong>&hellip;</p>
+<p>If you’ve heard this in code reviews, Twitter threads, or even inside your team, you’re not alone.</p>
+<p>These statements aren’t entirely false — but they also don’t tell the whole story. There are other ways to understand and apply SOLID in languages that don’t follow the classic object-oriented model.</p>
+<p>Let’s dig in.</p>
+<h2 id="does-solid-make-sense-in-go">Does SOLID make sense in Go?</h2>
+<p>The short answer is: <strong>yes</strong> — as long as you understand SOLID as <strong>design principles</strong>, not as implementation patterns.</p>
+<p>In Go, SOLID doesn’t show up as complex hierarchies or deep abstractions, but as simple, intentional design decisions.</p>
+<hr>
+<p><a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">SOLID</a> is an acronym for five software design principles proposed by <a href="http://cleancoder.com/products">Robert C. Martin</a> (Uncle Bob). They were popularized in a strongly object-oriented context, focused on classes, inheritance, and explicit polymorphism.</p>
+<p>The principles are:</p>
+<ul>
+<li><strong>Single Responsibility Principle (SRP)</strong></li>
+<li><strong>Open/Closed Principle (OCP)</strong></li>
+<li><strong>Liskov Substitution Principle (LSP)</strong></li>
+<li><strong>Interface Segregation Principle (ISP)</strong></li>
+<li><strong>Dependency Inversion Principle (DIP)</strong></li>
+</ul>
+<p>None of this is incompatible with Go. What changes is <em>how</em> these principles manifest.</p>
+<p>So… if Go isn’t classic OOP, why talk about SOLID?</p>
+<h2 id="go-isnt-classic-oop--and-thats-intentional">Go isn’t classic OOP — and that’s intentional</h2>
+<p>Go has no inheritance, no classes, and avoids deep hierarchies. Instead, the language encourages:</p>
+<ul>
+<li><strong>Composition over inheritance</strong></li>
+<li><strong>Implicit interfaces</strong></li>
+<li><strong>Simple structs</strong></li>
+<li><strong>Functions as first-class citizens</strong></li>
+</ul>
+<p>These characteristics fundamentally change how SOLID is applied.</p>
+<p>The main point isn’t to copy solutions from other languages, but to understand <strong>what problem each principle is trying to solve</strong> — and how we solve it in an idiomatic Go way.</p>
+<h2 id="its-a-mistake-to-write-go-as-if-it-were-classic-oop">It’s a mistake to write Go as if it were classic OOP</h2>
+<p>The most common mistake when trying to apply SOLID in Go is creating abstractions before there is a real problem.</p>
+<h3 id="common-example">Common example</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UserService</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">CreateUser</span>(<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">error</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Creating interfaces “just in case” rarely helps in Go. Without multiple concrete implementations or a clear reason to decouple, the abstraction only adds complexity and indirection.</p>
+<p>In Go, <strong>interfaces should emerge from usage</strong>, not from a future intention.</p>
+<hr>
+<h2 id="so-why-solid-in-go">So… why SOLID in Go?</h2>
+<p>Because when applied appropriately, the principles help you write code that is simpler, more testable, and easier to maintain.</p>
+<h3 id="1-small-interfaces-are-natural-in-go">1. Small interfaces are natural in Go</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Reader</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Read</span>(<span style="color:#a6e22e">p</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This kind of interface wasn’t created to “follow SOLID”, but it ends up reflecting the <strong>Interface Segregation Principle (ISP)</strong> perfectly: small, focused contracts that are easy to implement.</p>
+<h3 id="2-composition-solves-more-than-inheritance">2. Composition solves more than inheritance</h3>
+<p>Composition in Go maps naturally to several principles:</p>
+<ul>
+<li><strong>SRP</strong>, by keeping responsibilities well defined</li>
+<li><strong>OCP</strong>, by enabling extension through composition</li>
+<li><strong>DIP</strong>, by depending on behaviors, not concrete implementations</li>
+</ul>
+<p>It helps avoid fragile hierarchies and hard-to-predict side effects, even without inheritance.</p>
+<h3 id="3-explicit-dependencies">3. Explicit dependencies</h3>
+<p>In Go, dependencies are usually passed directly:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewService</span>(<span style="color:#a6e22e">repo</span> <span style="color:#a6e22e">Repository</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Service</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Service</span>{<span style="color:#a6e22e">repo</span>: <span style="color:#a6e22e">repo</span>}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This makes code easier to read, simplifies tests, and makes it clear what each component really depends on.</p>
+<hr>
+<h2 id="solid-in-go-is-more-about-boundaries-than-patterns">SOLID in Go is more about boundaries than patterns</h2>
+<p>In Go, applying SOLID is more about:</p>
+<ul>
+<li>defining clear responsibility boundaries</li>
+<li>protecting simple, explicit contracts</li>
+<li>reducing coupling between packages</li>
+<li>making tests and changes easier</li>
+</ul>
+<p>…and less about:</p>
+<ul>
+<li>building abstraction trees</li>
+<li>anticipating extensions that might never happen</li>
+<li>adding complexity with no real payoff</li>
+</ul>
+<h2 id="and-when-doesnt-solid-make-sense">And when doesn’t SOLID make sense?</h2>
+<p>In small, stable code with only one concrete implementation, extra abstractions rarely help.</p>
+<p>Go often prefers <strong>practical simplicity</strong> over theoretical elegance.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>In the next posts, we’ll explore each SOLID principle using Go as the example language:</p>
+<ul>
+<li>where it makes sense</li>
+<li>where it doesn’t</li>
+<li>how to apply it idiomatically</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>SOLID in Go isn’t a ready-made recipe — it’s a set of <a href="https://en.wikipedia.org/wiki/Heuristic">heuristics</a>.</p>
+<p>When applied with moderation, it helps you write code that is:</p>
+<ul>
+<li>more testable</li>
+<li>more readable</li>
+<li>more resilient to change</li>
+<li>easier to maintain</li>
+</ul>
+<p>When applied without a real need, it only adds unnecessary complexity.</p>
+<p>In Go, SOLID isn’t a set of rules — it’s a filter for making better design decisions.</p>
+<p>See you in the next post.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">But Uncle Bob</a></li>
+<li><a href="https://aprendagolang.com.br/o-que-e-solid/">Aprenda Golang</a></li>
+<li><a href="https://pt.wikipedia.org/wiki/SOLID">Wikipedia</a></li>
+<li><a href="https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html">Clean Coder blog</a></li>
+</ul>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table of contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#does-solid-make-sense-in-go">Does SOLID make sense in Go?</a></li>
+    <li><a href="#go-isnt-classic-oop--and-thats-intentional">Go isn’t classic OOP — and that’s intentional</a></li>
+    <li><a href="#its-a-mistake-to-write-go-as-if-it-were-classic-oop">It’s a mistake to write Go as if it were classic OOP</a>
+      <ul>
+        <li><a href="#common-example">Common example</a></li>
+      </ul>
+    </li>
+    <li><a href="#so-why-solid-in-go">So… why SOLID in Go?</a>
+      <ul>
+        <li><a href="#1-small-interfaces-are-natural-in-go">1. Small interfaces are natural in Go</a></li>
+        <li><a href="#2-composition-solves-more-than-inheritance">2. Composition solves more than inheritance</a></li>
+        <li><a href="#3-explicit-dependencies">3. Explicit dependencies</a></li>
+      </ul>
+    </li>
+    <li><a href="#solid-in-go-is-more-about-boundaries-than-patterns">SOLID in Go is more about boundaries than patterns</a></li>
+    <li><a href="#and-when-doesnt-solid-make-sense">And when doesn’t SOLID make sense?</a></li>
+    <li><a href="#next-steps">Next steps</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="http://fabianoflorentino.dev.local:1313/tags/post"
+                target="_blank"
+              >post</a></li>
+              
+              <li class="list-inline-item"><a href="http://fabianoflorentino.dev.local:1313/tags/go"
+                target="_blank"
+              >go</a></li>
+              
+              <li class="list-inline-item"><a href="http://fabianoflorentino.dev.local:1313/tags/architecture"
+                target="_blank"
+              >architecture</a></li>
+              
+              <li class="list-inline-item"><a href="http://fabianoflorentino.dev.local:1313/tags/solid"
+                target="_blank"
+              >solid</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://www.linkedin.com/feed/?shareActive=true&text= http%3a%2f%2ffabianoflorentino.dev.local%3a1313%2fen%2fposts%2fsolid_em_go_principio_ou_dogma%2f">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='https://x.com/share?text=SOLID%20in%20Go%3a%20principle%20or%20dogma%3f&url=http%3a%2f%2ffabianoflorentino.dev.local%3a1313%2fen%2fposts%2fsolid_em_go_principio_ou_dogma%2f&hashtags=post%2c%20go%2c%20architecture%2c%20solid'>
+                    <i class="fab fa-x-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=SOLID%20in%20Go%3a%20principle%20or%20dogma%3f: http%3a%2f%2ffabianoflorentino.dev.local%3a1313%2fen%2fposts%2fsolid_em_go_principio_ou_dogma%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=SOLID%20in%20Go%3a%20principle%20or%20dogma%3f&amp;body=Check%20out%20this%20site http%3a%2f%2ffabianoflorentino.dev.local%3a1313%2fen%2fposts%2fsolid_em_go_principio_ou_dogma%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+<script src="/js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    
+ 
+
+<div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/fabianoflorentino" target="_blank" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path id="footer-socialNetworks-github-svg-path"
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <span class="px-1">
+        <a href="https://www.linkedin.com/in/fabianosantosflorentino" target="_blank" aria-label="linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
+                viewBox="0 0 512 512">
+                <rect width="512" height="512" fill="#0077b5" rx="15%" />
+                <circle cx="142" cy="138" r="37" />
+                <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198" />
+                <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" />
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <a href="https://x.com/fabianoratm" target="_blank" aria-label="twitter">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+            <path fill="#03a9f4"
+                d="M42,37c0,2.762-2.239,5-5,5H11c-2.762,0-5-2.238-5-5V11c0-2.762,2.238-5,5-5h26c2.761,0,5,2.238,5,5 V37z" />
+            <path fill="#fff"
+                d="M36,17.12c-0.882,0.391-1.999,0.758-3,0.88c1.018-0.604,2.633-1.862,3-3 c-0.951,0.559-2.671,1.156-3.793,1.372C31.311,15.422,30.033,15,28.617,15C25.897,15,24,17.305,24,20v2c-4,0-7.9-3.047-10.327-6 c-0.427,0.721-0.667,1.565-0.667,2.457c0,1.819,1.671,3.665,2.994,4.543c-0.807-0.025-2.335-0.641-3-1c0,0.016,0,0.036,0,0.057 c0,2.367,1.661,3.974,3.912,4.422C16.501,26.592,16,27,14.072,27c0.626,1.935,3.773,2.958,5.928,3c-1.686,1.307-4.692,2-7,2 c-0.399,0-0.615,0.022-1-0.023C14.178,33.357,17.22,34,20,34c9.057,0,14-6.918,14-13.37c0-0.212-0.007-0.922-0.018-1.13 C34.95,18.818,35.342,18.104,36,17.12" />
+        </svg>
+    </a>
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            
+            &copy; 2026  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script>
+    if (document.body.className.includes("light")) {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            document.documentElement.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

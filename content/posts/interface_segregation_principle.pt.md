@@ -2,12 +2,13 @@
 date: '2026-02-19T17:52:53Z'
 draft: false
 title: 'Interface Segregation Principle'
+translationKey: interface_segregation_principle
 tags: [post, go, arquitetura, solid, isp]
 series: SOLID
 image: /images/ISP.jpg
 ---
 
-Este post é parte 4 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](https://fabianoflorentino.dev/tags/solid/).
+Este post é parte 4 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](/tags/solid/).
 
 ## Interface Segregation Principle (ISP)
 

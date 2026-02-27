@@ -2,6 +2,7 @@
 date: '2026-01-31T02:52:52-03:00'
 draft: false
 title: 'SOLID em Go Princípio ou dogma?'
+translationKey: solid_em_go_principio_ou_dogma
 tags: [post, go, arquitetura, solid]
 series: SOLID
 image: /images/SOLID.jpg

@@ -3,6 +3,203 @@ languageCode: "en-us"
 title: "Fabiano Santos Florentino"
 theme: hugo-profile
 
+defaultContentLanguage: pt
+defaultContentLanguageInSubdir: false
+
+languages:
+  pt:
+    languageName: "Português"
+    weight: 1
+  en:
+    languageName: "English"
+    weight: 2
+    params:
+      description: "Personal Blog"
+      navbar:
+        searchPlaceholder: "Search"
+      hero:
+        intro: "Hello World!"
+        subtitle: "Personal Blog"
+        content: "Father of Inácio and proud husband of Jullyana! Yes, two L's and a Y :)"
+        button:
+          name: "Resume"
+      about:
+        title: "About me!"
+        content: |-
+          I am a software developer focused on **Go and Ruby**, building **distributed systems**, **microservices**, and **REST APIs** for backend systems.
+
+          I have hands-on experience creating **scalable, resilient, and highly available** solutions, dealing with real-world production challenges around performance, concurrency, observability, and reliability.
+
+          Day to day, I use **Go as my main language for distributed services**, applying good architecture practices such as **hexagonal architecture**, clear separation of responsibilities, and well-defined contracts between services.
+
+          I also have a solid foundation in **SRE and DevOps**, with experience in **CI/CD**, automation, monitoring, cloud computing, and containerization with **Docker and Kubernetes**.
+        skills:
+          title: "Skills:"
+      experience:
+        title: "Experience"
+        items:
+          - company: "Kyndryl"
+            companyUrl: "https://www.kyndryl.com/us/en"
+            jobs:
+              - name: "Software Development Engineer"
+                date: "July/2023 - Present"
+                content: |-
+                  Develop and maintain backend APIs in Ruby on Rails for high-complexity distributed systems.
+                  I work with cross-functional teams to analyze project requirements and technical challenges to ensure a clear shared understanding.
+
+                  Implement scalable, high-performance solutions that support the system’s continuous growth.
+                  Identify and solve performance and scalability issues, applying advanced techniques to optimize performance and improve efficiency.
+
+                  Ensure backend API security and compliance.
+                  Implement strict security measures and work closely with cybersecurity teams to keep our systems protected against potential threats.
+
+                  Produce documentation to guarantee maintainability and scalability.
+                  I dedicate time to carefully document code, processes, and design decisions so the whole team can work effectively.
+
+                  Beyond software development, I actively provide technical support and mentorship to other team members.
+                  I believe in sharing knowledge and experience to foster growth and development across the team.
+                info:
+                  content: Working as Software Development Engineer (Software Engineering Development)
+              - name: "Site Reliability Engineer"
+                date: "December/2018 - July/2023"
+                content: |-
+                  Role focused on delivering reliable services to customers across hardware and software components.
+
+                  Activities include operating and maintaining operating systems across multiple platforms, application servers, database technologies, high-availability solutions, and load balancing.
+
+                  Responsibilities include (but are not limited to): platform operations and support, database administration, capacity planning, performance management, and security compliance.
+
+                  Support is also provided for system management tools that monitor the operational status of the environment.
+
+                  Work performed with a focus on reliability and resilience, combining the right mix of software and systems skills.
+                  Responsible for analyzing business needs, identifying problems, advising and designing solutions, building, testing, deploying, changing, and maintaining well-designed information systems and ecosystems.
+
+                  - Automate workflows and infrastructure, enabling product and engineering teams to move quickly.
+                  - Work alongside development and data science teams to deploy new technologies and strategies.
+                  - Manage cloud providers.
+                  - Automate infrastructure, applications, and services.
+                  - Monitor and support on-prem servers and services.
+                  - Ensure high availability of the environment.
+                info:
+                  content: Working as Site Reliability Engineer (SRE)
+          - company: "2com Consulting"
+            companyUrl: "https://2comconsulting.com.br/"
+            jobs:
+              - name: "Monitoring Analyst"
+                date: "June/2018 - December/2018"
+                info:
+                  content: Working as Monitoring Analyst
+                content: |-
+                  - Responsible for kickstarting DevOps culture practices across teams.
+                  - Monitoring service automation.
+                  - Centralization of automation code with Git.
+                  - Implement Ansible, Puppet, and ShellScript to support monitoring services and alert sensors.
+                  - Research methodologies for faster activity delivery.
+                  - Train teams on DevOps, Ansible, Puppet, ShellScript.
+                  - Manage, maintain, and monitor customer database services, ERP, and backups.
+                  - Customer support and internal team support.
+
+          - company: "Soluti"
+            companyUrl: "https://www.soluti.com.br/"
+            jobs:
+              - name: "IT Infrastructure Analyst"
+                date: "December/2014 - February/2018"
+                content: |-
+                  - Support Datacenter teams in implementing solutions and ensuring critical systems and services are properly monitored with relevant alerts.
+                  - Develop architectural solutions for new projects and changes to existing ones, using configuration management tools and scripts for system implementation and maintenance.
+                  - Handle support requests related to on-prem infrastructure.
+                  - Deploy, maintain, and monitor Linux / Apache / MySQL / PHP servers.
+                  - Manage reverse proxy services with apache2.
+                  - Manage internal server firewall services (iptables).
+                  - Manage Linux server hardening.
+                  - Deploy, maintain, and troubleshoot clients that issue digital certificates.
+                  - Automate and manage server updates and maintenance configurations with Puppet.
+                  - Automate and manage internal monitoring deployments with Zabbix.
+                  - Deploy Rundeck for configuration management and troubleshooting of internal services.
+                  - Implement, maintain, track, and document the digital certificate anti-fraud system.
+                  - Implement, maintain, document, and monitor the biometric identification system.
+      education:
+        title: "Education"
+        items:
+          - title: "Master of Business Administration (MBA), Software Engineering"
+            school:
+              name: "Faculdade Metropolitana"
+              url: "https://www.faculdademetropolitana.edu.br/"
+            date: "2022 - 2023"
+            GPA:
+            content:
+            featuredLink:
+              enable: true
+              name: "Certificate"
+              url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQBDREjvY2VlSq4ziBFJyR5UAQp8J5agulbW5LGrCDyBvpo?e=opKQT7"
+          - title: "Computer Forensics and Digital Expertise"
+            school:
+              name: "IPOG - Instituto de Pós-Graduação e Graduação"
+              url: "https://ipog.edu.br/cursos/pos-graduacao"
+            date: "2015 - 2017"
+            GPA:
+            content:
+            featuredLink:
+              enable: true
+              name: "Final thesis"
+              url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL8TcBAAAAAYdBbZiMyggrRiMFegETkPs?e=dW0XeU"
+          - title: "Computer Network Security"
+            school:
+              name: "Faculdade de Tecnologia Senai de Desenvolvimento Gerencial - FATESG"
+              url: "https://senaigoias.com.br/faculdade-fatesg"
+            date: "2013 - 2015"
+            GPA:
+            content:
+            featuredLink:
+              enable: true
+              name: "Final thesis"
+              url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL8jcBAAAAAZGFGMoCHiuyEiIXvOAPUxk?e=nZhMSL"
+          - title: "Computer Network Technologist"
+            school:
+              name: "Faculdade de Tecnologia Senai de Desenvolvimento Gerencial - FATESG"
+              url: "https://senaigoias.com.br/faculdade-fatesg"
+            date: "2008 - 2011"
+            GPA:
+            content:
+            featuredLink:
+              enable: true
+              name: "Final thesis"
+              url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL1-ICAAAAAfcJ9t1srMrzpDdywLgUKEI?e=GSU2QR"
+      achievements:
+        title: "Certificates"
+        items:
+          - title: Accredible
+            content: |
+              Courses and trainings
+            url: https://www.credential.net/profile/fabianoflorentino/wallet
+            image: /images/accredibleLogo.jpg
+          - title: Credly
+            content: |
+              Courses and trainings
+            url: https://www.credly.com/users/fabiano-florentino.2344b637/badges?sort=-state_updated_at&page=1#credly
+            image: /images/CredlyLogo.jpg
+      contact:
+        title: "Contact"
+        btnName: "Send Email"
+        formspree:
+          emailCaption: "Your email"
+          messageCaption: "Message"
+      singlePages:
+        readTime:
+          content: "min read"
+      terms:
+        read: "Read"
+        toc: "Table of contents"
+        tags: "Tags"
+        social: "Social"
+        copyright: "All rights reserved"
+        pageNotFound: "Page not found"
+        emailText: "Check out this site"
+
+      footer:
+        recentPosts:
+          title: "Recent Posts"
+
 outputs:
   home:
     - "HTML"
@@ -26,7 +223,7 @@ Menus:
     - identifier: blog
       name: Blog
       title: Blog posts
-      url: /posts
+      pageRef: /posts
       weight: 1
 
 params:
@@ -347,7 +544,7 @@ params:
     recentPosts:
       path: "posts"
       count: 3
-      title: Recent Posts
+      title: "Posts Recentes"
       enable: false
       disableFeaturedImage: false
     socialNetworks:
@@ -363,7 +560,7 @@ params:
     socialShare: true
     readTime:
       enable: true
-      content: "min read"
+      content: "min de leitura"
     scrollprogress:
       enable: true
     tags:
@@ -371,11 +568,13 @@ params:
 
   # For translations
   terms:
-    read: "Read"
+    read: "Ler"
     toc: "Sumário"
+    tags: "Tags"
+    social: "Redes"
     copyright: "Todos os direitos reservados"
-    pageNotFound: "Page not found"
-    emailText: "Check out this site"
+    pageNotFound: "Página não encontrada"
+    emailText: "Confira este site"
 
   datesFormat:
     article: "Jan 2, 2006"

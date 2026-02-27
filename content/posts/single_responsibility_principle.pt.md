@@ -2,12 +2,13 @@
 date: '2026-02-03T16:04:33Z'
 draft: false
 title: 'Single Responsibility Principle (SRP)'
+translationKey: single_responsibility_principle
 tags: [post, go, arquitetura, solid, srp]
 series: SOLID
 image: /images/SRP.jpg
 ---
 
-Este post é parte 1 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](https://fabianoflorentino.dev/tags/solid/).
+Este post é parte 1 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](/tags/solid/).
 
 Princípio de Resposabilidade única (Single Responsability Principle) a.k.a (SRP) criada por [Robert C. Matrin (Uncle Bob)](http://cleancoder.com/products) parece simples em sua definição;
 

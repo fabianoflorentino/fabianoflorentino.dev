@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lsp on Fabiano Santos Florentino</title>
+    <link>http://fabianoflorentino.dev.local:1313/en/tags/lsp/</link>
+    <description>Recent content in Lsp on Fabiano Santos Florentino</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Feb 2026 23:29:58 +0000</lastBuildDate>
+    <atom:link href="http://fabianoflorentino.dev.local:1313/en/tags/lsp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Liskov Substitution Principle</title>
+      <link>http://fabianoflorentino.dev.local:1313/en/posts/liskov_substitution_principle/</link>
+      <pubDate>Tue, 10 Feb 2026 23:29:58 +0000</pubDate>
+      <guid>http://fabianoflorentino.dev.local:1313/en/posts/liskov_substitution_principle/</guid>
+      <description>&lt;p&gt;This post is part 3 of a SOLID series. Follow the other articles via the tag &lt;a href=&#34;http://fabianoflorentino.dev.local:1313/en/tags/solid/&#34;&gt;/solid&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;“If q(x) is a property provable about objects x of type T, then q(y) should be true for objects y of type S where S is a subtype of T.”&lt;/em&gt;&#xA;— Barbara Liskov&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Translating that into something practical:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;if I swap one implementation for another, the system should keep working the same way.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;If the swap breaks something unexpectedly, we have a problem.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

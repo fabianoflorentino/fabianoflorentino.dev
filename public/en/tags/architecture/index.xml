@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Architecture on Fabiano Santos Florentino</title>
+    <link>http://fabianoflorentino.dev.local:1313/en/tags/architecture/</link>
+    <description>Recent content in Architecture on Fabiano Santos Florentino</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 26 Feb 2026 15:33:49 +0000</lastBuildDate>
+    <atom:link href="http://fabianoflorentino.dev.local:1313/en/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dependency Inversion Principle</title>
+      <link>http://fabianoflorentino.dev.local:1313/en/posts/dependency_inversion_principle/</link>
+      <pubDate>Thu, 26 Feb 2026 15:33:49 +0000</pubDate>
+      <guid>http://fabianoflorentino.dev.local:1313/en/posts/dependency_inversion_principle/</guid>
+      <description>&lt;p&gt;This post is part 5 of a SOLID series. Follow the other articles via the tag &lt;a href=&#34;http://fabianoflorentino.dev.local:1313/en/tags/solid/&#34;&gt;/solid&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;dependency-inversion-principle&#34;&gt;Dependency Inversion Principle&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;strong&gt;Dependency Inversion Principle (DIP)&lt;/strong&gt; is the last SOLID principle — and possibly the most challenging when we talk about architecture.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;High-level modules should not depend on low-level modules. Both should depend on abstractions.&#xA;Abstractions should not depend on details. Details should depend on abstractions.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;At first glance, it sounds like “another principle about interfaces”. But what it really aims to solve is deeper: &lt;strong&gt;protect what is stable (business rules) from what is volatile (infrastructure)&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Interface Segregation Principle</title>
+      <link>http://fabianoflorentino.dev.local:1313/en/posts/interface_segregation_principle/</link>
+      <pubDate>Thu, 19 Feb 2026 17:52:53 +0000</pubDate>
+      <guid>http://fabianoflorentino.dev.local:1313/en/posts/interface_segregation_principle/</guid>
+      <description>&lt;p&gt;This post is part 4 of a SOLID series. Follow the other articles via the tag &lt;a href=&#34;http://fabianoflorentino.dev.local:1313/en/tags/solid/&#34;&gt;/solid&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;interface-segregation-principle-isp&#34;&gt;Interface Segregation Principle (ISP)&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;strong&gt;Interface Segregation Principle&lt;/strong&gt; says:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Clients should not be forced to depend on methods they do not use.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;More practically:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;It’s better to have many small, specific interfaces than one big, generic interface.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;If SRP talks about responsibility of &lt;strong&gt;classes&lt;/strong&gt;, ISP talks about responsibility of &lt;strong&gt;interfaces&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In Go, we can think of interfaces as contracts that define expected behavior. ISP guides us to keep these contracts small and focused, so clients aren’t forced to implement or depend on methods that don’t make sense for them.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Liskov Substitution Principle</title>
+      <link>http://fabianoflorentino.dev.local:1313/en/posts/liskov_substitution_principle/</link>
+      <pubDate>Tue, 10 Feb 2026 23:29:58 +0000</pubDate>
+      <guid>http://fabianoflorentino.dev.local:1313/en/posts/liskov_substitution_principle/</guid>
+      <description>&lt;p&gt;This post is part 3 of a SOLID series. Follow the other articles via the tag &lt;a href=&#34;http://fabianoflorentino.dev.local:1313/en/tags/solid/&#34;&gt;/solid&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;“If q(x) is a property provable about objects x of type T, then q(y) should be true for objects y of type S where S is a subtype of T.”&lt;/em&gt;&#xA;— Barbara Liskov&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Translating that into something practical:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;if I swap one implementation for another, the system should keep working the same way.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;If the swap breaks something unexpectedly, we have a problem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Open/Closed Principle</title>
+      <link>http://fabianoflorentino.dev.local:1313/en/posts/open_closed_principle/</link>
+      <pubDate>Thu, 05 Feb 2026 02:31:46 +0000</pubDate>
+      <guid>http://fabianoflorentino.dev.local:1313/en/posts/open_closed_principle/</guid>
+      <description>&lt;p&gt;This post is part 2 of a SOLID series. Follow the other articles via the tag &lt;a href=&#34;http://fabianoflorentino.dev.local:1313/en/tags/solid/&#34;&gt;/solid&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In the previous post we talked about the &lt;strong&gt;&lt;a href=&#34;http://fabianoflorentino.dev.local:1313/en/posts/single_responsibility_principle/&#34;&gt;Single Responsibility Principle (SRP)&lt;/a&gt;&lt;/strong&gt; and how it helps reduce coupling, make responsibilities explicit, and enable local changes in the code.&lt;/p&gt;&#xA;&lt;p&gt;That post ended with a provocation:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;What if the API needs to support multiple formats at the same time?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;This question naturally appears when we think about real production systems — and it’s exactly the kind of problem that &lt;strong&gt;should not be solved with &lt;code&gt;if&lt;/code&gt;/&lt;code&gt;switch&lt;/code&gt; scattered around or code duplication&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Single Responsibility Principle (SRP)</title>
+      <link>http://fabianoflorentino.dev.local:1313/en/posts/single_responsibility_principle/</link>
+      <pubDate>Tue, 03 Feb 2026 16:04:33 +0000</pubDate>
+      <guid>http://fabianoflorentino.dev.local:1313/en/posts/single_responsibility_principle/</guid>
+      <description>&lt;p&gt;This post is part 1 of a SOLID series. Follow the other articles via the tag &lt;a href=&#34;http://fabianoflorentino.dev.local:1313/en/tags/solid/&#34;&gt;/solid&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;strong&gt;Single Responsibility Principle (SRP)&lt;/strong&gt;, popularized by &lt;a href=&#34;http://cleancoder.com/products&#34;&gt;Robert C. Martin (Uncle Bob)&lt;/a&gt;, sounds simple in its definition:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;A class should have only one reason to change.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Simple, right?&lt;/p&gt;&#xA;&lt;p&gt;In practice, though, SRP is often misapplied, resulting in:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;too many “artificial” structs&lt;/li&gt;&#xA;&lt;li&gt;interfaces with no clear purpose&lt;/li&gt;&#xA;&lt;li&gt;code more complex than the original problem&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;In Go, applying SRP does not mean creating dozens of tiny structs. It means ensuring &lt;strong&gt;each part of the code has a clear, single reason to change&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SOLID in Go: principle or dogma?</title>
+      <link>http://fabianoflorentino.dev.local:1313/en/posts/solid_em_go_principio_ou_dogma/</link>
+      <pubDate>Sat, 31 Jan 2026 02:52:52 -0300</pubDate>
+      <guid>http://fabianoflorentino.dev.local:1313/en/posts/solid_em_go_principio_ou_dogma/</guid>
+      <description>&lt;p&gt;Does this sound familiar?&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;Go is not object-oriented&amp;rdquo;&lt;/strong&gt; or &lt;strong&gt;&amp;ldquo;SOLID is a Java / C# thing&amp;rdquo;&lt;/strong&gt;&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;If you’ve heard this in code reviews, Twitter threads, or even inside your team, you’re not alone.&lt;/p&gt;&#xA;&lt;p&gt;These statements aren’t entirely false — but they also don’t tell the whole story. There are other ways to understand and apply SOLID in languages that don’t follow the classic object-oriented model.&lt;/p&gt;&#xA;&lt;p&gt;Let’s dig in.&lt;/p&gt;&#xA;&lt;h2 id=&#34;does-solid-make-sense-in-go&#34;&gt;Does SOLID make sense in Go?&lt;/h2&gt;&#xA;&lt;p&gt;The short answer is: &lt;strong&gt;yes&lt;/strong&gt; — as long as you understand SOLID as &lt;strong&gt;design principles&lt;/strong&gt;, not as implementation patterns.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

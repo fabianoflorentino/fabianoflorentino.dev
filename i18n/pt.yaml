@@ -1,0 +1,10 @@
+hello:
+  other: "Olá"
+blog:
+  other: "Blog"
+about:
+  other: "Sobre"
+contact:
+  other: "Contato"
+home:
+  other: "Início"

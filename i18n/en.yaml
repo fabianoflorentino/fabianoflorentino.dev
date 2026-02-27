@@ -1,0 +1,10 @@
+hello:
+  other: "Hello"
+blog:
+  other: "Blog"
+about:
+  other: "About"
+contact:
+  other: "Contact"
+home:
+  other: "Home"

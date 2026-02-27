@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=/fav.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<meta property="og:url" content="http://fabianoflorentino.dev.local:1313/en/posts/single_responsibility_principle/">
+  <meta property="og:site_name" content="Fabiano Santos Florentino">
+  <meta property="og:title" content="Single Responsibility Principle (SRP)">
+  <meta property="og:description" content="This post is part 1 of a SOLID series. Follow the other articles via the tag /solid.
+The Single Responsibility Principle (SRP), popularized by Robert C. Martin (Uncle Bob), sounds simple in its definition:
+A class should have only one reason to change.
+Simple, right?
+In practice, though, SRP is often misapplied, resulting in:
+too many “artificial” structs interfaces with no clear purpose code more complex than the original problem In Go, applying SRP does not mean creating dozens of tiny structs. It means ensuring each part of the code has a clear, single reason to change.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-03T16:04:33+00:00">
+    <meta property="article:modified_time" content="2026-02-03T16:04:33+00:00">
+    <meta property="article:tag" content="Post">
+    <meta property="article:tag" content="Go">
+    <meta property="article:tag" content="Architecture">
+    <meta property="article:tag" content="Solid">
+    <meta property="article:tag" content="Srp">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Single Responsibility Principle (SRP)">
+  <meta name="twitter:description" content="This post is part 1 of a SOLID series. Follow the other articles via the tag /solid.
+The Single Responsibility Principle (SRP), popularized by Robert C. Martin (Uncle Bob), sounds simple in its definition:
+A class should have only one reason to change.
+Simple, right?
+In practice, though, SRP is often misapplied, resulting in:
+too many “artificial” structs interfaces with no clear purpose code more complex than the original problem In Go, applying SRP does not mean creating dozens of tiny structs. It means ensuring each part of the code has a clear, single reason to change.">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --text-link-color: #007bff;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --text-link-color-dark: #ffffff;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+
+  
+  
+
+  <title>
+Single Responsibility Principle (SRP) | Fabiano Santos Florentino
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  false ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                Fabiano Santos Florentino
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Search'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav mx-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Search' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#about" aria-label="about">
+                            About me!
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#experience"
+                            aria-label="experience">
+                            Experience
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#education"
+                            aria-label="education">
+                            Education
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#achievements"
+                            aria-label="achievements">
+                            Certificates
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/posts/" title="Blog posts">
+                            
+                            Blog
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+
+                    
+                    <li class="nav-item navbar-text">
+                        <div class="text-center">
+                            
+                            
+
+                            
+                                
+                                    <a class="btn btn-link p-1" href="/posts/single_responsibility_principle/" title="Switch to Português">
+                                        Português
+                                    </a>
+                                
+                            
+                                
+                            
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Single Responsibility Principle (SRP)</h1>
+            <div class="text-center">
+              
+              Feb 3, 2026
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/images/SRP.jpg" alt="Single Responsibility Principle (SRP)">
+          </div>
+          
+          <article class="page-content  p-2">
+          <p>This post is part 1 of a SOLID series. Follow the other articles via the tag <a href="/en/tags/solid/">/solid</a>.</p>
+<p>The <strong>Single Responsibility Principle (SRP)</strong>, popularized by <a href="http://cleancoder.com/products">Robert C. Martin (Uncle Bob)</a>, sounds simple in its definition:</p>
+<blockquote>
+<p><strong>A class should have only one reason to change.</strong></p>
+</blockquote>
+<p>Simple, right?</p>
+<p>In practice, though, SRP is often misapplied, resulting in:</p>
+<ul>
+<li>too many “artificial” structs</li>
+<li>interfaces with no clear purpose</li>
+<li>code more complex than the original problem</li>
+</ul>
+<p>In Go, applying SRP does not mean creating dozens of tiny structs. It means ensuring <strong>each part of the code has a clear, single reason to change</strong>.</p>
+<blockquote>
+<p>In Go you don’t have <a href="https://en.wikipedia.org/wiki/Class_%28computer_programming%29">classes</a> like in traditional languages. The closest structure is a <code>struct</code>, which resembles a class in the sense that it groups data and behavior.</p>
+</blockquote>
+<hr>
+<h2 id="an-http-handler-that-does-everything">An HTTP handler that does everything</h2>
+<p>Imagine a REST API written only with Go’s builtin modules (<code>net/http</code> and <code>encoding/json</code>), with an endpoint that returns system info:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ReportHandler</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;active_users&#34;</span>: <span style="color:#ae81ff">120</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;errors&#34;</span>:       <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">response</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">data</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">errors</span>.<span style="color:#a6e22e">New</span>(<span style="color:#e6db74">&#34;failed to build response&#34;</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">Header</span>().<span style="color:#a6e22e">Set</span>(<span style="color:#e6db74">&#34;Content-Type&#34;</span>, <span style="color:#e6db74">&#34;application/json&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">Write</span>(<span style="color:#a6e22e">response</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This code works, but it can change for <strong>different reasons</strong>:</p>
+<ul>
+<li>the <strong>business rule</strong> changes (new data, new rules)</li>
+<li>the <strong>response format</strong> changes (JSON today, XML tomorrow)</li>
+<li>the <strong>transport</strong> changes (HTTP now, gRPC later)</li>
+</ul>
+<p>When everything is in the same place, the code ends up with multiple reasons to change — exactly what SRP tries to avoid.</p>
+<hr>
+<h2 id="applying-srp">Applying SRP</h2>
+<p>Let’s do a small refactor and apply SRP <strong>explicitly</strong>.</p>
+<p>The idea is simple:</p>
+<ul>
+<li>the HTTP handler handles <strong>transport only</strong></li>
+<li>business logic stays outside <code>net/http</code></li>
+<li>response formatting becomes someone else’s responsibility</li>
+</ul>
+<p>This makes it clear <strong>who changes for which reason</strong>.</p>
+<hr>
+<h3 id="business-rule-system-data">Business rule: system data</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">SystemReport</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ActiveUsers</span> <span style="color:#66d9ef">int</span> <span style="color:#e6db74">`json:&#34;active_users&#34;`</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Errors</span>      <span style="color:#66d9ef">int</span> <span style="color:#e6db74">`json:&#34;errors&#34;`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ReportService</span> <span style="color:#66d9ef">struct</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ReportService</span>) <span style="color:#a6e22e">Generate</span>() <span style="color:#a6e22e">SystemReport</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">SystemReport</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ActiveUsers</span>: <span style="color:#ae81ff">120</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Errors</span>:      <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This code changes <strong>only</strong> if business logic changes.</p>
+<hr>
+<h3 id="formatting-isolated-responsibility">Formatting: isolated responsibility</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Formatter</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">SystemReport</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>JSON implementation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">JSONFormatter</span> <span style="color:#66d9ef">struct</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">f</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">JSONFormatter</span>) <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">report</span> <span style="color:#a6e22e">SystemReport</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">report</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If tomorrow you need XML, YAML, or another format, you add another implementation without changing the rest of the code.</p>
+<hr>
+<h3 id="http-handler-transport-only">HTTP handler: transport only</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ReportHandler</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Service</span>   <span style="color:#f92672">*</span><span style="color:#a6e22e">ReportService</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Formatter</span> <span style="color:#a6e22e">Formatter</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">h</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ReportHandler</span>) <span style="color:#a6e22e">ServeHTTP</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">report</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Service</span>.<span style="color:#a6e22e">Generate</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">output</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Formatter</span>.<span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">report</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#a6e22e">w</span>, <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>(), <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusInternalServerError</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">Header</span>().<span style="color:#a6e22e">Set</span>(<span style="color:#e6db74">&#34;Content-Type&#34;</span>, <span style="color:#e6db74">&#34;application/json&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">WriteHeader</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">Write</span>(<span style="color:#a6e22e">output</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now the handler changes <strong>only</strong> if HTTP transport changes.</p>
+<hr>
+<h3 id="use-case-orchestrating-business-flow">Use case: orchestrating business flow</h3>
+<p>In production-ready systems, it’s common to have an intermediate layer between the handler and business logic: the <strong>use case</strong>.</p>
+<p>A use case coordinates the application flow without knowing HTTP details or any specific output format.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">GenerateReportUseCase</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Service</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ReportService</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">u</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">GenerateReportUseCase</span>) <span style="color:#a6e22e">Execute</span>() <span style="color:#a6e22e">SystemReport</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">Service</span>.<span style="color:#a6e22e">Generate</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This component changes only if the <strong>use case flow</strong> changes.</p>
+<hr>
+<h3 id="http-handler-with-use-case">HTTP handler (with use case)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ReportHandler</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">UseCase</span>   <span style="color:#f92672">*</span><span style="color:#a6e22e">GenerateReportUseCase</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Formatter</span> <span style="color:#a6e22e">Formatter</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">h</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ReportHandler</span>) <span style="color:#a6e22e">ServeHTTP</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">report</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">UseCase</span>.<span style="color:#a6e22e">Execute</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">output</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Formatter</span>.<span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">report</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#a6e22e">w</span>, <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>(), <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusInternalServerError</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">Header</span>().<span style="color:#a6e22e">Set</span>(<span style="color:#e6db74">&#34;Content-Type&#34;</span>, <span style="color:#e6db74">&#34;application/json&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">WriteHeader</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">Write</span>(<span style="color:#a6e22e">output</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now the handler is still responsible <strong>only for HTTP transport</strong>.</p>
+<hr>
+<h3 id="explicit-composition-in-main">Explicit composition in <code>main</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">service</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">ReportService</span>{}
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useCase</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">GenerateReportUseCase</span>{<span style="color:#a6e22e">Service</span>: <span style="color:#a6e22e">service</span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">formatter</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">JSONFormatter</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">handler</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">ReportHandler</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">UseCase</span>:   <span style="color:#a6e22e">useCase</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Formatter</span>: <span style="color:#a6e22e">formatter</span>,
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>, <span style="color:#a6e22e">handler</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h3 id="go-playground">Go Playground</h3>
+<p>Example implementation: <a href="https://go.dev/play/p/nBaa_i4iQT9">https://go.dev/play/p/nBaa_i4iQT9</a></p>
+<hr>
+<p>This composition makes it clear how responsibilities connect — without frameworks, without tight coupling.</p>
+<blockquote>
+<p>In larger applications, composition can be extracted to a bootstrap, container, or initialization module.
+Here it remains in <code>main</code> to make responsibilities and dependencies explicit.</p>
+</blockquote>
+<hr>
+<h2 id="srp-in-go-often-starts-with-small-interfaces">SRP in Go often starts with small interfaces</h2>
+<p>In Go, SRP tends to show up naturally when you create <strong>minimal interfaces</strong>, each with one well-defined role.</p>
+<p>In our example, one clear responsibility is <strong>formatting the API response</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Formatter</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">Data</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This interface doesn’t know:</p>
+<ul>
+<li>whether the format is JSON or XML</li>
+<li>who will consume the result</li>
+<li>whether it will be sent via HTTP, written to a file, or published to a queue</li>
+</ul>
+<p>It has a single goal: <strong>transform data into a representation</strong>.</p>
+<hr>
+<h2 id="concrete-implementation-jsonformatter">Concrete implementation: JSONFormatter</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">JSONFormatter</span> <span style="color:#66d9ef">struct</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">f</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">JSONFormatter</span>) <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">data</span> <span style="color:#a6e22e">Data</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">data</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A key Go detail here:</p>
+<ul>
+<li>interfaces are implemented <strong>implicitly</strong></li>
+<li>there is no <code>implements</code></li>
+<li>it’s enough that a struct has the method with the correct signature</li>
+</ul>
+<p>That reduces coupling without adding complexity.</p>
+<hr>
+<h2 id="what-if-i-need-another-format">What if I need another format?</h2>
+<p>That’s exactly the scenario SRP helps with.</p>
+<p>If tomorrow the API must respond in XML, you just add another implementation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">XMLFormatter</span> <span style="color:#66d9ef">struct</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">XMLFormatter</span>) <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">data</span> <span style="color:#a6e22e">Data</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">xml</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">data</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>No other part of the system needs to change:</p>
+<ul>
+<li>business logic stays the same</li>
+<li>handler stays the same</li>
+<li>use case stays the same</li>
+</ul>
+<p>Each formatter changes for one reason: <strong>the output format</strong>.</p>
+<hr>
+<h2 id="what-usually-goes-wrong">What usually goes wrong</h2>
+<p>A common mistake is to put all formats into a single struct and use conditionals:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Formatter</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Format</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">f</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Formatter</span>) <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">data</span> <span style="color:#a6e22e">Data</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Format</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;json&#34;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">data</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;xml&#34;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">xml</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">data</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">default</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">errors</span>.<span style="color:#a6e22e">New</span>(<span style="color:#e6db74">&#34;unsupported format&#34;</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now this code has many reasons to change:</p>
+<ul>
+<li>a new format</li>
+<li>rule changes</li>
+<li>validation</li>
+<li>error handling behavior</li>
+</ul>
+<p>That violates <strong>SRP</strong> and tends to grow out of control.</p>
+<hr>
+<h2 id="srp-is-not-one-struct-per-method">SRP is not “one struct per method”</h2>
+<p>In Go, SRP works best when you stop thinking in terms of “classes” and start thinking in terms of <strong>reasons to change</strong>.</p>
+<p>That often translates into:</p>
+<ul>
+<li>simple structs</li>
+<li>small interfaces</li>
+<li>composition in the use case or in <code>main</code></li>
+<li>low coupling between layers</li>
+</ul>
+<hr>
+<h2 id="a-practical-rule-that-works">A practical rule that works</h2>
+<blockquote>
+<p><strong>If a struct needs to import <code>net/http</code> and <code>encoding/json</code> at the same time, it probably has more than one responsibility.</strong></p>
+</blockquote>
+<p>This simple heuristic solves more SRP issues day-to-day than a lot of theory.</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>SRP in Go is not about following OOP dogma.
+It’s about reducing coupling, making responsibilities clear, and enabling local changes without side effects.</p>
+<p>With small interfaces, simple structs, and explicit composition, that’s usually more than enough.</p>
+<p>In the next post in the series we can explore how SRP connects to larger HTTP handlers or how it fits into a hexagonal architecture in Go.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html">Clean Coder blog</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Single-responsibility_principle">Wikipedia - SRP</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Class_%28computer_programming%29">Wikipedia - Classes</a></li>
+<li><a href="http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">But Uncle Bob</a></li>
+<li><a href="https://ttemporin.dev/diferencas-entre-structs-e-classes/">Structs vs Classes</a></li>
+<li><a href="https://drive.google.com/file/d/0ByOwmqah_nuGNHEtcU5OekdDMkk/view?resourcekey=0-AbuGpXQzwZcUGExkktKt0g">Paper - SRP: The Single Responsibility Principle</a></li>
+</ul>
+<h2 id="and-what-if">And what if…?</h2>
+<p>What if the API needs to support multiple formats at the same time? That kind of problem is a great lead-in to the next principle.</p>
+<p>See you there!</p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table of contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#an-http-handler-that-does-everything">An HTTP handler that does everything</a></li>
+    <li><a href="#applying-srp">Applying SRP</a>
+      <ul>
+        <li><a href="#business-rule-system-data">Business rule: system data</a></li>
+        <li><a href="#formatting-isolated-responsibility">Formatting: isolated responsibility</a></li>
+        <li><a href="#http-handler-transport-only">HTTP handler: transport only</a></li>
+        <li><a href="#use-case-orchestrating-business-flow">Use case: orchestrating business flow</a></li>
+        <li><a href="#http-handler-with-use-case">HTTP handler (with use case)</a></li>
+        <li><a href="#explicit-composition-in-main">Explicit composition in <code>main</code></a></li>
+        <li><a href="#go-playground">Go Playground</a></li>
+      </ul>
+    </li>
+    <li><a href="#srp-in-go-often-starts-with-small-interfaces">SRP in Go often starts with small interfaces</a></li>
+    <li><a href="#concrete-implementation-jsonformatter">Concrete implementation: JSONFormatter</a></li>
+    <li><a href="#what-if-i-need-another-format">What if I need another format?</a></li>
+    <li><a href="#what-usually-goes-wrong">What usually goes wrong</a></li>
+    <li><a href="#srp-is-not-one-struct-per-method">SRP is not “one struct per method”</a></li>
+    <li><a href="#a-practical-rule-that-works">A practical rule that works</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#and-what-if">And what if…?</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="http://fabianoflorentino.dev.local:1313/tags/post"
+                target="_blank"
+              >post</a></li>
+              
+              <li class="list-inline-item"><a href="http://fabianoflorentino.dev.local:1313/tags/go"
+                target="_blank"
+              >go</a></li>
+              
+              <li class="list-inline-item"><a href="http://fabianoflorentino.dev.local:1313/tags/architecture"
+                target="_blank"
+              >architecture</a></li>
+              
+              <li class="list-inline-item"><a href="http://fabianoflorentino.dev.local:1313/tags/solid"
+                target="_blank"
+              >solid</a></li>
+              
+              <li class="list-inline-item"><a href="http://fabianoflorentino.dev.local:1313/tags/srp"
+                target="_blank"
+              >srp</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://www.linkedin.com/feed/?shareActive=true&text= http%3a%2f%2ffabianoflorentino.dev.local%3a1313%2fen%2fposts%2fsingle_responsibility_principle%2f">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='https://x.com/share?text=Single%20Responsibility%20Principle%20%28SRP%29&url=http%3a%2f%2ffabianoflorentino.dev.local%3a1313%2fen%2fposts%2fsingle_responsibility_principle%2f&hashtags=post%2c%20go%2c%20architecture%2c%20solid%2c%20srp'>
+                    <i class="fab fa-x-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=Single%20Responsibility%20Principle%20%28SRP%29: http%3a%2f%2ffabianoflorentino.dev.local%3a1313%2fen%2fposts%2fsingle_responsibility_principle%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=Single%20Responsibility%20Principle%20%28SRP%29&amp;body=Check%20out%20this%20site http%3a%2f%2ffabianoflorentino.dev.local%3a1313%2fen%2fposts%2fsingle_responsibility_principle%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+<script src="/js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    
+ 
+
+<div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/fabianoflorentino" target="_blank" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path id="footer-socialNetworks-github-svg-path"
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <span class="px-1">
+        <a href="https://www.linkedin.com/in/fabianosantosflorentino" target="_blank" aria-label="linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
+                viewBox="0 0 512 512">
+                <rect width="512" height="512" fill="#0077b5" rx="15%" />
+                <circle cx="142" cy="138" r="37" />
+                <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198" />
+                <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" />
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <a href="https://x.com/fabianoratm" target="_blank" aria-label="twitter">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+            <path fill="#03a9f4"
+                d="M42,37c0,2.762-2.239,5-5,5H11c-2.762,0-5-2.238-5-5V11c0-2.762,2.238-5,5-5h26c2.761,0,5,2.238,5,5 V37z" />
+            <path fill="#fff"
+                d="M36,17.12c-0.882,0.391-1.999,0.758-3,0.88c1.018-0.604,2.633-1.862,3-3 c-0.951,0.559-2.671,1.156-3.793,1.372C31.311,15.422,30.033,15,28.617,15C25.897,15,24,17.305,24,20v2c-4,0-7.9-3.047-10.327-6 c-0.427,0.721-0.667,1.565-0.667,2.457c0,1.819,1.671,3.665,2.994,4.543c-0.807-0.025-2.335-0.641-3-1c0,0.016,0,0.036,0,0.057 c0,2.367,1.661,3.974,3.912,4.422C16.501,26.592,16,27,14.072,27c0.626,1.935,3.773,2.958,5.928,3c-1.686,1.307-4.692,2-7,2 c-0.399,0-0.615,0.022-1-0.023C14.178,33.357,17.22,34,20,34c9.057,0,14-6.918,14-13.37c0-0.212-0.007-0.922-0.018-1.13 C34.95,18.818,35.342,18.104,36,17.12" />
+        </svg>
+    </a>
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            
+            &copy; 2026  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script>
+    if (document.body.className.includes("light")) {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            document.documentElement.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

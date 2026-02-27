@@ -5,7 +5,7 @@
     <link>http://fabianoflorentino.dev.local:1313/tags/lsp/</link>
     <description>Recent content in Lsp on Fabiano Santos Florentino</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>pt</language>
     <lastBuildDate>Tue, 10 Feb 2026 23:29:58 +0000</lastBuildDate>
     <atom:link href="http://fabianoflorentino.dev.local:1313/tags/lsp/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -13,7 +13,7 @@
       <link>http://fabianoflorentino.dev.local:1313/posts/liskov_substitution_principle/</link>
       <pubDate>Tue, 10 Feb 2026 23:29:58 +0000</pubDate>
       <guid>http://fabianoflorentino.dev.local:1313/posts/liskov_substitution_principle/</guid>
-      <description>&lt;p&gt;Este post é parte 3 de uma série sobre SOLID. Acompanhe os outros artigos pela tag &lt;a href=&#34;https://fabianoflorentino.dev/tags/solid/&#34;&gt;/solid&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;“Se q(x) é uma propriedade demonstrável dos objetos x de tipo T. Então q(y) deve ser verdadeiro para objetos y de tipo S onde S é um subtipo de T”&lt;/em&gt;&#xA;— Barbara Liskov&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Traduzindo isso para o mundo real:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;se eu trocar uma implementação por outra, o sistema deveria continuar funcionando do mesmo jeito.&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Este post é parte 3 de uma série sobre SOLID. Acompanhe os outros artigos pela tag &lt;a href=&#34;http://fabianoflorentino.dev.local:1313/tags/solid/&#34;&gt;/solid&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;“Se q(x) é uma propriedade demonstrável dos objetos x de tipo T. Então q(y) deve ser verdadeiro para objetos y de tipo S onde S é um subtipo de T”&lt;/em&gt;&#xA;— Barbara Liskov&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Traduzindo isso para o mundo real:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;se eu trocar uma implementação por outra, o sistema deveria continuar funcionando do mesmo jeito.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

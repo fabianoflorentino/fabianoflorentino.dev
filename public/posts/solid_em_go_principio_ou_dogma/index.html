@@ -82,7 +82,7 @@ Essas afirmações não são totalmente falsas — mas também não contam a his
     body {
         font-size: 1rem;
         font-weight: 400;
-        line-height: 1.5;
+        line-height: 1.2;
         text-align: left;
     }
 
@@ -211,7 +211,7 @@ SOLID em Go Princípio ou dogma? | Fabiano Santos Florentino
 
             
             <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
-                <ul class="navbar-nav ms-auto text-center">
+                <ul class="navbar-nav mx-auto text-center">
                     
                         <li class="nav-item navbar-text d-block d-md-none">
                             <div class="nav-link">
@@ -274,28 +274,6 @@ SOLID em Go Princípio ou dogma? | Fabiano Santos Florentino
                     
                     
 
-                    
-                    <li class="nav-item navbar-text">
-                        
-                        <div class="text-center">
-                            <button id="theme-toggle">
-                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                                </svg>
-                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="5"></circle>
-                                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                                </svg>
-                            </button>
-                        </div>
-                    </li>
                     
 
                 </ul>
@@ -584,108 +562,6 @@ SOLID em Go Princípio ou dogma? | Fabiano Santos Florentino
   </div><footer>
     
  
- 
-<div class="container py-3" id="recent-posts">
-    
-    
-    <div class="h3 text-center text-secondary py-3">
-        Recent Posts
-    </div>
-    <div class="row justify-content-center">
-        
-        <div class="col-lg-4 col-md-6 pt-2">
-            <div class="card h-100">
-                
-                <div class="card-header">
-                    <a href="/posts/dependency_inversion_principle/">
-                        <img src="/images/DIP.jpg" class="card-img-top" alt="Dependency Inversion Principle">
-                    </a>
-                </div>
-                
-                <div class="card-body bg-transparent p-3 shadow-sm">
-                    <a href="/posts/dependency_inversion_principle/" class="primary-font card-title">
-                        <h5 class="card-title bg-transparent" title="Dependency Inversion Principle">Dependency Inversion …</h5>
-                    </a>
-                    <div class="card-text secondary-font">
-                        <p><h2 id="dependency-inversion-principle">Dependency Inversion Principle</h2>
-<p>O <strong>Dependency Inversion Principle (DIP)</strong> é o último princípio do SOLID — e talvez o mais desafiador quando falamos de arquitetura.</p>
-<blockquote>
-<p>Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações.
-Abstrações não devem depender de …</p></blockquote></p>
-                    </div>
-                </div>
-                <div class="mt-auto card-footer">
-                    <span class="float-start">Feb 26, 2026</span>
-                    <a href="/posts/dependency_inversion_principle/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 pt-2">
-            <div class="card h-100">
-                
-                <div class="card-header">
-                    <a href="/posts/interface_segregation_principle/">
-                        <img src="/images/ISP.jpg" class="card-img-top" alt="Interface Segregation Principle">
-                    </a>
-                </div>
-                
-                <div class="card-body bg-transparent p-3 shadow-sm">
-                    <a href="/posts/interface_segregation_principle/" class="primary-font card-title">
-                        <h5 class="card-title bg-transparent" title="Interface Segregation Principle">Interface Segregation …</h5>
-                    </a>
-                    <div class="card-text secondary-font">
-                        <p><hr>
-<h2 id="interface-segregation-principle-isp">Interface Segregation Principle (ISP)</h2>
-<p>O <strong>Interface Segregation Principle</strong> diz:</p>
-<blockquote>
-<p>Clientes não devem ser forçados a depender de métodos que não utilizam.</p>
-</blockquote>
-<p>Em termos mais práticos:</p>
-<blockquote>
-<p>É melhor ter várias interfaces pequenas e específicas do que uma interface grande e genérica.</p>
-</blockquote>
-<p>Se o SRP fala sobre …</p></p>
-                    </div>
-                </div>
-                <div class="mt-auto card-footer">
-                    <span class="float-start">Feb 19, 2026</span>
-                    <a href="/posts/interface_segregation_principle/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 pt-2">
-            <div class="card h-100">
-                
-                <div class="card-header">
-                    <a href="/posts/liskov_substitution_principle/">
-                        <img src="/images/LSP.jpg" class="card-img-top" alt="Liskov Substitution Principle">
-                    </a>
-                </div>
-                
-                <div class="card-body bg-transparent p-3 shadow-sm">
-                    <a href="/posts/liskov_substitution_principle/" class="primary-font card-title">
-                        <h5 class="card-title bg-transparent" title="Liskov Substitution Principle">Liskov Substitution …</h5>
-                    </a>
-                    <div class="card-text secondary-font">
-                        <p><blockquote>
-<p><em>“Se q(x) é uma propriedade demonstrável dos objetos x de tipo T. Então q(y) deve ser verdadeiro para objetos y de tipo S onde S é um subtipo de T”</em>
-— Barbara Liskov</p>
-</blockquote>
-<p>Traduzindo isso para o mundo real:</p>
-<p><strong>se eu trocar uma implementação por outra, o sistema deveria continuar funcionando do mesmo jeito. …</strong></p></p>
-                    </div>
-                </div>
-                <div class="mt-auto card-footer">
-                    <span class="float-start">Feb 10, 2026</span>
-                    <a href="/posts/liskov_substitution_principle/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-</div>
 
 <div class="text-center pt-2">
     
@@ -764,36 +640,11 @@ Abstrações não devem depender de …</p></blockquote></p>
 </div>
 </footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (localStorage.getItem("pref-theme") === "dark") {
+    if (document.body.className.includes("light")) {
         document.documentElement.classList.add('dark');
         document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-        document.documentElement.classList.remove('dark');
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
-        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
     }
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            document.documentElement.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-
 </script>
 
 

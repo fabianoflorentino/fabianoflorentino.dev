@@ -234,6 +234,9 @@ params:
   useBootstrapCDN: true
   mathjax: false
   animate: true
+  githubActivity:
+    enable: true
+    username: "fabianoflorentino"
   theme:
     disableThemeToggle: false
     defaultTheme: "dark"

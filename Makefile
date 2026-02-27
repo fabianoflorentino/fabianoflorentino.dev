@@ -7,7 +7,7 @@
 .PHONY: help build up down restart logs shell clean rebuild status new-post \
 	new-draft new-post-pt new-post-en list-content build-prod generate check-deps info watch url \
 	dev quick-start quick-stop logs-tail health prune \
-	clean-hugo regen
+	clean-hugo regen check-images
 
 # ============================================================================
 # Variáveis
@@ -184,6 +184,30 @@ generate: ## Gera os arquivos estáticos do site
 	@echo -e "$(GREEN)✓ Site gerado em ./public$(NC)"
 
 regen: clean-hugo generate ## Limpa e gera novamente o site (do zero)
+
+check-images: ## Verifica se arquivos referenciados em /images existem em static/
+	@echo -e "$(BLUE)🔎 Verificando referências de imagens...$(NC)"
+	@missing=0; \
+	paths=$$( ( \
+		grep -RhoE '^image:\s*/images/[^[:space:]]+' hugo.yaml content 2>/dev/null | sed -E 's/^image:\s*//' ; \
+		grep -RhoE '/images/[^\)\"\x27[:space:]]+' content 2>/dev/null \
+	) | sort -u ); \
+	if [ -z "$$paths" ]; then \
+		echo -e "$(YELLOW)⚠️  Nenhuma referência /images encontrada$(NC)"; \
+		exit 0; \
+	fi; \
+	for p in $$paths; do \
+		f="static$${p}"; \
+		if [ ! -f "$$f" ]; then \
+			echo -e "$(RED)❌ Missing: $$p  (esperado: $$f)$(NC)"; \
+			missing=1; \
+		fi; \
+	done; \
+	if [ $$missing -ne 0 ]; then \
+		echo -e "$(RED)Falha: existem referências de imagem quebradas.$(NC)"; \
+		exit 1; \
+	fi; \
+	echo -e "$(GREEN)✓ Todas as imagens referenciadas existem em static/$(NC)"
 
 ##@ Utilitários
 

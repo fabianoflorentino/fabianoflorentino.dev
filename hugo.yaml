@@ -3,6 +3,11 @@ languageCode: "pt-br"
 title: "Fabiano Santos Florentino"
 theme: hugo-profile
 
+taxonomies:
+  tag: tags
+  category: categories
+  series: series
+
 defaultContentLanguage: pt
 defaultContentLanguageInSubdir: false
 

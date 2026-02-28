@@ -578,7 +578,7 @@ params:
     tags: "Tags"
     social: "Redes"
     copyright: "Todos os direitos reservados"
-    pageNotFound: "Página não encontrada"
+    pageNotFound: ""
     emailText: "Confira este site"
 
   datesFormat:

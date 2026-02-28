@@ -28,13 +28,14 @@ languages:
       about:
         title: "About me!"
         content: |-
-          I am a software developer focused on **Go and Ruby**, building **distributed systems**, **microservices**, and **REST APIs** for backend systems.
+          I am a software developer specialized in **Go and Ruby**, focused on building **distributed systems**, **microservices**, and **REST APIs** for enterprise backends.
 
-          I have hands-on experience creating **scalable, resilient, and highly available** solutions, dealing with real-world production challenges around performance, concurrency, observability, and reliability.
+          I have hands-on experience creating **scalable, resilient, and highly available** solutions, working on real-world production challenges around performance, concurrency, observability, and reliability.
 
-          Day to day, I use **Go as my main language for distributed services**, applying good architecture practices such as **hexagonal architecture**, clear separation of responsibilities, and well-defined contracts between services.
+          Day to day, I use **Go as my main language for distributed services**, applying good architecture practices such as **hexagonal architecture**, **SOLID**, separation of responsibilities, and well-defined contracts between services. I build solutions that help clients automate processes, improve operational efficiency, solve complex problems, enhance the security and reliability of their systems, and scale their operations sustainably.
 
-          I also have a solid foundation in **SRE and DevOps**, with experience in **CI/CD**, automation, monitoring, cloud computing, and containerization with **Docker and Kubernetes**.
+          I also have a solid foundation in **SRE and DevOps** practices, with experience in **CI/CD**, automation, monitoring, cloud computing, and containerization with **Docker and Kubernetes**.
+          This blog is a space where I share learnings, hands-on experiences, and reflections about **backend engineering, distributed systems, Go, APIs, and software architecture**.
         skills:
           title: "Skills:"
       experience:
@@ -313,15 +314,14 @@ params:
     image: /images/me.jpeg
     content: |-
       Sou desenvolvedor de software especializado em **Go e Ruby**, com foco na construção de **sistemas distribuídos**, **microserviços** e **APIs REST** para backends corporativos.
-      
+
       Tenho experiência prática criando soluções **escaláveis, resilientes e de alta disponibilidade**, trabalhando com desafios reais de performance, concorrência, observabilidade e 
       confiabilidade em produção.
-      
-      No dia a dia, utilizo **Go como principal linguagem para serviços distribuídos**, aplicando boas práticas de arquitetura, como **arquitetura hexagonal**, separação de responsabilidades e contratos bem definidos entre serviços.
 
-      Também possuo uma base sólida em **SRE e DevOps**, com experiência em **CI/CD**, automação, monitoramento, cloud computing e containerização com **Docker e Kubernetes**.
+      No dia a dia, utilizo **Go como principal linguagem para serviços distribuídos**, aplicando boas práticas de arquitetura, como **arquitetura hexagonal**, **SOLID**, separação de responsabilidades e contratos bem definidos entre serviços. Desenvolvo soluções que ajudam os clientes a automatizar processos, melhorar a eficiência operacional, resolver problemas complexos, melhorar a segurança e a confiabilidade de seus sistemas, e a escalar suas operações de forma sustentável.
+
+      Também possuo uma base sólida de práticas **SRE e DevOps**, com experiência em **CI/CD**, automação, monitoramento, cloud computing e containerização com **Docker e Kubernetes**.
       Este blog é um espaço onde compartilho aprendizados, experiências práticas e reflexões sobre **backend, sistemas distribuídos, Go, APIs e arquitetura de software**.
-
     skills:
       enable: true
       title: "Conhecimento em:"

@@ -51,6 +51,25 @@ Why a script?
 - On `main`, it builds with `baseURL=https://fabianoflorentino.dev`.
 - On preview branches, it uses `CF_PAGES_URL` so links/canonical URLs work correctly.
 
+## Comments (Giscus)
+
+Comments are powered by Giscus (GitHub Discussions).
+
+Prerequisites:
+
+- The target repository must be public.
+- GitHub Discussions must be enabled.
+- The Giscus GitHub app must be installed for the repository.
+
+Current site configuration is set in `hugo.yaml` under `params.giscus`, including:
+
+- `repo`, `repoId`, `category`, `categoryId`
+- `mapping: "pathname"`
+- `strict`, `reactionsEnabled`, `emitMetadata`, `inputPosition`
+- `theme`, plus dynamic light/dark sync (`dynamicTheme`, `lightTheme`, `darkTheme`)
+
+After updating config, restart local dev server (`make down && make up`) if needed.
+
 ## Repo hygiene
 
 This repo does not commit Hugo build artifacts:

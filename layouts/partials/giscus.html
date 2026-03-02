@@ -1,0 +1,90 @@
+{{- $g := .Site.Params.giscus -}}
+{{- if and $g.enabled $g.repo -}}
+{{- $dynamicTheme := $g.dynamicTheme | default true -}}
+{{- $lightTheme := $g.lightTheme | default "light" -}}
+{{- $darkTheme := $g.darkTheme | default "dark" -}}
+<div id="giscus_container" class="giscus">
+  <div id="giscus_thread"></div>
+  <script src="https://giscus.app/client.js"
+    data-repo="{{ $g.repo }}"
+    {{ with $g.repoId }}data-repo-id="{{ . }}"{{ end }}
+    {{ with $g.category }}data-category="{{ . }}"{{ end }}
+    {{ with $g.categoryId }}data-category-id="{{ . }}"{{ end }}
+    data-mapping="{{ $g.mapping | default "pathname" }}"
+    data-strict="{{ $g.strict | default "0" }}"
+    data-reactions-enabled="{{ $g.reactionsEnabled | default "1" }}"
+    data-emit-metadata="{{ $g.emitMetadata | default "0" }}"
+    data-input-position="{{ $g.inputPosition | default "bottom" }}"
+    data-theme="{{ $g.theme | default "preferred_color_scheme" }}"
+    data-lang="{{ $g.lang | default .Site.Language.Lang }}"
+    crossorigin="anonymous"
+    async>
+  </script>
+  {{- if $dynamicTheme -}}
+  <script>
+    (function () {
+      var lightTheme = "{{ $lightTheme }}";
+      var darkTheme = "{{ $darkTheme }}";
+
+      function getCurrentTheme() {
+        var body = document.body;
+        if (body && body.classList.contains("dark")) {
+          return darkTheme;
+        }
+        return lightTheme;
+      }
+
+      function updateGiscusTheme() {
+        var iframe = document.querySelector("iframe.giscus-frame");
+        if (!iframe || !iframe.contentWindow) {
+          return;
+        }
+        iframe.contentWindow.postMessage(
+          {
+            giscus: {
+              setConfig: {
+                theme: getCurrentTheme(),
+              },
+            },
+          },
+          "https://giscus.app"
+        );
+      }
+
+      var observer = new MutationObserver(function () {
+        updateGiscusTheme();
+      });
+
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+      observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+
+      window.addEventListener("load", function () {
+        updateGiscusTheme();
+        setTimeout(updateGiscusTheme, 300);
+      });
+    })();
+  </script>
+  {{- end -}}
+</div>
+{{- else -}}
+<!-- giscus não está configurado. Para ativar, adicione algo como abaixo ao seu config:
+
+giscus:
+  enabled: true
+  repo: "username/repo"
+  repoId: "<REPO_ID>"        # opcional
+  category: "Announcements"  # opcional
+  categoryId: "<CATEGORY_ID>"
+  mapping: "pathname"
+  strict: "0"
+  reactionsEnabled: "1"
+  emitMetadata: "0"
+  inputPosition: "bottom"
+  lang: "en"                 # opcional, padrão: idioma da página
+  theme: "preferred_color_scheme"
+  dynamicTheme: true          # opcional, sincroniza com tema claro/escuro da página
+  lightTheme: "light"        # opcional
+  darkTheme: "dark"          # opcional
+
+-->
+{{- end -}}

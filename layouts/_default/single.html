@@ -212,7 +212,11 @@
     </div>
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-9 p-4">
-        {{ template "_internal/disqus.html" . }}
+        {{- if .Site.Params.giscus.enabled -}}
+          {{ partial "giscus.html" . }}
+        {{- else if .Site.Params.disqusShortname -}}
+          {{ template "_internal/disqus.html" . }}
+        {{- end -}}
       </div>
     </div>
   </div>

@@ -593,3 +593,20 @@ params:
 
   #customScripts: -| # You can add custom scripts which will be added before </body> tag
   #  <script type="text/javascript"><!-- any script here --></script>
+
+  # Giscus comments configuration (example)
+  giscus:
+    enabled: true # set to true to enable giscus
+    repo: "fabianoflorentino/fabianoflorentino.dev" # ex: "fabianoflorentino/fabianoflorentino.dev"
+    repoId: "R_kgDORCh_CQ"        # optional: repository ID from GitHub
+    category: "Comments"       # optional: discussion category name
+    categoryId: "DIC_kwDORCh_Cc4C3jNg" # optional: discussion category ID
+    mapping: "pathname"        # one of pathname, url, title, og:title, number, or specific
+    strict: "0"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"    # top | bottom
+    theme: "dark" # or a specific theme name
+    dynamicTheme: true
+    lightTheme: "light"
+    darkTheme: "dark"

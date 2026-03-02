@@ -38,5 +38,5 @@ Ideias de melhorias (alto impacto, baixo risco) para o blog (Hugo + Cloudflare P
 
 ## Interação
 
-- [ ] Comentários (giscus/GitHub Discussions)
+- [x] Comentários (giscus/GitHub Discussions)
 - [ ] Reações (👍) via endpoint serverless (Cloudflare Worker)

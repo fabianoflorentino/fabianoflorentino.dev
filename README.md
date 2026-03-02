@@ -70,6 +70,8 @@ Current site configuration is set in `hugo.yaml` under `params.giscus`, includin
 
 After updating config, restart local dev server (`make down && make up`) if needed.
 
+If Cloudflare Pages does not pick up the latest `main` commit automatically, trigger a manual redeploy from the Deployments page.
+
 ## Repo hygiene
 
 This repo does not commit Hugo build artifacts:

@@ -331,7 +331,6 @@ Se houver dúvida, vale perguntar:
 * Existe evidência de variação agora ou é hipótese? ([fonte](https://martinfowler.com/bliki/Yagni.html))
 * Estou centralizando conhecimento ou acoplando coisas diferentes? ([fonte](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction))
 
-
 ---
 
 ## Conclusão
@@ -347,3 +346,11 @@ Com o tempo, o padrão fica mais claro:
 
 Em Go, esses princípios aparecem com força porque a linguagem favorece clareza e composição.
 E, na prática, o aprendizado é contínuo: menos sobre seguir dogmas, mais sobre fazer boas escolhas de trade-off no contexto certo.
+
+## Referências
+
+* [KISS Principle - Wikipedia](https://en.wikipedia.org/wiki/KISS_principle)
+* [YAGNI - Martin Fowler](https://martinfowler.com/bliki/Yagni.html)
+* [DRY - The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/)
+* [A Philosophy of Software Design - O’Reilly](https://www.oreilly.com/library/view/a-philosophy-of/9781491924136/)
+* [The Wrong Abstraction - Sandi Metz](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction/)

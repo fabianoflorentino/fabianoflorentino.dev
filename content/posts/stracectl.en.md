@@ -5,6 +5,9 @@ title: 'Do you know strace?'
 translationKey: stracectl_introducao
 tags: [strace, linux, operating system]
 image: /images/strace-banner.jpg
+translation:
+  url: /posts/stracectl/
+  text: Versão em português
 ---
 
 In the first week of March, **[LinuxTips](https://linuxtips.io/)**, together with **[Jefferson](https://www.linkedin.com/in/jefersonfernando/)**, organized a 100% free online event about DevOps and everything that surrounds this area: the **[DevOps Week](https://linuxtips.io/semana-devops)**.

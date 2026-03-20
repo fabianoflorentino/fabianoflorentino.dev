@@ -18,6 +18,22 @@
         <div class="pr-lg-4">
           <div class="title mb-5">
             <h1 class="text-center mb-4">{{ .Title }}</h1>
+            {{ if .Params.translation }}
+            <div class="subtitle text-center mb-2">
+              <a href="{{ .Params.translation.url }}">{{ .Params.translation.text }}</a>
+            </div>
+            {{ else if gt (len .Translations) 0 }}
+            {{ $t := index .Translations 0 }}
+            <div class="subtitle text-center mb-2">
+              {{ if eq $t.Lang "en" }}
+                <a href="{{ $t.RelPermalink }}">English version</a>
+              {{ else if eq $t.Lang "pt" }}
+                <a href="{{ $t.RelPermalink }}">Versão em português</a>
+              {{ else }}
+                <a href="{{ $t.RelPermalink }}">View ({{ $t.Lang }})</a>
+              {{ end }}
+            </div>
+            {{ end }}
             <div class="text-center">
               {{ if .Params.author }}
                 {{ .Params.author }}

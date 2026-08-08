@@ -52,20 +52,15 @@ languages:
               - name: "Software Development Engineer"
                 date: "July/2023 - Present"
                 content: |-
-                  Develop and maintain backend APIs in Ruby on Rails for high-complexity distributed systems.
-                  I work with cross-functional teams to analyze project requirements and technical challenges to ensure a clear shared understanding.
+                  I’m a software engineer focused on backend, with a strong emphasis on Golang for building distributed systems at scale. Throughout my journey, I’ve specialized in turning complex problems into simple, reliable, and easy-to-evolve solutions, always prioritizing performance and predictability in production.
 
-                  Implement scalable, high-performance solutions that support the system’s continuous growth.
-                  Identify and solve performance and scalability issues, applying advanced techniques to optimize performance and improve efficiency.
+                  Today, I’m part of the backend team at the Kyndryl Bridge platform, where I develop Go services for an automation orchestration platform that supports mission-critical operations. I work daily with high-volume workloads, concurrency, and strict reliability requirements, building systems designed to scale.
 
-                  Ensure backend API security and compliance.
-                  Implement strict security measures and work closely with cybersecurity teams to keep our systems protected against potential threats.
+                  I work closely with architecture decisions, contributing to the design of resilient, observable distributed services using practices such as hexagonal architecture, well-defined service contracts, and clear separation of responsibilities.
 
-                  Produce documentation to guarantee maintainability and scalability.
-                  I dedicate time to carefully document code, processes, and design decisions so the whole team can work effectively.
+                  My SRE and DevOps foundation complements my backend engineering work, allowing me to see the system end-to-end — from code to production. Performance, monitoring, automation, and reliability are part of the same problem, and that’s where I like to operate.
 
-                  Beyond software development, I actively provide technical support and mentorship to other team members.
-                  I believe in sharing knowledge and experience to foster growth and development across the team.
+                  I believe in impact-driven software engineering: collaboration, continuous learning, and simplicity are the pillars for building sustainable systems that are ready to grow.
                 info:
                   content: Working as Software Development Engineer (Software Engineering Development)
               - name: "Site Reliability Engineer"
@@ -354,15 +349,15 @@ params:
           - name: "Engenheiro de Desenvolvimento de Software"
             date: "Julho/2023 - atualmente"
             content: |-
-              Desenvolver e manter APIs backend em Ruby on Rails para sistemas distribuídos de alta complexidade. Trabalho com equipes multidisciplinares, para analisar os requisitos do projeto e os desafios técnicos para garantir uma boa compreensão.
+              Sou engenheiro de software focado em backend, com forte atuação em Golang para construção de sistemas distribuídos em escala. Ao longo da minha jornada, venho me especializando em transformar problemas complexos em soluções simples, confiáveis e fáceis de evoluir, sempre com foco em performance e previsibilidade em produção.
 
-              Implementar soluções escaláveis e de alto desempenho que possam sustentar o crescimento contínuo do sistema. Identificar e resolver problemas de desempenho e escalabilidade, onde aplico técnicas avançadas para otimizar o desempenho e melhorar a eficiência.
+              Hoje faço parte do time de backend da plataforma Kyndryl Bridge, onde desenvolvo serviços em Go para uma plataforma de orquestração de automação que sustenta operações de missão crítica. Trabalho diariamente com workloads de alta volumetria, concorrência e requisitos rigorosos de confiabilidade, construindo sistemas preparados para escalar.
 
-              Assegurar a segurança e a conformidade das APIs backend. Implemento medidas rigorosas de segurança e trabalho em estreita colaboração com as equipes de segurança cibernética para garantir que nossos sistemas estejam protegidos contra ameaças potenciais.
+              Atuo próximo das decisões de arquitetura, contribuindo para o design de serviços distribuídos resilientes e observáveis, utilizando práticas como arquitetura hexagonal, contratos bem definidos entre serviços e separação clara de responsabilidades.
 
-              Documentação para garantir a manutenibilidade e a escalabilidade de qualquer sistema. Portanto, dedico tempo para documentar cuidadosamente o código, os processos e as decisões de design, garantindo que toda a equipe tenha acesso às informações necessárias para trabalhar de forma eficaz.
+              Minha base em SRE e DevOps complementa minha atuação como engenheiro backend, permitindo enxergar o sistema de ponta a ponta — de código à produção. Performance, monitoramento, automação e confiabilidade fazem parte do mesmo problema, e é nesse espaço que eu gosto de atuar.
 
-              Além de desenvolver software, também desempenho um papel ativo no fornecimento de suporte técnico e orientação para outros membros da equipe. Acredito na importância de compartilhar conhecimento e experiência para promover o crescimento e o desenvolvimento de todos os membros da equipe.
+              Acredito em engenharia de software orientada a impacto: colaboração, aprendizado contínuo e simplicidade são pilares para construir sistemas sustentáveis e preparados para crescer.
             info:
               content: Trabalhando como Engenheiro de Desenvolvimento de Software (Software Engineering Development)
           - name: |-

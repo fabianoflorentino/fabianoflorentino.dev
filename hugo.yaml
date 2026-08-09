@@ -571,6 +571,10 @@ params:
     tags:
       openInNewTab: true
 
+  # Reações (👍) via Cloudflare Pages Function + KV (ver functions/reactions.ts)
+  reactions:
+    enabled: true
+
   # For translations
   terms:
     read: "Ler"

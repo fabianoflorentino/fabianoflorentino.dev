@@ -168,6 +168,24 @@
             </ul>
           </div>
           {{- end -}}
+
+          {{/* Reactions (👍) - Cloudflare Pages Function + KV, chave = translationKey */}}
+          {{- if .Site.Params.reactions.enabled | default false -}}
+          <hr class="my-5">
+          <div class="reactions text-center mb-4" data-reaction-key="{{ .TranslationKey }}">
+            <button class="reaction-btn btn btn-outline-primary" data-emoji="👍" type="button">
+              <span class="reaction-emoji" aria-hidden="true">👍</span>
+              <span class="reaction-count">0</span>
+            </button>
+            <small class="d-block text-muted mt-2">
+              {{- if eq .Site.Language.Lang "pt" -}}
+                Gostou do post? Deixe seu 👍
+              {{- else -}}
+                Enjoyed the post? Leave a 👍
+              {{- end -}}
+            </small>
+          </div>
+          {{- end -}}
         </div>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-3">
@@ -282,5 +300,9 @@
 {{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
 <script src="{{.Site.Params.staticPath}}/js/readingTime.js"></script>
 {{end}}
+
+{{ if .Site.Params.reactions.enabled | default false }}
+<script defer src="{{.Site.Params.staticPath}}/js/reactions.js"></script>
+{{ end }}
 
 {{ end }}

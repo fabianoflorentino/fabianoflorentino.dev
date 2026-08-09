@@ -487,7 +487,7 @@ Checklist rápido para usar interface corretamente:
 
 ## Recursos & leitura recomendada
 
-* Go blog - Interfaces: [https://go.dev/blog/interfaces](https://go.dev/blog/interfaces)
+* Go blog - Interfaces: [https://research.swtch.com/interfaces](https://research.swtch.com/interfaces)
 * Spec (Method sets): [https://go.dev/ref/spec#Method_sets](https://go.dev/ref/spec#Method_sets)
 * pacote io.Reader: [https://pkg.go.dev/io#Reader](https://pkg.go.dev/io#Reader)
 * Artigo sobre nil interfaces: [https://go.dev/doc/faq#nil_error](https://go.dev/doc/faq#nil_error)

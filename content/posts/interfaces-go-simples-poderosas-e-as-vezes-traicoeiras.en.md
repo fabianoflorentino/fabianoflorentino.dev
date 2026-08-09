@@ -518,7 +518,7 @@ If you want to go deeper, in the next post we can explore:
 
 ## Resources & recommended reading
 
-* Go blog - Interfaces: https://go.dev/blog/interfaces
+* Go blog - Interfaces: https://research.swtch.com/interfaces
 * Spec (Method sets): https://go.dev/ref/spec#Method_sets
 * io.Reader package: https://pkg.go.dev/io#Reader
 * FAQ about nil interfaces: https://go.dev/doc/faq#nil_error

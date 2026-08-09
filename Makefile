@@ -158,6 +158,14 @@ new-post-en: ## Cria um novo post em EN (uso: make new-post-en TITLE="..." [KEY=
 	fi; \
 	echo -e "$(GREEN)✓ Post criado: $$file$(NC)"
 
+rename-post: ## Renomeia um post preservando a URL antiga (uso: make rename-post KEY=antigo NOVO=novo)
+	@if [ -z "$(KEY)" ] || [ -z "$(NOVO)" ]; then \
+		echo -e "$(RED)❌ Erro: Informe KEY e NOVO$(NC)"; \
+		echo -e "$(YELLOW)Uso: make rename-post KEY=slug-antigo NOVO=slug-novo$(NC)"; \
+		exit 1; \
+	fi
+	@sh scripts/rename-post.sh "$(KEY)" "$(NOVO)"
+
 new-draft: ## Cria um novo draft (uso: make new-draft TITLE="Meu Draft")
 	@if [ -z "$(TITLE)" ]; then \
 		echo -e "$(RED)❌ Erro: Informe o título do draft$(NC)"; \

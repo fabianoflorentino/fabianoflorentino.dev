@@ -16,10 +16,24 @@ languages:
     languageName: "Português"
     languageCode: "pt-br"
     weight: 1
+    menus:
+      main:
+        - identifier: blog
+          name: Blog
+          title: Blog posts
+          pageRef: /posts
+          weight: 1
   en:
     languageName: "English"
     languageCode: "en-us"
     weight: 2
+    menus:
+      main:
+        - identifier: blog
+          name: Blog
+          title: Blog posts
+          pageRef: /posts
+          weight: 1
     params:
       description: "Personal Blog"
       navbar:
@@ -220,14 +234,6 @@ markup:
   goldmark:
     renderer:
       unsafe: false
-
-Menus:
-  main:
-    - identifier: blog
-      name: Blog
-      title: Blog posts
-      pageRef: /posts
-      weight: 1
 
 params:
   title: "Fabiano Santos Florentino"

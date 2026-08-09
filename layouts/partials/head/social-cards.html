@@ -1,0 +1,98 @@
+{{- /*
+Social cards (OpenGraph + Twitter).
+
+Why this exists:
+- Hugo's built-in templates primarily look for `images: [...]`.
+- This site uses frontmatter `image: /images/...`.
+- The theme version resolves images with `absURL`; since post images now live
+  in `assets/images/`, we resolve via `resources.Get` so og:image points to the
+  processed resource (fallback to absURL for static/ images).
+*/ -}}
+
+{{- $siteTitle := .Site.Title -}}
+{{- $title := .Title | default $siteTitle -}}
+{{- $description := .Description | default (.Summary | plainify) | default .Site.Params.description | default "" -}}
+{{- $description = $description | htmlUnescape | strings.TrimSpace -}}
+
+{{- $image := "" -}}
+{{- with .Params.images -}}
+  {{- if reflect.IsSlice . -}}
+    {{- $image = index . 0 -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $image -}}
+  {{- with .Params.image -}}
+    {{- $image = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $image -}}
+  {{- with .Site.Params.hero.image -}}
+    {{- $image = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $image -}}
+  {{- with .Site.Params.about.image -}}
+    {{- $image = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $imageAbs := "" -}}
+{{- with $image -}}
+  {{- if or (hasPrefix . "http://") (hasPrefix . "https://") -}}
+    {{- $imageAbs = . -}}
+  {{- else -}}
+    {{- with resources.Get (strings.TrimPrefix "/" .) -}}
+      {{- $imageAbs = (.Resize "1200x").Permalink -}}
+    {{- else -}}
+      {{- $imageAbs = (. | absURL) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $lang := .Site.Language.LanguageCode | default .Site.Language.Lang | default "" -}}
+{{- $ogLocale := "" -}}
+{{- with $lang -}}
+  {{- $parts := split (lower .) "-" -}}
+  {{- if ge (len $parts) 2 -}}
+    {{- $ogLocale = printf "%s_%s" (index $parts 0) (upper (index $parts 1)) -}}
+  {{- else -}}
+    {{- $ogLocale = index $parts 0 -}}
+  {{- end -}}
+{{- end -}}
+
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ $siteTitle }}">
+<meta property="og:title" content="{{ $title }}">
+{{- if $description }}
+<meta property="og:description" content="{{ $description }}">
+{{- end }}
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+{{- if $ogLocale }}
+<meta property="og:locale" content="{{ $ogLocale }}">
+{{- end }}
+{{- if $imageAbs }}
+<meta property="og:image" content="{{ $imageAbs }}">
+{{- end }}
+
+{{- if .IsPage }}
+  {{- with .PublishDate }}
+<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+  {{- end }}
+  {{- with .Lastmod }}
+<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+  {{- end }}
+{{- end }}
+
+{{- $card := "summary" -}}
+{{- if $imageAbs -}}
+  {{- $card = "summary_large_image" -}}
+{{- end -}}
+
+<meta name="twitter:card" content="{{ $card }}">
+<meta name="twitter:title" content="{{ $title }}">
+{{- if $description }}
+<meta name="twitter:description" content="{{ $description }}">
+{{- end }}
+{{- if $imageAbs }}
+<meta name="twitter:image" content="{{ $imageAbs }}">
+{{- end }}

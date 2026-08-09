@@ -1,6 +1,6 @@
-FROM alpine:3.23.3 AS hugo
+FROM alpine:3.23.5 AS hugo
 
-ARG HUGO_VERSION=0.160.1 \
+ARG HUGO_VERSION=0.164.0 \
   HUGO_URL=https://github.com/gohugoio/hugo \
   HUGO_PATH=releases/download/v${HUGO_VERSION} \
   HUGO_BINARY=hugo_${HUGO_VERSION}_linux-amd64.tar.gz
@@ -22,7 +22,7 @@ COPY . .
 RUN hugo --gc --minify
 
 
-FROM nginx:1.27-alpine AS production
+FROM nginx:1.31-alpine AS production
 COPY --from=builder /blog/public/ /usr/share/nginx/html/
 EXPOSE 80
 

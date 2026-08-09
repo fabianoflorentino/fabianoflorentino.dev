@@ -7,7 +7,7 @@
 .PHONY: help build up down restart logs shell clean rebuild status new-post \
 	new-draft new-post-pt new-post-en list-content build-prod generate check-deps info watch url \
 	dev quick-start quick-stop logs-tail health prune \
-	clean-hugo regen check-images
+	clean-hugo regen check-images check-links check-frontmatter check-slugs rename-post
 
 # ============================================================================
 # Variáveis
@@ -117,9 +117,10 @@ new-post: ## Cria um novo post (uso: make new-post TITLE="Meu Post")
 		echo -e "$(YELLOW)Uso: make new-post TITLE=\"Meu Título\"$(NC)"; \
 		exit 1; \
 	fi
-	@echo -e "$(BLUE)📝 Criando novo post...$(NC)"
-	@docker exec $(CONTAINER_NAME) hugo new posts/$(shell echo "$(TITLE)" | tr '[:upper:]' '[:lower:]' | tr ' ' '_').md
-	@echo -e "$(GREEN)✓ Post criado!$(NC)"
+	@key=$$(echo "$(TITLE)" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$$//'); \
+	echo -e "$(BLUE)📝 Criando novo post: $${key}...$(NC)"; \
+	docker exec $(CONTAINER_NAME) hugo new "posts/$${key}.md"; \
+	echo -e "$(GREEN)✓ Post criado: content/posts/$${key}.md$(NC)"
 
 new-post-pt: ## Cria um novo post em PT (uso: make new-post-pt TITLE="..." [KEY="..."])
 	@if [ -z "$(TITLE)" ]; then \
@@ -163,9 +164,10 @@ new-draft: ## Cria um novo draft (uso: make new-draft TITLE="Meu Draft")
 		echo -e "$(YELLOW)Uso: make new-draft TITLE=\"Meu Título\"$(NC)"; \
 		exit 1; \
 	fi
-	@echo -e "$(BLUE)📝 Criando novo draft...$(NC)"
-	@docker exec $(CONTAINER_NAME) hugo new --kind post-bundle posts/$(shell echo "$(TITLE)" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
-	@echo -e "$(GREEN)✓ Draft criado!$(NC)"
+	@key=$$(echo "$(TITLE)" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$$//'); \
+	echo -e "$(BLUE)📝 Criando novo draft: $${key}...$(NC)"; \
+	docker exec $(CONTAINER_NAME) hugo new --kind post-bundle "posts/$${key}"; \
+	echo -e "$(GREEN)✓ Draft criado: content/posts/$${key}$(NC)"
 
 list-content: ## Lista todo o conteúdo do blog
 	@echo -e "$(BLUE)📋 Conteúdo do blog:$(NC)"
@@ -210,7 +212,27 @@ check-images: ## Verifica se arquivos referenciados em /images existem em assets
 		echo -e "$(RED)Falha: existem referências de imagem quebradas.$(NC)"; \
 		exit 1; \
 	fi; \
-	echo -e "$(GREEN)✓ Todas as imagens referenciadas existem em static/$(NC)"
+	echo -e "$(GREEN)✓ Todas as imagens referenciadas existem em assets/ ou static/$(NC)"
+
+check-links: ## Verifica links internos/externos no site buildado
+	@echo -e "$(BLUE)🔗 Verificando links do site...$(NC)"
+	@if docker exec $(CONTAINER_NAME) hugo --gc --minify >/dev/null 2>&1; then \
+		echo -e "$(GREEN)✓ Site gerado no container$(NC)"; \
+	elif command -v hugo >/dev/null 2>&1; then \
+		hugo --gc --minify; \
+	else \
+		echo -e "$(RED)❌ Não foi possível gerar o site (container parado e sem Hugo local)$(NC)"; \
+		exit 1; \
+	fi
+	@sh scripts/check-links.sh
+
+check-frontmatter: ## Verifica translationKey nos pares .pt.md/.en.md
+	@echo -e "$(BLUE)📄 Verificando frontmatter dos posts...$(NC)"
+	@sh scripts/check-frontmatter.sh
+
+check-slugs: ## Verifica slugs válidos (sem acentos/espaços/maiúsculas)
+	@echo -e "$(BLUE)🔤 Verificando slugs dos posts...$(NC)"
+	@sh scripts/check-slugs.sh
 
 ##@ Utilitários
 

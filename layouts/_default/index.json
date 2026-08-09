@@ -1,0 +1,13 @@
+{{- $index := slice -}}
+{{- range .Site.RegularPages -}}
+  {{- $image := .Params.image | default "" -}}
+  {{- with resources.Get (strings.TrimPrefix "/" $image) }}{{ $image = (.Resize "1200x").RelPermalink }}{{ end -}}
+  {{- $index = $index | append (dict
+    "title" .Title
+    "description" (.Params.description | default "")
+    "plain" (.Plain | default "")
+    "date" (.Date.Format "2006-01-02")
+    "permalink" .Permalink
+    "image" $image) -}}
+{{- end -}}
+{{- $index | jsonify -}}

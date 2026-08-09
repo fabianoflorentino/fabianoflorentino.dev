@@ -185,21 +185,24 @@ generate: ## Gera os arquivos estáticos do site
 
 regen: clean-hugo generate ## Limpa e gera novamente o site (do zero)
 
-check-images: ## Verifica se arquivos referenciados em /images existem em static/
+check-images: ## Verifica se arquivos referenciados em /images existem em assets/ ou static/
 	@echo -e "$(BLUE)🔎 Verificando referências de imagens...$(NC)"
 	@missing=0; \
 	paths=$$( ( \
 		grep -RhoE '^image:\s*/images/[^[:space:]]+' hugo.yaml content 2>/dev/null | sed -E 's/^image:\s*//' ; \
-		grep -RhoE '/images/[^\)\"\x27[:space:]]+' content 2>/dev/null \
+		grep -RhoE '/images/[^[:space:])"]+' content 2>/dev/null \
 	) | sort -u ); \
 	if [ -z "$$paths" ]; then \
 		echo -e "$(YELLOW)⚠️  Nenhuma referência /images encontrada$(NC)"; \
 		exit 0; \
 	fi; \
 	for p in $$paths; do \
-		f="static$${p}"; \
+		f="assets$${p}"; \
 		if [ ! -f "$$f" ]; then \
-			echo -e "$(RED)❌ Missing: $$p  (esperado: $$f)$(NC)"; \
+			f="static$${p}"; \
+		fi; \
+		if [ ! -f "$$f" ]; then \
+			echo -e "$(RED)❌ Missing: $$p  (esperado: assets$${p} ou static$${p})$(NC)"; \
 			missing=1; \
 		fi; \
 	done; \

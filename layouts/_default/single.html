@@ -52,7 +52,7 @@
           </div>
           {{ if .Params.image }}
           <div class="featured-image">
-            <img class="img-fluid mx-auto d-block" src="{{ .Params.image }}" alt="{{ .Title }}">
+            {{ partial "responsive-image.html" (dict "src" .Params.image "alt" .Title "class" "img-fluid mx-auto d-block" "sizes" "(max-width: 768px) 100vw, 768px") }}
           </div>
           {{ end }}
           <article class="page-content  p-2">

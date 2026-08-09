@@ -1,0 +1,6 @@
+{{- /*
+render-image: hook de renderização para imagens markdown (![alt](/images/x.png)).
+Delega ao partial responsive-image (srcset + WebP/AVIF quando em assets/,
+fallback para <img> com lazy loading caso contrário).
+*/ -}}
+{{- partial "responsive-image.html" (dict "src" .Destination "alt" .Text "title" .Title) -}}

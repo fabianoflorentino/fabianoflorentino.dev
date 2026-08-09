@@ -1,0 +1,42 @@
+{{- /*
+responsive-image.html: <picture> com srcset responsivo e WebP quando a imagem
+existe em assets/; fallback para <img> simples (loading=lazy) para caminhos crus
+(static/ ou URLs externas).
+
+Nota: AVIF foi testado (Resize "480x avif") mas o Hugo 0.155.3 extended não gera
+AVIF — o formato é ignorado silenciosamente e sai JPEG com extensão .jpg, o que
+quebraria o source type=image/avif. Por isso ficamos só com WebP.
+
+Uso: {{ partial "responsive-image.html" (dict "src" "/images/foo.jpg" "alt" "..." "class" "..." "sizes" "...") }}
+*/ -}}
+{{- $src := .src | default "" -}}
+{{- if eq $src "" }}{{ return }}{{ end -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class | default "" -}}
+{{- $sizes := .sizes | default "100vw" -}}
+{{- $isExternal := or (hasPrefix $src "http://") (hasPrefix $src "https://") -}}
+{{- if $isExternal -}}
+<img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy" decoding="async">
+{{- else -}}
+  {{- $res := resources.Get (strings.TrimPrefix "/" $src) -}}
+  {{- if not $res -}}
+<img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy" decoding="async">
+  {{- else -}}
+    {{- $widths := slice 480 768 1200 1920 -}}
+    {{- $srcset := slice -}}
+    {{- $srcsetWebp := slice -}}
+    {{- range $widths -}}
+      {{- if lt . $res.Width -}}
+        {{- $srcset = $srcset | append (printf "%s %dw" (($res.Resize (printf "%dx" .)).RelPermalink) .) -}}
+        {{- $srcsetWebp = $srcsetWebp | append (printf "%s %dw" (($res.Resize (printf "%dx webp" .)).RelPermalink) .) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $default := $res.Resize "1200x" -}}
+<picture>
+      {{- if gt (len $srcsetWebp) 0 }}
+  <source type="image/webp" srcset="{{ delimit $srcsetWebp ", " }}" sizes="{{ $sizes }}">
+      {{- end }}
+  <img src="{{ $default.RelPermalink }}" {{ if gt (len $srcset) 0 }}srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizes }}"{{ end }} alt="{{ $alt }}" class="{{ $class }}" loading="lazy" decoding="async">
+</picture>
+  {{- end -}}
+{{- end -}}

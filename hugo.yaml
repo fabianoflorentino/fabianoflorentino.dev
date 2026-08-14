@@ -47,14 +47,15 @@ languages:
       about:
         title: "About me!"
         content: |-
-          I am a software developer specialized in **Go and Ruby**, focused on building **distributed systems**, **microservices**, and **REST APIs** for enterprise backends.
+          I am a software developer specialized in Go and Ruby, focused on building distributed systems, microservices, and REST APIs for enterprise backends.
 
-          I have hands-on experience creating **scalable, resilient, and highly available** solutions, working on real-world production challenges around performance, concurrency, observability, and reliability.
+          My career has been shaped by reliability, automation, and software that supports critical operations. With more than 50k hours of experience in demanding environments, I have supported 1,200+ clients and contributed to solutions designed to scale in complex production settings.
 
-          Day to day, I use **Go as my main language for distributed services**, applying good architecture practices such as **hexagonal architecture**, **SOLID**, separation of responsibilities, and well-defined contracts between services. I build solutions that help clients automate processes, improve operational efficiency, solve complex problems, enhance the security and reliability of their systems, and scale their operations sustainably.
+          I apply practices such as hexagonal architecture, SOLID principles, observability, clear service contracts, and DevOps culture to build resilient, maintainable systems ready for growth.
 
-          I also have a solid foundation in **SRE and DevOps** practices, with experience in **CI/CD**, automation, monitoring, cloud computing, and containerization with **Docker and Kubernetes**.
-          This blog is a space where I share learnings, hands-on experiences, and reflections about **backend engineering, distributed systems, Go, APIs, and software architecture**.
+          I work at the intersection of engineering and operations: automating processes at scale, improving workflows, and reducing the impact of incidents. In production, that translates into 200M+ automated executions, 16M+ operational events managed per month, and measurable gains, including 30% lower impact and a 35% productivity improvement.
+
+          Across mission-critical environments, I have combined software engineering with operational excellence to help teams improve delivery speed, reduce operational friction, and sustain high-availability systems at scale.
         skills:
           title: "Skills:"
       experience:
@@ -66,15 +67,15 @@ languages:
               - name: "Software Development Engineer"
                 date: "July/2023 - Present"
                 content: |-
-                  I’m a software engineer focused on backend, with a strong emphasis on Golang for building distributed systems at scale. Throughout my journey, I’ve specialized in turning complex problems into simple, reliable, and easy-to-evolve solutions, always prioritizing performance and predictability in production.
+                  I develop backend services in Go for automation platforms and critical operations, with a focus on scalability, reliability, and predictability in production.
 
-                  Today, I’m part of the backend team at the Kyndryl Bridge platform, where I develop Go services for an automation orchestration platform that supports mission-critical operations. I work daily with high-volume workloads, concurrency, and strict reliability requirements, building systems designed to scale.
+                  I work with high-volume workloads, concurrency, and strict availability requirements, contributing to resilient, observable distributed systems that are easy to evolve over time.
 
-                  I work closely with architecture decisions, contributing to the design of resilient, observable distributed services using practices such as hexagonal architecture, well-defined service contracts, and clear separation of responsibilities.
+                  I also participate in architectural decisions and service improvements, applying practices such as hexagonal architecture, clear contracts, separation of responsibilities, and data-driven operational thinking.
 
-                  My SRE and DevOps foundation complements my backend engineering work, allowing me to see the system end-to-end — from code to production. Performance, monitoring, automation, and reliability are part of the same problem, and that’s where I like to operate.
+                  My background in SRE and DevOps complements my engineering work, allowing me to see the system end-to-end — from code to production.
 
-                  I believe in impact-driven software engineering: collaboration, continuous learning, and simplicity are the pillars for building sustainable systems that are ready to grow.
+                  The main goal is to turn complex problems into simple, sustainable solutions that create measurable impact in efficiency, stability, and delivery.
                 info:
                   content: Working as Software Development Engineer (Software Engineering Development)
               - name: "Site Reliability Engineer"
@@ -321,13 +322,13 @@ params:
     content: |-
       Sou desenvolvedor de software especializado em **Go e Ruby**, com foco na construção de **sistemas distribuídos**, **microserviços** e **APIs REST** para backends corporativos.
 
-      Tenho experiência prática criando soluções **escaláveis, resilientes e de alta disponibilidade**, trabalhando com desafios reais de performance, concorrência, observabilidade e 
-      confiabilidade em produção.
+      Minha carreira foi construída em torno de **confiabilidade, automação e software que sustenta operações essenciais**. Com mais de **50 mil horas de experiência** em ambientes exigentes, atendendo mais de **1.200 clientes** e contribui para soluções que escalam em contextos complexos de produção.
 
-      No dia a dia, utilizo **Go como principal linguagem para serviços distribuídos**, aplicando boas práticas de arquitetura, como **arquitetura hexagonal**, **SOLID**, separação de responsabilidades e contratos bem definidos entre serviços. Desenvolvo soluções que ajudam os clientes a automatizar processos, melhorar a eficiência operacional, resolver problemas complexos, melhorar a segurança e a confiabilidade de seus sistemas, e a escalar suas operações de forma sustentável.
+      Aplico práticas como **arquitetura hexagonal**, **princípios SOLID**, observabilidade, contratos claros entre serviços e práticas de engenharia de confiabilidade (SRE) para criar sistemas resilientes, fáceis de manter e prontos para crescer.
 
-      Também possuo uma base sólida de práticas **SRE e DevOps**, com experiência em **CI/CD**, automação, monitoramento, cloud computing e containerização com **Docker e Kubernetes**.
-      Este blog é um espaço onde compartilho aprendizados, experiências práticas e reflexões sobre **backend, sistemas distribuídos, Go, APIs e arquitetura de software**.
+      Trabalho na interseção entre engenharia e operação: automatizando processos em escala, otimizando fluxos e reduzindo o impacto de incidentes. Em produção, isso se traduz em **200M+ execuções automatizadas**, **16M+ eventos operacionais geridos por mês** e ganhos concretos como **redução de até 30% no impacto** e **aumento de até 35% na produtividade**.
+
+      Em ambientes críticos, combino engenharia de software com excelência operacional para ajudar times a melhorar velocidade de entrega, reduzir atritos operacionais e sustentar sistemas de alta disponibilidade em escala.
     skills:
       enable: true
       title: "Conhecimento em:"
@@ -355,15 +356,15 @@ params:
           - name: "Engenheiro de Desenvolvimento de Software"
             date: "Julho/2023 - atualmente"
             content: |-
-              Sou engenheiro de software focado em backend, com forte atuação em Golang para construção de sistemas distribuídos em escala. Ao longo da minha jornada, venho me especializando em transformar problemas complexos em soluções simples, confiáveis e fáceis de evoluir, sempre com foco em performance e previsibilidade em produção.
+              Desenvolvo serviços backend em Go para plataformas de automação e operações críticas, com foco em escalabilidade, confiabilidade e previsibilidade em produção.
 
-              Hoje faço parte do time de backend da plataforma Kyndryl Bridge, onde desenvolvo serviços em Go para uma plataforma de orquestração de automação que sustenta operações de missão crítica. Trabalho diariamente com workloads de alta volumetria, concorrência e requisitos rigorosos de confiabilidade, construindo sistemas preparados para escalar.
+              Trabalho com cargas elevadas, concorrência e requisitos rigorosos de alta disponibilidade, contribuindo para a entrega de sistemas distribuídos resilientes, observáveis e fáceis de evoluir.
 
-              Atuo próximo das decisões de arquitetura, contribuindo para o design de serviços distribuídos resilientes e observáveis, utilizando práticas como arquitetura hexagonal, contratos bem definidos entre serviços e separação clara de responsabilidades.
+              Atuo também na definição de arquitetura e na melhoria contínua dos serviços, aplicando boas práticas como arquitetura hexagonal, contratos bem definidos, separação de responsabilidades e cultura de operação orientada a dados.
 
-              Minha base em SRE e DevOps complementa minha atuação como engenheiro backend, permitindo enxergar o sistema de ponta a ponta — de código à produção. Performance, monitoramento, automação e confiabilidade fazem parte do mesmo problema, e é nesse espaço que eu gosto de atuar.
+              Minha experiência em SRE e DevOps complementa a atuação em engenharia de software, permitindo enxergar o sistema de ponta a ponta — do código à operação em produção.
 
-              Acredito em engenharia de software orientada a impacto: colaboração, aprendizado contínuo e simplicidade são pilares para construir sistemas sustentáveis e preparados para crescer.
+              O foco principal é transformar problemas complexos em soluções simples, sustentáveis e com impacto real em eficiência, estabilidade e entrega.
             info:
               content: Trabalhando como Engenheiro de Desenvolvimento de Software (Software Engineering Development)
           - name: |-

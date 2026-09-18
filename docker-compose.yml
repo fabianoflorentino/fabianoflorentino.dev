@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        HUGO_VERSION: ${HUGO_VERSION:-0.164.0}
+        HUGO_VERSION: ${HUGO_VERSION:-0.166.0}
     volumes:
       - ./:/blog
     ports:

@@ -47,7 +47,7 @@ languages:
       about:
         title: "About me!"
         content: |-
-          I am a **Backend and Platform Software Engineer** with over **10 years of experience**, evolving from infrastructure administration to developing distributed systems in **Go (Golang)**.
+          I am a **Backend and Platform Software Engineer** with **14 years of experience**, the last 10 dedicated to DevOps/SRE, distributed systems, and software development. My career evolved from infrastructure administration to building distributed systems in **Go (Golang)**.
 
           Specialist in designing, building, and maintaining scalable, high-performance microservices for the **Kyndryl Bridge** product, with direct impact on critical global operations. Strong background in **Hexagonal Architecture**, concurrency (goroutines and channels), service contracts, production resilience, observability, and **SRE/DevOps** culture.
 
@@ -311,7 +311,7 @@ params:
     title: "Sim sou eu!"
     image: /images/me.jpeg
     content: |-
-      Sou **Engenheiro de Software Backend e de Plataforma** com mais de **10 anos de experiência**, em uma trajetória que evoluiu da administração de infraestrutura para o desenvolvimento de sistemas distribuídos em **Go (Golang)**.
+      Sou **Engenheiro de Software Backend e de Plataforma** com **14 anos de experiência**, sendo os últimos 10 dedicados a DevOps/SRE, sistemas distribuídos e desenvolvimento de software. Minha trajetória evoluiu da administração de infraestrutura para a construção de sistemas distribuídos em **Go (Golang)**.
 
       Especialista na concepção, construção e manutenção de microserviços escaláveis de alta performance no produto **Kyndryl Bridge**, com impacto direto em operações críticas globais. Sólida atuação em **Arquitetura Hexagonal**, concorrência (goroutines e channels), contratos de serviço, resiliência de produção, observabilidade e cultura **SRE/DevOps**.
 

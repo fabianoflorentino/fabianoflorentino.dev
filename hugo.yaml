@@ -65,6 +65,9 @@ languages:
                 - "REST APIs"
                 - "Explicit contracts"
                 - "Clean Code"
+                - "SOLID"
+                - "TDD"
+                - "Testing"
             - title: "Distributed systems & SRE"
               items:
                 - "High availability"
@@ -356,6 +359,9 @@ params:
             - "APIs REST"
             - "Contratos explícitos"
             - "Clean Code"
+            - "SOLID"
+            - "TDD"
+            - "Testing"
         - title: "Sistemas distribuídos & SRE"
           items:
             - "Alta disponibilidade"

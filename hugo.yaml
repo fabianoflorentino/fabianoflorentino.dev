@@ -40,7 +40,7 @@ languages:
         searchPlaceholder: "Search"
       hero:
         intro: "Hello World!"
-        subtitle: "Backend Software Engineer | Go (Golang) & Platform / SRE"
+        subtitle: ""
         content: "Father of Inácio and proud husband of Jullyana! Yes, two L's and a Y :)"
         button:
           name: "Resume"
@@ -285,7 +285,7 @@ params:
     enable: true
     intro: "Olá Mundo!"
     title: "Fabiano Santos Florentino."
-    subtitle: "Engenheiro de Software Backend | Go (Golang) & Platform / SRE"
+    subtitle: ""
     content: "Pai do Inácio e tenho o privilégio de ser o esposo da Jullyana!, sim 2 ele's e ipislon :)"
     image: /images/me.jpeg
     bottomImage:

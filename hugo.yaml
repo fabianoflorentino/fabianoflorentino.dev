@@ -40,102 +40,93 @@ languages:
         searchPlaceholder: "Search"
       hero:
         intro: "Hello World!"
-        subtitle: "Personal Blog"
+        subtitle: "Backend Software Engineer | Go (Golang) & Platform / SRE"
         content: "Father of Inácio and proud husband of Jullyana! Yes, two L's and a Y :)"
         button:
           name: "Resume"
       about:
         title: "About me!"
         content: |-
-          I am a software developer specialized in Go and Ruby, focused on building distributed systems, microservices, and REST APIs for enterprise backends.
+          I am a **Backend and Platform Software Engineer** with over **10 years of experience**, evolving from infrastructure administration to developing distributed systems in **Go (Golang)**.
 
-          My career has been shaped by reliability, automation, and software that supports critical operations. With more than 50k hours of experience in demanding environments, I have supported 1,200+ clients and contributed to solutions designed to scale in complex production settings.
+          Specialist in designing, building, and maintaining scalable, high-performance microservices for the **Kyndryl Bridge** product, with direct impact on critical global operations. Strong background in **Hexagonal Architecture**, concurrency (goroutines and channels), service contracts, production resilience, observability, and **SRE/DevOps** culture.
 
-          I apply practices such as hexagonal architecture, SOLID principles, observability, clear service contracts, and DevOps culture to build resilient, maintainable systems ready for growth.
+          In production, this work translates into **200M+ automation executions** and **16M+ operational insights per month**, with a **30% reduction in impact incidents** and a **35% gain in global operational productivity**.
 
-          I work at the intersection of engineering and operations: automating processes at scale, improving workflows, and reducing the impact of incidents. In production, that translates into 200M+ automated executions, 16M+ operational events managed per month, and measurable gains, including 30% lower impact and a 35% productivity improvement.
-
-          Across mission-critical environments, I have combined software engineering with operational excellence to help teams improve delivery speed, reduce operational friction, and sustain high-availability systems at scale.
+          Based in **Hortolândia, SP — Brazil**. Languages: **native Portuguese** and **technical English with intermediate reading**.
         skills:
           title: "Skills:"
+          items:
+            - "**Backend:** Go (Golang), concurrency (goroutines/channels), hexagonal architecture, REST APIs, explicit contracts, Clean Code"
+            - "**Distributed systems & SRE:** high availability, observability (logs, metrics, tracing), resilience, load balancing, capacity planning"
+            - "**Automation & cloud:** Ansible, Puppet, Shell Script, Git, Linux (hardening), reverse proxy (Apache/Nginx), cloud environments"
+            - "**Critical operations & data:** mission-critical production support, databases, layered security, real-time monitoring (Zabbix/Rundeck)"
       experience:
         title: "Experience"
         items:
           - company: "Kyndryl"
             companyUrl: "https://www.kyndryl.com/us/en"
             jobs:
-              - name: "Software Development Engineer"
-                date: "July/2023 - Present"
+              - name: "Backend Software Engineer (Go)"
+                date: "June/2023 - Present"
                 content: |-
-                  I develop backend services in Go for automation platforms and critical operations, with a focus on scalability, reliability, and predictability in production.
+                  **Core Engine in Go:** Build and collaborative maintenance of the distributed backend services of **Kyndryl Bridge**, a global platform responsible for processing **200M+ automation executions** and **16M+ operational insights per month**.
 
-                  I work with high-volume workloads, concurrency, and strict availability requirements, contributing to resilient, observable distributed systems that are easy to evolve over time.
+                  **Architecture & Code Quality:** Continuous application of software architecture, clear service contracts, and decoupling of responsibilities, ensuring high maintainability and reliability.
 
-                  I also participate in architectural decisions and service improvements, applying practices such as hexagonal architecture, clear contracts, separation of responsibilities, and data-driven operational thinking.
+                  **Direct Operational Impact:** Architecture and concurrency improvements contributed to a **30% reduction in impact incidents** and a **35% gain in global operational productivity**.
 
-                  My background in SRE and DevOps complements my engineering work, allowing me to see the system end-to-end — from code to production.
-
-                  The main goal is to turn complex problems into simple, sustainable solutions that create measurable impact in efficiency, stability, and delivery.
+                  **Engineering & SRE:** Integration of software engineering best practices, observability, and SRE for system support and predictive capacity.
                 info:
-                  content: Working as Software Development Engineer (Software Engineering Development)
-              - name: "Site Reliability Engineer"
-                date: "December/2018 - July/2023"
+                  content: Working as Backend Software Engineer (Go)
+              - name: "Site Reliability Engineer (SRE)"
+                date: "August/2021 - July/2023"
                 content: |-
-                  Role focused on delivering reliable services to customers across hardware and software components.
+                  **Sustainment & Reliability:** Management and optimization of high-availability environments, load balancers, databases, and critical applications at enterprise scale.
 
-                  Activities include operating and maintaining operating systems across multiple platforms, application servers, database technologies, high-availability solutions, and load balancing.
+                  **Platform Operations:** Administration of operating systems, application servers, and database technologies, including capacity planning, performance management, and security compliance.
 
-                  Responsibilities include (but are not limited to): platform operations and support, database administration, capacity planning, performance management, and security compliance.
+                  **Automation & Monitoring:** Automation of infrastructure and services, cloud provider management, and continuous monitoring to ensure environment high availability.
+                info:
+                  content: Working as Site Reliability Engineer (SRE)
+          - company: "IBM"
+            companyUrl: "https://www.ibm.com/"
+            jobs:
+              - name: "Site Reliability Engineer (SRE)"
+                date: "December/2018 - August/2021"
+                content: |-
+                  **Infrastructure Automation:** Development of automations to support accelerated product delivery by engineering teams.
 
-                  Support is also provided for system management tools that monitor the operational status of the environment.
+                  **Sustainment & Reliability:** Management and optimization of high-availability environments, load balancers, databases, and critical applications at enterprise scale.
 
-                  Work performed with a focus on reliability and resilience, combining the right mix of software and systems skills.
-                  Responsible for analyzing business needs, identifying problems, advising and designing solutions, building, testing, deploying, changing, and maintaining well-designed information systems and ecosystems.
-
-                  - Automate workflows and infrastructure, enabling product and engineering teams to move quickly.
-                  - Work alongside development and data science teams to deploy new technologies and strategies.
-                  - Manage cloud providers.
-                  - Automate infrastructure, applications, and services.
-                  - Monitor and support on-prem servers and services.
-                  - Ensure high availability of the environment.
+                  **Compliance & Resilience:** Continuous monitoring, capacity planning, and application of rigorous security and compliance requirements in multicloud platforms.
                 info:
                   content: Working as Site Reliability Engineer (SRE)
           - company: "2com Consulting"
             companyUrl: "https://2comconsulting.com.br/"
             jobs:
-              - name: "Monitoring Analyst"
+              - name: "Monitoring Analyst / DevOps"
                 date: "June/2018 - December/2018"
                 info:
-                  content: Working as Monitoring Analyst
+                  content: Working as Monitoring Analyst / DevOps
                 content: |-
-                  - Responsible for kickstarting DevOps culture practices across teams.
-                  - Monitoring service automation.
-                  - Centralization of automation code with Git.
-                  - Implement Ansible, Puppet, and ShellScript to support monitoring services and alert sensors.
-                  - Research methodologies for faster activity delivery.
-                  - Train teams on DevOps, Ansible, Puppet, ShellScript.
-                  - Manage, maintain, and monitor customer database services, ERP, and backups.
-                  - Customer support and internal team support.
+                  **DevOps Culture & Enablement:** Leadership in spreading DevOps culture across the team, delivering practical training in Ansible, Puppet, and Shell Scripting.
+
+                  **Automation & Versioning:** Centralization of automation code in Git repositories and creation of custom sensors for preventive alerting of ERP and database services.
+
+                  **Operations:** Management, maintenance, and monitoring of customer database, ERP, and backup services, with support for customers and internal teams.
 
           - company: "Soluti"
             companyUrl: "https://www.soluti.com.br/"
             jobs:
-              - name: "IT Infrastructure Analyst"
+              - name: "IT Infrastructure & Security Analyst"
                 date: "December/2014 - February/2018"
                 content: |-
-                  - Support Datacenter teams in implementing solutions and ensuring critical systems and services are properly monitored with relevant alerts.
-                  - Develop architectural solutions for new projects and changes to existing ones, using configuration management tools and scripts for system implementation and maintenance.
-                  - Handle support requests related to on-prem infrastructure.
-                  - Deploy, maintain, and monitor Linux / Apache / MySQL / PHP servers.
-                  - Manage reverse proxy services with apache2.
-                  - Manage internal server firewall services (iptables).
-                  - Manage Linux server hardening.
-                  - Deploy, maintain, and troubleshoot clients that issue digital certificates.
-                  - Automate and manage server updates and maintenance configurations with Puppet.
-                  - Automate and manage internal monitoring deployments with Zabbix.
-                  - Deploy Rundeck for configuration management and troubleshooting of internal services.
-                  - Implement, maintain, track, and document the digital certificate anti-fraud system.
-                  - Implement, maintain, document, and monitor the biometric identification system.
+                  **Management & Hardening:** Administration of the Linux ecosystem, web servers (Apache), MySQL, and PHP; environment automation with Puppet and operational task orchestration with Rundeck.
+
+                  **Anti-fraud & Biometrics:** Implementation and technical documentation of critical biometric validation and digital certificate issuance systems.
+
+                  **Infrastructure & Data Center:** Configuration of reverse proxies, firewalls, and monitoring tools (Zabbix), ensuring SLA in mission-critical environments.
       education:
         title: "Education"
         items:
@@ -294,7 +285,7 @@ params:
     enable: true
     intro: "Olá Mundo!"
     title: "Fabiano Santos Florentino."
-    subtitle: "Blog Pessoal"
+    subtitle: "Engenheiro de Software Backend | Go (Golang) & Platform / SRE"
     content: "Pai do Inácio e tenho o privilégio de ser o esposo da Jullyana!, sim 2 ele's e ipislon :)"
     image: /images/me.jpeg
     bottomImage:
@@ -320,31 +311,21 @@ params:
     title: "Sim sou eu!"
     image: /images/me.jpeg
     content: |-
-      Sou desenvolvedor de software especializado em **Go e Ruby**, com foco na construção de **sistemas distribuídos**, **microserviços** e **APIs REST** para backends corporativos.
+      Sou **Engenheiro de Software Backend e de Plataforma** com mais de **10 anos de experiência**, em uma trajetória que evoluiu da administração de infraestrutura para o desenvolvimento de sistemas distribuídos em **Go (Golang)**.
 
-      Minha carreira foi construída em torno de **confiabilidade, automação e software que sustenta operações essenciais**. Com mais de **50 mil horas de experiência** em ambientes exigentes, atendendo mais de **1.200 clientes** e contribui para soluções que escalam em contextos complexos de produção.
+      Especialista na concepção, construção e manutenção de microserviços escaláveis de alta performance no produto **Kyndryl Bridge**, com impacto direto em operações críticas globais. Sólida atuação em **Arquitetura Hexagonal**, concorrência (goroutines e channels), contratos de serviço, resiliência de produção, observabilidade e cultura **SRE/DevOps**.
 
-      Aplico práticas como **arquitetura hexagonal**, **princípios SOLID**, observabilidade, contratos claros entre serviços e práticas de engenharia de confiabilidade (SRE) para criar sistemas resilientes, fáceis de manter e prontos para crescer.
+      Em produção, esse trabalho se traduz em **200M+ execuções de automação** e **16M+ insights operacionais por mês**, com **redução de 30% em incidentes de impacto** e **ganho de 35% na produtividade operacional global**.
 
-      Trabalho na interseção entre engenharia e operação: automatizando processos em escala, otimizando fluxos e reduzindo o impacto de incidentes. Em produção, isso se traduz em **200M+ execuções automatizadas**, **16M+ eventos operacionais geridos por mês** e ganhos concretos como **redução de até 30% no impacto** e **aumento de até 35% na produtividade**.
-
-      Em ambientes críticos, combino engenharia de software com excelência operacional para ajudar times a melhorar velocidade de entrega, reduzir atritos operacionais e sustentar sistemas de alta disponibilidade em escala.
+      Baseado em **Hortolândia, SP — Brasil**. Idiomas: **português nativo** e **inglês técnico com leitura intermediária**.
     skills:
       enable: true
       title: "Conhecimento em:"
       items:
-        - Go
-        - Ruby
-        - Linux
-        - Shellscript
-        - Container
-        - Docker
-        - Docker-Compose
-        - Kubernetes
-        - Openshift
-        - Grafana
-        - Insomnia
-        - Postman
+        - "**Backend:** Go (Golang), concorrência (goroutines/channels), arquitetura hexagonal, APIs REST, contratos explícitos, Clean Code"
+        - "**Sistemas distribuídos & SRE:** alta disponibilidade, observabilidade (logs, métricas, tracing), resiliência, balanceamento de carga, capacity planning"
+        - "**Automação & cloud:** Ansible, Puppet, Shell Script, Git, Linux (hardening), proxy reverso (Apache/Nginx), ambientes em nuvem"
+        - "**Operações críticas & dados:** suporte à produção nível crítico, bancos de dados, segurança em camadas, monitoramento em tempo real (Zabbix/Rundeck)"
 
   experience:
     enable: true
@@ -353,84 +334,73 @@ params:
       - company: "Kyndryl"
         companyUrl: "https://www.kyndryl.com/us/en"
         jobs:
-          - name: "Engenheiro de Desenvolvimento de Software"
-            date: "Julho/2023 - atualmente"
+          - name: "Engenheiro de Software Backend (Go)"
+            date: "Junho/2023 - atualmente"
             content: |-
-              Desenvolvo serviços backend em Go para plataformas de automação e operações críticas, com foco em escalabilidade, confiabilidade e previsibilidade em produção.
+              **Core Engine em Go:** Construção e manutenção colaborativa dos serviços backend distribuídos do **Kyndryl Bridge**, plataforma global responsável por processar **200M+ execuções de automação** e **16M+ insights operacionais por mês**.
 
-              Trabalho com cargas elevadas, concorrência e requisitos rigorosos de alta disponibilidade, contribuindo para a entrega de sistemas distribuídos resilientes, observáveis e fáceis de evoluir.
+              **Arquitetura & Qualidade de Código:** Aplicação contínua de arquitetura de software, contratos de serviço claros e desacoplamento de responsabilidades, garantindo alta manutenibilidade e confiabilidade.
 
-              Atuo também na definição de arquitetura e na melhoria contínua dos serviços, aplicando boas práticas como arquitetura hexagonal, contratos bem definidos, separação de responsabilidades e cultura de operação orientada a dados.
+              **Impacto Operacional Direto:** As melhorias de arquitetura e concorrência contribuíram para a **redução de 30% em incidentes de impacto** e um **ganho de 35% na produtividade operacional global**.
 
-              Minha experiência em SRE e DevOps complementa a atuação em engenharia de software, permitindo enxergar o sistema de ponta a ponta — do código à operação em produção.
-
-              O foco principal é transformar problemas complexos em soluções simples, sustentáveis e com impacto real em eficiência, estabilidade e entrega.
+              **Engenharia & SRE:** Integração de boas práticas de engenharia de software, observabilidade e SRE para sustentação e capacidade preditiva do sistema.
             info:
-              content: Trabalhando como Engenheiro de Desenvolvimento de Software (Software Engineering Development)
-          - name: |-
-              Engenheiro de Confiabilidade do Site
-            date: "Dezembro/2018 - Julho/2023"
+              content: Atuando como Engenheiro de Software Backend (Go)
+          - name: "Engenheiro de Confiabilidade de Sites (SRE)"
+            date: "Agosto/2021 - Julho/2023"
             content: |-
-              Função desempenhada na prestação de serviços performáticos a clientes em componentes de hardware e software.
+              **Sustentação & Confiabilidade:** Gestão e otimização de ambientes de alta disponibilidade, balanceadores de carga, bancos de dados e aplicações críticas em escala enterprise.
 
-              As atividades incluem operação e manutenção de sistemas operacionais em várias plataformas, servidores de aplicação, várias tecnologias de banco de dados, soluções de alta disponibilidade e balanceamento de carga.
+              **Operação de Plataforma:** Administração de sistemas operacionais, servidores de aplicação e tecnologias de banco de dados, com planejamento de capacidade, gestão de desempenho e conformidade de segurança.
 
-              As responsabilidades do trabalho para esta função incluem, mas não estão limitadas a: operação e manutenção de sistemas operacionais e suporte de plataforma, administração de banco de dados, planejamento de capacidade, gerenciamento de desempenho, conformidade de segurança.
-
-              O suporte também é fornecido para ferramentas de gerenciamento de sistemas que monitoram o status operacional do ambiente.
-
-              Função desempenhada com base em confiabilidade e resiliência com a combinação certa de conhecimentos e habilidades em software e sistemas, responsáveis por analisar as necessidades de negócios, determinação de problemas, aconselhar e projetar, construir, testar, implantar, alterar e manter uma informação bem projetada sistema e ecossistemas.
-
-              - Automatizar os fluxos de trabalho e a infraestrutura, permitindo que as equipes de produtos e engenharia se movimentem rapidamente, trabalhando em conjunto com as equipes de desenvolvimento e a ciência de dados para implantar novas tecnologias e implementar novas estratégias.
-              - Gerenciar provedores de nuvem.
-              - Automatizar Infraestrutura, Aplicações e Serviços.
-              - Monitoramento e suporte servidores e serviços no local.
-              - Garantir alta disponibilidade do ambiente.
+              **Automação & Monitoramento:** Automação de infraestrutura e serviços, gestão de provedores de nuvem e monitoramento contínuo para garantir a alta disponibilidade do ambiente.
             info:
-              content: Trabalhando como Engenheiro de Confiabilidade do Site (Site Reliability Engineer)
+              content: Atuando como Engenheiro de Confiabilidade de Sites (SRE)
+      - company: "IBM"
+        companyUrl: "https://www.ibm.com/"
+        jobs:
+          - name: "Engenheiro de Confiabilidade de Sites (SRE)"
+            date: "Dezembro/2018 - Agosto/2021"
+            content: |-
+              **Automação de Infraestrutura:** Desenvolvimento de automações para suportar a entrega acelerada de produtos pelos times de engenharia.
+
+              **Sustentação & Confiabilidade:** Gestão e otimização de ambientes de alta disponibilidade, balanceadores de carga, bancos de dados e aplicações críticas em escala enterprise.
+
+              **Conformidade & Resiliência:** Monitoramento contínuo, planejamento de capacidade e aplicação de rigorosos requisitos de segurança e compliance em plataformas multicloud.
+            info:
+              content: Atuando como Engenheiro de Confiabilidade de Sites (SRE)
       - company: "2com Consulting"
         companyUrl: "https://2comconsulting.com.br/"
         jobs:
-          - name: "Analista de Monitoramento"
+          - name: "Analista de Monitoramento / DevOps"
             date: "Junho/2018 - Dezembro/2018"
             info:
-              content: Trabalhando como Analista de Monitoramento
+              content: Atuando como Analista de Monitoramento / DevOps
             content: |-
-              - Responsável por iniciar as práticas da cultura de DevOps entre as equipes.
-              - Automação do serviço de monitoramento
-              - Centralização de códigos de automação com o Git.
-              - Implementação de Ansible, Puppet e ShellScript para auxiliar na implementação de serviços de monitoramento e sensores de alerta.
-              - Responsável por buscar metodologias para entrega mais rápida de atividades.
-              - Treinar equipes em DevOps, Ansible, Puppet, ShellScript
-              - Gerenciamento, manutenção e monitoramento de serviços de banco de dados, ERP e backups de clientes.
-              - Suporte ao cliente e equipes internas.
+              **Cultura DevOps & Enablement:** Liderança na disseminação da cultura DevOps na equipe, ministrando treinamentos práticos em Ansible, Puppet e Shell Scripting.
+
+              **Automação & Versionamento:** Centralização do código de automação em repositórios Git e criação de sensores customizados para alerta preventivo de serviços de ERP e bancos de dados.
+
+              **Operações:** Gerenciamento, manutenção e monitoramento de serviços de banco de dados, ERP e backups de clientes, com suporte ao cliente e às equipes internas.
 
       - company: "Soluti"
         companyUrl: "https://www.soluti.com.br/"
         jobs: 
-        - name: "Analista de infraestrutura de TI"
+        - name: "Analista de Infraestrutura de TI & Segurança"
           date: "Dezembro/2014 - Fevereiro/2018"
           content: |-
-            - Auxiliar as equipes do Datacenter na implementação de soluções de problemas, garantindo que os sistemas e serviços críticos sejam adequadamente monitorados e com alertas relevantes, devidamente ativos e resolvidos.
-            - Desenvolvimento de soluções de arquitetura para novos projetos e alteração de existentes, utilizando ferramentas de gerenciamento de configuração e scripts para implementação e manutenção do sistema.
-            - Atender solicitações de suporte em relação à infraestrutura local.
-            - Implantação, manutenção e monitoramento de servidores Linux / Apache / MySQL / PHP
-            - Gerenciamento de serviços de proxy reverso com o apache2
-            - Gerenciamento de serviços de firewall interno do servidor (iptales)
-            - Gerenciamento do endurecimento de servidores Linux
-            - Implantar, manter e solucionar problemas de clientes digitais que emitem certificados digitais
-            - Gerenciamento de automação e configuração de atualizações e manutenção de servidores com Puppet
-            - Gerenciamento de automação e configuração de implantação de monitoramento interno com o Zabbix
-            - Implantação do Rundeck para gerenciamento de configuração e solução de problemas de serviços internos
-            - Implementação, Manutenção e Acompanhamento do sistema antifraude de certificado digital
-            - Implementação, Manutenção, Documentação e Monitoramento do sistema de identificação biométrica.
+            **Gerenciamento & Hardening:** Administração de ecossistema Linux, servidores web (Apache), MySQL e PHP; automação de ambientes com Puppet e orquestração de tarefas operacionais com Rundeck.
+
+            **Sistemas Antifraude & Biometria:** Implantação e documentação técnica de sistemas críticos de validação biométrica e emissão de certificados digitais.
+
+            **Infraestrutura & Data Center:** Configuração de proxies reversos, firewalls e ferramentas de monitoramento (Zabbix), garantindo SLA em missão crítica.
 
   education:
     enable: true
-    title: "Formação Academica"
+    title: "Formação Acadêmica"
     index: false
     items:
-      - title: "Master of Business Administration - MBA, Engenharia de Software"
+      - title: "MBA em Engenharia de Software"
         school:
           name: "Faculdade Metropolitana"
           url: "https://www.faculdademetropolitana.edu.br/"
@@ -441,7 +411,7 @@ params:
           enable: true
           name: "Certificado"
           url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQBDREjvY2VlSq4ziBFJyR5UAQp8J5agulbW5LGrCDyBvpo?e=opKQT7"
-      - title: "Computer Forensics and Digital Expertise"
+      - title: "Pós-Graduação em Computação Forense e Perícia Digital"
         school:
           name: "IPOG - Instituto de Pós-Graduação e Graduação"
           url: "https://ipog.edu.br/cursos/pos-graduacao"
@@ -452,7 +422,7 @@ params:
           enable: true
           name: "Tese de conclusão de Curso"
           url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL8TcBAAAAAYdBbZiMyggrRiMFegETkPs?e=dW0XeU"
-      - title: "Computer Network Security"
+      - title: "Segurança em Rede de Computadores"
         school:
           name: "Faculdade de Tecnologia Senai de Desenvolvimento Gerencial - FATESG"
           url: "https://senaigoias.com.br/faculdade-fatesg"
@@ -463,7 +433,7 @@ params:
           enable: true
           name: "Tese de conclusão de Curso"
           url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL8jcBAAAAAZGFGMoCHiuyEiIXvOAPUxk?e=nZhMSL"
-      - title: "Computer Network Technologist"
+      - title: "Tecnólogo em Rede de Computadores"
         school:
           name: "Faculdade de Tecnologia Senai de Desenvolvimento Gerencial - FATESG"
           url: "https://senaigoias.com.br/faculdade-fatesg"

@@ -57,10 +57,36 @@ languages:
         skills:
           title: "Skills:"
           items:
-            - "**Backend:** Go (Golang), concurrency (goroutines/channels), hexagonal architecture, REST APIs, explicit contracts, Clean Code"
-            - "**Distributed systems & SRE:** high availability, observability (logs, metrics, tracing), resilience, load balancing, capacity planning"
-            - "**Automation & cloud:** Ansible, Puppet, Shell Script, Git, Linux (hardening), reverse proxy (Apache/Nginx), cloud environments"
-            - "**Critical operations & data:** mission-critical production support, databases, layered security, real-time monitoring (Zabbix/Rundeck)"
+            - title: "Backend"
+              items:
+                - "Go (Golang)"
+                - "Concurrency (goroutines/channels)"
+                - "Hexagonal Architecture"
+                - "REST APIs"
+                - "Explicit contracts"
+                - "Clean Code"
+            - title: "Distributed systems & SRE"
+              items:
+                - "High availability"
+                - "Observability (logs, metrics, tracing)"
+                - "Resilience"
+                - "Load balancing"
+                - "Capacity planning"
+            - title: "Automation & cloud"
+              items:
+                - "Ansible"
+                - "Puppet"
+                - "Shell Script"
+                - "Git"
+                - "Linux (hardening)"
+                - "Reverse proxy (Apache/Nginx)"
+                - "Cloud environments"
+            - title: "Critical operations & data"
+              items:
+                - "Mission-critical production support"
+                - "Databases"
+                - "Layered security"
+                - "Real-time monitoring (Zabbix/Rundeck)"
       experience:
         title: "Experience"
         items:
@@ -322,10 +348,36 @@ params:
       enable: true
       title: "Conhecimento em:"
       items:
-        - "**Backend:** Go (Golang), concorrência (goroutines/channels), arquitetura hexagonal, APIs REST, contratos explícitos, Clean Code"
-        - "**Sistemas distribuídos & SRE:** alta disponibilidade, observabilidade (logs, métricas, tracing), resiliência, balanceamento de carga, capacity planning"
-        - "**Automação & cloud:** Ansible, Puppet, Shell Script, Git, Linux (hardening), proxy reverso (Apache/Nginx), ambientes em nuvem"
-        - "**Operações críticas & dados:** suporte à produção nível crítico, bancos de dados, segurança em camadas, monitoramento em tempo real (Zabbix/Rundeck)"
+        - title: "Backend"
+          items:
+            - "Go (Golang)"
+            - "Concorrência (goroutines/channels)"
+            - "Arquitetura Hexagonal"
+            - "APIs REST"
+            - "Contratos explícitos"
+            - "Clean Code"
+        - title: "Sistemas distribuídos & SRE"
+          items:
+            - "Alta disponibilidade"
+            - "Observabilidade (logs, métricas, tracing)"
+            - "Resiliência"
+            - "Balanceamento de carga"
+            - "Capacity planning"
+        - title: "Automação & cloud"
+          items:
+            - "Ansible"
+            - "Puppet"
+            - "Shell Script"
+            - "Git"
+            - "Linux (hardening)"
+            - "Proxy reverso (Apache/Nginx)"
+            - "Ambientes em nuvem"
+        - title: "Operações críticas & dados"
+          items:
+            - "Suporte à produção nível crítico"
+            - "Bancos de dados"
+            - "Segurança em camadas"
+            - "Monitoramento em tempo real (Zabbix/Rundeck)"
 
   experience:
     enable: true

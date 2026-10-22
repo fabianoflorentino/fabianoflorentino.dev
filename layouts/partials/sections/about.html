@@ -1,0 +1,39 @@
+{{ if .Site.Params.about.enable | default false }}
+<section id="about" class="py-0 py-sm-5">
+    <div class="container bg-transparent">
+        <h3 class="text-center bg-transparent">{{ .Site.Params.about.title }}</h3>
+        <div class="bg-transparent row justify-content-center px-3 py-5">
+            {{ if .Site.Params.about.image }}
+            <div class="col-sm-12 col-md-8 col-lg-4 mb-5 mb-sm-0 mb-md-5 mb-lg-0 d-none d-sm-none d-md-block">
+                <div class="image d-flex px-5">
+                    <img src="{{ .Site.Params.about.image }}" class="img-thumbnail mx-auto rounded-circle" alt="">
+                </div>
+            </div>
+            {{ end }}
+            <div class="col-sm-12 col-md-12 col-lg-8 content">
+                {{ .Site.Params.about.content | markdownify }}
+
+                {{ if .Site.Params.about.skills.enable }}
+                <div class="skills-section">
+                    <h4 class="skills-title">{{ .Site.Params.about.skills.title }}</h4>
+                    <div class="row g-3">
+                        {{ range .Site.Params.about.skills.items }}
+                        <div class="col-12 col-md-6">
+                            <div class="skill-card h-100">
+                                <h5 class="skill-card-title">{{ .title }}</h5>
+                                <ul class="skill-card-list">
+                                    {{ range .items }}
+                                    <li>{{ . }}</li>
+                                    {{ end }}
+                                </ul>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

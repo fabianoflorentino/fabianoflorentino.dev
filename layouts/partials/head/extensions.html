@@ -11,6 +11,9 @@
 <link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}">
 <link rel="alternate" hreflang="x-default" href="{{ $xdefault.Permalink }}">
 {{- end }}
+{{- if .Site.Params.about.skills.enable }}
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/skills.css" media="all">
+{{- end }}
 {{- if not .Site.Params.hero.subtitle }}
 <style>
   #hero h2 {

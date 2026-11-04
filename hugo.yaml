@@ -41,8 +41,19 @@ languages:
       projects:
         title: "Projects"
         heading: "Open source projects"
-        subtitle: "Tools I built for observability, markets, and infrastructure — each with a live demo and public source."
+        subtitle: "Tools I built for observability, media, markets, and infrastructure — each with a live demo and public source."
         items:
+          - title: "vidctl"
+            kicker: "Desktop · Video"
+            tagline: "A 100% offline video compressor with H.265, GPU acceleration, split parts, and audio extraction."
+            image: "/images/projects/vidctl.svg"
+            demo: "https://vidctl.fabianoflorentino.dev"
+            repo: "https://github.com/fabianoflorentino/vidctl"
+            stack:
+              - "Go"
+              - "Wails"
+              - "Svelte"
+              - "ffmpeg"
           - title: "stracectl"
             kicker: "Observability · Go"
             tagline: "A modern strace with a real-time TUI and a Kubernetes sidecar mode."
@@ -558,8 +569,19 @@ params:
     enable: true
     title: "Projetos"
     heading: "Projetos open source"
-    subtitle: "Ferramentas que construí para observabilidade, mercado e infraestrutura — todas com demo ao vivo e código aberto."
+    subtitle: "Ferramentas que construí para observabilidade, mídia, mercado e infraestrutura — todas com demo ao vivo e código aberto."
     items:
+      - title: "vidctl"
+        kicker: "Desktop · Vídeo"
+        tagline: "Compressor de vídeo 100% offline com H.265, aceleração por GPU, corte em partes e extração de áudio."
+        image: "/images/projects/vidctl.svg"
+        demo: "https://vidctl.fabianoflorentino.dev"
+        repo: "https://github.com/fabianoflorentino/vidctl"
+        stack:
+          - "Go"
+          - "Wails"
+          - "Svelte"
+          - "ffmpeg"
       - title: "stracectl"
         kicker: "Observabilidade · Go"
         tagline: "Um strace moderno com TUI em tempo real e modo sidecar para Kubernetes."

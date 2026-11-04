@@ -368,8 +368,6 @@ params:
       fontAwesomeIcons:
         - icon: fab fa-github
           url: https://github.com/fabianoflorentino
-        - icon: fab fa-x-twitter
-          url: https://x.com/fabianoratm
         - icon: fab fa-linkedin
           url: https://www.linkedin.com/in/fabianosantosflorentino
 
@@ -619,7 +617,6 @@ params:
     socialNetworks:
       github: https://github.com/fabianoflorentino
       linkedin: https://www.linkedin.com/in/fabianosantosflorentino
-      twitter: https://x.com/fabianoratm
 
   listPages:
     disableFeaturedImage: false

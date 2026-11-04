@@ -256,12 +256,12 @@ languages:
             content: |
               Courses and trainings
             url: https://www.credential.net/profile/fabianoflorentino/wallet
-            image: /images/accredibleLogo.jpg
+            image: /images/accredible-logo.svg
           - title: Credly
             content: |
               Courses and trainings
             url: https://www.credly.com/users/fabiano-florentino.2344b637/badges?sort=-state_updated_at&page=1#credly
-            image: /images/CredlyLogo.jpg
+            image: /images/credly-logo.svg
       contact:
         title: "Contact"
         btnName: "Send Email"
@@ -552,12 +552,12 @@ params:
         content: |
           Cursos e Treinamentos
         url: https://www.credential.net/profile/fabianoflorentino/wallet
-        image: /images/accredibleLogo.jpg
+        image: /images/accredible-logo.svg
       - title: Credly
         content: |
           Cursos e Treinamentos
         url: https://www.credly.com/users/fabiano-florentino.2344b637/badges?sort=-state_updated_at&page=1#credly
-        image: /images/CredlyLogo.jpg
+        image: /images/credly-logo.svg
 
   projects:
     enable: true

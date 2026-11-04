@@ -14,3 +14,5 @@ project_demo:
   other: "Site"
 project_code:
   other: "Código"
+back_to_top:
+  other: "Voltar ao topo"

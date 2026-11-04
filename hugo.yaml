@@ -38,6 +38,44 @@ languages:
       description: "Personal Blog"
       navbar:
         searchPlaceholder: "Search"
+      projects:
+        title: "Projects"
+        heading: "Open source projects"
+        subtitle: "Tools I built for observability, markets, and infrastructure — each with a live demo and public source."
+        items:
+          - title: "stracectl"
+            kicker: "Observability · Go"
+            tagline: "A modern strace with a real-time TUI and a Kubernetes sidecar mode."
+            image: "/images/projects/stracectl.png"
+            demo: "https://stracectl.fabianoflorentino.dev"
+            repo: "https://github.com/fabianoflorentino/stracectl"
+            stack:
+              - "Go"
+              - "Bubble Tea"
+              - "eBPF"
+              - "Kubernetes"
+          - title: "stckcraw"
+            kicker: "Market data · B3"
+            tagline: "Top 10 B3 gainers and losers by asset type, with daily charts refreshed every 30 minutes."
+            image: "/images/projects/stckcraw.svg"
+            demo: "https://stckcraw.fabianoflorentino.dev"
+            repo: "https://github.com/fabianoflorentino/stckcraw"
+            stack:
+              - "Go"
+              - "GitHub Actions"
+              - "brapi.dev"
+              - "Yahoo Finance"
+          - title: "certificate-validate"
+            kicker: "Security · TLS"
+            tagline: "TLS certificate monitoring from the CLI, API, and Kubernetes, with OCSP/CRL checks, Prometheus metrics, and alerts."
+            image: "/images/projects/certificate-validate.png"
+            demo: "https://certificate-validate.fabianoflorentino.dev"
+            repo: "https://github.com/fabianoflorentino/certificate-validate"
+            stack:
+              - "Go"
+              - "Prometheus"
+              - "Kubernetes"
+              - "OCSP/CRL"
       hero:
         intro: "Hello World!"
         subtitle: ""
@@ -276,22 +314,22 @@ params:
     textAlign: left
 
   color:
-    textColor: "#343a40"
-    secondaryTextColor: "#6c757d"
-    textLinkColor: "#007bff"
-    backgroundColor: "#eaedf0"
-    secondaryBackgroundColor: "#64ffda1a"
-    primaryColor: "#007bff"
-    secondaryColor: "#f8f9fa"
+    textColor: "#0f172a"
+    secondaryTextColor: "#5b6b82"
+    textLinkColor: "#087f8c"
+    backgroundColor: "#f6f8fc"
+    secondaryBackgroundColor: "#eef2f8"
+    primaryColor: "#0b8f7d"
+    secondaryColor: "#ffffff"
 
     darkmode:
-      textColor: "#e4e6eb"
-      secondaryTextColor: "#b0b3b8"
-      textLinkColor: "#ffffff"
-      backgroundColor: "#18191a"
-      secondaryBackgroundColor: "#212529"
-      primaryColor: "#ffffff"
-      secondaryColor: "#212529"
+      textColor: "#e6edf3"
+      secondaryTextColor: "#93a4b8"
+      textLinkColor: "#6bffd6"
+      backgroundColor: "#080b14"
+      secondaryBackgroundColor: "#0e1522"
+      primaryColor: "#6bffd6"
+      secondaryColor: "#0e1522"
 
   navbar:
     align: mx-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
@@ -306,7 +344,7 @@ params:
       disableAbout: false
       disableExperience: false
       disableEducation: false
-      disableProjects: true
+      disableProjects: false
       disableAchievements: false
       disableContact: true
 
@@ -519,53 +557,44 @@ params:
         image: /images/CredlyLogo.jpg
 
   projects:
-    enable: false
-    title: "Custom Name"
+    enable: true
+    title: "Projetos"
+    heading: "Projetos open source"
+    subtitle: "Ferramentas que construí para observabilidade, mercado e infraestrutura — todas com demo ao vivo e código aberto."
     items:
-      - title: Hugo Profile
-        content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
-        image: /images/projects/profile.png
-        featured:
-          name: Demo
-          link: https://hugo-profile.netlify.app
-        badges:
-          - "Hugo"
-          - "Bootstrap"
-          - "Javascript"
-        links:
-          - icon: fa fa-envelope
-            url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/hugo-profile
-          - icon: fab fa-x-twitter
-            url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
-
-      - title: Image Converter
-        content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
-        image: /images/projects/converter.jpg
-        featured:
-          name: Demo
-          link: https://django-converter.herokuapp.com
-        badges:
-          - "Django"
-          - "Bootstrap"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/converter
-
-      - title: Hugo Profile V2
-        content: A clean and simple Hugo template for personal portfolio and blog.
-        image: /images/projects/profile2.jpg
-        featured:
-          name: Demo V2
-          link: https://hugo-profile-2.netlify.app
-        badges:
-          - "Hugo"
-          - "Bootstrap"
-          - "Javascript"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/HugoProfileV2
+      - title: "stracectl"
+        kicker: "Observabilidade · Go"
+        tagline: "Um strace moderno com TUI em tempo real e modo sidecar para Kubernetes."
+        image: "/images/projects/stracectl.png"
+        demo: "https://stracectl.fabianoflorentino.dev"
+        repo: "https://github.com/fabianoflorentino/stracectl"
+        stack:
+          - "Go"
+          - "Bubble Tea"
+          - "eBPF"
+          - "Kubernetes"
+      - title: "stckcraw"
+        kicker: "Dados de mercado · B3"
+        tagline: "Top 10 altas e baixas da B3 por tipo de ativo, com gráficos diários atualizados a cada 30 minutos."
+        image: "/images/projects/stckcraw.svg"
+        demo: "https://stckcraw.fabianoflorentino.dev"
+        repo: "https://github.com/fabianoflorentino/stckcraw"
+        stack:
+          - "Go"
+          - "GitHub Actions"
+          - "brapi.dev"
+          - "Yahoo Finance"
+      - title: "certificate-validate"
+        kicker: "Segurança · TLS"
+        tagline: "Monitoramento de certificados TLS via CLI, API e Kubernetes, com OCSP/CRL, métricas Prometheus e alertas."
+        image: "/images/projects/certificate-validate.png"
+        demo: "https://certificate-validate.fabianoflorentino.dev"
+        repo: "https://github.com/fabianoflorentino/certificate-validate"
+        stack:
+          - "Go"
+          - "Prometheus"
+          - "Kubernetes"
+          - "OCSP/CRL"
 
   contact:
     enable: true

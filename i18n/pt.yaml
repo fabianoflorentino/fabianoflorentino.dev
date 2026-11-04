@@ -8,3 +8,9 @@ contact:
   other: "Contato"
 home:
   other: "Início"
+project_eyebrow:
+  other: "Código aberto"
+project_demo:
+  other: "Ver demo"
+project_code:
+  other: "Código"

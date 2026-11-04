@@ -382,7 +382,7 @@ params:
   about:
     enable: true
     title: "Sim sou eu!"
-    image: /images/me.jpeg
+    image: /images/me-about.jpg
     content: |-
       Profissional de tecnologia com **14 anos de experiência**, incluindo **10 anos** em administração de sistemas Linux e Windows, automação, contêineres, monitoramento e observabilidade. Nos últimos **quatro anos**, foco em engenharia de software e desenvolvimento backend em **Go, Ruby on Rails e Python**.
 

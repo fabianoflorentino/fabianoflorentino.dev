@@ -96,115 +96,112 @@ languages:
       about:
         title: "About me!"
         content: |-
-          I am a **Backend and Platform Software Engineer** with **14 years of experience**, the last 10 dedicated to DevOps/SRE, distributed systems, and software development. My career evolved from infrastructure administration to building distributed systems in **Go (Golang)**.
+          Technology professional with **14 years of experience**, including **10 years** in Linux and Windows systems administration, automation, containers, monitoring, and observability. Over the last **four years**, focused on software engineering and backend development with **Go, Ruby on Rails, and Python**.
 
-          Specialist in designing, building, and maintaining scalable, high-performance microservices for the **Kyndryl Bridge** product, with direct impact on critical global operations. Strong background in **Hexagonal Architecture**, concurrency (goroutines and channels), service contracts, production resilience, observability, and **SRE/DevOps** culture.
+          Builds services for automation platforms, applying software engineering practices, sound architecture, and **SRE and DevOps** principles. Experienced in mission-critical environments and distributed systems supporting a platform with approximately **200 million automated executions per month** and **60,000 automations and workflows**.
 
-          In production, this work translates into **200M+ automation executions** and **16M+ operational insights per month**, with a **30% reduction in impact incidents** and a **35% gain in global operational productivity**.
+          Reported environment-level indicators include **16 million operational events managed monthly**, **up to 30% reduction in operational impact**, and **up to 35% productivity improvement**.
 
-          Based in **Hortolândia, SP — Brazil**. Languages: **native Portuguese** and **technical English with intermediate reading**.
+          Based in **Hortolândia, São Paulo — Brazil**. Languages: **native Portuguese** and **English: basic to intermediate (speaking, reading, and writing)**.
         skills:
           title: "Skills:"
           items:
-            - title: "Backend"
+            - title: "Backend Engineering"
               items:
-                - "Go (Golang)"
-                - "Concurrency (goroutines/channels)"
-                - "Hexagonal Architecture"
+                - "Go"
+                - "Ruby on Rails"
+                - "Python"
                 - "REST APIs"
-                - "Explicit contracts"
-                - "Clean Code"
+            - title: "Architecture & Design"
+              items:
+                - "Distributed systems"
+                - "Hexagonal architecture"
                 - "SOLID"
-                - "TDD"
-                - "Testing"
-            - title: "Distributed systems & SRE"
+                - "Clean Code"
+            - title: "SRE & Observability"
               items:
+                - "Reliability"
+                - "Monitoring"
                 - "High availability"
-                - "Observability (logs, metrics, tracing)"
-                - "Resilience"
-                - "Load balancing"
-                - "Capacity planning"
-            - title: "Automation & cloud"
+                - "Performance"
+            - title: "Infrastructure & Automation"
               items:
+                - "Linux"
+                - "Kubernetes"
+                - "Containers"
                 - "Ansible"
-                - "Puppet"
-                - "Shell Script"
-                - "Git"
-                - "Linux (hardening)"
-                - "Reverse proxy (Apache/Nginx)"
-                - "Cloud environments"
-            - title: "Critical operations & data"
-              items:
-                - "Mission-critical production support"
-                - "Databases"
-                - "Layered security"
-                - "Real-time monitoring (Zabbix/Rundeck)"
+                - "DevOps"
       experience:
         title: "Experience"
         items:
           - company: "Kyndryl"
-            companyUrl: "https://www.kyndryl.com/us/en"
+            companyUrl: "https://www.kyndryl.com/"
             jobs:
-              - name: "Backend Software Engineer (Go)"
-                date: "June/2023 - Present"
+              - name: "Software Engineering Development"
+                date: "July 2023 – Present · Hortolândia, São Paulo, Brazil"
                 content: |-
-                  **Core Engine in Go:** Build and collaborative maintenance of the distributed backend services of **Kyndryl Bridge**, a global platform responsible for processing **200M+ automation executions** and **16M+ operational insights per month**.
+                  **Go backend development:** Develop Go backend services for a large-scale automation platform, focusing on scalability, reliability, and production predictability.
 
-                  **Architecture & Code Quality:** Continuous application of software architecture, clear service contracts, and decoupling of responsibilities, ensuring high maintainability and reliability.
+                  **High workloads & concurrency:** Work with high workloads, concurrency, and strict availability requirements in distributed systems.
 
-                  **Direct Operational Impact:** Architecture and concurrency improvements contributed to a **30% reduction in impact incidents** and a **35% gain in global operational productivity**.
+                  **Architecture & evolution:** Contribute to service architecture and evolution using hexagonal architecture, well-defined contracts, and separation of concerns.
 
-                  **Engineering & SRE:** Integration of software engineering best practices, observability, and SRE for system support and predictive capacity.
-                info:
-                  content: Working as Backend Software Engineer (Go)
-              - name: "Site Reliability Engineer (SRE)"
-                date: "August/2021 - July/2023"
-                content: |-
-                  **Sustainment & Reliability:** Management and optimization of high-availability environments, load balancers, databases, and critical applications at enterprise scale.
-
-                  **Platform Operations:** Administration of operating systems, application servers, and database technologies, including capacity planning, performance management, and security compliance.
-
-                  **Automation & Monitoring:** Automation of infrastructure and services, cloud provider management, and continuous monitoring to ensure environment high availability.
-                info:
-                  content: Working as Site Reliability Engineer (SRE)
+                  **SRE & DevOps:** Apply SRE and DevOps practices with an end-to-end view, from code to production operations.
           - company: "IBM"
             companyUrl: "https://www.ibm.com/"
             jobs:
-              - name: "Site Reliability Engineer (SRE)"
-                date: "December/2018 - August/2021"
+              - name: "Site Reliability Engineer"
+                date: "December 2018 – February 2023 · Hortolândia, São Paulo, Brazil"
                 content: |-
-                  **Infrastructure Automation:** Development of automations to support accelerated product delivery by engineering teams.
+                  **Platform operations:** Operated and maintained operating systems, application servers, databases, and high-availability and load-balancing solutions.
 
-                  **Sustainment & Reliability:** Management and optimization of high-availability environments, load balancers, databases, and critical applications at enterprise scale.
+                  **Capacity & compliance:** Supported capacity planning, performance management, security compliance, and platform operations.
 
-                  **Compliance & Resilience:** Continuous monitoring, capacity planning, and application of rigorous security and compliance requirements in multicloud platforms.
-                info:
-                  content: Working as Site Reliability Engineer (SRE)
-          - company: "2com Consulting"
+                  **Infrastructure automation:** Automated workflows and infrastructure across cloud providers and on-premises services.
+
+                  **Reliability:** Monitored and supported servers and services, focusing on reliability, resilience, and availability.
+          - company: "2Com Consulting"
             companyUrl: "https://2comconsulting.com.br/"
             jobs:
-              - name: "Monitoring Analyst / DevOps"
-                date: "June/2018 - December/2018"
-                info:
-                  content: Working as Monitoring Analyst / DevOps
+              - name: "Monitoring Analyst"
+                date: "June 2018 – December 2018 · Goiânia, Goiás, Brazil"
                 content: |-
-                  **DevOps Culture & Enablement:** Leadership in spreading DevOps culture across the team, delivering practical training in Ansible, Puppet, and Shell Scripting.
+                  **DevOps culture:** Helped introduce DevOps practices and automate monitoring services.
 
-                  **Automation & Versioning:** Centralization of automation code in Git repositories and creation of custom sensors for preventive alerting of ERP and database services.
+                  **Automation & versioning:** Centralized code in Git and implemented Ansible, Puppet, and Shell Script for monitoring and alerting.
 
-                  **Operations:** Management, maintenance, and monitoring of customer database, ERP, and backup services, with support for customers and internal teams.
-
-          - company: "Soluti"
+                  **Operations & training:** Trained teams in DevOps and automation; monitored databases, ERP systems, and backups.
+          - company: "Soluti Digital Certification"
             companyUrl: "https://www.soluti.com.br/"
             jobs:
-              - name: "IT Infrastructure & Security Analyst"
-                date: "December/2014 - February/2018"
+              - name: "IT Infrastructure Analyst"
+                date: "December 2014 – February 2018 · Goiânia, Goiás, Brazil"
                 content: |-
-                  **Management & Hardening:** Administration of the Linux ecosystem, web servers (Apache), MySQL, and PHP; environment automation with Puppet and operational task orchestration with Rundeck.
+                  **Linux infrastructure:** Implemented, maintained, and monitored Linux, Apache, MySQL, and PHP servers.
 
-                  **Anti-fraud & Biometrics:** Implementation and technical documentation of critical biometric validation and digital certificate issuance systems.
+                  **Automation & monitoring:** Automated configuration and maintenance with Puppet; implemented monitoring with Zabbix and task management with Rundeck.
 
-                  **Infrastructure & Data Center:** Configuration of reverse proxies, firewalls, and monitoring tools (Zabbix), ensuring SLA in mission-critical environments.
+                  **Security & networking:** Managed reverse proxies, firewalls, and Linux server hardening.
+
+                  **Digital certification:** Supported digital certificate services, anti-fraud systems, and biometric identification.
+          - company: "Brasil Telecom"
+            companyUrl: "https://pt.wikipedia.org/wiki/Brasil_Telecom"
+            jobs:
+              - name: "Technology Analyst"
+                date: "July 2014 – November 2014 · Goiânia, Goiás, Brazil"
+                content: |-
+                  **Technical support:** Provided local and remote technical support for users and Windows workstations.
+
+                  **Systems & images:** Troubleshot incidents, validated and implemented internal systems, and created and distributed Windows images.
+          - company: "Sonda IT"
+            companyUrl: "https://www.sonda.com/"
+            jobs:
+              - name: "IT Support Analyst"
+                date: "November 2011 – June 2014 · Goiânia, Goiás, Brazil"
+                content: |-
+                  **Corporate support:** Provided local and remote technical support and analyzed high-impact incidents in a call center environment.
+
+                  **WDS & automation:** Managed Windows Deployment Services (WDS), automated installations, and analyzed logs for service deployments.
       education:
         title: "Education"
         items:
@@ -212,7 +209,7 @@ languages:
             school:
               name: "Faculdade Metropolitana"
               url: "https://www.faculdademetropolitana.edu.br/"
-            date: "2022 - 2023"
+            date: "July 2022 – September 2023"
             GPA:
             content:
             featuredLink:
@@ -221,7 +218,7 @@ languages:
               url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQBDREjvY2VlSq4ziBFJyR5UAQp8J5agulbW5LGrCDyBvpo?e=opKQT7"
           - title: "Computer Forensics and Digital Expertise"
             school:
-              name: "IPOG - Instituto de Pós-Graduação e Graduação"
+              name: "IPOG - Institute of Postgraduate Studies and Higher Education"
               url: "https://ipog.edu.br/cursos/pos-graduacao"
             date: "2015 - 2017"
             GPA:
@@ -232,7 +229,7 @@ languages:
               url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL8TcBAAAAAYdBbZiMyggrRiMFegETkPs?e=dW0XeU"
           - title: "Computer Network Security"
             school:
-              name: "Faculdade de Tecnologia Senai de Desenvolvimento Gerencial - FATESG"
+              name: "FATESG - SENAI Faculty of Management Development"
               url: "https://senaigoias.com.br/faculdade-fatesg"
             date: "2013 - 2015"
             GPA:
@@ -241,9 +238,9 @@ languages:
               enable: true
               name: "Final thesis"
               url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL8jcBAAAAAZGFGMoCHiuyEiIXvOAPUxk?e=nZhMSL"
-          - title: "Computer Network Technologist"
+          - title: "Associate Degree in Computer Networking"
             school:
-              name: "Faculdade de Tecnologia Senai de Desenvolvimento Gerencial - FATESG"
+              name: "FATESG - SENAI Faculty of Management Development"
               url: "https://senaigoias.com.br/faculdade-fatesg"
             date: "2008 - 2011"
             GPA:
@@ -387,118 +384,115 @@ params:
     title: "Sim sou eu!"
     image: /images/me.jpeg
     content: |-
-      Sou **Engenheiro de Software Backend e de Plataforma** com **14 anos de experiência**, sendo os últimos 10 dedicados a DevOps/SRE, sistemas distribuídos e desenvolvimento de software. Minha trajetória evoluiu da administração de infraestrutura para a construção de sistemas distribuídos em **Go (Golang)**.
+      Profissional de tecnologia com **14 anos de experiência**, incluindo **10 anos** em administração de sistemas Linux e Windows, automação, contêineres, monitoramento e observabilidade. Nos últimos **quatro anos**, foco em engenharia de software e desenvolvimento backend em **Go, Ruby on Rails e Python**.
 
-      Especialista na concepção, construção e manutenção de microserviços escaláveis de alta performance no produto **Kyndryl Bridge**, com impacto direto em operações críticas globais. Sólida atuação em **Arquitetura Hexagonal**, concorrência (goroutines e channels), contratos de serviço, resiliência de produção, observabilidade e cultura **SRE/DevOps**.
+      Atua em serviços para plataformas de automação, aplicando boas práticas de desenvolvimento, arquitetura de software e princípios de **SRE e DevOps**. Experiência em ambientes críticos e sistemas distribuídos, em uma plataforma com cerca de **200 milhões de execuções automatizadas mensais** e **60 mil automações e workflows**.
 
-      Em produção, esse trabalho se traduz em **200M+ execuções de automação** e **16M+ insights operacionais por mês**, com **redução de 30% em incidentes de impacto** e **ganho de 35% na produtividade operacional global**.
+      Os indicadores reportados para o ambiente incluem **16 milhões de eventos operacionais geridos por mês**, **redução de até 30% no impacto operacional** e **aumento de até 35% na produtividade**.
 
-      Baseado em **Hortolândia, SP — Brasil**. Idiomas: **português nativo** e **inglês técnico com leitura intermediária**.
+      Baseado em **Hortolândia, SP — Brasil**. Idiomas: **português nativo** e **inglês básico–intermediário (fala, leitura e escrita)**.
     skills:
       enable: true
       title: "Conhecimento em:"
       items:
-        - title: "Backend"
+        - title: "Engenharia Backend"
           items:
-            - "Go (Golang)"
-            - "Concorrência (goroutines/channels)"
-            - "Arquitetura Hexagonal"
+            - "Go"
+            - "Ruby on Rails"
+            - "Python"
             - "APIs REST"
-            - "Contratos explícitos"
-            - "Clean Code"
+        - title: "Arquitetura & Design"
+          items:
+            - "Sistemas distribuídos"
+            - "Arquitetura hexagonal"
             - "SOLID"
-            - "TDD"
-            - "Testing"
-        - title: "Sistemas distribuídos & SRE"
+            - "Clean Code"
+        - title: "SRE & Observabilidade"
           items:
+            - "Confiabilidade"
+            - "Monitoramento"
             - "Alta disponibilidade"
-            - "Observabilidade (logs, métricas, tracing)"
-            - "Resiliência"
-            - "Balanceamento de carga"
-            - "Capacity planning"
-        - title: "Automação & cloud"
+            - "Desempenho"
+        - title: "Infraestrutura & Automação"
           items:
+            - "Linux"
+            - "Kubernetes"
+            - "Contêineres"
             - "Ansible"
-            - "Puppet"
-            - "Shell Script"
-            - "Git"
-            - "Linux (hardening)"
-            - "Proxy reverso (Apache/Nginx)"
-            - "Ambientes em nuvem"
-        - title: "Operações críticas & dados"
-          items:
-            - "Suporte à produção nível crítico"
-            - "Bancos de dados"
-            - "Segurança em camadas"
-            - "Monitoramento em tempo real (Zabbix/Rundeck)"
+            - "DevOps"
 
   experience:
     enable: true
     title: "Experiência"
     items:
       - company: "Kyndryl"
-        companyUrl: "https://www.kyndryl.com/us/en"
+        companyUrl: "https://www.kyndryl.com/"
         jobs:
-          - name: "Engenheiro de Software Backend (Go)"
-            date: "Junho/2023 - atualmente"
+          - name: "Software Engineering Development"
+            date: "Julho de 2023 – Atual · Hortolândia, SP"
             content: |-
-              **Core Engine em Go:** Construção e manutenção colaborativa dos serviços backend distribuídos do **Kyndryl Bridge**, plataforma global responsável por processar **200M+ execuções de automação** e **16M+ insights operacionais por mês**.
+              **Desenvolvimento backend em Go:** Serviços para uma plataforma de automação de grande escala, com foco em escalabilidade, confiabilidade e previsibilidade em produção.
 
-              **Arquitetura & Qualidade de Código:** Aplicação contínua de arquitetura de software, contratos de serviço claros e desacoplamento de responsabilidades, garantindo alta manutenibilidade e confiabilidade.
+              **Cargas elevadas & concorrência:** Atuação com altos volumes, concorrência e requisitos rigorosos de alta disponibilidade em sistemas distribuídos.
 
-              **Impacto Operacional Direto:** As melhorias de arquitetura e concorrência contribuíram para a **redução de 30% em incidentes de impacto** e um **ganho de 35% na produtividade operacional global**.
+              **Arquitetura & evolução:** Contribuição para a arquitetura e evolução dos serviços, com arquitetura hexagonal, contratos bem definidos e separação de responsabilidades.
 
-              **Engenharia & SRE:** Integração de boas práticas de engenharia de software, observabilidade e SRE para sustentação e capacidade preditiva do sistema.
-            info:
-              content: Atuando como Engenheiro de Software Backend (Go)
-          - name: "Engenheiro de Confiabilidade de Sites (SRE)"
-            date: "Agosto/2021 - Julho/2023"
-            content: |-
-              **Sustentação & Confiabilidade:** Gestão e otimização de ambientes de alta disponibilidade, balanceadores de carga, bancos de dados e aplicações críticas em escala enterprise.
-
-              **Operação de Plataforma:** Administração de sistemas operacionais, servidores de aplicação e tecnologias de banco de dados, com planejamento de capacidade, gestão de desempenho e conformidade de segurança.
-
-              **Automação & Monitoramento:** Automação de infraestrutura e serviços, gestão de provedores de nuvem e monitoramento contínuo para garantir a alta disponibilidade do ambiente.
-            info:
-              content: Atuando como Engenheiro de Confiabilidade de Sites (SRE)
+              **SRE & DevOps:** Práticas de SRE e DevOps com visão ponta a ponta, do código à operação em produção.
       - company: "IBM"
         companyUrl: "https://www.ibm.com/"
         jobs:
-          - name: "Engenheiro de Confiabilidade de Sites (SRE)"
-            date: "Dezembro/2018 - Agosto/2021"
+          - name: "Site Reliability Engineer"
+            date: "Dezembro de 2018 – Fevereiro de 2023 · Hortolândia, SP"
             content: |-
-              **Automação de Infraestrutura:** Desenvolvimento de automações para suportar a entrega acelerada de produtos pelos times de engenharia.
+              **Operação de plataforma:** Operação e manutenção de sistemas operacionais, servidores de aplicação, bancos de dados e soluções de alta disponibilidade e balanceamento de carga.
 
-              **Sustentação & Confiabilidade:** Gestão e otimização de ambientes de alta disponibilidade, balanceadores de carga, bancos de dados e aplicações críticas em escala enterprise.
+              **Capacidade & conformidade:** Planejamento de capacidade, gestão de desempenho, conformidade de segurança e suporte a plataformas.
 
-              **Conformidade & Resiliência:** Monitoramento contínuo, planejamento de capacidade e aplicação de rigorosos requisitos de segurança e compliance em plataformas multicloud.
-            info:
-              content: Atuando como Engenheiro de Confiabilidade de Sites (SRE)
+              **Automação de infraestrutura:** Automação de fluxos de trabalho e infraestrutura, com suporte a provedores de nuvem e serviços locais.
+
+              **Confiabilidade:** Monitoramento e suporte a servidores e serviços, com foco em confiabilidade, resiliência e disponibilidade.
       - company: "2com Consulting"
         companyUrl: "https://2comconsulting.com.br/"
         jobs:
-          - name: "Analista de Monitoramento / DevOps"
-            date: "Junho/2018 - Dezembro/2018"
-            info:
-              content: Atuando como Analista de Monitoramento / DevOps
+          - name: "Analista de Monitoramento"
+            date: "Junho de 2018 – Dezembro de 2018 · Goiânia, GO"
             content: |-
-              **Cultura DevOps & Enablement:** Liderança na disseminação da cultura DevOps na equipe, ministrando treinamentos práticos em Ansible, Puppet e Shell Scripting.
+              **Cultura DevOps:** Apoio à adoção de práticas DevOps e à automação de serviços de monitoramento.
 
-              **Automação & Versionamento:** Centralização do código de automação em repositórios Git e criação de sensores customizados para alerta preventivo de serviços de ERP e bancos de dados.
+              **Automação & versionamento:** Centralização de código no Git e implementação de Ansible, Puppet e Shell Script para monitoramento e alertas.
 
-              **Operações:** Gerenciamento, manutenção e monitoramento de serviços de banco de dados, ERP e backups de clientes, com suporte ao cliente e às equipes internas.
-
-      - company: "Soluti"
+              **Operação & treinamento:** Treinamento de equipes em DevOps e automação; monitoramento de bancos de dados, ERP e backups.
+      - company: "Soluti Certificação Digital"
         companyUrl: "https://www.soluti.com.br/"
-        jobs: 
-        - name: "Analista de Infraestrutura de TI & Segurança"
-          date: "Dezembro/2014 - Fevereiro/2018"
-          content: |-
-            **Gerenciamento & Hardening:** Administração de ecossistema Linux, servidores web (Apache), MySQL e PHP; automação de ambientes com Puppet e orquestração de tarefas operacionais com Rundeck.
+        jobs:
+          - name: "Analista de Infraestrutura de TI"
+            date: "Dezembro de 2014 – Fevereiro de 2018 · Goiânia, GO"
+            content: |-
+              **Infraestrutura Linux:** Implementação, manutenção e monitoramento de servidores Linux, Apache, MySQL e PHP.
 
-            **Sistemas Antifraude & Biometria:** Implantação e documentação técnica de sistemas críticos de validação biométrica e emissão de certificados digitais.
+              **Automação & monitoramento:** Automação de configuração e manutenção com Puppet; monitoramento com Zabbix e gestão de tarefas com Rundeck.
 
-            **Infraestrutura & Data Center:** Configuração de proxies reversos, firewalls e ferramentas de monitoramento (Zabbix), garantindo SLA em missão crítica.
+              **Segurança & rede:** Administração de proxy reverso, firewall e hardening de servidores Linux.
+
+              **Certificação digital:** Suporte a serviços de certificação digital, antifraude e identificação biométrica.
+      - company: "Brasil Telecom"
+        companyUrl: "https://pt.wikipedia.org/wiki/Brasil_Telecom"
+        jobs:
+          - name: "Analista de Tecnologia"
+            date: "Julho de 2014 – Novembro de 2014 · Goiânia, GO"
+            content: |-
+              **Suporte técnico:** Suporte local e remoto a usuários e estações Windows.
+
+              **Sistemas & imagens:** Análise de incidentes, homologação e implementação de sistemas internos, criação e distribuição de imagens Windows.
+      - company: "Sonda IT"
+        companyUrl: "https://www.sonda.com/"
+        jobs:
+          - name: "Analista de Suporte de TI"
+            date: "Novembro de 2011 – Junho de 2014 · Goiânia, GO"
+            content: |-
+              **Suporte corporativo:** Suporte técnico local e remoto ao ambiente corporativo e análise de incidentes de grande impacto em call center.
+
+              **WDS & automação:** Administração do Windows Deployment Services (WDS), automação de instalações e análise de logs para implantação de serviços.
 
   education:
     enable: true
@@ -509,14 +503,14 @@ params:
         school:
           name: "Faculdade Metropolitana"
           url: "https://www.faculdademetropolitana.edu.br/"
-        date: "2022 - 2023"
+        date: "Julho de 2022 – Setembro de 2023"
         GPA:
         content:
         featuredLink:
           enable: true
           name: "Certificado"
           url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQBDREjvY2VlSq4ziBFJyR5UAQp8J5agulbW5LGrCDyBvpo?e=opKQT7"
-      - title: "Pós-Graduação em Computação Forense e Perícia Digital"
+      - title: "Perícia Forense Computacional e Perícia Digital"
         school:
           name: "IPOG - Instituto de Pós-Graduação e Graduação"
           url: "https://ipog.edu.br/cursos/pos-graduacao"
@@ -527,7 +521,7 @@ params:
           enable: true
           name: "Tese de conclusão de Curso"
           url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL8TcBAAAAAYdBbZiMyggrRiMFegETkPs?e=dW0XeU"
-      - title: "Segurança em Rede de Computadores"
+      - title: "Segurança de Redes de Computadores"
         school:
           name: "Faculdade de Tecnologia Senai de Desenvolvimento Gerencial - FATESG"
           url: "https://senaigoias.com.br/faculdade-fatesg"
@@ -538,7 +532,7 @@ params:
           enable: true
           name: "Tese de conclusão de Curso"
           url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL8jcBAAAAAZGFGMoCHiuyEiIXvOAPUxk?e=nZhMSL"
-      - title: "Tecnólogo em Rede de Computadores"
+      - title: "Tecnólogo em Redes de Computadores"
         school:
           name: "Faculdade de Tecnologia Senai de Desenvolvimento Gerencial - FATESG"
           url: "https://senaigoias.com.br/faculdade-fatesg"
@@ -621,7 +615,7 @@ params:
     title: "Contato"
     content:
     btnName: Enviar Email
-    btnLink: mailto:me@fabianoflorentino.dev
+    btnLink: mailto:fabianoflorentino@outlook.com
     formspree:
       enable: false # `contact.email` value will be ignored
       formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'

@@ -14,15 +14,15 @@
             <div class="col-lg-4 col-md-6">
                 <article class="project-card">
                     {{ if .image }}
-                    <a class="project-frame" href="{{ .demo }}" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                    <div class="project-frame" aria-hidden="true">
                         <div class="project-chrome">
                             <span class="dot dot-red"></span>
                             <span class="dot dot-yellow"></span>
                             <span class="dot dot-green"></span>
                             <span class="project-chrome-title">{{ .title }}</span>
                         </div>
-                        <img src="{{ .image }}" alt="{{ .title }}" loading="lazy" width="1200" height="750">
-                    </a>
+                        <img src="{{ .image }}" alt="{{ .title }}" loading="lazy">
+                    </div>
                     {{ end }}
                     <div class="project-body">
                         {{ with .kicker }}
@@ -39,8 +39,8 @@
                         {{ end }}
                     </div>
                     <div class="project-footer">
-                        <a class="project-link" href="{{ .demo }}" target="_blank" rel="noopener noreferrer">{{ i18n "project_demo" }} →</a>
-                        <a class="project-link is-muted" href="{{ .repo }}" target="_blank" rel="noopener noreferrer">{{ i18n "project_code" }}</a>
+                        <a class="project-link stretched-link" href="{{ .demo }}" target="_blank" rel="noopener noreferrer" aria-label="{{ i18n "project_demo" }}: {{ .title }}">{{ i18n "project_demo" }} →</a>
+                        <a class="project-link is-muted" href="{{ .repo }}" target="_blank" rel="noopener noreferrer" aria-label="{{ i18n "project_code" }}: {{ .title }}">{{ i18n "project_code" }}</a>
                     </div>
                 </article>
             </div>

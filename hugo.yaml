@@ -169,7 +169,7 @@ languages:
             companyUrl: "https://www.ibm.com/"
             jobs:
               - name: "Site Reliability Engineer"
-                date: "December 2018 – February 2023 · Hortolândia, São Paulo, Brazil"
+                date: "December 2018 – July 2023 · Hortolândia, São Paulo, Brazil"
                 content: |-
                   **Platform operations:** Operated and maintained operating systems, application servers, databases, and high-availability and load-balancing solutions.
 
@@ -478,7 +478,7 @@ params:
         companyUrl: "https://www.ibm.com/"
         jobs:
           - name: "Site Reliability Engineer"
-            date: "Dezembro de 2018 – Fevereiro de 2023 · Hortolândia, SP"
+            date: "Dezembro de 2018 – Julho de 2023 · Hortolândia, SP"
             content: |-
               **Operação de plataforma:** Operação e manutenção de sistemas operacionais, servidores de aplicação, bancos de dados e soluções de alta disponibilidade e balanceamento de carga.
 

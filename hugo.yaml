@@ -35,7 +35,7 @@ languages:
           pageRef: /posts
           weight: 1
     params:
-      description: "Personal Blog"
+      description: "Backend Software Engineer focused on Go, distributed systems, observability, and SRE."
       navbar:
         searchPlaceholder: "Search"
       projects:
@@ -90,13 +90,13 @@ languages:
       hero:
         intro: "Hello World!"
         subtitle: ""
-        content: "Father of Inácio and proud husband of Jullyana! Yes, two L's and a Y :)"
+        content: "I'm Inácio's dad, and I have the privilege of being Jullyana's husband!—yes, that's two 'l's and a 'y' :)"
         button:
           name: "Resume"
       about:
-        title: "About me!"
+        title: "Yes, it's me!"
         content: |-
-          Technology professional with **14 years of experience**, including **10 years** in Linux and Windows systems administration, automation, containers, monitoring, and observability. Over the last **four years**, focused on software engineering and backend development with **Go, Ruby on Rails, and Python**.
+          Technology professional with **15 years of experience**, including **10 years** in Linux and Windows systems administration, automation, containers, monitoring, and observability. Over the last **three years**, focused on software engineering and backend development with **Go, Ruby on Rails, and Python**.
 
           Builds services for automation platforms, applying software engineering practices, sound architecture, and **SRE and DevOps** principles. Experienced in mission-critical environments and distributed systems supporting a platform with approximately **200 million automated executions per month** and **60,000 automations and workflows**.
 
@@ -112,24 +112,38 @@ languages:
                 - "Ruby on Rails"
                 - "Python"
                 - "REST APIs"
+                - "gRPC"
+                - "OpenAPI"
             - title: "Architecture & Design"
               items:
                 - "Distributed systems"
                 - "Hexagonal architecture"
                 - "SOLID"
                 - "Clean Code"
+                - "Event-driven design"
             - title: "SRE & Observability"
               items:
                 - "Reliability"
                 - "Monitoring"
                 - "High availability"
                 - "Performance"
+                - "Prometheus"
+                - "Grafana"
+                - "OpenTelemetry"
+            - title: "Data & Messaging"
+              items:
+                - "PostgreSQL"
+                - "Redis"
+                - "Kafka"
+                - "RabbitMQ"
             - title: "Infrastructure & Automation"
               items:
                 - "Linux"
                 - "Kubernetes"
-                - "Containers"
+                - "Docker"
+                - "Terraform"
                 - "Ansible"
+                - "CI/CD"
                 - "DevOps"
       experience:
         title: "Experience"
@@ -137,16 +151,20 @@ languages:
           - company: "Kyndryl"
             companyUrl: "https://www.kyndryl.com/"
             jobs:
-              - name: "Software Engineering Development"
+              - name: "Software Engineer"
                 date: "July 2023 – Present · Hortolândia, São Paulo, Brazil"
                 content: |-
-                  **Go backend development:** Develop Go backend services for a large-scale automation platform, focusing on scalability, reliability, and production predictability.
+                  **Go backend development:** Develop backend services in Go for automation platforms and critical operations, with a focus on scalability, reliability, and predictability in production.
 
-                  **High workloads & concurrency:** Work with high workloads, concurrency, and strict availability requirements in distributed systems.
+                  **High-volume workloads & concurrency:** Work with high-volume workloads, concurrency, and strict availability requirements, contributing to resilient, observable distributed systems that are easy to evolve over time.
 
-                  **Architecture & evolution:** Contribute to service architecture and evolution using hexagonal architecture, well-defined contracts, and separation of concerns.
+                  **Scale & results:** Contribute to a platform with approximately **200 million automated executions per month** and **60,000 automations and workflows**, with **16 million operational events managed monthly**, **up to 30% reduction in operational impact**, and **up to 35% productivity improvement**.
 
-                  **SRE & DevOps:** Apply SRE and DevOps practices with an end-to-end view, from code to production operations.
+                  **Architecture & evolution:** Participate in architectural decisions and service improvements, applying hexagonal architecture, clear contracts, separation of responsibilities, and data-driven operational thinking.
+
+                  **SRE & DevOps:** Complement engineering work with an SRE and DevOps background, providing an end-to-end view of the system, from code to production.
+
+                  **Objective & impact:** Turn complex problems into simple, sustainable solutions that create measurable impact in efficiency, stability, and delivery.
           - company: "IBM"
             companyUrl: "https://www.ibm.com/"
             jobs:
@@ -171,7 +189,7 @@ languages:
                   **Automation & versioning:** Centralized code in Git and implemented Ansible, Puppet, and Shell Script for monitoring and alerting.
 
                   **Operations & training:** Trained teams in DevOps and automation; monitored databases, ERP systems, and backups.
-          - company: "Soluti Digital Certification"
+          - company: "Soluti Certificação Digital"
             companyUrl: "https://www.soluti.com.br/"
             jobs:
               - name: "IT Infrastructure Analyst"
@@ -250,16 +268,16 @@ languages:
               name: "Final thesis"
               url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL1-ICAAAAAfcJ9t1srMrzpDdywLgUKEI?e=GSU2QR"
       achievements:
-        title: "Certificates"
+        title: "Credentials"
         items:
           - title: Accredible
             content: |
-              Courses and trainings
+              Courses, trainings, and badges
             url: https://www.credential.net/profile/fabianoflorentino/wallet
             image: /images/accredible-logo.svg
           - title: Credly
             content: |
-              Courses and trainings
+              Courses, trainings, and badges
             url: https://www.credly.com/users/fabiano-florentino.2344b637/badges?sort=-state_updated_at&page=1#credly
             image: /images/credly-logo.svg
       contact:
@@ -304,7 +322,7 @@ markup:
 
 params:
   title: "Fabiano Santos Florentino"
-  description: "Blog Pessoal"
+  description: ""
   useBootstrapCDN: true
   mathjax: false
   animate: true
@@ -354,7 +372,7 @@ params:
       disableEducation: false
       disableProjects: false
       disableAchievements: false
-      disableContact: true
+      disableContact: false
 
   hero:
     enable: true
@@ -384,13 +402,13 @@ params:
     title: "Sim sou eu!"
     image: /images/me-about.jpg
     content: |-
-      Profissional de tecnologia com **14 anos de experiência**, incluindo **10 anos** em administração de sistemas Linux e Windows, automação, contêineres, monitoramento e observabilidade. Nos últimos **quatro anos**, foco em engenharia de software e desenvolvimento backend em **Go, Ruby on Rails e Python**.
+      Profissional de tecnologia com **15 anos de experiência**, incluindo **10 anos** em administração de sistemas Linux e Windows, automação, contêineres, monitoramento e observabilidade. Nos últimos **três anos**, foco em engenharia de software e desenvolvimento backend em **Go, Ruby on Rails e Python**.
 
       Atua em serviços para plataformas de automação, aplicando boas práticas de desenvolvimento, arquitetura de software e princípios de **SRE e DevOps**. Experiência em ambientes críticos e sistemas distribuídos, em uma plataforma com cerca de **200 milhões de execuções automatizadas mensais** e **60 mil automações e workflows**.
 
       Os indicadores reportados para o ambiente incluem **16 milhões de eventos operacionais geridos por mês**, **redução de até 30% no impacto operacional** e **aumento de até 35% na produtividade**.
 
-      Baseado em **Hortolândia, SP — Brasil**. Idiomas: **português nativo** e **inglês básico–intermediário (fala, leitura e escrita)**.
+      Baseado em **Hortolândia, SP — Brasil**. Idiomas: **português nativo** e **inglês básico-intermediário (fala, leitura e escrita)**.
     skills:
       enable: true
       title: "Conhecimento em:"
@@ -401,24 +419,38 @@ params:
             - "Ruby on Rails"
             - "Python"
             - "APIs REST"
+            - "gRPC"
+            - "OpenAPI"
         - title: "Arquitetura & Design"
           items:
             - "Sistemas distribuídos"
             - "Arquitetura hexagonal"
             - "SOLID"
             - "Clean Code"
+            - "Design orientado a eventos"
         - title: "SRE & Observabilidade"
           items:
             - "Confiabilidade"
             - "Monitoramento"
             - "Alta disponibilidade"
             - "Desempenho"
+            - "Prometheus"
+            - "Grafana"
+            - "OpenTelemetry"
+        - title: "Dados & Mensageria"
+          items:
+            - "PostgreSQL"
+            - "Redis"
+            - "Kafka"
+            - "RabbitMQ"
         - title: "Infraestrutura & Automação"
           items:
             - "Linux"
             - "Kubernetes"
-            - "Contêineres"
+            - "Docker"
+            - "Terraform"
             - "Ansible"
+            - "CI/CD"
             - "DevOps"
 
   experience:
@@ -428,16 +460,20 @@ params:
       - company: "Kyndryl"
         companyUrl: "https://www.kyndryl.com/"
         jobs:
-          - name: "Software Engineering Development"
+          - name: "Engenheiro de Software"
             date: "Julho de 2023 – Atual · Hortolândia, SP"
             content: |-
-              **Desenvolvimento backend em Go:** Serviços para uma plataforma de automação de grande escala, com foco em escalabilidade, confiabilidade e previsibilidade em produção.
+              **Desenvolvimento backend em Go:** Desenvolvimento de serviços backend em Go para plataformas de automação e operações críticas, com foco em escalabilidade, confiabilidade e previsibilidade em produção.
 
-              **Cargas elevadas & concorrência:** Atuação com altos volumes, concorrência e requisitos rigorosos de alta disponibilidade em sistemas distribuídos.
+              **Cargas elevadas & concorrência:** Atuação com altos volumes, concorrência e requisitos rigorosos de disponibilidade, contribuindo para sistemas distribuídos resilientes, observáveis e fáceis de evoluir ao longo do tempo.
 
-              **Arquitetura & evolução:** Contribuição para a arquitetura e evolução dos serviços, com arquitetura hexagonal, contratos bem definidos e separação de responsabilidades.
+              **Escala & resultados:** Atuação em uma plataforma com cerca de **200 milhões de execuções automatizadas mensais** e **60 mil automações e workflows**, com **16 milhões de eventos operacionais geridos por mês**, **redução de até 30% no impacto operacional** e **aumento de até 35% na produtividade**.
 
-              **SRE & DevOps:** Práticas de SRE e DevOps com visão ponta a ponta, do código à operação em produção.
+              **Arquitetura & evolução:** Participação em decisões arquiteturais e melhorias de serviços, aplicando arquitetura hexagonal, contratos claros, separação de responsabilidades e pensamento operacional orientado a dados.
+
+              **SRE & DevOps:** Bagagem em SRE e DevOps que complementa o trabalho de engenharia, permitindo uma visão ponta a ponta do sistema, do código à produção.
+
+              **Objetivo & impacto:** Transformar problemas complexos em soluções simples e sustentáveis, com impacto mensurável em eficiência, estabilidade e entrega.
       - company: "IBM"
         companyUrl: "https://www.ibm.com/"
         jobs:
@@ -451,7 +487,7 @@ params:
               **Automação de infraestrutura:** Automação de fluxos de trabalho e infraestrutura, com suporte a provedores de nuvem e serviços locais.
 
               **Confiabilidade:** Monitoramento e suporte a servidores e serviços, com foco em confiabilidade, resiliência e disponibilidade.
-      - company: "2com Consulting"
+      - company: "2Com Consulting"
         companyUrl: "https://2comconsulting.com.br/"
         jobs:
           - name: "Analista de Monitoramento"
@@ -546,16 +582,16 @@ params:
 
   achievements:
     enable: true
-    title: Certificados
+    title: Credenciais
     items:
       - title: Accredible
         content: |
-          Cursos e Treinamentos
+          Cursos, treinamentos e badges
         url: https://www.credential.net/profile/fabianoflorentino/wallet
         image: /images/accredible-logo.svg
       - title: Credly
         content: |
-          Cursos e Treinamentos
+          Cursos, treinamentos e badges
         url: https://www.credly.com/users/fabiano-florentino.2344b637/badges?sort=-state_updated_at&page=1#credly
         image: /images/credly-logo.svg
 
@@ -620,7 +656,7 @@ params:
       enable: false # `contact.email` value will be ignored
       formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
       emailCaption: "Seu e-mail"
-      messageCaption: "Menssagem"
+      messageCaption: "Mensagem"
       messageRows: 5
 
   footer:

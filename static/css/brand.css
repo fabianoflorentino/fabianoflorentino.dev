@@ -19,6 +19,8 @@ body.light {
   --brand-glow: rgba(7, 121, 168, 0.16);
   --brand-accent-glow: rgba(109, 63, 209, 0.1);
   --brand-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+  --brand-header-bg: rgba(255, 255, 255, 0.82);
+  --brand-header-shadow: 0 1px 0 rgba(15, 23, 42, 0.06), 0 16px 40px rgba(15, 23, 42, 0.14);
 }
 
 body.dark {
@@ -35,6 +37,8 @@ body.dark {
   --brand-glow: rgba(49, 201, 255, 0.22);
   --brand-accent-glow: rgba(167, 139, 250, 0.16);
   --brand-shadow: 0 24px 60px rgba(2, 8, 23, 0.45);
+  --brand-header-bg: rgba(8, 11, 20, 0.78);
+  --brand-header-shadow: 0 1px 0 rgba(148, 163, 184, 0.12), 0 18px 44px rgba(2, 8, 23, 0.6);
 }
 
 /* ---------- Typography ---------- */
@@ -208,6 +212,19 @@ body #hero h1 {
 
 .navbar .nav-link {
   font-weight: 500;
+}
+
+#profileHeader {
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+#profileHeader.showHeaderOnTop {
+  background-color: var(--brand-header-bg) !important;
+  border-bottom-color: var(--brand-border);
+  box-shadow: var(--brand-header-shadow);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
 }
 
 .btn {
@@ -457,6 +474,10 @@ body #hero h1 {
 
   .project-card,
   .project-icon {
+    transition: none;
+  }
+
+  #profileHeader {
     transition: none;
   }
 }

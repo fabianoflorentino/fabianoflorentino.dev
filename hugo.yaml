@@ -46,7 +46,7 @@ languages:
           - title: "golang-agent-skills"
             kicker: "Developer tooling · Go"
             tagline: "A versioned field guide of 58 agent skills that helps AI agents write, review, and debug idiomatic Go — from architecture and concurrency to security and performance."
-            image: "/images/projects/golang-agent-skills.svg"
+            image: "/images/projects/golang-agent-skills.png"
             demo: "https://golang-agent-skills.fabianoflorentino.dev"
             repo: "https://github.com/fabianoflorentino/golang-agent-skills"
             stack:
@@ -57,7 +57,7 @@ languages:
           - title: "vidctl"
             kicker: "Desktop · Video"
             tagline: "A 100% offline video compressor with H.265, GPU acceleration, split parts, and audio extraction."
-            image: "/images/projects/vidctl.svg"
+            image: "/images/projects/vidctl.png"
             demo: "https://vidctl.fabianoflorentino.dev"
             repo: "https://github.com/fabianoflorentino/vidctl"
             stack:
@@ -79,7 +79,7 @@ languages:
           - title: "stckcraw"
             kicker: "Market data · B3"
             tagline: "Top 10 B3 gainers and losers by asset type, with daily charts refreshed every 30 minutes."
-            image: "/images/projects/stckcraw.svg"
+            image: "/images/projects/stckcraw.png"
             demo: "https://stckcraw.fabianoflorentino.dev"
             repo: "https://github.com/fabianoflorentino/stckcraw"
             stack:
@@ -615,7 +615,7 @@ params:
       - title: "golang-agent-skills"
         kicker: "Ferramentas dev · Go"
         tagline: "Guia de campo versionado com 58 skills para agentes de IA escreverem, revisarem e depurarem Go idiomático — de arquitetura e concorrência a segurança e performance."
-        image: "/images/projects/golang-agent-skills.svg"
+        image: "/images/projects/golang-agent-skills.png"
         demo: "https://golang-agent-skills.fabianoflorentino.dev"
         repo: "https://github.com/fabianoflorentino/golang-agent-skills"
         stack:
@@ -626,7 +626,7 @@ params:
       - title: "vidctl"
         kicker: "Desktop · Vídeo"
         tagline: "Compressor de vídeo 100% offline com H.265, aceleração por GPU, corte em partes e extração de áudio."
-        image: "/images/projects/vidctl.svg"
+        image: "/images/projects/vidctl.png"
         demo: "https://vidctl.fabianoflorentino.dev"
         repo: "https://github.com/fabianoflorentino/vidctl"
         stack:
@@ -648,7 +648,7 @@ params:
       - title: "stckcraw"
         kicker: "Dados de mercado · B3"
         tagline: "Top 10 altas e baixas da B3 por tipo de ativo, com gráficos diários atualizados a cada 30 minutos."
-        image: "/images/projects/stckcraw.svg"
+        image: "/images/projects/stckcraw.png"
         demo: "https://stckcraw.fabianoflorentino.dev"
         repo: "https://github.com/fabianoflorentino/stckcraw"
         stack:

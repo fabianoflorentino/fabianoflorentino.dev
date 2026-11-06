@@ -13,22 +13,20 @@
             {{ range .Site.Params.projects.items }}
             <div class="col-lg-4 col-md-6">
                 <article class="project-card">
-                    {{ if .image }}
-                    <div class="project-frame" aria-hidden="true">
-                        <div class="project-chrome">
-                            <span class="dot dot-red"></span>
-                            <span class="dot dot-yellow"></span>
-                            <span class="dot dot-green"></span>
-                            <span class="project-chrome-title">{{ .title }}</span>
-                        </div>
-                        <img src="{{ .image }}" alt="{{ .title }}" loading="lazy">
-                    </div>
-                    {{ end }}
-                    <div class="project-body">
-                        {{ with .kicker }}
-                        <span class="project-kicker">{{ . }}</span>
+                    <div class="project-head">
+                        {{ if .icon }}
+                        <span class="project-icon" style="--project-accent: {{ .accent | default "#6bffd6" }};" aria-hidden="true">
+                            <img src="{{ .icon }}" alt="" loading="lazy" width="32" height="32">
+                        </span>
                         {{ end }}
-                        <h4 class="project-name">{{ .title }}</h4>
+                        <div class="project-heading">
+                            {{ with .kicker }}
+                            <span class="project-kicker">{{ . }}</span>
+                            {{ end }}
+                            <h4 class="project-name">{{ .title }}</h4>
+                        </div>
+                    </div>
+                    <div class="project-body">
                         <p class="project-tagline">{{ .tagline }}</p>
                         {{ with .stack }}
                         <ul class="project-stack">

@@ -46,7 +46,8 @@ languages:
           - title: "golang-agent-skills"
             kicker: "Developer tooling · Go"
             tagline: "A versioned field guide of 58 agent skills that helps AI agents write, review, and debug idiomatic Go — from architecture and concurrency to security and performance."
-            image: "/images/projects/golang-agent-skills.png"
+            icon: "/images/projects/icons/golang-agent-skills.svg"
+            accent: "#6bffd6"
             demo: "https://golang-agent-skills.fabianoflorentino.dev"
             repo: "https://github.com/fabianoflorentino/golang-agent-skills"
             stack:
@@ -57,7 +58,8 @@ languages:
           - title: "vidctl"
             kicker: "Desktop · Video"
             tagline: "A 100% offline video compressor with H.265, GPU acceleration, split parts, and audio extraction."
-            image: "/images/projects/vidctl.png"
+            icon: "/images/projects/icons/vidctl.svg"
+            accent: "#38bdf8"
             demo: "https://vidctl.fabianoflorentino.dev"
             repo: "https://github.com/fabianoflorentino/vidctl"
             stack:
@@ -68,7 +70,8 @@ languages:
           - title: "stracectl"
             kicker: "Observability · Go"
             tagline: "A modern strace with a real-time TUI and a Kubernetes sidecar mode."
-            image: "/images/projects/stracectl.png"
+            icon: "/images/projects/icons/stracectl.svg"
+            accent: "#31c9ff"
             demo: "https://stracectl.fabianoflorentino.dev"
             repo: "https://github.com/fabianoflorentino/stracectl"
             stack:
@@ -79,7 +82,8 @@ languages:
           - title: "stckcraw"
             kicker: "Market data · B3"
             tagline: "Top 10 B3 gainers and losers by asset type, with daily charts refreshed every 30 minutes."
-            image: "/images/projects/stckcraw.png"
+            icon: "/images/projects/icons/stckcraw.svg"
+            accent: "#f5b84b"
             demo: "https://stckcraw.fabianoflorentino.dev"
             repo: "https://github.com/fabianoflorentino/stckcraw"
             stack:
@@ -90,7 +94,8 @@ languages:
           - title: "certificate-validate"
             kicker: "Security · TLS"
             tagline: "TLS certificate monitoring from the CLI, API, and Kubernetes, with OCSP/CRL checks, Prometheus metrics, and alerts."
-            image: "/images/projects/certificate-validate.png"
+            icon: "/images/projects/icons/certificate-validate.svg"
+            accent: "#a78bfa"
             demo: "https://certificate-validate.fabianoflorentino.dev"
             repo: "https://github.com/fabianoflorentino/certificate-validate"
             stack:
@@ -615,7 +620,8 @@ params:
       - title: "golang-agent-skills"
         kicker: "Ferramentas dev · Go"
         tagline: "Guia de campo versionado com 58 skills para agentes de IA escreverem, revisarem e depurarem Go idiomático — de arquitetura e concorrência a segurança e performance."
-        image: "/images/projects/golang-agent-skills.png"
+        icon: "/images/projects/icons/golang-agent-skills.svg"
+        accent: "#6bffd6"
         demo: "https://golang-agent-skills.fabianoflorentino.dev"
         repo: "https://github.com/fabianoflorentino/golang-agent-skills"
         stack:
@@ -626,7 +632,8 @@ params:
       - title: "vidctl"
         kicker: "Desktop · Vídeo"
         tagline: "Compressor de vídeo 100% offline com H.265, aceleração por GPU, corte em partes e extração de áudio."
-        image: "/images/projects/vidctl.png"
+        icon: "/images/projects/icons/vidctl.svg"
+        accent: "#38bdf8"
         demo: "https://vidctl.fabianoflorentino.dev"
         repo: "https://github.com/fabianoflorentino/vidctl"
         stack:
@@ -637,7 +644,8 @@ params:
       - title: "stracectl"
         kicker: "Observabilidade · Go"
         tagline: "Um strace moderno com TUI em tempo real e modo sidecar para Kubernetes."
-        image: "/images/projects/stracectl.png"
+        icon: "/images/projects/icons/stracectl.svg"
+        accent: "#31c9ff"
         demo: "https://stracectl.fabianoflorentino.dev"
         repo: "https://github.com/fabianoflorentino/stracectl"
         stack:
@@ -648,7 +656,8 @@ params:
       - title: "stckcraw"
         kicker: "Dados de mercado · B3"
         tagline: "Top 10 altas e baixas da B3 por tipo de ativo, com gráficos diários atualizados a cada 30 minutos."
-        image: "/images/projects/stckcraw.png"
+        icon: "/images/projects/icons/stckcraw.svg"
+        accent: "#f5b84b"
         demo: "https://stckcraw.fabianoflorentino.dev"
         repo: "https://github.com/fabianoflorentino/stckcraw"
         stack:
@@ -659,7 +668,8 @@ params:
       - title: "certificate-validate"
         kicker: "Segurança · TLS"
         tagline: "Monitoramento de certificados TLS via CLI, API e Kubernetes, com OCSP/CRL, métricas Prometheus e alertas."
-        image: "/images/projects/certificate-validate.png"
+        icon: "/images/projects/icons/certificate-validate.svg"
+        accent: "#a78bfa"
         demo: "https://certificate-validate.fabianoflorentino.dev"
         repo: "https://github.com/fabianoflorentino/certificate-validate"
         stack:

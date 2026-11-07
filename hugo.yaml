@@ -261,7 +261,7 @@ languages:
             featuredLink:
               enable: true
               name: "Certificate"
-              url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQBDREjvY2VlSq4ziBFJyR5UAQp8J5agulbW5LGrCDyBvpo?e=opKQT7"
+              url: "/files/certificates/mba-software-engineering-certificate.pdf"
           - title: "Computer Forensics and Digital Expertise"
             school:
               name: "IPOG - Institute of Postgraduate Studies and Higher Education"
@@ -272,7 +272,7 @@ languages:
             featuredLink:
               enable: true
               name: "Final thesis"
-              url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL8TcBAAAAAYdBbZiMyggrRiMFegETkPs?e=dW0XeU"
+              url: "/files/certificates/tcc-ipog-computer-forensics.pdf"
           - title: "Computer Network Security"
             school:
               name: "FATESG - SENAI Faculty of Management Development"
@@ -283,7 +283,7 @@ languages:
             featuredLink:
               enable: true
               name: "Final thesis"
-              url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL8jcBAAAAAZGFGMoCHiuyEiIXvOAPUxk?e=nZhMSL"
+              url: "/files/certificates/tcc-fatesg-computer-network-security.pdf"
           - title: "Associate Degree in Computer Networking"
             school:
               name: "FATESG - SENAI Faculty of Management Development"
@@ -294,7 +294,7 @@ languages:
             featuredLink:
               enable: true
               name: "Final thesis"
-              url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL1-ICAAAAAfcJ9t1srMrzpDdywLgUKEI?e=GSU2QR"
+              url: "/files/certificates/tcc-fatesg-computer-networking.pdf"
       achievements:
         title: "Credentials"
         items:
@@ -573,7 +573,7 @@ params:
         featuredLink:
           enable: true
           name: "Certificado"
-          url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQBDREjvY2VlSq4ziBFJyR5UAQp8J5agulbW5LGrCDyBvpo?e=opKQT7"
+          url: "/files/certificates/mba-software-engineering-certificate.pdf"
       - title: "Perícia Forense Computacional e Perícia Digital"
         school:
           name: "IPOG - Instituto de Pós-Graduação e Graduação"
@@ -584,7 +584,7 @@ params:
         featuredLink:
           enable: true
           name: "Tese de conclusão de Curso"
-          url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL8TcBAAAAAYdBbZiMyggrRiMFegETkPs?e=dW0XeU"
+          url: "/files/certificates/tcc-ipog-computer-forensics.pdf"
       - title: "Segurança de Redes de Computadores"
         school:
           name: "Faculdade de Tecnologia Senai de Desenvolvimento Gerencial - FATESG"
@@ -595,7 +595,7 @@ params:
         featuredLink:
           enable: true
           name: "Tese de conclusão de Curso"
-          url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL8jcBAAAAAZGFGMoCHiuyEiIXvOAPUxk?e=nZhMSL"
+          url: "/files/certificates/tcc-fatesg-computer-network-security.pdf"
       - title: "Tecnólogo em Redes de Computadores"
         school:
           name: "Faculdade de Tecnologia Senai de Desenvolvimento Gerencial - FATESG"
@@ -606,7 +606,7 @@ params:
         featuredLink:
           enable: true
           name: "Tese de conclusão de Curso"
-          url: "https://1drv.ms/b/c/cb8da23e4e8298d9/IQDZmIJOPqKNIIDL1-ICAAAAAfcJ9t1srMrzpDdywLgUKEI?e=GSU2QR"
+          url: "/files/certificates/tcc-fatesg-computer-networking.pdf"
 
   achievements:
     enable: true

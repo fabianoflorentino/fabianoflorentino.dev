@@ -224,3 +224,20 @@
         </div>
     </nav>
 </header>
+
+<script>
+    (function () {
+        var header = document.getElementById("profileHeader");
+        if (!header) {
+            return;
+        }
+        var syncHeaderHeight = function () {
+            header.style.setProperty("--profile-header-h", header.offsetHeight + "px");
+        };
+        syncHeaderHeight();
+        window.addEventListener("resize", syncHeaderHeight);
+        if ("ResizeObserver" in window) {
+            new ResizeObserver(syncHeaderHeight).observe(header);
+        }
+    })();
+</script>

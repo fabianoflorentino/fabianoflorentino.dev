@@ -180,21 +180,25 @@
                     <li class="nav-item navbar-text">
                         <!-- darkmode mode toggle -->
                         <div class="text-center">
-                            <button id="theme-toggle">
-                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                                </svg>
-                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="5"></circle>
-                                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                                </svg>
+                            <button id="theme-toggle" class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Alternar tema claro e escuro">
+                                <span class="theme-switch-track">
+                                    <span class="theme-switch-knob">
+                                        <svg class="theme-switch-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="5"></circle>
+                                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                        </svg>
+                                        <svg class="theme-switch-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                        </svg>
+                                    </span>
+                                </span>
                             </button>
                         </div>
                     </li>
@@ -203,20 +207,22 @@
 
                     <!-- Language Switcher -->
                     <li class="nav-item navbar-text">
-                        <div class="text-center">
-                            {{ $translations := .AllTranslations }}
-                            {{ if not $translations }}
-                                {{ $translations = .Site.Home.AllTranslations }}
+                        {{ $currentLang := .Site.Language.Lang }}
+                        {{ $translations := .AllTranslations }}
+                        {{ if not $translations }}
+                            {{ $translations = .Site.Home.AllTranslations }}
+                        {{ end }}
+                        {{ range $translations }}
+                            {{ if ne $currentLang .Language.Lang }}
+                            <a class="lang-switch{{ if eq $currentLang "en" }} is-en{{ end }}" href="{{ .RelPermalink }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Locale }}" aria-label="Alternar idioma">
+                                <span class="lang-switch-track">
+                                    <span class="lang-switch-knob" aria-hidden="true"></span>
+                                    <span class="lang-switch-label">PT</span>
+                                    <span class="lang-switch-label">EN</span>
+                                </span>
+                            </a>
                             {{ end }}
-
-                            {{ range $translations }}
-                                {{ if ne $.Site.Language.Lang .Language.Lang }}
-                                    <a class="btn btn-link p-1" href="{{ .RelPermalink }}" title="Switch to {{ .Language.LanguageName }}">
-                                        {{ .Language.LanguageName }}
-                                    </a>
-                                {{ end }}
-                            {{ end }}
-                        </div>
+                        {{ end }}
                     </li>
                 </ul>
 
@@ -227,17 +233,26 @@
 
 <script>
     (function () {
-        var header = document.getElementById("profileHeader");
-        if (!header) {
-            return;
+        var html = document.documentElement;
+        var themeSwitch = document.getElementById("theme-toggle");
+        if (themeSwitch) {
+            var syncThemeState = function () {
+                var isDark = html.classList.contains("dark");
+                themeSwitch.setAttribute("aria-checked", isDark ? "true" : "false");
+            };
+            syncThemeState();
+            new MutationObserver(syncThemeState).observe(html, {
+                attributes: true,
+                attributeFilter: ["class"]
+            });
         }
-        var syncHeaderHeight = function () {
-            header.style.setProperty("--profile-header-h", header.offsetHeight + "px");
-        };
-        syncHeaderHeight();
-        window.addEventListener("resize", syncHeaderHeight);
-        if ("ResizeObserver" in window) {
-            new ResizeObserver(syncHeaderHeight).observe(header);
-        }
+
+        document.querySelectorAll(".lang-switch").forEach(function (link) {
+            link.addEventListener("click", function () {
+                try {
+                    sessionStorage.setItem("lang-switch", "1");
+                } catch (e) {}
+            });
+        });
     })();
 </script>

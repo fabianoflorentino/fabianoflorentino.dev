@@ -13,17 +13,35 @@
   <title>
     {{- block "title" . }} {{- end }}
   </title>
+
+  <script>
+    (function () {
+      try {
+        var pref = localStorage.getItem("pref-theme");
+        var dark = pref === "dark" || (!pref && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        if (dark) {
+          document.documentElement.classList.add("dark");
+        }
+        if (sessionStorage.getItem("lang-switch") === "1") {
+          sessionStorage.removeItem("lang-switch");
+          document.documentElement.classList.add("no-entry-motion");
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 
 <body class="light">
   <!-- javascripts -->
   <!-- <script src="/js/jquery-3.6.0.min.js"></script> -->
 
-  {{- partial "sections/header.html" . -}}
-  <div id="content">
-    {{- block "main" . }}{{- end }}
+  <div class="site-shell">
+    {{- partial "sections/header.html" . -}}
+    <div id="content">
+      {{- block "main" . }}{{- end }}
+    </div>
+    {{- partial "sections/footer/index.html" . -}}
   </div>
-  {{- partial "sections/footer/index.html" . -}}
   {{- partial "back-to-top.html" . -}}
 
   {{- if (or (eq .Site.Params.UseBootstrapCDN true) (eq .Site.Params.UseBootstrapCDN "js")) -}}

@@ -32,7 +32,7 @@ The dev server runs on <http://localhost:1313>.
 
 ### Pinning Hugo version
 
-Cloudflare Pages uses `HUGO_VERSION=0.155.3`.
+Cloudflare Pages uses `HUGO_VERSION=0.169.0`.
 To keep local builds consistent, copy `.env.example` to `.env`:
 
 - `cp .env.example .env`
@@ -44,7 +44,7 @@ To keep local builds consistent, copy `.env.example` to `.env`:
 - **Build command**: `sh scripts/cf-build.sh`
 - **Build output directory**: `public`
 - **Environment variables**:
-  - `HUGO_VERSION=0.155.3`
+  - `HUGO_VERSION=0.169.0`
 
 Why a script?
 

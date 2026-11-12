@@ -420,6 +420,33 @@ body #achievements .card:focus {
   transform: translateY(-5px);
 }
 
+/* ---------- Post banner (single) ---------- */
+
+#single .featured-image img {
+  border: 1px solid var(--brand-border) !important;
+  border-radius: 18px !important;
+  box-shadow: var(--brand-header-shadow) !important;
+  background-color: var(--brand-surface);
+}
+
+/* ---------- Footer social icons ---------- */
+
+.footer-social-icons a {
+  color: var(--brand-muted);
+  display: inline-flex;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-social-icons a:hover {
+  color: var(--brand-teal);
+  transform: translateY(-2px);
+}
+
+.footer-social-icons svg {
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
 @media (min-width: 768px) {
   #experience .container > .row > .col-sm-12.col-md-8.col-lg-8 {
     flex: 0 0 auto;

@@ -1,0 +1,89 @@
+/* ============================================================
+   Posts list — cyberpunk card shell
+   Overrides the theme's list.css to match the site brand layer:
+   brand surface, border, soft shadow + a neon lift on hover.
+   ============================================================ */
+
+#list-page .card {
+  background-color: var(--brand-surface) !important;
+  border: 1px solid var(--brand-border);
+  border-radius: 16px;
+  box-shadow: var(--brand-shadow);
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+#list-page .card:hover {
+  border-color: var(--brand-border-strong);
+  box-shadow: var(--brand-header-shadow);
+  transform: translateY(-5px);
+}
+
+#list-page .card a {
+  text-decoration: none;
+}
+
+#list-page .card a h5 {
+  color: var(--brand-text) !important;
+}
+
+#list-page .card > .card-header {
+  padding: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+#list-page .card > .card-header .card-img-top {
+  width: 100%;
+  height: 250px !important;
+  background-color: transparent !important;
+}
+
+#list-page .card-text * {
+  background-color: transparent !important;
+}
+
+#list-page .post-footer {
+  padding: 0.6rem 1rem;
+  background-color: var(--brand-surface) !important;
+  color: var(--brand-muted) !important;
+  border-top: 1px solid var(--brand-border);
+  font-size: 0.8rem;
+}
+
+#list-page .post-footer a {
+  background-color: transparent !important;
+  color: var(--brand-teal) !important;
+  border: 1px solid var(--brand-border-strong);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.78rem;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+#list-page .post-footer a:hover {
+  color: var(--brand-cyan) !important;
+  border-color: var(--brand-teal);
+}
+
+#list-page .post-footer a:focus {
+  box-shadow: none !important;
+}
+
+/* pagination */
+#list-page ul li a {
+  transition: none;
+  border-color: var(--brand-border);
+  background-color: var(--brand-surface) !important;
+  color: var(--brand-muted) !important;
+}
+
+#list-page ul li a:focus {
+  box-shadow: none;
+}
+
+#list-page .page-item.active .page-link {
+  border-color: var(--brand-teal);
+  background-color: var(--brand-teal) !important;
+  color: var(--background-color) !important;
+}

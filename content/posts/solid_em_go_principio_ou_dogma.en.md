@@ -5,7 +5,7 @@ title: 'SOLID in Go: principle or dogma?'
 translationKey: solid_em_go_principio_ou_dogma
 tags: [post, go, architecture, solid]
 series: SOLID
-image: /images/SOLID.jpg
+image: /images/SOLID.png
 ---
 
 Does this sound familiar?

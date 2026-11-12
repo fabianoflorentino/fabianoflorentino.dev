@@ -4,7 +4,7 @@ draft: false
 title: 'Do you know strace?'
 translationKey: stracectl_introducao
 tags: [strace, linux, operating system]
-image: /images/strace-banner.jpg
+image: /images/strace-banner.png
 translation:
   url: /posts/stracectl/
   text: Versão em português

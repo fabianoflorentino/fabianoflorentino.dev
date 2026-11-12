@@ -5,7 +5,7 @@ title: 'Open/Closed Principle'
 translationKey: open_closed_principle
 tags: [post, go, arquitetura, solid, ocp]
 series: SOLID
-image: /images/OCP.jpg
+image: /images/OCP.png
 ---
 
 Este post é parte 2 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](/tags/solid/).

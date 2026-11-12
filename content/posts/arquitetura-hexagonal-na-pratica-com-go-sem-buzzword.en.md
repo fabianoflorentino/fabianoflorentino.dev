@@ -5,7 +5,7 @@ title: 'Hexagonal Architecture in Practice (with Go, no buzzword)'
 translationKey: arquitetura-hexagonal
 tags: [post, go, architecture, hexagonal]
 mermaid: true
-image: /images/arquitetura-hexagonal.jpg
+image: /images/arquitetura-hexagonal.png
 ---
 
 > If your business rule depends on `*sql.DB`, `http.Request`, or any technical detail, then your system is already coupled - you just have not felt the impact yet.

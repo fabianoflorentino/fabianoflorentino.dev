@@ -4,7 +4,7 @@ draft: false
 title: 'KISS, YAGNI, and DRY in Go: when to simplify, when to postpone, and when to abstract'
 translationKey: kiss-yagni-dry-em-go
 tags: [post, go, architecture, design, principles, kiss, yagni, dry]
-image: /images/kiss-yagni-dry-go.jpg
+image: /images/kiss-yagni-dry-go.png
 ---
 
 ## KISS, YAGNI, and DRY in Go

@@ -5,7 +5,7 @@ title: 'Dependency Inversion Principle'
 translationKey: dependency_inversion_principle
 tags: [post, go, architecture, solid, dip]
 series: SOLID
-image: /images/DIP.jpg
+image: /images/DIP.png
 ---
 
 This post is part 5 of a SOLID series. Follow the other articles via the tag [/solid](/en/tags/solid/).

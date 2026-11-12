@@ -5,7 +5,7 @@ title: 'Liskov Substitution Principle'
 translationKey: liskov_substitution_principle
 tags: [post, go, architecture, solid, lsp]
 series: SOLID
-image: /images/LSP.jpg
+image: /images/LSP.png
 ---
 
 This post is part 3 of a SOLID series. Follow the other articles via the tag [/solid](/en/tags/solid/).

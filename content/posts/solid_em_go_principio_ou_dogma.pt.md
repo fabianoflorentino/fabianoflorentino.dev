@@ -5,7 +5,7 @@ title: 'SOLID em Go Princípio ou dogma?'
 translationKey: solid_em_go_principio_ou_dogma
 tags: [post, go, arquitetura, solid]
 series: SOLID
-image: /images/SOLID.jpg
+image: /images/SOLID.png
 ---
 
 Isso soa familiar?

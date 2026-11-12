@@ -5,7 +5,7 @@ title: 'Interface Segregation Principle'
 translationKey: interface_segregation_principle
 tags: [post, go, architecture, solid, isp]
 series: SOLID
-image: /images/ISP.jpg
+image: /images/ISP.png
 ---
 
 This post is part 4 of a SOLID series. Follow the other articles via the tag [/solid](/en/tags/solid/).

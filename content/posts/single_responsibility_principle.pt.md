@@ -5,7 +5,7 @@ title: 'Single Responsibility Principle (SRP)'
 translationKey: single_responsibility_principle
 tags: [post, go, arquitetura, solid, srp]
 series: SOLID
-image: /images/SRP.jpg
+image: /images/SRP.png
 ---
 
 Este post é parte 1 de uma série sobre SOLID. Acompanhe os outros artigos pela tag [/solid](/tags/solid/).

@@ -5,7 +5,7 @@ title: 'Arquitetura Hexagonal na prática (com Go, sem buzzword)'
 translationKey: arquitetura-hexagonal
 tags: [post, go, architecture, hexagonal]
 mermaid: true
-image: /images/arquitetura-hexagonal.jpg
+image: /images/arquitetura-hexagonal.png
 ---
 
 > Se sua regra de negócio depende de `*sql.DB`, `http.Request` ou qualquer detalhe técnico, então seu sistema já está acoplado — e você só ainda não sentiu o impacto.

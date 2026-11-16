@@ -124,13 +124,35 @@ languages:
       about:
         title: "Yes, it's me!"
         content: |-
-          Technology professional with **15 years of experience**, including **10 years** in Linux and Windows systems administration, automation, containers, monitoring, and observability. Over the last **three years**, focused on software engineering and backend development with **Go, Ruby on Rails, and Python**.
+          I'm a technology professional with **14 years of experience**, working in mission-critical environments at the intersection of **Site Reliability Engineering (SRE)**, **Software Engineering**, and **DevOps**.
 
-          Builds services for automation platforms, applying software engineering practices, sound architecture, and **SRE and DevOps** principles. Experienced in mission-critical environments and distributed systems supporting a platform with approximately **200 million automated executions per month** and **60,000 automations and workflows**.
+          My journey began with **10 years** dedicated to **Linux and Windows** systems administration, infrastructure, container orchestration, process automation, monitoring, and observability. During that time, I developed a solid understanding of availability, resilience, scalability, and the reliability of distributed systems.
 
-          Reported environment-level indicators include **16 million operational events managed monthly**, **up to 30% reduction in operational impact**, and **up to 35% productivity improvement**.
+          Over the last **4 years**, I have been moving toward **Software Engineering**, building backend applications and APIs with **Ruby on Rails**, **Python**, and, more recently, **Go (Golang)**.
 
-          Based in **Hortolândia, São Paulo — Brazil**. Languages: **native Portuguese** and **English: basic to intermediate (speaking, reading, and writing)**.
+          I currently work on backend solutions for a large-scale services and automation platform, enabling customers to create, run, and manage automations involving technologies such as **Ansible Automation Platform (AAP)**, cloud providers, monitoring platforms, and observability tools.
+
+          My work combines software engineering and operational excellence, applying practices such as **TDD**, **SOLID**, **Clean Code**, software architecture, and **SRE and DevOps** principles. I have a special interest in operations automation, toil reduction, observability, incident management, and continuous improvement of service reliability.
+
+          I believe SRE goes beyond keeping systems available. It's about applying software engineering principles to operational challenges, building resilient, scalable, and sustainable systems while balancing reliability, delivery velocity, and operational efficiency.
+
+          My goal is to contribute to the evolution of critical platforms and services, bringing development and operations closer together through automation, reliability engineering, and results-driven solutions.
+
+          Collaboration, simplicity, continuous learning, and a focus on impact are the pillars that guide the way I work.
+        impact:
+          enable: true
+          title: "Production impact"
+          items:
+            - value: "200M+"
+              label: "automated executions per month"
+            - value: "60k"
+              label: "automations and workflows managed"
+            - value: "16M+"
+              label: "operational events managed per month"
+            - value: "30%"
+              label: "reduction in operational impact"
+            - value: "35%"
+              label: "increase in productivity"
         skills:
           title: "Skills:"
           items:
@@ -430,13 +452,35 @@ params:
     title: "Sim sou eu!"
     image: /images/me-about.jpg
     content: |-
-      Profissional de tecnologia com **15 anos de experiência**, incluindo **10 anos** em administração de sistemas Linux e Windows, automação, contêineres, monitoramento e observabilidade. Nos últimos **três anos**, foco em engenharia de software e desenvolvimento backend em **Go, Ruby on Rails e Python**.
+      Sou profissional de tecnologia há **14 anos**, com experiência em ambientes de alta criticidade e atuação na interseção entre **Site Reliability Engineering (SRE)**, **Engenharia de Software** e **DevOps**.
 
-      Atua em serviços para plataformas de automação, aplicando boas práticas de desenvolvimento, arquitetura de software e princípios de **SRE e DevOps**. Experiência em ambientes críticos e sistemas distribuídos, em uma plataforma com cerca de **200 milhões de execuções automatizadas mensais** e **60 mil automações e workflows**.
+      Minha trajetória começou com **10 anos** dedicados à administração de sistemas **Linux e Windows**, infraestrutura, orquestração de contêineres, automação de processos, monitoramento e observabilidade. Ao longo desse período, desenvolvi uma visão sólida sobre disponibilidade, resiliência, escalabilidade e confiabilidade de sistemas distribuídos.
 
-      Os indicadores reportados para o ambiente incluem **16 milhões de eventos operacionais geridos por mês**, **redução de até 30% no impacto operacional** e **aumento de até 35% na produtividade**.
+      Nos últimos **4 anos**, venho direcionando minha atuação para **Engenharia de Software**, desenvolvendo aplicações e APIs backend utilizando **Ruby on Rails**, **Python** e, mais recentemente, **Go (Golang)**.
 
-      Baseado em **Hortolândia, SP — Brasil**. Idiomas: **português nativo** e **inglês básico-intermediário (fala, leitura e escrita)**.
+      Atualmente, trabalho no desenvolvimento de soluções backend para uma plataforma de serviços e automação em larga escala, habilitando clientes a criar, executar e gerenciar automações envolvendo tecnologias como **Ansible Automation Platform (AAP)**, provedores de nuvem, plataformas de monitoramento e ferramentas de observabilidade.
+
+      Minha atuação combina engenharia de software e excelência operacional, aplicando práticas como **TDD**, **SOLID**, **Clean Code**, arquitetura de software e princípios de **SRE e DevOps**. Tenho especial interesse em automação de operações, redução de toil, observabilidade, gestão de incidentes e melhoria contínua da confiabilidade dos serviços.
+
+      Acredito que SRE vai além de manter sistemas disponíveis. Trata-se de aplicar princípios de engenharia de software aos desafios de operação, construindo sistemas resilientes, escaláveis e sustentáveis, enquanto equilibramos confiabilidade, velocidade de entrega e eficiência operacional.
+
+      Meu objetivo é contribuir para a evolução de plataformas e serviços críticos, aproximando desenvolvimento e operações por meio de automação, engenharia de confiabilidade e soluções orientadas a resultados.
+
+      Colaboração, simplicidade, aprendizado contínuo e foco em impacto são os pilares que orientam minha forma de trabalhar.
+    impact:
+      enable: true
+      title: "Impacto em produção"
+      items:
+        - value: "200 mi+"
+          label: "execuções automatizadas mensalmente"
+        - value: "60 mil"
+          label: "automações e workflows gerenciados"
+        - value: "16 mi+"
+          label: "eventos operacionais geridos por mês"
+        - value: "30%"
+          label: "de redução no impacto operacional"
+        - value: "35%"
+          label: "de aumento na produtividade"
     skills:
       enable: true
       title: "Conhecimento em:"

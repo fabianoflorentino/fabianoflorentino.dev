@@ -13,6 +13,20 @@
             <div class="col-sm-12 col-md-12 col-lg-8 content">
                 {{ .Site.Params.about.content | markdownify }}
 
+                {{ if .Site.Params.about.impact.enable }}
+                <div class="impact-section">
+                    <h4 class="impact-title">{{ .Site.Params.about.impact.title }}</h4>
+                    <div class="impact-grid">
+                        {{ range .Site.Params.about.impact.items }}
+                        <div class="impact-card">
+                            <span class="impact-value">{{ .value }}</span>
+                            <span class="impact-label">{{ .label }}</span>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+
                 {{ if .Site.Params.about.skills.enable }}
                 <div class="skills-section">
                     <h4 class="skills-title">{{ .Site.Params.about.skills.title }}</h4>

@@ -17,3 +17,6 @@ Thumbs.db
 # Local environment overrides
 .env
 .env.*
+
+# SRE series knowledge base (private: client names, internal links)
+.sre-knowledge/

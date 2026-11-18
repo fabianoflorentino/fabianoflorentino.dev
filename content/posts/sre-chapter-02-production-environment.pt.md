@@ -51,19 +51,19 @@ A lição aqui não é decorar os nomes, e sim perceber o padrão: **cada camada
 
 Na rede, o capítulo descreve o **Jupiter**, o tecido de rede do datacenter com alta largura de banda, e o **GSLB** (_Global Software Load Balancer_), que distribui tráfego entre datacenters e regiões.
 
-De novo, a ideia é a mesma: a rede é tratada como um recurso de software, programável e redundante, não como cabos fixos.
+De novo, a ideia é a mesma: a rede é tratada como um recurso de software, programável e redundante, não como cabos fixos. ([descrição completa no livro](https://sre.google/sre-book/production-environment/#networking-2ksZhrT8))
 
 ## Serviço de lock: Chubby
 
 Um detalhe que muita gente acha curioso: o Google tem um **serviço de lock distribuído** chamado Chubby, usado para eleição de líder e coordenação entre sistemas. Baseado em Paxos, ele resolve o problema de "quem é o responsável agora" em um ambiente distribuído.
 
-Parece nicho, mas é a fundação de coisas como eleger quem é o líder de um cluster — um problema que aparece em praticamente qualquer sistema distribuído.
+Parece nicho, mas é a fundação de coisas como eleger quem é o líder de um cluster — um problema que aparece em praticamente qualquer sistema distribuído. ([descrição completa no livro](https://sre.google/sre-book/production-environment/#lock-service-jWsjIlcM))
 
 ## Monitoramento: ver o ambiente
 
 Por fim, o capítulo fala de **monitoramento e alerta** como parte integrante do ambiente — no Google, sistemas como o Borgmon coletam métricas em série temporal para dar visibilidade ao que acontece.
 
-O ponto-chave: **monitoramento não é um acessório que você adiciona depois**. É parte da plataforma, assim como storage e rede.
+O ponto-chave: **monitoramento não é um acessório que você adiciona depois**. É parte da plataforma, assim como storage e rede. ([descrição completa no livro](https://sre.google/sre-book/production-environment/#monitoring-and-alerting-2ksLtBc8))
 
 ## O que eu levo deste capítulo
 

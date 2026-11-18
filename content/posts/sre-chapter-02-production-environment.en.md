@@ -51,19 +51,19 @@ The lesson here isn't to memorize the names, but to notice the pattern: **every 
 
 On the network side, the chapter describes **Jupiter**, the datacenter network fabric with high bandwidth, and **GSLB** (_Global Software Load Balancer_), which distributes traffic across datacenters and regions.
 
-Again, the idea is the same: the network is treated as a programmable, redundant software resource, not fixed cables.
+Again, the idea is the same: the network is treated as a programmable, redundant software resource, not fixed cables. ([full description in the book](https://sre.google/sre-book/production-environment/#networking-2ksZhrT8))
 
 ## Lock service: Chubby
 
 A detail many find curious: Google has a **distributed lock service** called Chubby, used for leader election and coordination between systems. Built on Paxos, it solves the "who's in charge right now" problem in a distributed environment.
 
-It seems niche, but it's the foundation for things like electing a cluster's leader — a problem that shows up in almost any distributed system.
+It seems niche, but it's the foundation for things like electing a cluster's leader — a problem that shows up in almost any distributed system. ([full description in the book](https://sre.google/sre-book/production-environment/#lock-service-jWsjIlcM))
 
 ## Monitoring: seeing the environment
 
 Finally, the chapter talks about **monitoring and alerting** as an integral part of the environment — at Google, systems like Borgmon collect time-series metrics to provide visibility into what's happening.
 
-The key point: **monitoring is not an accessory you add later**. It's part of the platform, just like storage and networking.
+The key point: **monitoring is not an accessory you add later**. It's part of the platform, just like storage and networking. ([full description in the book](https://sre.google/sre-book/production-environment/#monitoring-and-alerting-2ksLtBc8))
 
 ## What I take from this chapter
 

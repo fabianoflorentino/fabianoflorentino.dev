@@ -34,4 +34,4 @@ EXPOSE 1313
 
 USER 1000:1000
 
-ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0", "--baseURL", "http://fabianoflorentino.dev.local:1313", "--buildDrafts", "--disableFastRender"]
+ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0", "--baseURL", "http://fabianoflorentino.dev.local:1313", "--buildDrafts", "--buildFuture", "--disableFastRender"]

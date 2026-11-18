@@ -20,3 +20,6 @@ Thumbs.db
 
 # SRE series knowledge base (private: client names, internal links)
 .sre-knowledge/
+
+# Cloudflare CLI cache/state
+.cloudflare/

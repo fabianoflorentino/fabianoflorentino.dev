@@ -115,6 +115,18 @@ languages:
               - "Prometheus"
               - "Kubernetes"
               - "OCSP/CRL"
+          - title: "seraph"
+            kicker: "Status board · Go"
+            tagline: "An independent, ad-free status board powered by official status pages and HTTP probes — no account, server, or database."
+            icon: "/images/projects/icons/seraph.svg"
+            accent: "#34d399"
+            demo: "https://seraph.fabianoflorentino.dev"
+            repo: "https://github.com/fabianoflorentino/seraph"
+            stack:
+              - "Go"
+              - "Cloudflare Worker"
+              - "GitHub Pages"
+              - "PWA"
       hero:
         intro: "Hello World!"
         subtitle: ""
@@ -745,6 +757,18 @@ params:
           - "Prometheus"
           - "Kubernetes"
           - "OCSP/CRL"
+      - title: "seraph"
+        kicker: "Painel de status · Go"
+        tagline: "Painel de status independente e sem anúncios, alimentado por páginas de status oficiais e sondas HTTP — sem conta, servidor ou banco de dados."
+        icon: "/images/projects/icons/seraph.svg"
+        accent: "#34d399"
+        demo: "https://seraph.fabianoflorentino.dev"
+        repo: "https://github.com/fabianoflorentino/seraph"
+        stack:
+          - "Go"
+          - "Cloudflare Worker"
+          - "GitHub Pages"
+          - "PWA"
 
   contact:
     enable: true

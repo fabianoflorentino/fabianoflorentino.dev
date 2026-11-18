@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="seraph-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16233d"/>
+      <stop offset="0.55" stop-color="#0d1628"/>
+      <stop offset="1" stop-color="#070d1a"/>
+    </linearGradient>
+    <linearGradient id="seraph-grad" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6ee7b7"/>
+      <stop offset=".5" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+    <radialGradient id="seraph-glow" cx=".5" cy=".3" r=".72">
+      <stop stop-color="#34d399" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="seraph-clip">
+      <rect x="4" y="4" width="56" height="56" rx="15"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#seraph-clip)">
+    <rect x="4" y="4" width="56" height="56" rx="15" fill="url(#seraph-bg)"/>
+    <rect x="4" y="4" width="56" height="56" fill="url(#seraph-glow)"/>
+    <circle cx="18" cy="17" r="2.5" fill="#34d399"/>
+    <circle cx="32" cy="17" r="2.5" fill="#fbbf24"/>
+    <circle cx="46" cy="17" r="2.5" fill="#f87171"/>
+    <path d="M8 34 h10 l4 -9 l5 18 l5 -14 l4 5 h20" fill="none" stroke="url(#seraph-grad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x="4.75" y="4.75" width="54.5" height="54.5" rx="14.25" fill="none" stroke="url(#seraph-grad)" stroke-opacity=".6" stroke-width="1.5"/>
+</svg>

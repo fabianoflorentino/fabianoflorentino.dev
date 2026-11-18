@@ -27,6 +27,24 @@
   var storageKey = "reaction:" + key + ":" + emoji;
   var pending = false;
 
+  var lang = (document.documentElement.lang || "").toLowerCase();
+  var isPt = lang.indexOf("pt") === 0;
+  var MSG_ERROR = isPt
+    ? "Não foi possível registrar sua reação. Tente novamente."
+    : "Couldn't register your reaction. Please try again.";
+
+  var msgEl = document.createElement("small");
+  msgEl.className = "reaction-message d-block mt-2";
+  msgEl.setAttribute("role", "status");
+  msgEl.style.display = "none";
+  container.appendChild(msgEl);
+
+  function showMessage(text) {
+    msgEl.textContent = text;
+    msgEl.classList.add("text-danger");
+    msgEl.style.display = "block";
+  }
+
   function render(count) {
     if (countEl) countEl.textContent = String(count);
   }
@@ -60,6 +78,7 @@
     if (pending) return;
     pending = true;
     button.setAttribute("disabled", "disabled");
+    msgEl.style.display = "none";
 
     fetch("/reactions", {
       method: "POST",
@@ -67,25 +86,26 @@
       body: JSON.stringify({ key: key, emoji: emoji }),
     })
       .then(function (res) {
-        return res.ok ? res.json() : null;
+        if (!res.ok) {
+          throw new Error("reaction request failed: " + res.status);
+        }
+        return res.json();
       })
       .then(function (data) {
-        if (data) {
-          render(data[emoji] || 0);
-          button.setAttribute("aria-pressed", "true");
-          try {
-            localStorage.setItem(storageKey, "1");
-          } catch (e) {
-            // segue sem persistir (privado/bloqueado): pode reagir de novo
-            pending = false;
-            button.removeAttribute("disabled");
-          }
+        render((data && data[emoji]) || 0);
+        button.setAttribute("aria-pressed", "true");
+        try {
+          localStorage.setItem(storageKey, "1");
+        } catch (e) {
+          // segue sem persistir localmente; a contagem já foi registrada.
         }
       })
       .catch(function () {
-        // Falhou (offline etc.): restaura o botão.
+        // Falhou (offline, endpoint indisponível, erro no servidor): restaura o
+        // botão e avisa o usuário em vez de desabilitar em silêncio.
         pending = false;
         button.removeAttribute("disabled");
+        showMessage(MSG_ERROR);
       });
   });
 })();

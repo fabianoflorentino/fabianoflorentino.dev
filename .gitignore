@@ -23,3 +23,6 @@ Thumbs.db
 
 # Cloudflare CLI cache/state
 .cloudflare/
+
+# Local-only opencode skills (private SRE series writing workflow)
+.opencode/skills/sre-series/

@@ -127,6 +127,18 @@ languages:
               - "Cloudflare Worker"
               - "GitHub Pages"
               - "PWA"
+          - title: "srectl"
+            kicker: "SRE · Kubernetes"
+            tagline: "A local SRE, DevOps and Platform Engineering training environment on kind — GitOps with Argo CD, the LGTM stack, security and chaos drills, all from a single CLI."
+            icon: "/images/projects/icons/srectl.svg"
+            accent: "#3b82f6"
+            demo: "https://srectl.fabianoflorentino.dev"
+            repo: "https://github.com/fabianoflorentino/srectl"
+            stack:
+              - "Go"
+              - "Kubernetes"
+              - "Argo CD"
+              - "LGTM"
       hero:
         intro: "Hello World!"
         subtitle: ""
@@ -769,6 +781,18 @@ params:
           - "Cloudflare Worker"
           - "GitHub Pages"
           - "PWA"
+      - title: "srectl"
+        kicker: "SRE · Kubernetes"
+        tagline: "Ambiente local de treinamento em SRE, DevOps e Platform Engineering no kind — GitOps com Argo CD, stack LGTM, segurança e drills de caos em um único CLI."
+        icon: "/images/projects/icons/srectl.svg"
+        accent: "#3b82f6"
+        demo: "https://srectl.fabianoflorentino.dev"
+        repo: "https://github.com/fabianoflorentino/srectl"
+        stack:
+          - "Go"
+          - "Kubernetes"
+          - "Argo CD"
+          - "LGTM"
 
   contact:
     enable: true

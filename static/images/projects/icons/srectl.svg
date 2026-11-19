@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="srectl-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16233d"/>
+      <stop offset="0.55" stop-color="#0d1628"/>
+      <stop offset="1" stop-color="#070d1a"/>
+    </linearGradient>
+    <linearGradient id="srectl-grad" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#93c5fd"/>
+      <stop offset=".5" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <radialGradient id="srectl-glow" cx=".5" cy=".4" r=".7">
+      <stop stop-color="#3b82f6" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="srectl-clip">
+      <rect x="4" y="4" width="56" height="56" rx="15"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#srectl-clip)">
+    <rect x="4" y="4" width="56" height="56" rx="15" fill="url(#srectl-bg)"/>
+    <rect x="4" y="4" width="56" height="56" fill="url(#srectl-glow)"/>
+    <g stroke="url(#srectl-grad)" stroke-width="1.6" opacity=".7">
+      <line x1="32" y1="32" x2="32" y2="17"/>
+      <line x1="32" y1="32" x2="45" y2="24.5"/>
+      <line x1="32" y1="32" x2="45" y2="39.5"/>
+      <line x1="32" y1="32" x2="32" y2="47"/>
+      <line x1="32" y1="32" x2="19" y2="39.5"/>
+      <line x1="32" y1="32" x2="19" y2="24.5"/>
+    </g>
+    <circle cx="32" cy="32" r="5.5" fill="url(#srectl-grad)"/>
+    <circle cx="32" cy="32" r="2" fill="#0d1628"/>
+    <g fill="url(#srectl-grad)">
+      <circle cx="32" cy="17" r="3"/>
+      <circle cx="45" cy="24.5" r="3"/>
+      <circle cx="45" cy="39.5" r="3"/>
+      <circle cx="32" cy="47" r="3"/>
+      <circle cx="19" cy="39.5" r="3"/>
+      <circle cx="19" cy="24.5" r="3"/>
+    </g>
+  </g>
+  <rect x="4.75" y="4.75" width="54.5" height="54.5" rx="14.25" fill="none" stroke="url(#srectl-grad)" stroke-opacity=".6" stroke-width="1.5"/>
+</svg>

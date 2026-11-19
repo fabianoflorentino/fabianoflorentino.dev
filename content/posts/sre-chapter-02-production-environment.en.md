@@ -1,6 +1,6 @@
 ---
 date: '2026-11-19T00:00:00Z'
-draft: true
+draft: false
 title: 'Site Reliability Engineering: The Production Environment'
 translationKey: sre_chapter_02_production_environment
 tags: [post, sre, google-sre]

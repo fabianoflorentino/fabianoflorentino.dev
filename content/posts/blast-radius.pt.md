@@ -3,7 +3,7 @@ date: '2026-09-17T00:00:00Z'
 draft: false
 title: 'Blast Radius: como uma metáfora militar virou princípio de design em sistemas distribuídos'
 translationKey: blast_radius
-tags: [post, sre, sistemas-distribuidos, arquitetura, confiabilidade, nuvem]
+tags: [post, sistemas-distribuidos, arquitetura, arquitetura-de-sistemas, confiabilidade, nuvem]
 mermaid: true
 image: /images/blast-radius.png
 translation:

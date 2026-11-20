@@ -53,6 +53,59 @@
 
   {{- partial "scripts.html" . -}}
 
+  <script>
+    (function () {
+      if (document.startViewTransition) {
+        return;
+      }
+      var content = document.getElementById("content");
+      if (!content) return;
+
+      var settle = function () {
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            content.classList.remove("is-entering");
+          });
+        });
+      };
+
+      content.classList.add("is-entering");
+      settle();
+
+      document.addEventListener("click", function (event) {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        var target = event.target;
+        if (target.nodeType === 3) target = target.parentElement;
+        var link = target && target.closest ? target.closest("a[href]") : null;
+        if (!link || link.target || link.hasAttribute("download") || link.classList.contains("lang-switch")) return;
+
+        var url;
+        try {
+          url = new URL(link.href, window.location.href);
+        } catch (e) {
+          return;
+        }
+        if (url.origin !== window.location.origin || url.href === window.location.href) return;
+        if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return;
+
+        event.preventDefault();
+        content.classList.remove("is-entering");
+        content.classList.add("is-leaving");
+        window.setTimeout(function () {
+          window.location.assign(url.href);
+        }, 460);
+      });
+
+      window.addEventListener("pageshow", function (event) {
+        content.classList.remove("is-leaving");
+        if (event.persisted) {
+          content.classList.add("is-entering");
+          settle();
+        }
+      });
+    })();
+  </script>
+
   <!-- for search -->
   <section id="search-content" class="py-2">
     <div class="container" id="search-results"></div>

@@ -36,6 +36,7 @@
   <!-- <script src="/js/jquery-3.6.0.min.js"></script> -->
 
   <div class="site-shell">
+    {{- partial "brand-backdrop.html" . -}}
     {{- partial "sections/header.html" . -}}
     <div id="content">
       {{- block "main" . }}{{- end }}

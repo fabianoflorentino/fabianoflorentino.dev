@@ -739,3 +739,12 @@ body #achievements .card:focus {
     transition: none;
   }
 }
+
+/* Post body — justified text for multi-line paragraphs.
+   `text-align: justify` leaves the last line (and single-line paragraphs)
+   left-aligned, so short paragraphs aren't stretched into large gaps. */
+.page-content p {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}

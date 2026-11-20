@@ -3,7 +3,7 @@ date: '2026-04-09T20:58:30Z'
 draft: false
 title: 'Arquitetura Hexagonal na prática (com Go, sem buzzword)'
 translationKey: arquitetura-hexagonal
-tags: [post, go, architecture, hexagonal]
+tags: [post, go, arquitetura, hexagonal]
 mermaid: true
 image: /images/arquitetura-hexagonal.png
 ---

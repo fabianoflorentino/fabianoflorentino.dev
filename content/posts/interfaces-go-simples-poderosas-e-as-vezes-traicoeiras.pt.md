@@ -4,7 +4,7 @@ draft: false
 title: 'Interfaces em Go: simples, poderosas e às vezes traiçoeiras'
 description: 'Introdução rápida e didática sobre interfaces em Go: o que são, quando usar e como evitar armadilhas comuns.'
 translationKey: interfaces-go-simples-poderosas-e-as-vezes-traicoeiras
-tags:  [post, go, arquitetura, backend, boas-praticas]
+tags:  [post, go, arquitetura, back-end, boas-praticas]
 image: /images/go-interface.png
 ---
 

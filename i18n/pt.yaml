@@ -16,3 +16,5 @@ project_code:
   other: "Código"
 back_to_top:
   other: "Voltar ao topo"
+filter_by_tag:
+  other: "Filtrar por tag"

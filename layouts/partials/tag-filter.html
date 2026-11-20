@@ -1,0 +1,11 @@
+{{- $tags := .Site.Taxonomies.tags -}}
+{{- if gt (len $tags) 0 -}}
+<nav class="tag-filter" aria-label="{{ i18n "filter_by_tag" }}">
+  <span class="tag-filter-label">{{ i18n "filter_by_tag" }}:</span>
+  {{- range $name, $taxonomy := $tags -}}
+    {{- if ne $name "post" -}}
+    <a class="tag-chip" href="{{ $taxonomy.Page.RelPermalink }}">{{ $name }}<span class="tag-chip-count">{{ $taxonomy.Count }}</span></a>
+    {{- end -}}
+  {{- end -}}
+</nav>
+{{- end -}}

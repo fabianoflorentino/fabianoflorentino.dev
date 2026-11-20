@@ -87,3 +87,61 @@
   background-color: var(--brand-teal) !important;
   color: var(--background-color) !important;
 }
+
+/* tag filter bar (posts section) */
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.tag-filter-label {
+  color: var(--brand-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 0.15rem;
+}
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.75rem;
+  border: 1px solid var(--brand-border);
+  border-radius: 999px;
+  background-color: var(--brand-surface);
+  color: var(--brand-teal);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tag-chip:hover {
+  border-color: var(--brand-teal);
+  color: var(--brand-cyan);
+  box-shadow: var(--brand-shadow);
+}
+
+.tag-chip-count {
+  color: var(--brand-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.tag-chip:hover .tag-chip-count {
+  color: var(--brand-cyan);
+}
+
+.tag-chip-sm {
+  padding: 0.15rem 0.55rem;
+  font-size: 0.72rem;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}

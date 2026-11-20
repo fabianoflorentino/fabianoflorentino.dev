@@ -16,3 +16,5 @@ project_code:
   other: "Source"
 back_to_top:
   other: "Back to top"
+filter_by_tag:
+  other: "Filter by tag"

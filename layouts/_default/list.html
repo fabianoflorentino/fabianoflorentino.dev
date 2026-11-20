@@ -12,6 +12,13 @@
     <h2 class="text-center pb-2">{{.Title}}
         {{- with .OutputFormats.Get "RSS" }} <a href="{{ .Permalink }}" class="rss-feed-link" title="RSS" aria-label="Assinar feed RSS"><i class="fa-solid fa-rss text-warning" aria-hidden="true"></i></a>{{ end }}
     </h2>
+    {{- if and (eq .Kind "section") (eq .Section "posts") -}}
+    <div class="row justify-content-center pb-3">
+        <div class="col-12">
+            {{ partial "tag-filter.html" . }}
+        </div>
+    </div>
+    {{- end -}}
     <div class="row">
         {{ range .Paginator.Pages }}
         <div class="col-lg-4 col-md-6 my-3">
@@ -32,6 +39,15 @@
                             <p>{{ .Summary | truncate 0 ""}}</p>
                         </div>
                     </div>
+                    {{- if .Params.tags -}}
+                    <div class="card-tags px-4 pb-3 bg-transparent">
+                        {{- range .Params.tags -}}
+                        {{- if ne . "post" -}}
+                        <a class="tag-chip tag-chip-sm" href="{{ "tags" | relLangURL }}/{{ . | urlize }}/">{{ . }}</a>
+                        {{- end -}}
+                        {{- end -}}
+                    </div>
+                    {{- end -}}
                     <div class="mt-auto post-footer bg-transparent py-3">
                         <span class="float-start bg-transparent">{{ .Date.Format (.Site.Params.datesFormat.articleList | default "January 2, 2006") }}</span>
                         <a href="{{ .RelPermalink }}" class="float-end btn btn-outline-info btn-sm">{{ .Site.Params.terms.read | default "Read" }}</a>

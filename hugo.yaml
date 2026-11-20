@@ -163,20 +163,6 @@ languages:
           My goal is to contribute to the evolution of critical platforms and services, bringing development and operations closer together through automation, reliability engineering, and results-driven solutions.
 
           Collaboration, simplicity, continuous learning, and a focus on impact are the pillars that guide the way I work.
-        impact:
-          enable: true
-          title: "Production impact"
-          items:
-            - value: "200M+"
-              label: "automated executions per month"
-            - value: "60k"
-              label: "automations and workflows managed"
-            - value: "16M+"
-              label: "operational events managed per month"
-            - value: "30%"
-              label: "reduction in operational impact"
-            - value: "35%"
-              label: "increase in productivity"
         skills:
           title: "Skills:"
           items:
@@ -491,20 +477,6 @@ params:
       Meu objetivo é contribuir para a evolução de plataformas e serviços críticos, aproximando desenvolvimento e operações por meio de automação, engenharia de confiabilidade e soluções orientadas a resultados.
 
       Colaboração, simplicidade, aprendizado contínuo e foco em impacto são os pilares que orientam minha forma de trabalhar.
-    impact:
-      enable: true
-      title: "Impacto em produção"
-      items:
-        - value: "200 mi+"
-          label: "execuções automatizadas mensalmente"
-        - value: "60 mil"
-          label: "automações e workflows gerenciados"
-        - value: "16 mi+"
-          label: "eventos operacionais geridos por mês"
-        - value: "30%"
-          label: "de redução no impacto operacional"
-        - value: "35%"
-          label: "de aumento na produtividade"
     skills:
       enable: true
       title: "Conhecimento em:"

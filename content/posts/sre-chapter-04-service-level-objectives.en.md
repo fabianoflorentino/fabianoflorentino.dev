@@ -1,6 +1,6 @@
 ---
 date: '2026-11-21T00:00:00Z'
-draft: true
+draft: false
 title: 'Site Reliability Engineering: Service Level Objectives'
 translationKey: sre_chapter_04_service_level_objectives
 tags: [post, sre, google-sre]

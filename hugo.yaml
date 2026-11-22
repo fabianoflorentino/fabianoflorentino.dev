@@ -214,70 +214,70 @@ languages:
               - name: "Software Engineer"
                 date: "July 2023 – Present · Hortolândia, São Paulo, Brazil"
                 content: |-
-                  **Go backend development:** Develop backend services in Go for automation platforms and critical operations, with a focus on scalability, reliability, and predictability in production.
+                  **Go backend at scale:** Develop backend services in Go for automation platforms and critical operations, with concurrency, hexagonal architecture, clear contracts, and a focus on reliability and predictability in production.
 
-                  **High-volume workloads & concurrency:** Work with high-volume workloads, concurrency, and strict availability requirements, contributing to resilient, observable distributed systems that are easy to evolve over time.
+                  **Automation platform:** Contributed to a platform with approximately **200 million automated executions per month**, **60,000 automations and workflows**, and **16 million operational events managed monthly**.
 
-                  **Scale & results:** Contribute to a platform with approximately **200 million automated executions per month** and **60,000 automations and workflows**, with **16 million operational events managed monthly**, **up to 30% reduction in operational impact**, and **up to 35% productivity improvement**.
+                  **Measurable impact:** Contributed to improvements that delivered **up to 30% reduction in operational impact** and **up to 35% productivity improvement**, with data-driven decisions and end-to-end operational thinking.
 
-                  **Architecture & evolution:** Participate in architectural decisions and service improvements, applying hexagonal architecture, clear contracts, separation of responsibilities, and data-driven operational thinking.
-
-                  **SRE & DevOps:** Complement engineering work with an SRE and DevOps background, providing an end-to-end view of the system, from code to production.
-
-                  **Objective & impact:** Turn complex problems into simple, sustainable solutions that create measurable impact in efficiency, stability, and delivery.
+                  **SRE & DevOps:** An SRE and DevOps background complements engineering work, enabling end-to-end ownership from code to production in distributed, observable, and evolvable systems.
           - company: "IBM"
             companyUrl: "https://www.ibm.com/"
             jobs:
               - name: "Site Reliability Engineer"
                 date: "December 2018 – July 2023 · Hortolândia, São Paulo, Brazil"
                 content: |-
-                  **Platform operations:** Operated and maintained operating systems, application servers, databases, and high-availability and load-balancing solutions.
+                  **SRE leadership in a stabilization project:** Led a 7-person cross-functional task force — operations, networking, DBA, application, and account — to restore stability to a healthcare platform serving about **13 million beneficiaries**, under HIPAA and budget constraints.
 
-                  **Capacity & compliance:** Supported capacity planning, performance management, security compliance, and platform operations.
+                  **Root cause and permanent fixes:** Investigated the source of the incidents and eliminated three issues: a legacy process with a memory leak, TCP keepalive configured on the load balancer, and leftover development code that called a non-existent local service, causing **2.4 s** timeouts.
 
-                  **Infrastructure automation:** Automated workflows and infrastructure across cloud providers and on-premises services.
+                  **Reliability results:** Reduced error rate from **43.6% to 0.2%** and increased transaction success from **55.45% to 99.5%**, with **2,900 calls per minute** and **181 ms** average response time.
 
-                  **Reliability:** Monitored and supported servers and services, focusing on reliability, resilience, and availability.
+                  **Observability:** Led the AppDynamics PoC and rollout, supported UAT instrumentation, and helped create an SRE dashboard for proactive monitoring, reducing manual log checks.
+
+                  **Proactive monitoring:** Built a containerized Zabbix/Grafana dashboard for AIX, Linux, and Windows environments, expanding coverage to Oracle, SQL Server, DB2, and digital certificate expiration.
           - company: "2Com Consulting"
             companyUrl: "https://2comconsulting.com.br/"
             jobs:
-              - name: "Monitoring Analyst"
+              - name: "Specialist Monitoring Analyst"
                 date: "June 2018 – December 2018 · Goiânia, Goiás, Brazil"
                 content: |-
-                  **DevOps culture:** Helped introduce DevOps practices and automate monitoring services.
+                  **Monitoring automation:** Developed Ansible roles and playbooks to deploy the OMD monitoring system across Linux/Oracle and Windows/SQL Server scenarios, reducing delivery time from **days to 30–40 minutes**.
 
-                  **Automation & versioning:** Centralized code in Git and implemented Ansible, Puppet, and Shell Script for monitoring and alerting.
+                  **Operational results:** Migrated Shell scripts to GitLab-versioned Ansible roles; reduced the ticket queue by **more than 60%** and **eliminated the monitoring delivery backlog**.
 
-                  **Operations & training:** Trained teams in DevOps and automation; monitored databases, ERP systems, and backups.
+                  **Technical decision & teams:** Evaluated Puppet through a PoC and rejected it because it required an agent, dedicated infrastructure, and stable connectivity; with Ansible, standardized the process and trained teams in DevOps and automation.
           - company: "Soluti Certificação Digital"
             companyUrl: "https://www.soluti.com.br/"
             jobs:
               - name: "IT Infrastructure Analyst"
                 date: "December 2014 – February 2018 · Goiânia, Goiás, Brazil"
                 content: |-
-                  **Linux infrastructure:** Implemented, maintained, and monitored Linux, Apache, MySQL, and PHP servers.
+                  **Configuration management at scale:** Developed GitLab-versioned Puppet modules for an environment that grew from **20 to 150 servers**, covering ITI/ICP-Brasil compliance, security, and hardening.
 
-                  **Automation & monitoring:** Automated configuration and maintenance with Puppet; implemented monitoring with Zabbix and task management with Rundeck.
+                  **Release automation:** Automated distribution and updates for a PHP/Apache system, including file diff checks, server configuration, and service restarts.
 
-                  **Security & networking:** Managed reverse proxies, firewalls, and Linux server hardening.
+                  **Monitoring & capacity:** Implemented Zabbix with a Puppet module for CPU, memory, and disk metrics, supporting capacity planning and incident response.
 
-                  **Digital certification:** Supported digital certificate services, anti-fraud systems, and biometric identification.
+                  **Infrastructure availability:** Implemented a VMware vCenter cluster with Windows Server Storage for nearly **200 virtualized services and servers**, improving availability, resilience, and resource utilization.
+
+                  **DevOps culture:** Bridged datacenter and development teams, reducing manual steps, delivery errors, and provisioning time.
           - company: "Brasil Telecom"
             companyUrl: "https://pt.wikipedia.org/wiki/Brasil_Telecom"
             jobs:
               - name: "Technology Analyst"
                 date: "July 2014 – November 2014 · Goiânia, Goiás, Brazil"
                 content: |-
-                  **Technical support:** Provided local and remote technical support for users and Windows workstations.
+                  **Technical support:** Provided local and remote support for users and Windows workstations, including incident analysis and resolution.
 
-                  **Systems & images:** Troubleshot incidents, validated and implemented internal systems, and created and distributed Windows images.
+                  **Systems & images:** Validated and deployed internal systems, and created and distributed Windows images.
           - company: "Sonda IT"
             companyUrl: "https://www.sonda.com/"
             jobs:
               - name: "IT Support Analyst"
                 date: "November 2011 – June 2014 · Goiânia, Goiás, Brazil"
                 content: |-
-                  **Corporate support:** Provided local and remote technical support and analyzed high-impact incidents in a call center environment.
+                  **Corporate support:** Provided local and remote technical support for the corporate environment and analyzed high-impact incidents in a call center.
 
                   **WDS & automation:** Managed Windows Deployment Services (WDS), automated installations, and analyzed logs for service deployments.
       education:
@@ -531,63 +531,63 @@ params:
           - name: "Engenheiro de Software"
             date: "Julho de 2023 – Atual · Hortolândia, SP"
             content: |-
-              **Desenvolvimento backend em Go:** Desenvolvimento de serviços backend em Go para plataformas de automação e operações críticas, com foco em escalabilidade, confiabilidade e previsibilidade em produção.
+              **Backend Go em escala:** Desenvolvimento de serviços backend em Go para plataformas de automação e operações críticas, com concorrência, arquitetura hexagonal, contratos claros e foco em confiabilidade e previsibilidade em produção.
 
-              **Cargas elevadas & concorrência:** Atuação com altos volumes, concorrência e requisitos rigorosos de disponibilidade, contribuindo para sistemas distribuídos resilientes, observáveis e fáceis de evoluir ao longo do tempo.
+              **Plataforma de automação:** Contribuição para uma plataforma com cerca de **200 milhões de execuções automatizadas por mês**, **60 mil automações e workflows** e **16 milhões de eventos operacionais geridos por mês**.
 
-              **Escala & resultados:** Atuação em uma plataforma com cerca de **200 milhões de execuções automatizadas mensais** e **60 mil automações e workflows**, com **16 milhões de eventos operacionais geridos por mês**, **redução de até 30% no impacto operacional** e **aumento de até 35% na produtividade**.
+              **Impacto mensurável:** Participação em melhorias que geraram **redução de até 30% no impacto operacional** e **aumento de até 35% na produtividade**, com decisões orientadas a dados e pensamento operacional ponta a ponta.
 
-              **Arquitetura & evolução:** Participação em decisões arquiteturais e melhorias de serviços, aplicando arquitetura hexagonal, contratos claros, separação de responsabilidades e pensamento operacional orientado a dados.
-
-              **SRE & DevOps:** Bagagem em SRE e DevOps que complementa o trabalho de engenharia, permitindo uma visão ponta a ponta do sistema, do código à produção.
-
-              **Objetivo & impacto:** Transformar problemas complexos em soluções simples e sustentáveis, com impacto mensurável em eficiência, estabilidade e entrega.
+              **SRE & DevOps:** Bagagem em SRE e DevOps que complementa a engenharia, permitindo atuar do código à produção em sistemas distribuídos, observáveis e fáceis de evoluir.
       - company: "IBM"
         companyUrl: "https://www.ibm.com/"
         jobs:
           - name: "Site Reliability Engineer"
             date: "Dezembro de 2018 – Julho de 2023 · Hortolândia, SP"
             content: |-
-              **Operação de plataforma:** Operação e manutenção de sistemas operacionais, servidores de aplicação, bancos de dados e soluções de alta disponibilidade e balanceamento de carga.
+              **Liderança SRE em projeto de estabilização:** Liderei uma força-tarefa de 7 pessoas — operações, redes, DBA, aplicação e account — para restaurar a estabilidade de uma plataforma de saúde com cerca de **13 milhões de beneficiários**, sob restrições de HIPAA e orçamento.
 
-              **Capacidade & conformidade:** Planejamento de capacidade, gestão de desempenho, conformidade de segurança e suporte a plataformas.
+              **Causa raiz e correções definitivas:** Investiguei a origem dos incidentes e eliminei três problemas: um processo legado com vazamento de memória, keepalive TCP configurado no balanceador e código residual de desenvolvimento que chamava um serviço local inexistente, gerando timeouts de **2,4 s**.
 
-              **Automação de infraestrutura:** Automação de fluxos de trabalho e infraestrutura, com suporte a provedores de nuvem e serviços locais.
+              **Resultados de confiabilidade:** Taxa de erro reduzida de **43,6% para 0,2%** e sucesso transacional elevado de **55,45% para 99,5%**, com **2,9 mil chamadas por minuto** e **181 ms** de resposta média.
 
-              **Confiabilidade:** Monitoramento e suporte a servidores e serviços, com foco em confiabilidade, resiliência e disponibilidade.
+              **Observabilidade:** Conduzi PoC e implantação do AppDynamics, apoiei a instrumentação do ambiente de UAT e participei da criação de dashboard SRE para monitoração proativa, reduzindo a checagem manual de logs.
+
+              **Monitoramento proativo:** Desenvolvi dashboard Zabbix/Grafana em containers para ambientes AIX, Linux e Windows, com evolução para Oracle, SQL Server, DB2 e validade de certificados digitais.
       - company: "2Com Consulting"
         companyUrl: "https://2comconsulting.com.br/"
         jobs:
-          - name: "Analista de Monitoramento"
+          - name: "Analista de Monitoramento Especialista"
             date: "Junho de 2018 – Dezembro de 2018 · Goiânia, GO"
             content: |-
-              **Cultura DevOps:** Apoio à adoção de práticas DevOps e à automação de serviços de monitoramento.
+              **Automação de monitoramento:** Desenvolvi roles e playbooks Ansible para implantar o sistema OMD em cenários Linux/Oracle e Windows/SQL Server, reduzindo a entrega de **dias para 30–40 minutos**.
 
-              **Automação & versionamento:** Centralização de código no Git e implementação de Ansible, Puppet e Shell Script para monitoramento e alertas.
+              **Resultado operacional:** Migrei scripts Shell para roles Ansible versionadas no GitLab; reduzi **mais de 60% da fila de chamados** e **zerei o backlog de entrega** do serviço de monitoramento.
 
-              **Operação & treinamento:** Treinamento de equipes em DevOps e automação; monitoramento de bancos de dados, ERP e backups.
+              **Decisão técnica e times:** Avaliei Puppet via PoC e descartei a adoção por exigir agente, infraestrutura dedicada e conexão estável; com Ansible, padronizei o processo e treinei equipes em DevOps e automação.
       - company: "Soluti Certificação Digital"
         companyUrl: "https://www.soluti.com.br/"
         jobs:
           - name: "Analista de Infraestrutura de TI"
             date: "Dezembro de 2014 – Fevereiro de 2018 · Goiânia, GO"
             content: |-
-              **Infraestrutura Linux:** Implementação, manutenção e monitoramento de servidores Linux, Apache, MySQL e PHP.
+              **Gestão de configuração em escala:** Desenvolvi módulos Puppet versionados no GitLab para um ambiente que cresceu de **20 para 150 servidores**, cobrindo conformidade ITI/ICP-Brasil, segurança e hardening.
 
-              **Automação & monitoramento:** Automação de configuração e manutenção com Puppet; monitoramento com Zabbix e gestão de tarefas com Rundeck.
+              **Release e automação:** Automatizei a distribuição e atualização de sistema PHP/Apache, incluindo verificação de diferenças, configuração do servidor e restart de serviços.
 
-              **Segurança & rede:** Administração de proxy reverso, firewall e hardening de servidores Linux.
+              **Monitoramento e capacidade:** Implementei Zabbix com módulo Puppet para métricas de CPU, memória e disco, apoiando planejamento de capacidade e resposta a incidentes.
 
-              **Certificação digital:** Suporte a serviços de certificação digital, antifraude e identificação biométrica.
+              **Disponibilidade de infraestrutura:** Implementei cluster VMware vCenter com Windows Server Storage para quase **200 serviços e servidores virtualizados**, aumentando disponibilidade, resiliência e aproveitamento de recursos.
+
+              **Cultura DevOps:** Aproximei datacenter e desenvolvimento, reduzindo etapas manuais, erros de entrega e tempo de provisionamento.
       - company: "Brasil Telecom"
         companyUrl: "https://pt.wikipedia.org/wiki/Brasil_Telecom"
         jobs:
           - name: "Analista de Tecnologia"
             date: "Julho de 2014 – Novembro de 2014 · Goiânia, GO"
             content: |-
-              **Suporte técnico:** Suporte local e remoto a usuários e estações Windows.
+              **Suporte técnico:** Atendimento local e remoto a usuários e estações Windows, com análise e resolução de incidentes.
 
-              **Sistemas & imagens:** Análise de incidentes, homologação e implementação de sistemas internos, criação e distribuição de imagens Windows.
+              **Sistemas & imagens:** Homologação e implantação de sistemas internos, criação e distribuição de imagens Windows.
       - company: "Sonda IT"
         companyUrl: "https://www.sonda.com/"
         jobs:

@@ -13,7 +13,7 @@ translation:
 
 Este é o quinto post da série sobre o livro [_Site Reliability Engineering: How Google Runs Production Systems_](https://sre.google/sre-book/table-of-contents/). Depois de falar de SLOs, o livro olha para o trabalho que consome o tempo do SRE. O [capítulo 5](https://sre.google/sre-book/eliminating-toil/) abre com uma frase de Carla Geisser que vale o post inteiro: **"Se um operador humano precisa tocar seu sistema durante a operação normal, você tem um bug. A definição de normal muda conforme o sistema cresce."**
 
-## O que é toil (e o que não é)
+## O que é toil — e o que não é
 
 *Toil* não é simplesmente "trabalho de que eu não gosto". Gosto pessoal não define o conceito: algumas pessoas até gostam de tarefas manuais e repetitivas. Também não é qualquer tarefa administrativa. O livro separa três coisas:
 

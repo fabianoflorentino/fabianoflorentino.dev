@@ -514,6 +514,12 @@ body #achievements .card:focus {
   letter-spacing: -0.03em;
 }
 
+#about .content > p {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
 /* ---------- Projects ---------- */
 
 .brand-projects {

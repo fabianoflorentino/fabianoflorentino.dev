@@ -1,6 +1,6 @@
 ---
 date: '2026-11-22T00:00:00Z'
-draft: true
+draft: false
 title: 'Site Reliability Engineering: Eliminando o toil'
 translationKey: sre_chapter_05_eliminating_toil
 tags: [post, sre, google-sre]
@@ -46,7 +46,7 @@ As atividades de um SRE caem, aproximadamente, em quatro caixas:
 - **Toil**: trabalho repetitivo e manual diretamente ligado à operação do serviço.
 - **Overhead**: trabalho administrativo que não está diretamente ligado ao serviço.
 
-A meta de 50% é uma média ao longo de alguns trimestres ou de um ano, não uma cota diária. Toil é irregular: há semanas que concentram mais incêndio. O problema é quando a média fica persistentemente muito abaixo de 50% de engenharia — aí é hora de parar e entender o que está errado.
+A meta de 50% é uma média ao longo de alguns trimestres ou de um ano, não uma cota diária. Toil é irregular: há semanas que concentram mais incêndio, e uma equipe pode ficar temporariamente abaixo do piso de 50% de engenharia. O problema é quando o **tempo de engenharia** fica persistentemente abaixo de 50% — ou seja, o toil passa de 50% —; aí é hora de parar e entender o que está errado.
 
 **Se todo o seu tempo é apagar incêndio, você não está escalando o serviço; está apenas pagando a conta dele.**
 

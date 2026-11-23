@@ -1,6 +1,6 @@
 ---
 date: '2026-11-22T00:00:00Z'
-draft: true
+draft: false
 title: 'Site Reliability Engineering: Eliminating Toil'
 translationKey: sre_chapter_05_eliminating_toil
 tags: [post, sre, google-sre]
@@ -46,7 +46,7 @@ An SRE's activities fall roughly into four boxes:
 - **Toil**: repetitive, manual work directly tied to running the service.
 - **Overhead**: administrative work not directly tied to the service.
 
-The 50% goal is an average over a few quarters or a year, not a daily quota. Toil is spiky: some weeks concentrate more firefighting. The problem is when the engineering average stays persistently far below 50% — that's the moment to stop and figure out what's wrong.
+The 50% goal is an average over a few quarters or a year, not a daily quota. Toil is spiky: some weeks concentrate more firefighting, and a team may temporarily dip below the 50% engineering floor. The problem is when **engineering time** stays persistently below 50% — meaning toil goes above 50% — because that's the moment to stop and figure out what's wrong.
 
 **If all your time goes to firefighting, you aren't scaling the service; you're just paying its bill.**
 

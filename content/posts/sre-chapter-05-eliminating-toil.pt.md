@@ -1,5 +1,5 @@
 ---
-date: '2026-11-22T00:00:00Z'
+date: '2026-11-23T00:00:00Z'
 draft: false
 title: 'Site Reliability Engineering: Eliminando o toil'
 translationKey: sre_chapter_05_eliminating_toil

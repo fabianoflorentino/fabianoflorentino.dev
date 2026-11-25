@@ -1,6 +1,6 @@
 ---
 date: '2026-11-25T00:00:00Z'
-draft: true
+draft: false
 title: 'Site Reliability Engineering: A evolução da automação no Google'
 translationKey: sre_chapter_07_evolution_of_automation
 tags: [post, sre, google-sre]

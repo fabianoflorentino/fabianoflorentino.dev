@@ -74,7 +74,7 @@ A mágica é que o error budget **alinha incentivos**. Enquanto há orçamento, 
 
 O que mais me marcou neste capítulo foi ver o livro dar nome a uma tensão que eu vivi o tempo inteiro, sem nunca ter um critério claro para resolvê-la.
 
-Na autoridade certificadora onde trabalhei, a conversa entre desenvolvimento e operação era sempre a mesma: **um lado queria entregar, o outro queria estabilizar** — e não havia número nenhum para arbitrar. Foi só quando comecei a adotar **DevOps**, aproximando os times, que entendi que o problema não era de gente, era de **falta de um objetivo compartilhado**. O error budget é exatamente isso: um objetivo que os dois lados aceitam e que tira a decisão do terreno da política.
+Na **Soluti**, onde trabalhei, a conversa entre desenvolvimento e operação era sempre a mesma: **um lado queria entregar, o outro queria estabilizar** — e não havia número nenhum para arbitrar. Foi só quando comecei a adotar **DevOps**, aproximando os times, que entendi que o problema não era de gente, era de **falta de um objetivo compartilhado**. O error budget é exatamente isso: um objetivo que os dois lados aceitam e que tira a decisão do terreno da política.
 
 A ideia de "confiável o suficiente" também mudou como eu via projeto. Em um grande varejista brasileiro, o ambiente de **produção e desenvolvimento compartilhava o mesmo cluster Kubernetes** — ou seja, o negócio estava assumindo um risco que ninguém tinha quantificado. Separar em clusters dedicados não foi só uma melhoria técnica: foi **alinhar o risco aceito à tolerância real do negócio**. Produção passou a ter alta disponibilidade, e desenvolvimento ganhou liberdade para errar sem derrubar o cliente.
 

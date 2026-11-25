@@ -69,7 +69,7 @@ The key point: **monitoring is not an accessory you add later**. It's part of th
 
 This chapter hit me because it describes, at planetary scale, a journey I went through at a much smaller scale.
 
-I started by taking care of physical servers, one at a time — the opposite of a "herd". Working as an infrastructure analyst at a certificate authority, my first turning point was **virtualizing and creating a cluster**: isolated servers became a fleet of almost **200 virtual machines and services**, with better CPU and memory utilization and, above all, more availability. It was my first contact with the idea of treating resources as something you manage collectively, not as individual boxes.
+I started by taking care of physical servers, one at a time — the opposite of a "herd". Working as an infrastructure analyst at **Soluti**, my first turning point was **virtualizing and creating a cluster**: isolated servers became a fleet of almost **200 virtual machines and services**, with better CPU and memory utilization and, above all, more availability. It was my first contact with the idea of treating resources as something you manage collectively, not as individual boxes.
 
 Later, working with **Kubernetes**, I saw Borg's logic in action. In a project for a major Brazilian retailer, the problem was exactly one of those the chapter teaches you to avoid: **production and development shared the same cluster**. Creating separate clusters brought isolation, high availability, and stability to production. It was the modern — and much simpler — version of what Google does with Borg.
 

@@ -87,7 +87,7 @@ O caso do [**Bigtable**](https://sre.google/sre-book/monitoring-distributed-syst
 
 ## O que eu levo deste capítulo
 
-Na Soluti, o monitoramento era feito direto na console de virtualização. Ele mostrava o básico, mas não dava uma visão ampla do que estava acontecendo. Com o crescimento do ambiente, implementei **Zabbix** com um módulo **Puppet**, acompanhando CPU, memória e disco. Isso melhorou a visão sobre os recursos, ajudou no planejamento de capacidade e deu mais agilidade para agir antes de uma falha maior — em um ambiente que chegou a quase **200 serviços e servidores virtualizados**.
+Na **Soluti**, o monitoramento era feito direto na console de virtualização. Ele mostrava o básico, mas não dava uma visão ampla do que estava acontecendo. Com o crescimento do ambiente, implementei **Zabbix** com um módulo **Puppet**, acompanhando CPU, memória e disco. Isso melhorou a visão sobre os recursos, ajudou no planejamento de capacidade e deu mais agilidade para agir antes de uma falha maior — em um ambiente que chegou a quase **200 serviços e servidores virtualizados**.
 
 Em um cliente de grande porte, participei da construção de um dashboard de **Zabbix + Grafana** em containers, cobrindo ambientes **AIX, Linux e Windows**, IIS, bancos Oracle, SQL Server e DB2 e vencimento de certificados digitais. A ideia era ter uma visão “ao vivo” do ambiente e agir antes de o problema virar alerta ou ticket. Funcionou: houve caso de identificar um problema em Oracle antes de a fila de atendimento ser acionada.
 

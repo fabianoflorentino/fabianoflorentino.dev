@@ -74,7 +74,7 @@ The magic is that the error budget **aligns incentives**. While budget remains, 
 
 What struck me most in this chapter was seeing the book name a tension I lived constantly, without ever having a clear criterion to resolve it.
 
-At the certificate authority where I worked, the conversation between development and operations was always the same: **one side wanted to ship, the other wanted to stabilize** — and there was no number to arbitrate it. It was only when I started adopting **DevOps**, bringing the teams together, that I understood the problem wasn't the people — it was the **lack of a shared objective**. The error budget is exactly that: an objective both sides accept, taking the decision out of politics.
+At **Soluti**, where I worked, the conversation between development and operations was always the same: **one side wanted to ship, the other wanted to stabilize** — and there was no number to arbitrate it. It was only when I started adopting **DevOps**, bringing the teams together, that I understood the problem wasn't the people — it was the **lack of a shared objective**. The error budget is exactly that: an objective both sides accept, taking the decision out of politics.
 
 The idea of "reliable enough" also changed how I saw a project. At a major Brazilian retailer, **production and development shared the same Kubernetes cluster** — meaning the business was taking on a risk nobody had quantified. Separating them into dedicated clusters wasn't just a technical improvement: it was **aligning the accepted risk with the business's real tolerance**. Production got high availability, and development gained the freedom to fail without taking the customer down.
 

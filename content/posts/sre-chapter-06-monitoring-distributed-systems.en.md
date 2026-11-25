@@ -87,7 +87,7 @@ The [**Bigtable**](https://sre.google/sre-book/monitoring-distributed-systems/#b
 
 ## What I take from this chapter
 
-At Soluti, monitoring was done directly on the virtualization console. It showed the basics, but not a broad view of what was happening. As the environment grew, I implemented **Zabbix** with a **Puppet** module, tracking CPU, memory, and disk. That improved visibility into resources, supported capacity planning, and made it faster to act before a larger failure — in an environment that reached nearly **200 virtualized services and servers**.
+At **Soluti**, monitoring was done directly on the virtualization console. It showed the basics, but not a broad view of what was happening. As the environment grew, I implemented **Zabbix** with a **Puppet** module, tracking CPU, memory, and disk. That improved visibility into resources, supported capacity planning, and made it faster to act before a larger failure — in an environment that reached nearly **200 virtualized services and servers**.
 
 At a large client, I helped build a **Zabbix + Grafana** dashboard in containers, covering **AIX, Linux, and Windows** environments, IIS, Oracle, SQL Server, and DB2 databases, and digital certificate expiration. The goal was a live view of the environment and action before a problem became an alert or a ticket. It worked: there was a case where an Oracle issue was identified before the support queue was triggered.
 

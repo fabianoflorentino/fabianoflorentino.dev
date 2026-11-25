@@ -69,7 +69,7 @@ O ponto-chave: **monitoramento não é um acessório que você adiciona depois**
 
 Esse capítulo me pegou porque ele descreve, em escala planetária, uma trajetória que eu percorri em escala bem menor.
 
-Comecei cuidando de servidores físicos, um por um — o oposto do "rebanho". Na época de analista de infraestrutura em uma autoridade certificadora, a primeira virada de chave foi **virtualizar e criar um cluster**: servidores isolados viraram um parque de quase **200 serviços e máquinas virtuais**, com melhor aproveitamento de CPU e memória e, principalmente, mais disponibilidade. Foi meu primeiro contato com a ideia de tratar recursos como algo gerenciável em conjunto, não como caixas individuais.
+Comecei cuidando de servidores físicos, um por um — o oposto do "rebanho". Na época de analista de infraestrutura na **Soluti**, a primeira virada de chave foi **virtualizar e criar um cluster**: servidores isolados viraram um parque de quase **200 serviços e máquinas virtuais**, com melhor aproveitamento de CPU e memória e, principalmente, mais disponibilidade. Foi meu primeiro contato com a ideia de tratar recursos como algo gerenciável em conjunto, não como caixas individuais.
 
 Depois, já trabalhando com **Kubernetes**, vi a mesma lógica do Borg em ação. Em um projeto para um grande varejista brasileiro, o problema era exatamente um daqueles que o capítulo ensina a evitar: **produção e desenvolvimento dividiam o mesmo cluster**. Criar clusters separados trouxe isolamento, alta disponibilidade e estabilidade para a produção. Foi a versão moderna, e bem mais simples, daquilo que o Google faz com o Borg.
 

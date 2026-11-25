@@ -67,7 +67,7 @@ Notice that almost all of this is **engineering work**, not "firefighting work".
 
 I didn't know the term SRE when I first started practicing it. It was at **Soluti**, still working as an infrastructure analyst, that I took my first steps — without realizing it: by implementing configuration management with Puppet, plus automation and monitoring with Zabbix and Rundeck, I was, in practice, reducing toil and treating operations as an engineering problem.
 
-At **2Com**, during a brief stint, came the most concrete proof that this works: I automated a costly process that used to take about **three days** to complete, down to **a few minutes**, as long as the client's environment was prepared. It was the first time I truly eliminated toil — and the first time I felt the discipline's impact firsthand.
+At **2Com Consulting**, during a brief stint, came the most concrete proof that this works: I automated a costly process that used to take about **three days** to complete, down to **a few minutes**, as long as the client's environment was prepared. It was the first time I truly eliminated toil — and the first time I felt the discipline's impact firsthand.
 
 I carried those lessons into **IBM** and, later, **Kyndryl**, managing critical environments for large clients. There, the pattern repeated itself: improving processes and automating repetitive (or time-intensive) operations, turning days into minutes.
 

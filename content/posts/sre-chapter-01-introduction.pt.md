@@ -67,7 +67,7 @@ Perceba que quase tudo isso é **trabalho de engenharia**, não "trabalho de apa
 
 Eu não conhecia o termo SRE quando comecei a praticá-lo. Foi na **Soluti**, ainda como analista de infraestrutura, que dei os primeiros passos — sem saber: ao implementar gestão de configuração com Puppet, automação e monitoramento com Zabbix e Rundeck, eu estava, na prática, reduzindo toil e tratando a operação como um problema de engenharia.
 
-Na **2Com**, em uma passagem breve, veio a prova mais concreta de que isso funciona: automatizei um processo custoso que levava cerca de **três dias** para ser concluído e passou a rodar em **poucos minutos**, desde que o ambiente do cliente estivesse preparado. Foi a primeira vez que eliminei toil de verdade — e a primeira vez que senti, na pele, o impacto da disciplina.
+Na **2Com Consulting**, em uma passagem breve, veio a prova mais concreta de que isso funciona: automatizei um processo custoso que levava cerca de **três dias** para ser concluído e passou a rodar em **poucos minutos**, desde que o ambiente do cliente estivesse preparado. Foi a primeira vez que eliminei toil de verdade — e a primeira vez que senti, na pele, o impacto da disciplina.
 
 Levei esses ensinamentos para a **IBM** e, depois, para a **Kyndryl**, gerenciando ambientes críticos de grandes clientes. Lá, o padrão se repetiu: melhorar processos e automatizar operações repetitivas (ou de alto custo de tempo), transformando dias em minutos.
 

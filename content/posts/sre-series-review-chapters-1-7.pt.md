@@ -1,6 +1,6 @@
 ---
 date: '2026-11-26T00:00:00Z'
-draft: true
+draft: false
 title: 'Site Reliability Engineering: O que vimos até aqui'
 translationKey: sre_series_review_chapters_1_7
 tags: [post, sre, google-sre]
@@ -11,62 +11,137 @@ translation:
   text: English version
 ---
 
-Depois de sete capítulos, vale olhar para trás antes de seguir. Este post é uma pausa entre o capítulo 7 e o capítulo 8: uma chance de revisitar o caminho, organizar o que ficou e chegar a **Release Engineering** com o terreno mais firme.
+Depois de sete capítulos, vale olhar para trás antes de seguir. Este post é uma pausa entre o capítulo 7 e o capítulo 8: uma oportunidade de revisitar o caminho, conectar os conceitos e entender o que mudou na minha percepção sobre Site Reliability Engineering.
 
-A continuação é o **Capítulo 8: Engenharia de release**. Aqui, a ideia não é repetir o que já foi dito, mas enxergar as conexões que só aparecem depois de ler tudo em sequência.
+O livro do Google [_Site Reliability Engineering: How Google Runs Production Systems_](https://sre.google/sre-book/table-of-contents/) foi a base desta série. Ao longo dos capítulos, percorremos os fundamentos apresentados nele: começamos entendendo por que o SRE surgiu, passamos pela arquitetura dos ambientes de produção e chegamos a temas como gerenciamento de risco, objetivos de nível de serviço, toil, monitoramento e automação.
+
+Mais do que conhecer ferramentas ou memorizar conceitos, a leitura me fez olhar para algumas experiências profissionais de outra maneira. Práticas que eu já adotava ganharam uma fundamentação mais clara, enquanto outras revelaram lacunas que ainda preciso desenvolver.
+
+Antes de entrar em Engenharia de Release (_Release Engineering_), vale entender como essas peças se encaixam.
 
 ## O que vimos até aqui
 
-O [capítulo 1](/posts/sre-chapter-01-introduction/) fez a pergunta que sustenta a série até aqui: o que muda quando a operação é tratada como engenharia? A resposta não veio como cargo ou ferramenta, mas como postura — parar de apagar incêndio e começar a projetar. A meta de manter o toil abaixo de 50% apareceu como consequência disso.
+O [capítulo 1: Introdução](/posts/sre-chapter-01-introduction/) apresentou a ideia que sustenta toda a série: o que muda quando a operação passa a ser tratada como engenharia?
 
-O [capítulo 2](/posts/sre-chapter-02-production-environment/) mostrou o palco. Borg, armazenamento, rede, locks e monitoramento deixaram de ser nomes soltos e viraram camadas de um mesmo desenho. A confiabilidade não estava no hardware, mas na arquitetura que assume a falha.
+O Google propôs uma mudança de abordagem. Em vez de escalar a operação simplesmente adicionando pessoas, passou a aplicar engenharia de software aos problemas operacionais. A redução do trabalho operacional repetitivo, o chamado _toil_, e a dedicação de pelo menos 50% do tempo à engenharia são consequências dessa filosofia.
 
-Os capítulos 3 e 4 deram o vocabulário do risco. O [capítulo 3](/posts/sre-chapter-03-embracing-risk/) derrubou a ideia de que 100% é a meta: confiabilidade custa, tem retorno decrescente, e o error budget transforma essa tensão em decisão.
+O [capítulo 2: O ambiente de produção](/posts/sre-chapter-02-production-environment/) mostrou onde essa filosofia acontece. Borg, Colossus, Bigtable, Spanner, Jupiter, Chubby e Borgmon não são apenas tecnologias isoladas. São componentes de uma arquitetura construída para operar em grande escala, considerando que falhas de hardware, software e rede fazem parte da realidade.
 
-O [capítulo 4](/posts/sre-chapter-04-service-level-objectives/) deu nome às peças — SLI, SLO e SLA — e lembrou que medir o usuário, olhar a cauda e escolher poucos indicadores vale mais que uma parede de dashboards. O caso do Chubby ficou como aviso de que ser bom demais também pode ser um problema.
+A principal lição foi entender que confiabilidade não depende de máquinas que nunca falham, mas de uma arquitetura capaz de assumir falhas e continuar funcionando.
 
-Os três capítulos seguintes olharam para o trabalho. O [capítulo 5](/posts/sre-chapter-05-eliminating-toil/) definiu o toil: não é o trabalho chato, é o que não deixa o sistema melhor depois que você termina. O [capítulo 6](/posts/sre-chapter-06-monitoring-distributed-systems/) trouxe os quatro sinais dourados (golden signals), a diferença entre sintoma e causa e a pergunta que vale carregar: isso merece acordar alguém às três da manhã? O [capítulo 7](/posts/sre-chapter-07-evolution-of-automation/) mostrou que automação é multiplicador, não panaceia — e que o horizonte é autonomia, não só script.
+Os [capítulos 3 e 4](/posts/sre-chapter-03-embracing-risk/) aprofundaram a relação entre confiabilidade e risco.
 
-**Lidos juntos, os capítulos formam um ciclo: definir risco, medir, reduzir trabalho, automatizar, observar e aprender.**
+No capítulo 3, _Embracing Risk_, o livro questiona uma ideia bastante comum: 100% de disponibilidade nem sempre é o melhor objetivo. Confiabilidade tem custo, e cada novo nível de disponibilidade exige investimentos que podem comprometer a velocidade de desenvolvimento e a entrega de funcionalidades.
 
-## Engenharia contínua
+O _error budget_ aparece como uma maneira objetiva de equilibrar essas necessidades, permitindo que produto e operação tomem decisões a partir de um mesmo indicador.
 
-Talvez os capítulos pareçam assuntos separados. Mas eles se encaixam em um ciclo.
+No capítulo 4, [Service Level Objectives](/posts/sre-chapter-04-service-level-objectives/), esse raciocínio ganha uma estrutura mais clara. SLI, SLO e SLA deixam de ser siglas usadas indistintamente e passam a representar coisas diferentes: o que medimos, qual objetivo queremos atingir e qual compromisso assumimos com o usuário.
 
-O risco aparece no começo e volta sempre. Sem SLO, “disponibilidade” é opinião. Com SLO, vira orçamento, prioridade e conversa entre produto e operação.
+Outro ponto importante foi entender que medir tudo não significa medir bem. Os indicadores precisam representar a experiência do usuário, e os objetivos devem ser simples, relevantes e possíveis de acompanhar.
 
-A visibilidade entra no meio. Monitoramento não é enfeite de dashboard, é o sistema nervoso que permite decidir se o problema é sintoma, causa ou ruído.
+Os [capítulos 5 e 6](/posts/sre-chapter-05-eliminating-toil/) trouxeram a discussão para o trabalho cotidiano de quem opera sistemas.
 
-E o trabalho fecha o ciclo. Reduzir toil e evoluir a automação são dois lados da mesma moeda: um diz por que melhorar, o outro mostra como.
+Em _Eliminating Toil_, o capítulo 5, aprendemos que toil não é simplesmente trabalho repetitivo ou desagradável. É o trabalho operacional que tende a ser manual, repetitivo, automatizável, tático, sem valor duradouro e que cresce junto com o serviço.
 
-Nenhum capítulo resolve tudo sozinho. **SLO sem monitoramento é intenção; monitoramento sem SLO é ruído; automação sem SLO é velocidade na direção errada.**
+O capítulo 6, [Monitoring Distributed Systems](/posts/sre-chapter-06-monitoring-distributed-systems/), mostrou como transformar dados em decisões. Os quatro sinais dourados — latência, tráfego, erros e saturação — ajudam a entender o comportamento dos serviços, enquanto a distinção entre white-box e black-box mostra por que observar a infraestrutura não é necessariamente o mesmo que observar a experiência do usuário.
+
+Também ficou uma pergunta que vale carregar para qualquer ambiente de produção: isso realmente merece acordar alguém às três da manhã?
+
+Por fim, o [capítulo 7: A evolução da automação no Google](/posts/sre-chapter-07-evolution-of-automation/) mostrou que automatizar não significa necessariamente alcançar maturidade operacional.
+
+O capítulo apresenta uma evolução que vai da execução manual até sistemas capazes de identificar problemas e se recuperar sem intervenção humana. A diferença entre automação e autonomia é importante: automatizar uma tarefa é diferente de construir um sistema que não precisa mais daquela tarefa.
+
+A leitura também trouxe um alerta: automação sem entendimento pode multiplicar erros em escala. Por isso, precisa ser tratada como software, com versionamento, testes, idempotência, observabilidade e mecanismos de segurança.
+
+## O que conecta esses capítulos
+
+Lendo os sete capítulos em sequência, fica mais fácil perceber que o SRE não é um conjunto de práticas independentes. Existe uma relação entre todas elas.
+
+Tudo começa entendendo o ambiente e aceitando que falhas fazem parte de sistemas distribuídos. A partir daí, precisamos definir quanto risco estamos dispostos a assumir e transformar essa decisão em objetivos mensuráveis, por meio de SLIs, SLOs e error budgets.
+
+Com os objetivos definidos, o monitoramento permite acompanhar o comportamento do serviço, identificar problemas e entender se a experiência do usuário está dentro do esperado.
+
+Ao mesmo tempo, precisamos reduzir o trabalho operacional repetitivo. Uma equipe que passa todo o tempo mantendo sistemas funcionando não consegue dedicar o mesmo esforço à melhoria desses sistemas.
+
+É nesse ponto que a automação entra como ferramenta de engenharia. Não apenas para executar tarefas mais rapidamente, mas para reduzir intervenções humanas, padronizar processos e construir sistemas capazes de lidar com falhas de maneira previsível.
+
+Essas práticas se complementam:
+
+- **Confiabilidade** define o que precisamos preservar.
+- **SLIs e SLOs** estabelecem como medir e qual objetivo perseguir.
+- **Monitoramento** permite entender o comportamento do sistema.
+- **Redução de toil** devolve tempo para atividades de engenharia.
+- **Automação** reduz intervenções e padroniza operações.
+- **Autonomia** representa a evolução de sistemas capazes de operar e se recuperar dentro de limites seguros.
+
+Nenhum desses elementos resolve tudo sozinho.
+
+Um SLO sem monitoramento é apenas uma intenção. Monitoramento sem objetivos claros pode gerar uma quantidade enorme de dados sem ajudar nas decisões. Automação sem entendimento pode acelerar uma falha. E uma equipe sem tempo para engenharia acaba apenas sustentando os problemas existentes.
+
+**SRE conecta essas práticas em torno de um objetivo: construir e operar sistemas confiáveis, sem transformar a operação em um trabalho exclusivamente manual.**
 
 ## O que eu levo destes sete capítulos
 
-Eu comecei como analista de infraestrutura, cuidando de servidores um por um. Na **Soluti**, a primeira virada foi virtualizar e criar cluster: quase **200 serviços e máquinas virtuais** deixaram de ser caixas isoladas e passaram a ser um parque gerenciável. Depois vieram o **Zabbix**, o **Puppet** e a automação de configuração e release.
+Quando comecei a ler o livro, minha identificação com SRE veio principalmente das experiências que já tinha com infraestrutura, monitoramento e automação. Muitos dos problemas apresentados não eram novidade para mim. Eu já havia enfrentado situações semelhantes em diferentes ambientes e organizações.
 
-Na **2Com Consulting**, a virada foi de escala e processo: scripts Shell viraram roles Ansible, a entrega de monitoramento caiu de dias para **30–40 minutos**, a fila de chamados encolheu **mais de 60%** e o backlog foi zerado. Foi a primeira vez que vi automação mudar o jogo de forma mensurável.
+A diferença é que, ao longo dos capítulos, comecei a enxergar essas experiências sob outra perspectiva.
 
-Na **IBM** e na **Kyndryl**, o mesmo padrão apareceu em ambientes críticos de grandes clientes, com monitoramento, automação e plataformas de operação. Mas a série também me obrigou a ser honesto sobre o que eu **não** tinha: nunca defini um SLO formal, nunca documentei um postmortem blameless e nunca cheguei ao nível 5 de autonomia.
+Na **Soluti**, comecei como analista de infraestrutura, cuidando de servidores físicos individualmente. A primeira grande mudança foi virtualizar esse ambiente, que saiu de pouco mais de 20 servidores para aproximadamente 150, chegando posteriormente a quase 200 serviços e máquinas virtuais. Vieram também o Zabbix, o Puppet e a automação de configuração e release.
 
-Olhando para trás, a mudança não foi de ferramenta para ferramenta. Foi de “manter no ar” para “entender o que ‘no ar’ significa”. De herói de incidente para sistema que aprende.
+Naquele momento, meu objetivo era melhorar a administração do ambiente, aproveitar melhor os recursos e reduzir o trabalho manual. Hoje consigo identificar nessas decisões alguns dos fundamentos apresentados pelo livro: padronização, redução de toil e tratamento da infraestrutura como algo que pode ser gerenciado por software.
 
-**O mercado transformou SRE em um cargo. Para mim, é uma disciplina: estudar continuamente, aplicar os princípios e tratar operação como engenharia.**
+Na **2Com Consulting**, a evolução veio principalmente pela necessidade de escala. Processos que dependiam de scripts Shell e configurações manuais passaram a ser estruturados em roles e playbooks Ansible. A entrega de monitoramento, que antes levava dias, passou a acontecer em aproximadamente 30–40 minutos. A fila de chamados caiu mais de 60%, e o backlog de entregas foi zerado, atendendo uma base de aproximadamente 700 clientes.
+
+Foi uma experiência importante para entender que automação não representa apenas economia de tempo. Ela muda a capacidade de uma equipe atender demandas, padronizar ambientes e manter a qualidade da entrega conforme a operação cresce.
+
+Na **IBM** e, posteriormente, na **Kyndryl**, passei a trabalhar em ambientes críticos de grandes clientes, com diferentes tecnologias, requisitos operacionais e necessidades de confiabilidade. Monitoramento, automação e plataformas de operação continuaram fazendo parte do meu trabalho, mas a escala e a complexidade trouxeram outros desafios.
+
+Mais recentemente, minha atuação também se aproximou da engenharia de software, trabalhando com Go, APIs e sistemas distribuídos, incluindo plataformas de automação que precisam executar processos em larga escala.
+
+Olhando para essa trajetória, percebo que a mudança não aconteceu de uma ferramenta para outra. Foi uma evolução na maneira de pensar sobre os sistemas: de manter servidores funcionando para entender os serviços, seus comportamentos, suas dependências e o impacto que uma falha pode causar.
+
+Mas a leitura também deixou algumas lacunas bastante claras.
+
+**Eu automatizava processos, mas não media formalmente o toil. Monitorava infraestrutura, mas nem sempre conseguia medir a experiência do usuário. Buscava disponibilidade, mas não trabalhava com SLOs formalmente definidos.**
+
+Essas constatações não diminuem o valor das experiências anteriores. Pelo contrário, ajudam a entender o que eu fazia, por que fazia e como poderia ter feito melhor.
+
+É uma das contribuições mais importantes dessa leitura: não apenas reconhecer aquilo que já praticamos, mas identificar o que ainda precisamos desenvolver.
+
+**O mercado transformou SRE em uma função profissional, mas, para mim, ele representa principalmente uma disciplina de engenharia: estudar continuamente, aplicar os princípios e assumir a responsabilidade pela confiabilidade dos sistemas.**
 
 ## Aprendizado contínuo
 
-Nem tudo o que quero praticar cabe no dia a dia do trabalho. Por isso, boa parte do meu estudo virou laboratório: projetos pequenos, feitos para errar sem consequência e entender de verdade como as peças se encaixam.
+Nem tudo o que quero praticar cabe no dia a dia do trabalho. Por isso, boa parte do meu estudo também acontece em laboratório, por meio de projetos pequenos, desenvolvidos para experimentar, errar sem consequência em produção e entender como os conceitos funcionam na prática.
 
-No [**srectl**](https://github.com/fabianoflorentino/srectl), por exemplo, monto um ambiente local de SRE, DevOps e Platform Engineering em Go, com Kubernetes, Argo CD e a stack LGTM. É onde testo SLIs, SLO e error budget sem fingir que estou em produção.
+Alguns projetos open source nasceram justamente dessa necessidade de transformar leitura em experiência.
 
-O [**seraph**](https://github.com/fabianoflorentino/seraph) nasceu da vontade de ter um status board que lê páginas de status oficiais — o lugar natural para publicar disponibilidade. O [**certificate-validate**](https://github.com/fabianoflorentino/certificate-validate) transforma um SLI concreto em ferramenta: certificado expirado é serviço indisponível. E o [**fraudctl**](https://github.com/fabianoflorentino/fraudctl) é um campo de teste para latência, erro e disponibilidade em uma API real.
+O [**srectl**](https://github.com/fabianoflorentino/srectl) é um ambiente local de treinamento em SRE, DevOps e Platform Engineering, desenvolvido em Go, com Kubernetes, Argo CD e a stack LGTM. É onde posso experimentar SLIs, SLOs, error budgets e observabilidade em um ambiente controlado.
 
-Nenhum deles é um produto pronto. São projetos de estudo, feitos para manter o conhecimento em movimento e me obrigar a aplicar os princípios de SRE em algo concreto.
+O [**seraph**](https://github.com/fabianoflorentino/seraph) surgiu da ideia de construir um status board independente, que consulta páginas de status oficiais e apresenta a situação dos serviços. É uma forma de explorar disponibilidade e comunicação do estado operacional.
 
-Ainda tenho muito a aprender — e é isso que mantém o estudo vivo. **A teoria só vira disciplina quando encontra um sistema para praticar.**
+O [**certificate-validate**](https://github.com/fabianoflorentino/certificate-validate) trabalha com um indicador bastante concreto: a validade de certificados SSL/TLS. Um certificado expirado pode tornar um serviço inacessível, mesmo quando todos os seus componentes parecem estar funcionando normalmente.
 
-## Acompanhe a série
+Já o [**fraudctl**](https://github.com/fabianoflorentino/fraudctl) é uma API em Go que recebe pagamentos e analisa possíveis fraudes. O projeto participou da Rinha de Backend deste ano, ficando em 19º lugar, e também funciona como um campo de experimentação para latência, taxa de erros e disponibilidade em uma aplicação real.
 
-No próximo post, vou falar do **Capítulo 8: Engenharia de release** (_Release Engineering_). É o capítulo que mostra por que “funciona na minha máquina” não é um processo de entrega — e o que separa um deploy de um release confiável.
+Cada projeto representa uma oportunidade diferente de colocar em prática conceitos que aparecem ao longo da série.
+
+Nenhum deles é um produto pronto, e essa nunca foi a intenção. São projetos de estudo, experimentação e aprendizado contínuo. O objetivo é construir algo concreto, testar hipóteses e entender os problemas que aparecem quando saímos da teoria.
+
+**A teoria só vira disciplina quando encontra um sistema para praticar.**
+
+## O que vem pela frente
+
+Sete capítulos depois, tenho uma visão mais estruturada sobre SRE, mas também uma lista maior de coisas que quero aprender e experimentar.
+
+Ainda preciso aprofundar a definição e o acompanhamento de SLOs, melhorar a instrumentação dos meus projetos, explorar práticas de resposta a incidentes e entender melhor como construir sistemas com maior autonomia operacional.
+
+E é justamente por isso que a leitura continua fazendo sentido.
+
+No próximo post, vamos entrar no **Capítulo 8: Engenharia de Release** (_Release Engineering_).
+
+Até aqui, falamos sobre confiabilidade, risco, monitoramento e automação. Agora, o livro aborda como organizar o processo de entrega de software para que releases sejam previsíveis, reproduzíveis e confiáveis.
+
+Afinal, fazer o deploy de uma aplicação é apenas uma parte do processo. Garantir que uma nova versão chegue à produção com segurança exige engenharia.
 
 Acompanhe a série pela página [/series/sre/](/series/sre/).

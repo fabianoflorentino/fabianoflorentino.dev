@@ -926,3 +926,17 @@ body #achievements .card:focus {
   hyphens: auto;
   -webkit-hyphens: auto;
 }
+
+/* The theme makes body links `inline-block`, so long links can't wrap and
+   justified paragraphs open large gaps around them. Keep links inline in
+   paragraphs and use a static underline instead of the block pseudo-element. */
+#single .page-content p a {
+  display: inline;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+#single .page-content p a::after {
+  display: none;
+}

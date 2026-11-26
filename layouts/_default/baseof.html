@@ -43,6 +43,9 @@
     </div>
     {{- partial "sections/footer/index.html" . -}}
   </div>
+  {{- if and (eq .Section "posts") (eq .Kind "section") -}}
+    {{- partial "blog-side-banners.html" . -}}
+  {{- end -}}
   {{- partial "back-to-top.html" . -}}
 
   {{- if (or (eq .Site.Params.UseBootstrapCDN true) (eq .Site.Params.UseBootstrapCDN "js")) -}}

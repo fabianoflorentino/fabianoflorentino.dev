@@ -466,6 +466,104 @@ body #achievements .card:focus {
   background-color: var(--brand-surface);
 }
 
+/* ---------- Temporary side banners (JEFPALOOZA) ---------- */
+
+.blog-side-banner {
+  --banner-tilt: 0deg;
+  animation: blog-side-banner-float 7s ease-in-out infinite;
+  backface-visibility: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 10px;
+  box-shadow: 0 30px 70px rgba(2, 8, 23, 0.42), 0 10px 24px rgba(2, 8, 23, 0.28);
+  cursor: pointer;
+  overflow: visible;
+  position: fixed;
+  text-decoration: none;
+  top: 50%;
+  width: clamp(150px, 9.5vw, 220px);
+  will-change: transform;
+  z-index: 50;
+}
+
+.blog-side-banner:focus-visible {
+  outline: 2px solid var(--brand-teal);
+  outline-offset: 4px;
+}
+
+.blog-side-banner::before {
+  background: rgba(255, 255, 255, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(2, 8, 23, 0.16);
+  content: "";
+  height: 18px;
+  left: 50%;
+  position: absolute;
+  top: -7px;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 58px;
+  z-index: 2;
+}
+
+.blog-side-banner img {
+  aspect-ratio: 4 / 5;
+  border-radius: 9px;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.blog-side-banner--left {
+  --banner-tilt: -5deg;
+  left: clamp(10px, 1.3vw, 30px);
+  transform: translateY(-50%) rotate(var(--banner-tilt));
+}
+
+.blog-side-banner--right {
+  --banner-tilt: 5deg;
+  animation-delay: -3.5s;
+  right: clamp(10px, 1.3vw, 30px);
+  transform: translateY(-50%) rotate(var(--banner-tilt));
+}
+
+@keyframes blog-side-banner-float {
+  0%,
+  100% {
+    transform: translateY(-50%) rotate(var(--banner-tilt));
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 8px)) rotate(var(--banner-tilt));
+  }
+}
+
+@media (min-width: 1840px) {
+  .blog-side-banner {
+    width: min(280px, calc((100vw - 1320px) / 2 - 4px - clamp(40px, 2.9vw, 64px)));
+  }
+
+  .blog-side-banner--left {
+    left: clamp(40px, 2.9vw, 64px);
+  }
+
+  .blog-side-banner--right {
+    right: clamp(40px, 2.9vw, 64px);
+  }
+}
+
+@media (max-width: 1699px) {
+  .blog-side-banner {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-side-banner {
+    animation: none;
+  }
+}
+
 /* ---------- Footer social icons ---------- */
 
 .footer-social-icons a {

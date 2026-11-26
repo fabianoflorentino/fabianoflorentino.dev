@@ -1,0 +1,15 @@
+{{- /* Temporário: banners laterais JEFPALOOZA na listagem de posts — remover após segunda (30/11/2026). */ -}}
+{{- $banner := resources.Get "images/jefpalooza-2026.png" -}}
+{{- if $banner -}}
+  {{- $banner = $banner.Fit "720x900 webp q90" -}}
+  {{- $isPT := eq .Site.Language.Lang "pt" -}}
+  {{- $url := "https://www.youtube.com/live/8yq4Dqd8w_0?si=izpgvJ3wC35g6xkF" -}}
+  {{- $alt := cond $isPT "JEFPALOOZA — 24 horas ao vivo, 26 e 27 de novembro" "JEFPALOOZA — 24 hours live, November 26–27" -}}
+  {{- $label := cond $isPT "Assistir ao JEFPALOOZA ao vivo no YouTube" "Watch JEFPALOOZA live on YouTube" -}}
+  <a class="blog-side-banner blog-side-banner--left" href="{{ $url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $label }}">
+    <img src="{{ $banner.RelPermalink }}" width="{{ $banner.Width }}" height="{{ $banner.Height }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  </a>
+  <a class="blog-side-banner blog-side-banner--right" href="{{ $url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $label }}">
+    <img src="{{ $banner.RelPermalink }}" width="{{ $banner.Width }}" height="{{ $banner.Height }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  </a>
+{{- end -}}

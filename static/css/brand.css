@@ -538,9 +538,28 @@ body #achievements .card:focus {
   }
 }
 
+@media (min-width: 1400px) {
+  body.has-jefpalooza-banners #list-page,
+  body.has-jefpalooza-banners #single > .container {
+    max-width: min(1180px, calc(100vw - 360px));
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1699px) {
+  body.has-jefpalooza-banners #single .page-content p {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1839px) {
+  .blog-side-banner {
+    width: min(260px, calc((100vw - 1180px) / 2 - 20px - clamp(10px, 1.3vw, 30px)));
+  }
+}
+
 @media (min-width: 1840px) {
   .blog-side-banner {
-    width: min(280px, calc((100vw - 1320px) / 2 - 4px - clamp(40px, 2.9vw, 64px)));
+    width: min(300px, calc((100vw - 1180px) / 2 - 20px - clamp(40px, 2.9vw, 64px)));
   }
 
   .blog-side-banner--left {
@@ -552,7 +571,7 @@ body #achievements .card:focus {
   }
 }
 
-@media (max-width: 1699px) {
+@media (max-width: 1399px) {
   .blog-side-banner {
     display: none;
   }

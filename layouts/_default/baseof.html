@@ -31,7 +31,15 @@
   </script>
 </head>
 
-<body class="light">
+{{- $showJefpaloozaBanners := false -}}
+{{- if and (eq .Section "posts") (or (eq .Kind "page") (eq .Kind "section")) -}}
+  {{- $showJefpaloozaBanners = true -}}
+{{- else if and (eq .Kind "term") (eq .Section "series") -}}
+  {{- if eq (lower .Data.Term) "sre" -}}
+    {{- $showJefpaloozaBanners = true -}}
+  {{- end -}}
+{{- end -}}
+<body class="light{{ if $showJefpaloozaBanners }} has-jefpalooza-banners{{ end }}">
   <!-- javascripts -->
   <!-- <script src="/js/jquery-3.6.0.min.js"></script> -->
 
@@ -43,14 +51,6 @@
     </div>
     {{- partial "sections/footer/index.html" . -}}
   </div>
-  {{- $showJefpaloozaBanners := false -}}
-  {{- if and (eq .Section "posts") (or (eq .Kind "page") (eq .Kind "section")) -}}
-    {{- $showJefpaloozaBanners = true -}}
-  {{- else if and (eq .Kind "term") (eq .Section "series") -}}
-    {{- if eq (lower .Data.Term) "sre" -}}
-      {{- $showJefpaloozaBanners = true -}}
-    {{- end -}}
-  {{- end -}}
   {{- if $showJefpaloozaBanners -}}
     {{- partial "blog-side-banners.html" . -}}
   {{- end -}}

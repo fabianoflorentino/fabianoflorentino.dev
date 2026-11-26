@@ -43,7 +43,7 @@
     </div>
     {{- partial "sections/footer/index.html" . -}}
   </div>
-  {{- if and (eq .Section "posts") (eq .Kind "section") -}}
+  {{- if and (eq .Section "posts") (or (eq .Kind "page") (eq .Kind "section")) -}}
     {{- partial "blog-side-banners.html" . -}}
   {{- end -}}
   {{- partial "back-to-top.html" . -}}

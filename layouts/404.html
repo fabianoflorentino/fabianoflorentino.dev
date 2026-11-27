@@ -1,0 +1,58 @@
+{{ define "head" }}
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/404.css?v=2" media="all">
+{{ end }}
+
+{{ define "title" }}
+{{ if eq .Site.Language.Lang "pt" }}404 — Rota não encontrada{{ else }}404 — Route not found{{ end }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+{{ $isPT := eq .Site.Language.Lang "pt" }}
+{{ $homeURL := "/" | relLangURL }}
+{{ $postsURL := "/posts/" | relLangURL }}
+{{ $seriesURL := "/series/sre/" | relLangURL }}
+<section id="error-404">
+  <div class="container">
+    <div class="error-404__grid">
+      <div class="error-404__panel">
+        <div class="error-404__hud">
+          <span class="error-404__dot" aria-hidden="true"></span>
+          <span>HTTP 404</span>
+          <span class="error-404__hud-sep" aria-hidden="true">/</span>
+          <span>{{ if $isPT }}ROTA NÃO ENCONTRADA{{ else }}ROUTE NOT FOUND{{ end }}</span>
+        </div>
+        <div class="error-404__code" data-text="404" aria-hidden="true">404</div>
+        <p class="error-404__signal">{{ if $isPT }}SINAL PERDIDO NO CLUSTER{{ else }}SIGNAL LOST IN THE CLUSTER{{ end }}</p>
+        <h1>{{ if $isPT }}Essa rota não respondeu.{{ else }}This route didn't answer.{{ end }}</h1>
+        <p class="error-404__copy">{{ if $isPT }}O endereço que você tentou acessar não existe, mudou de lugar ou saiu do ar. O sistema continua de pé — só essa rota que não respondeu.{{ else }}The address you tried to reach doesn't exist, moved, or went offline. The system is still up — it's just this route that didn't answer.{{ end }}</p>
+        <div class="error-404__actions">
+          <a class="error-404__action error-404__action--primary" href="{{ $homeURL }}">{{ if $isPT }}Voltar ao início{{ else }}Back home{{ end }}</a>
+          <a class="error-404__action error-404__action--ghost" href="{{ $postsURL }}">{{ if $isPT }}Ler o blog{{ else }}Read the blog{{ end }}</a>
+        </div>
+        <div class="error-404__trace">
+          <span>trace:</span>
+          <code>edge-router → service-mesh → 404</code>
+        </div>
+      </div>
+      <aside class="error-404__telemetry">
+        <div class="error-404__telemetry-head">
+          <span class="error-404__pulse" aria-hidden="true"></span>
+          {{ if $isPT }}TELEMETRIA{{ else }}TELEMETRY{{ end }}
+        </div>
+        <dl>
+          <div><dt>status</dt><dd>404</dd></div>
+          <div><dt>service</dt><dd>edge-router</dd></div>
+          <div><dt>route</dt><dd>unknown</dd></div>
+          <div><dt>impact</dt><dd>none</dd></div>
+        </dl>
+        <div class="error-404__links">
+          <a href="{{ $homeURL }}">{{ if $isPT }}início{{ else }}home{{ end }}</a>
+          <a href="{{ $postsURL }}">posts</a>
+          <a href="{{ $seriesURL }}">{{ if $isPT }}série SRE{{ else }}SRE series{{ end }}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+{{ end }}
